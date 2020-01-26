@@ -62,10 +62,6 @@ export default {
         this.results = value.data;
         this.state = "done";
 
-        setTimeout(() => {
-          this.state = "idle";
-        }, 1000 * 10);
-
       }).catch(err => {
         // eslint-disable-next-line no-console
         console.log(err);
