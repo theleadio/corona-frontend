@@ -8,7 +8,7 @@
       class="bg-gray-100 p-3 text-sm block"
     >
       <p class="leading-normal"><span class="font-bold">{{ news.title }}</span> - {{ news.description }}</p>
-      <p class="text-right font-semibold">{{ news.published | moment('from') }}</p>
+      <p class="text-right font-semibold">{{ news.publishedAt | moment('from') }}</p>
     </a>
   </div>
 </template>
