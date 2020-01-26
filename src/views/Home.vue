@@ -12,21 +12,23 @@
             <RecentNews />
           </div>
 
+          <!-- hide for now
           <NotifyCard />
+          -->
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import NotifyCard from "../components/NotifyCard";
+// import NotifyCard from "../components/NotifyCard";
 import RecentNews from "../components/RecentNews";
 import Search from "../components/Search";
 import TrendingNews from './Home/TrendingNews';
 
 export default {
   components: {
-    NotifyCard,
+    // NotifyCard,
     RecentNews,
     Search,
     TrendingNews
