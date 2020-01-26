@@ -10,7 +10,10 @@
           </svg>
         </button>
       </div>
-      <div v-for="link in links" v-bind:key="link.name">
+      <div v-for="link in links" v-bind:key="link.name" class="hidden lg:block">
+          <router-link class="mr-4 hover:text-green-200" :to="{name: link.name}">{{link.display}}</router-link>
+      </div>
+      <div v-for="link in links" v-bind:key="link.name" class="lg:hidden">
           <router-link v-if="showlinks" class="mr-4 hover:text-green-200" :to="{name: link.name}">{{link.display}}</router-link>
       </div>
     </div>
