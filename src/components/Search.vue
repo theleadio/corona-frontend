@@ -1,10 +1,9 @@
 <template>
-  <div class="flex flex-col items-center search">
+  <div class="flex flex-col items-center search" v-on-clickaway="onClickAwaySearch">
     <div class="flex w-full items-center">
       <input
           v-on:input="typedSearch"
-          v-on:focus="typedSearch"
-          v-on:blur="onInputBlur"
+          v-on:focus="onFocusSearch"
           v-model="term" type="text"
           class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200  py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-300"
       />
@@ -53,9 +52,13 @@
 
 <script>
 import axios from "../lib/axios";
+import { directive as onClickaway } from 'vue-clickaway';
 
 export default {
   name: "Search",
+  directives: {
+    onClickaway: onClickaway,
+  },
   data: function () {
     return {
       term: "",
@@ -93,8 +96,15 @@ export default {
     search: function () {
       this.performSearch();
     },
-    onInputBlur: function() {
-      this.results = [];
+    onFocusSearch: function() {
+      if (this.results && this.results.length) {
+        this.state = 'done';
+      }
+      else {
+        this.performSearch();
+      }
+    },
+    onClickAwaySearch: function() {
       this.state = "idle";
     },
   }
