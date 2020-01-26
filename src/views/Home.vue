@@ -1,10 +1,6 @@
 <template>
   <div>
     <div class="container">
-      <Logo />
-    </div>
-    <Nav />
-    <div class="container">
       <Search class="mt-4 mb-8" />
       <div class="flex flex-wrap -mx-2">
         <div class="w-full md:w-2/3 px-2">
@@ -39,8 +35,6 @@
 
 <script>
 import Card from "../components/Card";
-import Logo from "../components/Logo";
-import Nav from "../components/Nav";
 import News from "../components/News";
 import NotifyCard from "../components/NotifyCard";
 import RecentNews from "../components/RecentNews";
@@ -51,8 +45,6 @@ import axios, { getData } from "../lib/axios";
 export default {
   components: {
     Card,
-    Logo,
-    Nav,
     News,
     NotifyCard,
     RecentNews,
