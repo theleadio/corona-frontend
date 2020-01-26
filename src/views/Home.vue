@@ -12,8 +12,7 @@
         </div>
         <div class="w-full md:w-1/3 px-2">
           <div class="mb-4">
-            <Card title="Recent News"> </Card>
-            <RecentNews v-for="index in 4" :key="index" />
+            <RecentNews />
           </div>
 
           <NotifyCard />
