@@ -78,12 +78,12 @@
 }
 .placeholder-content_item:nth-child(3) {
   top: 40px;
-  left: 190px;
+  left: 26%;
   height: 12px;
 }
 .placeholder-content_item:nth-child(4) {
   top: 75px;
-  left: 190px;
+  left: 26%;
   height: 12px;
 }
 .placeholder-content_item:nth-child(5) {
