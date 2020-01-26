@@ -1,9 +1,10 @@
 <template>
   <div>
     <div class="container">
+      <LocationSelector/>
       <Search class="mt-4 mb-8" />
       <div class="flex flex-wrap -mx-2">
-        
+
         <div class="w-full md:w-2/3 px-2">
           <TrendingNews></TrendingNews>
         </div>
@@ -25,13 +26,15 @@
 import RecentNews from "../components/RecentNews";
 import Search from "../components/Search";
 import TrendingNews from './Home/TrendingNews';
+import LocationSelector from '../components/LocationSelector';
 
 export default {
   components: {
     // NotifyCard,
     RecentNews,
     Search,
-    TrendingNews
+    TrendingNews,
+    LocationSelector
   },
   mounted() {
 
