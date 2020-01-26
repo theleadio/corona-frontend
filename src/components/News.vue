@@ -3,11 +3,11 @@
     :href="article.url"
     target="_blank"
     class="article block bg-cover bg-center bg-no-repeat h-64 w-full relative mb-4"
-    :style="{ backgroundImage: `url(${article.imageUrl})` }"
+    :style="{ backgroundImage: `url('${article.urlToImage}')` }"
   >
     <div class="content  absolute bottom-0 w-full px-2 py-4 text-black">
-      <h2 class="font-bold text-xl mb-2 leading-tight">{{ article.title }}</h2>
-      <p>{{ article.description | summary }}</p>
+      <h2 class="font-bold text-xl mb-2 leading-tight">{{ article.title | title(titleLength) }}</h2>
+      <p>{{ article.description | summary(summaryLength) }}</p>
     </div>
   </a>
 </template>
@@ -16,16 +16,29 @@
 export default {
   name: "News",
   props: {
+    titleLength: {
+      type: Number,
+    },
+    summaryLength: {
+      type: Number,
+    },
     article: {
       type: Object,
       required: true
     }
   },
   filters: {
-    summary(description) {
-      description = description || '';
+    title(title, length) {
+      title = title || '';
+      length = length || 40;
 
-      return description.substring(0, 80) + "....";
+      return title.substring(0, length) + "....";
+    },
+    summary(summary, length) {
+      summary = summary || '';
+      length = length || 80;
+
+      return summary.substring(0, length) + "....";
     }
   }
 };
