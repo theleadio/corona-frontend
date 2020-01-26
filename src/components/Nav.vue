@@ -2,6 +2,12 @@
     <div class="bg-primary flex">
         <div class="container flex flex-col md:flex-row font-bold text-white text-lg">
             <router-link
+                class="ml-2 mr-4 hover:text-green-200"
+                :to="{name: 'page.home'}"
+            >
+                Home
+            </router-link>
+            <router-link
                 class="mr-4 hover:text-green-200"
                 :to="{ name: 'page.causes' }"
             >
