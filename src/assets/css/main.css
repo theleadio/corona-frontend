@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.container {
+    @apply max-w-5xl !important;
+    @apply mx-auto py-2 px-2;
+}
