@@ -1,7 +1,13 @@
 <template>
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col items-center search">
     <div class="flex w-full items-center">
-      <input v-on:input="typedSearch" v-model="term" type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200  py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-300" />
+      <input
+          v-on:input="typedSearch"
+          v-on:focus="typedSearch"
+          v-on:blur="onInputBlur"
+          v-model="term" type="text"
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200  py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-300"
+      />
       <button class="bg-primary h-12 w-12 flex items-center justify-center" v-on:click="search">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +27,13 @@
       </button>
     </div>
     <div v-if="state == 'done' && results.length > 0" class="flex flex-col w-full overflow-auto bg-white text-black shadow-md list">
-      <a v-for="result in results" :key="result.nid" :href="result.url" class="w-full result-link" v-on:click="linkClick">
+      <a
+          v-for="result in results"
+          :key="result.nid"
+          :href="result.url"
+          target="_blank"
+          class="w-full result-link"
+      >
         <p class="p-4">
           {{result.title.substring(0, 100) + "..."}}
         </p>
@@ -56,7 +68,7 @@ export default {
   },
   methods: {
     performSearch: function () {
-      this.state = "searching";
+      this.state = "loading";
       
       axios.get("/news?q=" + this.term).then(value => {
         this.results = value.data;
@@ -81,16 +93,24 @@ export default {
     search: function () {
       this.performSearch();
     },
-    linkClick: function () {
+    onInputBlur: function() {
+      this.results = [];
       this.state = "idle";
-    }
+    },
   }
 };
 </script>
 
 <style scoped>
+  .search {
+    position: relative;
+  }
+
   .list {
+    position: absolute;
+    top: 47px;
     max-height: 300px;
+    z-index: 99;
   }
 
   .result-link {
