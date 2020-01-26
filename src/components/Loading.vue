@@ -1,21 +1,25 @@
 <template>
     <div
         v-if="loading"
-        class="loading-container">
+    >
+      <slot name="loading">
+        <div class="loading-container">
+          
+          <!-- Placeholder Content -->
+          <div class="placeholder-content">
+              <div class="placeholder-content_item"></div>
+              <div class="placeholder-content_item"></div>
+              <div class="placeholder-content_item"></div>
+              <div class="placeholder-content_item"></div>
+              <div class="placeholder-content_item"></div>
+              <div class="placeholder-content_item"></div>
+              <div class="placeholder-content_item"></div>
+              <div class="placeholder-content_item"></div>
+              <div class="placeholder-content_item"></div>
+          </div>
         
-        <!-- Placeholder Content -->
-        <div class="placeholder-content">
-            <div class="placeholder-content_item"></div>
-            <div class="placeholder-content_item"></div>
-            <div class="placeholder-content_item"></div>
-            <div class="placeholder-content_item"></div>
-            <div class="placeholder-content_item"></div>
-            <div class="placeholder-content_item"></div>
-            <div class="placeholder-content_item"></div>
-            <div class="placeholder-content_item"></div>
-            <div class="placeholder-content_item"></div>
         </div>
-              
+      </slot>
     </div>
     <div
         v-else
