@@ -1,7 +1,9 @@
 <template>
     <div>
         <div class="bg-primary text-white font-bold p-2">{{ title }}</div>
-        <slot></slot>
+        <div class="bg-gray-100">
+            <slot></slot>
+        </div>
     </div>
 </template>
 
