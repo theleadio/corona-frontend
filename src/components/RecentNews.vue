@@ -15,7 +15,7 @@
 
 <script>
 import Card from "../components/Card";
-import axios, {getData} from "../lib/axios";
+import { getRecentNews } from "../api/news";
 
 export default {
   name: "RecentNews",
@@ -28,13 +28,9 @@ export default {
     };
   },
   created() {
-    const sort = '-publishedAt'
-    const limit = 4;
-
-    axios
-      .get(`/news?sort=${sort}&limit=${limit}`)
-      .then(res => {
-        this.recentNews = getData(res);
+    getRecentNews()
+      .then(data => {
+        this.recentNews = data;
       })
       .catch(err => {
         // eslint-disable-next-line no-console

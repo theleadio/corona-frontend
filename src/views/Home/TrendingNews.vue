@@ -34,7 +34,7 @@ import Card from "../../components/Card";
 import Loading from '../../components/Loading';
 import News from "../../components/News";
 import Paginate from 'vuejs-paginate';
-import axios, { getData } from "../../lib/axios";
+import { getTrendingNews } from "../../api/news";
 
 export default {
 	components: {
@@ -65,10 +65,8 @@ export default {
 			const limit = this.pageSize;
 			const offset = (this.currentPageNumber - 1) * limit;
 
-			this.ajax = axios
-				.get(`/news/trending?offset=${offset}&limit=${limit}`)
-				.then(res => {
-					const data = getData(res);
+			this.ajax = getTrendingNews({ limit, offset })
+				.then(data => {
 					this.articles = data.items;
 					this.numberTotalItems = data.total;
 				});
