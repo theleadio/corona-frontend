@@ -1,10 +1,15 @@
 <template>
   <div>
     <Card title="Recent News"> </Card>
-    <div v-for="news in recentNews" :key="news.id" class="bg-gray-100 p-3 text-sm">
+    <a
+      v-for="news in recentNews" :key="news.id"
+      :href="news.url"
+      target="_blank"
+      class="bg-gray-100 p-3 text-sm block"
+    >
       <p class="leading-normal"><span class="font-bold">{{ news.title }}</span> - {{ news.description }}</p>
       <p class="text-right font-semibold">{{ news.published | moment('from') }}</p>
-    </div>
+    </a>
   </div>
 </template>
 
@@ -40,5 +45,11 @@ export default {
 </script>
 
 <style scoped>
+a {
+  transition: background-color .4s;
+}
 
+a:hover {
+ background-color: #eaeaea;
+}
 </style>
