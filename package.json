@@ -12,6 +12,8 @@
     "core-js": "^3.4.4",
     "tailwindcss": "^1.1.4",
     "vue": "^2.6.10",
+    "vue-clickaway": "^2.2.2",
+    "vue-gtm": "^2.2.0",
     "vue-moment": "^4.1.0",
     "vue-router": "^3.1.5",
     "vuejs-paginate": "^2.1.0"
