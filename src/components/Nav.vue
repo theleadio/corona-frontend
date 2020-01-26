@@ -2,8 +2,8 @@
   <nav class="flex items-center justify-between flex-wrap bg-primary">
     <div class="container flex flex-col md:flex-row font-bold text-white text-lg">
       <div class="flex justify-between lg:hidden">
-          <div>
-              Menu
+          <div class="capitalize">
+              {{currentPage}}
           </div>
           <div>
               <button id="hamburger" class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white self-end"
@@ -18,8 +18,8 @@
       <div v-for="link in links" v-bind:key="link.name" class="hidden lg:block">
           <router-link class="mr-4 hover:text-green-200" :to="{name: link.name}">{{link.display}}</router-link>
       </div>
-      <div v-for="link in links" v-bind:key="link.name" class="lg:hidden">
-          <router-link v-if="showlinksmobile" class="mr-4 hover:text-green-200" :to="{name: link.name}">{{link.display}}</router-link>
+      <div v-for="link in links" v-bind:key="'mob-'+link.name" class="lg:hidden">
+          <router-link v-if="showlinksmobile" class="mr-4 hover:text-green-200" :to="{name: link.name}" @click.native="showlinksmobile = false">{{link.display}}</router-link>
       </div>
     </div>
   </nav>
@@ -28,6 +28,11 @@
 <script>
 export default {
   name: "Nav",
+  computed:{
+      currentPage: function(){
+          return this.$route.name.replace("page.","");
+      }
+  },
   data: function(){
       return {
           links: [{name: "page.home",display:"Home"},
