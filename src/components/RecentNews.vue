@@ -48,4 +48,8 @@ a {
 a:hover {
  background-color: #eaeaea;
 }
+
+a + a {
+  border-top: 1px solid #108885;
+}
 </style>
