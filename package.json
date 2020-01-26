@@ -12,6 +12,7 @@
     "core-js": "^3.4.4",
     "tailwindcss": "^1.1.4",
     "vue": "^2.6.10",
+    "vue-moment": "^4.1.0",
     "vue-router": "^3.1.5"
   },
   "devDependencies": {
@@ -33,7 +34,7 @@
       "eslint:recommended"
     ],
     "rules": {
-      "no-console":"off"
+      "no-console": "off"
     },
     "parserOptions": {
       "parser": "babel-eslint"
