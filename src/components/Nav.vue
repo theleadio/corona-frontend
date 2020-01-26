@@ -1,6 +1,6 @@
 <template>
     <div class="bg-primary flex">
-        <div class="container flex font-bold text-white text-lg">
+        <div class="container flex flex-col md:flex-row font-bold text-white text-lg">
             <a href="#" class="mr-4 hover:text-green-200">Causes</a>
             <a href="#" class="mr-4 hover:text-green-200">Prevention</a>
             <a href="#" class="mr-4 hover:text-green-200">Sources</a>
