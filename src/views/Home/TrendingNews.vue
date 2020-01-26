@@ -13,7 +13,7 @@
 			>
 				<News
 					:article="article"
-					:title-length="index == 0 ? 60 : 35"
+					:title-length="index == 0 ? 60 : 55"
 					:summary-length="index == 0 ? 160 : 75"
 				/>
 			</div>
