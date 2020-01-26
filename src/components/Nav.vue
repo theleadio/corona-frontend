@@ -9,18 +9,25 @@
           </svg>
         </button>
       </div>
-      <router-link class="mr-4 hover:text-green-200" :to="{name: 'page.home'}">Home</router-link>
-      <router-link class="mr-4 hover:text-green-200" :to="{ name: 'page.causes' }">Causes</router-link>
-      <router-link class="mr-4 hover:text-green-200" :to="{ name: 'page.prevention' }">Prevention</router-link>
-      <router-link class="mr-4 hover:text-green-200" :to="{ name: 'page.sources' }">Sources</router-link>
-      <router-link class="mr-4 hover:text-green-200" :to="{ name: 'page.countries' }">Countries</router-link>
+      <div v-for="link in links" v-bind:key="link.name">
+          <router-link  class="mr-4 hover:text-green-200" :to="{name: link.name}">{{link.display}}</router-link>
+      </div>
     </div>
   </nav>
 </template>
 
 <script>
 export default {
-  name: "Nav"
+  name: "Nav",
+  data: function(){
+      return {
+          links: [{name: "page.home",display:"Home"},
+          {name: "page.causes",display:"Causes"},
+          {name: "page.prevention",display:"Prevention"},
+          {name: "page.sources",display:"Sources"},
+          {name: "page.countries",display:"Countries"}]
+      }
+  }
 };
 </script>
 
