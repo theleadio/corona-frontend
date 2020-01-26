@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div ref="trending-news">
 		<Card title="Trending News"></Card>
 		<Loading :ajax="ajax">
 			<div class="flex flex-wrap -mx-2">
@@ -78,8 +78,16 @@ export default {
 			this.getTrendingNews();
 		},
 		scrollToTop() {
+			// https://plainjs.com/javascript/styles/get-the-position-of-an-element-relative-to-the-document-24/
+			const offset = (el) => {
+				const rect = el.getBoundingClientRect();
+				const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+				const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+				return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+			}
+			const trendingNewsDiv = this.$refs['trending-news'];
 			window.scroll({
-				top: 0,
+				top: trendingNewsDiv ? offset(trendingNewsDiv).top - 16 : 0,
 				left: 0,
 				behavior: 'smooth'
 			});
