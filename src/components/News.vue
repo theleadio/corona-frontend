@@ -7,7 +7,7 @@
   >
     <div class="content  absolute bottom-0 w-full px-2 py-4 text-black">
       <h2 class="font-bold text-xl mb-2 leading-tight">{{ article.title }}</h2>
-      <p>{{ summary }}</p>
+      <p>{{ article.description | summary }}</p>
     </div>
   </a>
 </template>
@@ -21,10 +21,11 @@ export default {
       required: true
     }
   },
-  computed: {
-    summary() {
-      if (!this.article) return "";
-      return this.article.description.substring(0, 80) + "....";
+  filters: {
+    summary(description) {
+      description = description || '';
+
+      return description.substring(0, 80) + "....";
     }
   }
 };
