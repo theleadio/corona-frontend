@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex items-center justify-between flex-wrap bg-primary">
+  <nav v-sticky class="flex items-center justify-between flex-wrap bg-primary">
     <div class="container flex flex-col md:flex-row font-bold text-white text-lg">
       <div class="flex justify-between lg:hidden">
           <div class="capitalize">
@@ -48,5 +48,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+.top-sticky {
+  box-shadow: 0 -4px 6px 6px #5a5a5a;
+}
 </style>

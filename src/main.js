@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from "./router";
+import Sticky from 'vue-sticky-directive';
 import VueGtm from 'vue-gtm';
 import { GTM_ID } from './config';
 
 Vue.config.productionTip = false
 
 Vue.use(require('vue-moment'));
+Vue.use(Sticky);
 Vue.use(VueGtm, {
   id: GTM_ID, // Your GTM single container ID or array of container ids ['GTM-xxxxxxx', 'GTM-yyyyyyy']
   queryParams: { // Add url query string when load gtm.js with GTM ID (optional)
