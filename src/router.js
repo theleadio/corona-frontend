@@ -5,7 +5,7 @@ import Home from "../src/views/Home";
 import Causes from "../src/views/Causes";
 import Prevention from "../src/views/Prevention";
 import Sources from "../src/views/Sources";
-import Countries from "../src/views/Countries";
+import Analytics from "../src/views/Analytics";
 
 Vue.use(Router);
 
@@ -33,9 +33,9 @@ export default new Router({
             name: 'page.sources',
         },
         {
-            path: "/countries",
-            component: Countries,
-            name: 'page.countries',
+            path: "/analytics",
+            component: Analytics,
+            name: 'page.analytics',
         }
     ]
 });

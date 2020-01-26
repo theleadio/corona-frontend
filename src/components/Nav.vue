@@ -29,18 +29,20 @@
 export default {
   name: "Nav",
   computed:{
-      currentPage: function(){
-          return this.$route.name.replace("page.","");
+      currentPage: function() {
+          return this.$route.name.replace("page.", "");
       }
   },
-  data: function(){
+  data: function() {
       return {
-          links: [{name: "page.home",display:"Home"},
-          {name: "page.causes",display:"Causes"},
-          {name: "page.prevention",display:"Prevention"},
-          {name: "page.sources",display:"Sources"},
-          {name: "page.countries",display:"Countries"}],
-          showlinksmobile: false
+          links: [
+            { name: "page.home", display: "Home" },
+            { name: "page.causes", display: "Causes" },
+            { name: "page.prevention", display: "Prevention" },
+            { name: "page.sources", display: "Sources"},
+            { name: "page.analytics", display: "Analytics"}
+          ],
+          showlinksmobile: false,
       }
   }
 };
