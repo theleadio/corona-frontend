@@ -24,6 +24,7 @@ Vue.use(VueGtm, {
 });
 
 import "./assets/css/main.css";
+import "flag-icon-css/css/flag-icon.min.css"
 
 new Vue({
   router,
