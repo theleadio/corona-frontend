@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded flex" @click="showOptions = !showOptions">
+        <button :class="btnclass" @click="showOptions = !showOptions">
             <div v-if="selectedOption">
             {{selectedOption[displaykey]}}
             </div>
@@ -32,6 +32,20 @@ export default {
       unselected: {
           type: String,
           default: "Select"
+      },
+      btnclass:{
+          type: Object,
+          default: function(){
+              return{
+                    "bg-gray-200": true,
+                    "text-left": true,
+                    "font-bold":true,
+                    "py-2":true,
+                    "px-4": true,
+                    "rounded":true,
+                    "flex":true
+              }
+          }
       }
   },
   data: function() {
