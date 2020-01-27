@@ -43,6 +43,12 @@ export default {
 		Loading,
 		Paginate,
 	},
+	props: {
+		country: {
+			type: [Object],
+			default: () => {},
+		},
+	},
 	data() {
 		return {
 			articles: [],
@@ -53,19 +59,24 @@ export default {
 		}
 	},
 	mounted() {
-		this.getTrendingNews();
+		this.loadData();
 	},
 	computed: {
 		pageCount() {
 			return Math.ceil(this.numberTotalItems / this.pageSize);
 		}
 	},
+	watch: {
+		country() {
+			this.loadData();
+		},
+	},
 	methods: {
-		getTrendingNews() {
+		loadData() {
 			const limit = this.pageSize;
 			const offset = (this.currentPageNumber - 1) * limit;
 
-			this.ajax = getTrendingNews({ limit, offset })
+			this.ajax = getTrendingNews({ limit, offset, country: this.country.name })
 				.then(data => {
 					this.articles = data.items;
 					this.numberTotalItems = data.total;
@@ -73,7 +84,7 @@ export default {
 		},
 		onClickPagination() {
 			this.scrollToTop();
-			this.getTrendingNews();
+			this.loadData();
 		},
 		scrollToTop() {
 			// https://plainjs.com/javascript/styles/get-the-position-of-an-element-relative-to-the-document-24/

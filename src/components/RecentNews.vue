@@ -22,21 +22,35 @@ export default {
   components: {
     Card,
   },
+  props: {
+    country: [Object],
+    default: () => {},
+  },
   data() {
     return {
       recentNews: [],
     };
   },
+  watch: {
+    country() {
+      this.loadData();
+    }
+  },
   created() {
-    getRecentNews()
-      .then(data => {
-        this.recentNews = data;
-      })
-      .catch(err => {
-        // eslint-disable-next-line no-console
-        console.log(err);
-      });
-  }
+    this.loadData();
+  },
+  methods: {
+    loadData() {
+      getRecentNews({ country: this.country.name })
+        .then(data => {
+          this.recentNews = data;
+        })
+        .catch(err => {
+          // eslint-disable-next-line no-console
+          console.log(err);
+        });
+    },
+  },
 }
 </script>
 
