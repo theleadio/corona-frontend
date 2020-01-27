@@ -6,7 +6,7 @@
       <div class="flex flex-wrap -mx-2">
         <div class="w-full md:w-2/3 px-2">
           <Search class="mt-4 mb-8" />
-          <TrendingNews :country="country"></TrendingNews>
+          <TrendingNews :country="country.code"></TrendingNews>
         </div>
         <div class="w-full md:w-1/3 px-2">
           <div class="mt-4 mb-4">
