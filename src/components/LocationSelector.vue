@@ -6,7 +6,11 @@
       </label>
       <div>
         <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded w-full md:w-1/2 flex" @click="showOptions = !showOptions">
-          <div v-if="currentCountry">
+          <div v-if="currentCountry && currentCountry.code === 'global'">
+            <i class="fas fa-globe"></i>
+            {{currentCountry.name}}
+          </div>
+          <div v-else-if="currentCountry">
             <span :class="'flag-icon flag-icon-'+currentCountry.code"></span>
             {{currentCountry.name}}
           </div>
@@ -19,6 +23,12 @@
         </button>
 
         <ul class="absolute text-gray-700 pt-1 z-50" v-if="showOptions">
+          <li>
+            <a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" @click="selectCountry(global)">
+              <i class="fas fa-globe"></i>
+              Global
+            </a>
+          </li>
           <li v-for="country in countries" v-bind:key="country.code">
             <a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" @click="selectCountry(country)">
               <span :class="'flag-icon flag-icon-'+country.code"></span>
@@ -36,7 +46,7 @@
       </div>
       <div class="text-center pl-2 pr-2 md:pl-5 md:pr-5">
         <div class="text-primary text-3xl md:text-5xl">42</div>
-        <div class="text-sm uppercase text-grey tracking-wide">Pending</div>
+        <div class="text-sm uppercase text-grey tracking-wide">Suspected</div>
       </div>
       <div class="text-center pl-2 pr-2 md:pl-5 md:pr-5">
         <div class="text-primary text-3xl md:text-5xl">46</div>
@@ -53,6 +63,7 @@ export default {
     return {
       currentCountry: null,
       showOptions: false,
+      global: {code: "global",name: "Global"},
       countries: [
         { code: "my", name: "Malaysia" },
         { code: "sg", name: "Singapore" },
