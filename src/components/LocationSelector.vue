@@ -63,7 +63,7 @@ export default {
     return {
       currentCountry: null,
       showOptions: false,
-      global: {code: "global",name: "Global"},
+      global: {code: "global", name: "Global"},
       countries: [
         { code: "my", name: "Malaysia" },
         { code: "sg", name: "Singapore" },
@@ -76,7 +76,7 @@ export default {
     selectCountry(country) {
       this.currentCountry = country;
       this.showOptions = !this.showOptions;
-      this.$emit("input", country.code);
+      this.$emit('input', country && country.code === 'global' ? {} : country);
     }
   }
 };

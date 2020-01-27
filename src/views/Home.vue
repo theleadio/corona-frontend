@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="container">
-      <LocationSelector v-model="country"/>
+      <LocationSelector v-model="country" />
       
       <div class="flex flex-wrap -mx-2">
         <div class="w-full md:w-2/3 px-2">
           <Search class="mt-4 mb-8" />
-          <TrendingNews></TrendingNews>
+          <TrendingNews :country="country"></TrendingNews>
         </div>
         <div class="w-full md:w-1/3 px-2">
           <div class="mt-4 mb-4">
@@ -14,7 +14,7 @@
           </div>
 
           <div class="mt-4 mb-4">
-            <RecentNews />
+            <RecentNews :country="country" />
           </div>
 
           <!-- hide for now
@@ -47,8 +47,8 @@ export default {
   },
   data: function(){
     return {
-      country: ""
+      country: "",
     }
-  }
+  },
 };
 </script>
