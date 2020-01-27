@@ -65,7 +65,7 @@ export default {
     selectCountry(country) {
       this.currentCountry = country;
       this.showOptions = !this.showOptions;
-      this.$emit("input", country);
+      this.$emit("input", country.code);
     }
   }
 };
