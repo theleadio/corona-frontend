@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <LocationSelector/>
+      <LocationSelector v-model="country"/>
       
       <div class="flex flex-wrap -mx-2">
         <div class="w-full md:w-2/3 px-2">
@@ -10,7 +10,7 @@
         </div>
         <div class="w-full md:w-1/3 px-2">
           <div class="mt-4 mb-4">
-            <HealthcareInstitutions />
+            <HealthcareInstitutions :country="country"/>
           </div>
 
           <div class="mt-4 mb-4">
@@ -45,5 +45,10 @@ export default {
   mounted() {
 
   },
+  data: function(){
+    return {
+      country: ""
+    }
+  }
 };
 </script>
