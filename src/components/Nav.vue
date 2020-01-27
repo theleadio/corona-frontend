@@ -37,7 +37,7 @@ export default {
       return {
           links: [
             { name: "page.home", display: "Home" },
-            { name: "page.causes", display: "Causes" },
+            { name: "page.causes", display: "What is 2019-nCov" },
             { name: "page.prevention", display: "Prevention" },
             { name: "page.sources", display: "Sources"},
             { name: "page.analytics", display: "Analytics"}
