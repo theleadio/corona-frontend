@@ -39,26 +39,53 @@
       </div>
     </div>
 
-    <!-- <div class="flex justify-center w-full md:justify-end md:w-1/2 mt-5 md:mt-0">
+     <div class="flex justify-center w-full md:justify-end md:w-1/2 mt-5 md:mt-0">
       <div class="text-center pl-2 pr-2 md:pl-5 md:pr-5">
-        <div class="text-primary text-3xl md:text-5xl">4</div>
+        <div class="text-primary text-3xl md:text-5xl">
+          <template v-if="typeof numConfirm === 'number'">
+            <animated-number :value="numConfirm" :round="1" :duration="300" />
+          </template>
+          <template v-else>
+            {{ numConfirm }}
+          </template>
+        </div>
         <div class="text-sm uppercase text-grey tracking-wide">Confirmed</div>
       </div>
       <div class="text-center pl-2 pr-2 md:pl-5 md:pr-5">
-        <div class="text-primary text-3xl md:text-5xl">42</div>
+        <div class="text-primary text-3xl md:text-5xl">
+          <template v-if="typeof numSuspect === 'number'">
+            <animated-number :value="numSuspect" :round="1" :duration="300" />
+          </template>
+          <template v-else>
+            {{ numSuspect }}
+          </template>
+        </div>
         <div class="text-sm uppercase text-grey tracking-wide">Suspected</div>
       </div>
       <div class="text-center pl-2 pr-2 md:pl-5 md:pr-5">
-        <div class="text-primary text-3xl md:text-5xl">46</div>
+        <div class="text-primary text-3xl md:text-5xl">
+          <template v-if="typeof numHeal === 'number'">
+            <animated-number :value="numHeal" :round="1" :duration="300" />
+          </template>
+          <template v-else>
+            {{ numHeal }}
+          </template>
+        </div>
         <div class="text-sm uppercase text-grey tracking-wide">Negative</div>
       </div>
-    </div> -->
+    </div>
   </div>
 </template>
 
 <script>
+import AnimatedNumber from "animated-number-vue";
+import { getStats } from '../api/stats';
+
 export default {
   name: "LocationSelector",
+  components: {
+    AnimatedNumber,
+  },
   data: function() {
     return {
       currentCountry: null,
@@ -68,8 +95,11 @@ export default {
         { code: "my", name: "Malaysia" },
         { code: "sg", name: "Singapore" },
         { code: "th", name: "Thailand" },
-        { code: "vn", name: "Vietnam" }
-      ]
+        { code: "vn", name: "Vietnam" },
+      ],
+      numSuspect: '',
+      numConfirm: '',
+      numHeal: '',
     };
   },
   methods: {
@@ -77,8 +107,35 @@ export default {
       this.currentCountry = country;
       this.showOptions = !this.showOptions;
       this.$emit('input', country && country.code === 'global' ? {} : country);
+      this.loadStats();
+    },
+    loadStats() {
+      const selectedCountry = !this.currentCountry || this.currentCountry.code === 'global' ? '' : this.currentCountry.name;
+      getStats(selectedCountry)
+        .then(data => {
+          this.numSuspect = data.num_suspect;
+          this.numConfirm = data.num_confirm;
+          this.numHeal = data.num_heal;
+        });
+    },
+    formatInteger(value) {
+      return Math.ceil(value);
     }
-  }
+  },
+  watch: {
+    numSuspect() {
+        this.$refs.numSuspectElem && this.$refs.numSuspectElem.start();
+    },
+    numConfirm() {
+      this.$refs.numConfirmElem && this.$refs.numConfirmElem.start();
+    },
+    numHeal() {
+      this.$refs.numHealElem && this.$refs.numHealElem.start();
+    },
+  },
+  created() {
+    this.loadStats();
+  },
 };
 </script>
 
