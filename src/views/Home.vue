@@ -27,6 +27,9 @@ import Search from "../components/Search";
 import TrendingNews from './Home/TrendingNews';
 
 export default {
+  metaInfo: {
+    title: 'Home',
+  },
   components: {
     // NotifyCard,
     RecentNews,

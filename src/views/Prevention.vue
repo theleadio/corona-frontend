@@ -7,6 +7,8 @@
 </template>
 <script>
 export default {
-    
+  metaInfo: {
+    title: 'Prevention',
+  },
 }
 </script>

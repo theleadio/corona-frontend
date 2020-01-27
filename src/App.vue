@@ -24,6 +24,14 @@ import Nav from "./components/Nav"
 
 export default {
   name: 'app',
+  metaInfo: {
+    title: 'App',
+    titleTemplate: '%s | Corona Tracker',
+    htmlAttrs: {
+      lang: 'en',
+      amp: true
+    }
+  },
   components:{
     BackToTop,
     Nav,
