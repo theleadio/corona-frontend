@@ -123,9 +123,6 @@ export default {
           this.numHeal = data.num_heal;
         });
     },
-    formatInteger(value) {
-      return Math.ceil(value);
-    }
   },
   watch: {
     numSuspect() {
