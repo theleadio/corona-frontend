@@ -10,6 +10,10 @@
         </div>
         <div class="w-full md:w-1/3 px-2">
           <div class="mt-4 mb-4">
+            <HealthcareInstitutions />
+          </div>
+
+          <div class="mt-4 mb-4">
             <RecentNews />
           </div>
 
@@ -27,6 +31,7 @@ import RecentNews from "../components/RecentNews";
 import Search from "../components/Search";
 import TrendingNews from './Home/TrendingNews';
 import LocationSelector from '../components/LocationSelector';
+import HealthcareInstitutions from "../components/HealthcareInstitutions"
 
 export default {
   components: {
@@ -34,7 +39,8 @@ export default {
     RecentNews,
     Search,
     TrendingNews,
-    LocationSelector
+    LocationSelector,
+    HealthcareInstitutions
   },
   mounted() {
 
