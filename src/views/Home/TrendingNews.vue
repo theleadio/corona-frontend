@@ -2,8 +2,8 @@
 	<div ref="trending-news">
 		<Card title="Trending News"></Card>
 		<Loading :ajax="ajax">
-			<div class="flex flex-wrap -mx-2">
-				<template v-if="articles && articles.length">
+			<template v-if="articles && articles.length">
+				<div class="flex flex-wrap -mx-2">
 					<div
 							v-for="(article, index) in articles"
 							:key="article.id"
@@ -16,21 +16,21 @@
 								:summary-length="index === 0 ? 160 : 75"
 						/>
 					</div>
-				</template>
-				<template v-else>
-					<div class="my-8 mx-auto text-center">No result</div>
-				</template>
-			</div>
-			<paginate
-				v-model="currentPageNumber"
-				:page-count="pageCount"
-				:page-range="5"
-				:click-handler="onClickPagination"
-				prev-text="Prev"
-				next-text="Next"
-				container-class="pagination"
-				page-class="">
-			</paginate>
+				</div>
+				<paginate
+						v-model="currentPageNumber"
+						:page-count="pageCount"
+						:page-range="5"
+						:click-handler="onClickPagination"
+						prev-text="Prev"
+						next-text="Next"
+						container-class="pagination"
+						page-class="">
+				</paginate>
+			</template>
+			<template v-else>
+				<div class="my-8 mx-auto text-center">No result</div>
+			</template>
 		</Loading>
 	</div>
 </template>
