@@ -58,6 +58,12 @@ export default {
       return regionsarray;
     }
   },
+  watch: {
+    country() {
+      // Reset region when country changes
+      this.region = '';
+    },
+  },
   created() {
     getHealthcareInstitutions().then(data => {
       this.locations = data.hospitalsAndHealthcareProviders;

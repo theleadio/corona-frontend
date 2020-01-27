@@ -1,12 +1,12 @@
 <template>
     <div>
         <button :class="btnclass" @click="showOptions = !showOptions">
-            <div v-if="selectedOption">
-            {{selectedOption[displaykey]}}
+            <div v-if="value">
+                {{value}}
             </div>
             <div v-else>{{unselected}}</div>
             <div class="self-center float">
-            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">            
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                 <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
             </svg>
             </div>
@@ -26,6 +26,7 @@
 export default {
   name: "Dropdown",
   props:{
+      value: String,
       options: Array,
       valuekey: String,
       displaykey: String,
@@ -50,13 +51,11 @@ export default {
   },
   data: function() {
     return {
-      selectedOption: null,
       showOptions: false
     };
   },
   methods: {
     selectOption(option) {
-      this.selectedOption = option;
       this.showOptions = !this.showOptions;
       this.$emit("input", option[this.valuekey]);
     }
