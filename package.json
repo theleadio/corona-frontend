@@ -15,6 +15,7 @@
     "vue-backtotop": "^1.6.1",
     "vue-clickaway": "^2.2.2",
     "vue-gtm": "^2.2.0",
+    "vue-meta": "^2.3.2",
     "vue-moment": "^4.1.0",
     "vue-router": "^3.1.5",
     "vue-sticky-directive": "0.0.10",
