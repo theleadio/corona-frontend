@@ -25,6 +25,7 @@ Vue.use(VueGtm, {
 
 import "./assets/css/main.css";
 import "flag-icon-css/css/flag-icon.min.css"
+import "@fortawesome/fontawesome-free/css/all.min.css"
 
 new Vue({
   router,
