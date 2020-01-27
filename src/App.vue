@@ -27,9 +27,6 @@ export default {
   metaInfo: {
     title: 'App',
     titleTemplate: '%s | Corona Tracker',
-    'og:title': 'Corona Tracker',
-    'og:description': 'One stop platform for data and news related to 2019-nCov',
-    'og:image': 'https://www.coronatracker.com//og-corona.png',
     htmlAttrs: {
       lang: 'en',
       amp: true
