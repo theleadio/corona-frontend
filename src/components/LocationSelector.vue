@@ -39,7 +39,7 @@
       </div>
     </div>
 
-    <div class="flex justify-center w-full md:justify-end md:w-1/2 mt-5 md:mt-0">
+    <!-- <div class="flex justify-center w-full md:justify-end md:w-1/2 mt-5 md:mt-0">
       <div class="text-center pl-2 pr-2 md:pl-5 md:pr-5">
         <div class="text-primary text-3xl md:text-5xl">4</div>
         <div class="text-sm uppercase text-grey tracking-wide">Confirmed</div>
@@ -52,7 +52,7 @@
         <div class="text-primary text-3xl md:text-5xl">46</div>
         <div class="text-sm uppercase text-grey tracking-wide">Negative</div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
