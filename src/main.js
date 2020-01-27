@@ -4,7 +4,7 @@ import router from "./router";
 import Sticky from 'vue-sticky-directive';
 import VueGtm from 'vue-gtm';
 import VueMeta from 'vue-meta'
-import { GTM_ID } from './config';
+import { GTM_ID_LIST } from './config';
 
 Vue.config.productionTip = false
 
@@ -15,7 +15,7 @@ Vue.use(VueMeta, {
   refreshOnceOnNavigation: true
 });
 Vue.use(VueGtm, {
-  id: GTM_ID, // Your GTM single container ID or array of container ids ['GTM-xxxxxxx', 'GTM-yyyyyyy']
+  id: GTM_ID_LIST.split(','), // Your GTM single container ID or array of container ids ['GTM-xxxxxxx', 'GTM-yyyyyyy']
   queryParams: { // Add url query string when load gtm.js with GTM ID (optional)
     // gtm_auth: 'AB7cDEf3GHIjkl-MnOP8qr',
     // gtm_preview:'env-4',
