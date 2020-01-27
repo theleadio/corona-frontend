@@ -84,8 +84,11 @@ export default {
 				return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
 			}
 			const trendingNewsDiv = this.$refs['trending-news'];
+			const navBarHeight = 46;
+			const offsetY = 16; // additional offset for aesthetic
+
 			window.scroll({
-				top: trendingNewsDiv ? offset(trendingNewsDiv).top - 16 : 0,
+				top: trendingNewsDiv ? offset(trendingNewsDiv).top - navBarHeight - offsetY : 0,
 				left: 0,
 				behavior: 'smooth'
 			});
