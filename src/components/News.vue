@@ -3,7 +3,7 @@
     :href="article.url"
     target="_blank"
     class="article block bg-cover bg-center bg-no-repeat h-64 w-full relative mb-4"
-    :style="{ backgroundImage: `url('${article.urlToImage}')` }"
+    v-lazy:background-image="article.urlToImage"
   >
     <div class="content  absolute bottom-0 w-full px-2 py-4 text-black">
       <h2 class="font-bold text-xl mb-2 leading-tight">{{ article.title | title(titleLength) }}</h2>
