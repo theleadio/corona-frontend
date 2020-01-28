@@ -14,7 +14,7 @@
           </div>
 
           <div class="mt-4 mb-4">
-            <RecentNews :country="country" />
+            <!-- <RecentNews :country="country" /> -->
           </div>
 
           <!-- hide for now
@@ -27,7 +27,7 @@
 </template>
 <script>
 // import NotifyCard from "../components/NotifyCard";
-import RecentNews from "../components/RecentNews";
+//import RecentNews from "../components/RecentNews";
 import Search from "../components/Search";
 import TrendingNews from './Home/TrendingNews';
 import LocationSelector from '../components/LocationSelector';
@@ -39,7 +39,7 @@ export default {
   },
   components: {
     // NotifyCard,
-    RecentNews,
+    //RecentNews,
     Search,
     TrendingNews,
     LocationSelector,
