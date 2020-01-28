@@ -16,7 +16,7 @@
       <p class="text-center">We do not have any screening centre location data for the selected country or region yet!</p>
       <p class="text-center mt-2">Help us collate the data for your country!</p>
       <p class="font-bold text-center text-primary">
-        <a href="https://t.me/joinchat/Jc3F5hR2yrcJ6OYlN9kXgw?fbclid=IwAR1oBafFFEo7HAnoUSX1T9nzdtFroXLtTUxn67yACnRRLrT2o-syWBZG_vI">
+        <a target="_blank" href="https://t.me/joinchat/Jc3F5hR2yrcJ6OYlN9kXgw?fbclid=IwAR1oBafFFEo7HAnoUSX1T9nzdtFroXLtTUxn67yACnRRLrT2o-syWBZG_vI">
           <i class="fab fa-telegram"></i> Join our telegram group
         </a>
       </p>
