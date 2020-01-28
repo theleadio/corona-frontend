@@ -51,27 +51,27 @@
         </div>
         <div class="text-sm uppercase text-grey tracking-wide">Confirmed</div>
       </div>
+       <div class="text-center pl-2 pr-2 md:pl-5 md:pr-5">
+         <div class="text-primary text-3xl md:text-5xl">
+           <template v-if="typeof numHeal === 'number'">
+             <animated-number :value="numHeal" :round="1" :duration="300" />
+           </template>
+           <template v-else>
+             {{ numHeal }}
+           </template>
+         </div>
+         <div class="text-sm uppercase text-grey tracking-wide">Negative</div>
+       </div>
       <div class="text-center pl-2 pr-2 md:pl-5 md:pr-5">
         <div class="text-primary text-3xl md:text-5xl">
-          <template v-if="typeof numSuspect === 'number'">
-            <animated-number :value="numSuspect" :round="1" :duration="300" />
+          <template v-if="typeof numDeath === 'number'">
+            <animated-number :value="numDeath" :round="1" :duration="300" />
           </template>
           <template v-else>
-            {{ numSuspect }}
+            {{ numDeath }}
           </template>
         </div>
-        <div class="text-sm uppercase text-grey tracking-wide">Suspected</div>
-      </div>
-      <div class="text-center pl-2 pr-2 md:pl-5 md:pr-5">
-        <div class="text-primary text-3xl md:text-5xl">
-          <template v-if="typeof numHeal === 'number'">
-            <animated-number :value="numHeal" :round="1" :duration="300" />
-          </template>
-          <template v-else>
-            {{ numHeal }}
-          </template>
-        </div>
-        <div class="text-sm uppercase text-grey tracking-wide">Negative</div>
+        <div class="text-sm uppercase text-grey tracking-wide">Death</div>
       </div>
     </div>
   </div>
@@ -106,7 +106,7 @@ export default {
         { code: "th", name: "Thailand" },
         { code: "vn", name: "Vietnam" },
       ],
-      numSuspect: '',
+      numDeath: '',
       numConfirm: '',
       numHeal: '',
     };
@@ -128,15 +128,15 @@ export default {
       const selectedCountry = !this.currentCountry || this.currentCountry.code === 'global' ? '' : this.currentCountry.name;
       getStats(selectedCountry)
         .then(data => {
-          this.numSuspect = data.num_suspect;
+          this.numDeath = data.num_dead;
           this.numConfirm = data.num_confirm;
           this.numHeal = data.num_heal;
         });
     },
   },
   watch: {
-    numSuspect() {
-        this.$refs.numSuspectElem && this.$refs.numSuspectElem.start();
+    numDeath() {
+        this.$refs.numDeathElem && this.$refs.numDeathElem.start();
     },
     numConfirm() {
       this.$refs.numConfirmElem && this.$refs.numConfirmElem.start();
