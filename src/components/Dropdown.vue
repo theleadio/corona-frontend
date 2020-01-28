@@ -44,7 +44,8 @@ export default {
                     "py-2":true,
                     "px-4": true,
                     "rounded":true,
-                    "flex":true
+                    "flex":true,
+                    "w-full":true
               }
           }
       }

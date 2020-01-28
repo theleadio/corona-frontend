@@ -23,7 +23,8 @@ Vue.use(VueLazyload, {
   preLoad: 1.3,
   error: LazyLoadSpinner,
   loading: LazyLoadSpinner,
-  attempt: 1
+  attempt: 1,
+  lazyComponent: true
 })
 
 import "./assets/css/main.css";
