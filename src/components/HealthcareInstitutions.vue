@@ -10,12 +10,15 @@
       <p class="text-right font-semibold"><i class="fas fa-phone"></i> {{location.telNo}}</p>
     </div>
     </div>
-    <div v-else class="bg-gray-100 p-3 text-sm block justify-center">
+    <div v-else-if="!(country === '' || country === 'global')" class="bg-gray-100 p-3 text-sm block justify-center">
       <p class="text-4xl text-center"><i class="far fa-frown"></i></p>
       <p class="font-bold text-center capitalize">Sorry!</p>
       <p class="text-center">We do not have any screening centre location data for the selected country or region yet!</p>
+      <p class="text-center mt-2">Please select another country or region</p>
+    </div>
+    <div class="bg-gray-300 p-3 text-sm block justify-center">
       <p class="text-center mt-2">Help us collate the data for your country!</p>
-      <p class="font-bold text-center text-primary">
+      <p class="font-bold text-center text-primary text-lg">
         <a target="_blank" href="https://t.me/joinchat/Jc3F5hR2yrcJ6OYlN9kXgw?fbclid=IwAR1oBafFFEo7HAnoUSX1T9nzdtFroXLtTUxn67yACnRRLrT2o-syWBZG_vI">
           <i class="fab fa-telegram"></i> Join our telegram group
         </a>
