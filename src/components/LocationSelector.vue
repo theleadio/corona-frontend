@@ -134,17 +134,6 @@ export default {
         });
     },
   },
-  watch: {
-    numDeath() {
-        this.$refs.numDeathElem && this.$refs.numDeathElem.start();
-    },
-    numConfirm() {
-      this.$refs.numConfirmElem && this.$refs.numConfirmElem.start();
-    },
-    numHeal() {
-      this.$refs.numHealElem && this.$refs.numHealElem.start();
-    },
-  },
   created() {
     this.loadStats();
   },
