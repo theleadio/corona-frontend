@@ -6,6 +6,7 @@
           v-on:focus="onFocusSearch"
           v-model="term" type="text"
           class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200  py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-300"
+          placeholder="Search..."
       />
       <button class="bg-primary h-12 w-12 flex items-center justify-center" v-on:click="search">
         <svg
