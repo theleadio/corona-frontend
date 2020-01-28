@@ -5,7 +5,7 @@
         I am from...
       </label>
       <div>
-        <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded w-full md:w-1/2 flex" @click="showOptions = !showOptions">
+        <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded w-full md:w-1/2 flex" @click="showOptions" v-on-clickaway="closeOptions">
           <div v-if="currentCountry && currentCountry.code === 'global'">
             <i class="fas fa-globe"></i>
             {{currentCountry.name}}
@@ -22,7 +22,7 @@
           </div>
         </button>
 
-        <ul class="absolute text-gray-700 pt-1 z-50" v-if="showOptions">
+        <ul class="absolute text-gray-700 pt-1 z-50" v-if="optionsShowed">
           <li>
             <a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" @click="selectCountry(global)">
               <i class="fas fa-globe"></i>
@@ -80,16 +80,20 @@
 <script>
 import AnimatedNumber from "animated-number-vue";
 import { getStats } from '../api/stats';
+import { directive as onClickaway } from 'vue-clickaway';
 
 export default {
   name: "LocationSelector",
+  directives: {
+    onClickaway: onClickaway,
+  },
   components: {
     AnimatedNumber,
   },
   data: function() {
     return {
       currentCountry: null,
-      showOptions: false,
+      optionsShowed: false,
       global: {code: "global", name: "Global"},
       countries: [
         { code: "cn", name: "China" },
@@ -113,6 +117,12 @@ export default {
       this.showOptions = !this.showOptions;
       this.$emit('input', country && country.code === 'global' ? {} : country);
       this.loadStats();
+    },
+    showOptions(){
+      this.optionsShowed = true;
+    },
+    closeOptions(){
+      this.optionsShowed = false;
     },
     loadStats() {
       const selectedCountry = !this.currentCountry || this.currentCountry.code === 'global' ? '' : this.currentCountry.name;
