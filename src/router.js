@@ -6,6 +6,7 @@ import Causes from "../src/views/Causes";
 import Prevention from "../src/views/Prevention";
 import Sources from "../src/views/Sources";
 import Analytics from "../src/views/Analytics";
+import About from "../src/views/About";
 
 Vue.use(Router);
 
@@ -36,7 +37,13 @@ export default new Router({
             path: "/analytics",
             component: Analytics,
             name: 'page.analytics',
-        }
+        },
+        {
+            path: "/about",
+            component: About,
+            name: 'page.about',
+        },
+
     ]
 });
 
