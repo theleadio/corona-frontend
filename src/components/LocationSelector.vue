@@ -114,7 +114,7 @@ export default {
   methods: {
     selectCountry(country) {
       this.currentCountry = country;
-      this.showOptions = !this.showOptions;
+      this.optionsShowed = !this.optionsShowed;
       this.$emit('input', country && country.code === 'global' ? {} : country);
       this.loadStats();
     },
