@@ -60,7 +60,7 @@
              {{ numHeal }}
            </template>
          </div>
-         <div class="text-sm uppercase text-grey tracking-wide">Negative</div>
+         <div class="text-sm uppercase text-grey tracking-wide">Recovered</div>
        </div>
       <div class="text-center pl-2 pr-2 md:pl-5 md:pr-5">
         <div class="text-primary text-3xl md:text-5xl">
