@@ -28,6 +28,14 @@
         <li>Lead frontend engineer - Tan Wei Seng (<a class='hover:underline' href='http://xming13.github.io/'>Github</a>)</li>
       </ul>
     </div>
+
+    <div class='w-full'>
+      <h2 class='pt-4 text-2xl font-bold mt-4 pb-2'>Source Code</h2>
+      <ul class='list-disc ml-5'>
+        <li><a class='hover:underline' href='https://github.com/theleadio/corona-frontend'>corono-frontend</a></li>
+        <li><a class='hover:underline' href='https://github.com/theleadio/coronatracker'>coronatracker</a></li>
+      </ul>
+    </div>
   </div>
 </template>
 <script>
