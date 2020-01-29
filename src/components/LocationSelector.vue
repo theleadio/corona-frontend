@@ -43,7 +43,7 @@
       <div class="text-center pl-2 pr-2 md:pl-5 md:pr-5">
         <div class="text-primary text-3xl md:text-5xl">
           <template v-if="typeof numConfirm === 'number'">
-            <animated-number :value="numConfirm/2" :round="1" :duration="300" />
+            <animated-number :value="numConfirm" :round="1" :duration="300" />
           </template>
           <template v-else>
             {{ numConfirm }}
@@ -54,7 +54,7 @@
        <div class="text-center pl-2 pr-2 md:pl-5 md:pr-5">
          <div class="text-primary text-3xl md:text-5xl">
            <template v-if="typeof numHeal === 'number'">
-             <animated-number :value="numHeal/2" :round="1" :duration="300" />
+             <animated-number :value="numHeal" :round="1" :duration="300" />
            </template>
            <template v-else>
              {{ numHeal }}
@@ -65,7 +65,7 @@
       <div class="text-center pl-2 pr-2 md:pl-5 md:pr-5">
         <div class="text-primary text-3xl md:text-5xl">
           <template v-if="typeof numDeath === 'number'">
-            <animated-number :value="numDeath/2" :round="1" :duration="300" />
+            <animated-number :value="numDeath" :round="1" :duration="300" />
           </template>
           <template v-else>
             {{ numDeath }}
