@@ -22,18 +22,49 @@
 
     <div class='w-full'>
       <h2 class='pt-4 text-2xl font-bold mt-4 pb-2'>Heroes behind CoronaTracker</h2>
-      <ul class='list-disc ml-5'>
-        <li>Project lead - Dr. Lau Cher Han (<a class='hover:underline' href='https://www.linkedin.com/in/drhanlau/'>LinkedIn</a>)</li>
-        <li>Lead data scientist - Hafeez Nazri (<a class='hover:underline' href='https://www.linkedin.com/in/hafeeznazri/?originalSubdomain=my'>LinkedIn</a>)</li>
-        <li>Lead frontend engineer - Tan Wei Seng (<a class='hover:underline' href='http://xming13.github.io/'>Github</a>)</li>
-      </ul>
+      <div class="flex flex-wrap -mb-4">
+        <div class="w-full md:w-1/3 mb-4 hero">
+          <img src="../assets/image/lau_cher_han.jpg" alt="Dr. Lau Cher Han" />
+          <div class="mt-4 font-bold">Project lead</div>
+          <div>Dr. Lau Cher Han</div>
+          <div>(<a class='underline' href='https://www.linkedin.com/in/drhanlau/' target="_blank">LinkedIn</a>)</div>
+        </div>
+        <div class="w-full md:w-1/3 mb-4 hero">
+          <img src="../assets/image/hafeez_nazri.jpg" alt="Hafeez Nazri" />
+          <div class="mt-4 font-bold">Lead data scientist</div>
+          <div class="">Hafeez Nazri</div>
+          <div>(<a class='underline' href='https://www.linkedin.com/in/hafeeznazri/' target="_blank">LinkedIn</a>)</div>
+        </div>
+        <div class="w-full md:w-1/3 mb-4 hero">
+          <img src="../assets/image/tan_wei_seng.png" alt="Tan Wei Seng" />
+          <div class="mt-4 font-bold">Lead frontend engineer</div>
+          <div>Tan Wei Seng</div>
+          <div>(<a class='underline' href='https://www.linkedin.com/in/wei-seng-tan-304ba78a/' target="_blank">LinkedIn</a>)</div>
+        </div>
+      </div>
+
+      <a
+          class="my-6 mx-auto text-center block text-2xl underline"
+          href="https://docs.google.com/spreadsheets/d/1cG1UmEa-0IUetdKzYsMKXpypGFWoO88eTzadvN4NS5Y/edit#gid=0"
+          target="_blank">
+        And many more!!
+      </a>
     </div>
   </div>
 </template>
 <script>
-export default {
+  export default {
   metaInfo: {
-    title: 'Analytics',
+    title: 'About',
   },
 }
 </script>
+<style scoped>
+  .hero img {
+    height: 200px;
+    margin: 0 auto;
+  }
+  .hero > div {
+    text-align: center;
+  }
+</style>
