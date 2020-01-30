@@ -1,6 +1,8 @@
 <template>
 	<div ref="trending-news">
 		<Card title="Trending News"></Card>
+		<Multiselect v-model="selectedLanguages" :options="languages" valuekey="id" displaykey="name"/>
+
 		<Loading :ajax="ajax">
 			<template v-if="articles && articles.length">
 				<div class="flex flex-wrap -mx-2">
@@ -38,6 +40,7 @@
 import Card from "../../components/Card";
 import Loading from '../../components/Loading';
 import News from "../../components/News";
+import Multiselect from '../../components/Multiselect'
 import Paginate from 'vuejs-paginate';
 import { getTrendingNews } from "../../api/news";
 
@@ -47,6 +50,7 @@ export default {
 		News,
 		Loading,
 		Paginate,
+		Multiselect
 	},
 	props: {
 		country: {
@@ -60,7 +64,9 @@ export default {
 			currentPageNumber: 1,
 			pageSize: 9,
 			numberTotalItems: 0,
-			ajax: null
+			ajax: null,
+			languages: [{id:"EN", name: "English"},{id:"BM", name: "Bahasa Melayu"},{id:"ZH", name: "中文"}],
+			selectedLanguages: []
 		}
 	},
 	mounted() {
