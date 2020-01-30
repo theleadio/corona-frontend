@@ -129,7 +129,14 @@ export default {
       this.optionsShowed = !this.optionsShowed;
     },
     updateCountryCodeParam(country) {
+      const query = country && country.code !== 'global' ? {
+        country_code: country.code,
+      } : null;
+      
       this.$router.push({
+        path: '/',
+        query,
+      });
         path: '/',
         query: {
           country_code: country.code,
