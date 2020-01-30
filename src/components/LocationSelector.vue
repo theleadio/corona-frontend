@@ -139,13 +139,7 @@ export default {
     checkForPresetCountryCode() {
       const { country_code: countryCode } = this.$route.query;
       const country = this.countries.find(country => country.code === countryCode);
-
-      if (countryCode && country) {
-        this.selectCountry(country);
-      } else {
-        // Default to global for invalid country code
-        this.selectCountry(this.global);
-      }
+      this.selectCountry(country || this.global);
       this.closeOptions();
     },
     loadStats() {
