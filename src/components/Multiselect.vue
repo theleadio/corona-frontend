@@ -1,16 +1,25 @@
 <template>
     <div>
-        <div class="px-3 py-3">
-            <span v-for="option in options" :key="option[valuekey]">
-                <a v-if="itemSelected(option[valuekey])" class="inline-block bg-primary rounded-full px-3 py-1 text-sm text-white mr-2"
-                @click="unselectItem(option[valuekey])">
-                    {{option[displaykey]}} <i class="fas fa-times"></i>
-                </a>
-                <a v-else class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm mr-2"
-                @click="selectItem(option[valuekey])">
-                    {{option[displaykey]}} <i class="fas fa-plus"></i>
-                </a>
-            </span>
+        <div class="px-3 py-3 flex">
+            <div class="w-full md:w-4/5">
+                <span v-for="option in options" :key="option[valuekey]">
+                    <button v-if="itemSelected(option[valuekey])" class="inline-block border-solid border bg-primary rounded-full px-3 py-1 text-sm text-white mr-2"
+                    @click="unselectItem(option[valuekey])">
+                        {{option[displaykey]}} <i class="fas fa-times"></i>
+                    </button>
+                    <button v-else class="inline-block text-primary border-solid border border-primary rounded-full px-3 py-1 text-sm mr-2"
+                    @click="selectItem(option[valuekey])">
+                        {{option[displaykey]}} <i class="fas fa-plus"></i>
+                    </button>
+                </span>
+            </div>
+            <div class="w-full md:w-1/5 flex justify-end">
+                <button class="text-gray-600 underline px-3 py-1 text-sm"
+                    @click="clearSelection()">
+                    Clear All
+                </button>
+            </div>
+            
             
         </div>
     </div>
@@ -37,8 +46,11 @@
             }
         },
         watch: {
-            selectedValues: function(){
-                this.values = this.selectedValues
+            selectedValues(){
+                this.values = this.selectedValues;
+            },
+            values(){
+                this.$emit('input', this.values);
             }
         },
         methods:{
@@ -50,6 +62,9 @@
             },
             unselectItem(value){
                 this.values = this.values.filter(item => item !== value);
+            },
+            clearSelection(){
+                this.values = [];
             }
         },
         created(){
