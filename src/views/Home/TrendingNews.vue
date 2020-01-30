@@ -85,13 +85,16 @@ export default {
 		country() {
 			this.loadData();
 		},
+		selectedLanguages() {
+			this.loadData();
+		},
 	},
 	methods: {
 		loadData() {
 			const limit = this.pageSize;
 			const offset = (this.currentPageNumber - 1) * limit;
 
-			this.ajax = getTrendingNews({ limit, offset, country: this.country.name })
+			this.ajax = getTrendingNews({ limit, offset, country: this.country.name, language: this.selectedLanguages.join(',') })
 				.then(data => {
 					this.articles = data.items;
 					this.numberTotalItems = data.total;
