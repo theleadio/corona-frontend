@@ -66,9 +66,9 @@ export default {
 			numberTotalItems: 0,
 			ajax: null,
 			languages: [
-				{id:"EN", name: "English"},
-				{id:"BM", name: "Bahasa Melayu"},
-				//{id:"ZH", name: "中文"}
+				{ id: "en", name: "English" },
+				{ id: "ms", name: "Bahasa Melayu" },
+				//{ id: "zh", name: "中文" }
 				],
 			selectedLanguages: []
 		}
