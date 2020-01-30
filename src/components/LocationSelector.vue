@@ -116,6 +116,7 @@ export default {
       this.currentCountry = country;
       this.optionsShowed = !this.optionsShowed;
       this.$emit('input', country && country.code === 'global' ? {} : country);
+      this.updateCountryCodeParam(country);
       this.loadStats();
     },
     showOptions(){
@@ -127,8 +128,29 @@ export default {
     toggleOptions() {
       this.optionsShowed = !this.optionsShowed;
     },
+    updateCountryCodeParam(country) {
+      this.$router.push({
+        path: '/',
+        query: {
+          country_code: country.code,
+        }
+      });
+    },
+    checkForPresetCountryCode() {
+      const { country_code: countryCode } = this.$route.query;
+      const country = this.countries.find(country => country.code === countryCode);
+
+      if (countryCode && country) {
+        this.selectCountry(country);
+      } else {
+        // Default to global for invalid country code
+        this.selectCountry(this.global);
+      }
+      this.closeOptions();
+    },
     loadStats() {
       const selectedCountry = !this.currentCountry || this.currentCountry.code === 'global' ? '' : this.currentCountry.name;
+
       getStats(selectedCountry)
         .then(data => {
           this.numDeath = data.num_dead;
@@ -138,6 +160,7 @@ export default {
     },
   },
   created() {
+    this.checkForPresetCountryCode();
     this.loadStats();
   },
 };
