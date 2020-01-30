@@ -65,7 +65,11 @@ export default {
 			pageSize: 9,
 			numberTotalItems: 0,
 			ajax: null,
-			languages: [{id:"EN", name: "English"},{id:"BM", name: "Bahasa Melayu"},{id:"ZH", name: "中文"}],
+			languages: [
+				{id:"EN", name: "English"},
+				{id:"BM", name: "Bahasa Melayu"},
+				//{id:"ZH", name: "中文"}
+				],
 			selectedLanguages: []
 		}
 	},
