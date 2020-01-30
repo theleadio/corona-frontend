@@ -1,19 +1,19 @@
 <template>
     <div>
-        <div class="px-3 py-3 flex">
-            <div class="w-full md:w-4/5">
+        <div class="px-3 py-1 flex flex-wrap">
+            <div class="w-full md:w-5/6">
                 <span v-for="option in options" :key="option[valuekey]">
-                    <button v-if="itemSelected(option[valuekey])" class="inline-block border-solid border bg-primary rounded-full px-3 py-1 text-sm text-white mr-2"
+                    <button v-if="itemSelected(option[valuekey])" class="inline-block mt-2 border-solid border bg-primary rounded-full px-3 py-1 text-sm text-white mr-2"
                     @click="unselectItem(option[valuekey])">
                         {{option[displaykey]}} <i class="fas fa-times"></i>
                     </button>
-                    <button v-else class="inline-block text-primary border-solid border border-primary rounded-full px-3 py-1 text-sm mr-2"
+                    <button v-else class="inline-block mt-2 text-primary border-solid border border-primary rounded-full px-3 py-1 text-sm mr-2"
                     @click="selectItem(option[valuekey])">
                         {{option[displaykey]}} <i class="fas fa-plus"></i>
                     </button>
                 </span>
             </div>
-            <div class="w-full md:w-1/5 flex justify-end">
+            <div class="w-full md:w-1/6 flex justify-end">
                 <button class="text-gray-600 underline px-3 py-1 text-sm"
                     @click="clearSelection()">
                     Clear All
