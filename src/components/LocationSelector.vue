@@ -11,12 +11,12 @@
             {{currentCountry.name}}
           </div>
           <div v-else-if="currentCountry">
-            <span :class="'flag-icon flag-icon-'+currentCountry.code"></span>
+            <span :class="'cursor-pointer flag-icon flag-icon-'+currentCountry.code"></span>
             {{currentCountry.name}}
           </div>
           <div v-else>Select Country</div>
           <div class="self-center ml-auto">
-            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">            
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
               <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
             </svg>
           </div>
@@ -24,13 +24,13 @@
 
         <ul class="absolute text-gray-700 pt-1 z-50 w-full md:w-1/2" v-if="optionsShowed">
           <li>
-            <a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" @click="selectCountry(global)">
+            <a class="cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" @click="selectCountry(global)">
               <i class="fas fa-globe"></i>
               <span class="ml-2">Global</span>
             </a>
           </li>
           <li v-for="country in countries" v-bind:key="country.code">
-            <a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" @click="selectCountry(country)">
+            <a class="cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" @click="selectCountry(country)">
               <span :class="'flag-icon flag-icon-'+country.code"></span>
               <span class="ml-2">{{country.name}}</span>
             </a>
