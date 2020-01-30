@@ -4,8 +4,8 @@
       <label class="block tracking-wide text-gray-700 text-s font-bold mb-2" for="select-country">
         I am from...
       </label>
-      <div>
-        <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded w-full md:w-1/2 flex" @click="showOptions" v-on-clickaway="closeOptions">
+      <div class="relative">
+        <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded w-full md:w-1/2 flex" @click="toggleOptions" v-on-clickaway="closeOptions">
           <div v-if="currentCountry && currentCountry.code === 'global'">
             <i class="fas fa-globe"></i>
             {{currentCountry.name}}
@@ -22,17 +22,17 @@
           </div>
         </button>
 
-        <ul class="absolute text-gray-700 pt-1 z-50" v-if="optionsShowed">
+        <ul class="absolute text-gray-700 pt-1 z-50 w-full md:w-1/2" v-if="optionsShowed">
           <li>
             <a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" @click="selectCountry(global)">
               <i class="fas fa-globe"></i>
-              Global
+              <span class="ml-2">Global</span>
             </a>
           </li>
           <li v-for="country in countries" v-bind:key="country.code">
             <a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" @click="selectCountry(country)">
               <span :class="'flag-icon flag-icon-'+country.code"></span>
-              {{country.name}}
+              <span class="ml-2">{{country.name}}</span>
             </a>
           </li>
         </ul>
@@ -123,6 +123,9 @@ export default {
     },
     closeOptions(){
       this.optionsShowed = false;
+    },
+    toggleOptions() {
+      this.optionsShowed = !this.optionsShowed;
     },
     loadStats() {
       const selectedCountry = !this.currentCountry || this.currentCountry.code === 'global' ? '' : this.currentCountry.name;
