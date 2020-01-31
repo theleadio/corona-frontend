@@ -1,6 +1,8 @@
 <template>
 	<div ref="trending-news">
 		<Card title="Trending News"></Card>
+		<Multiselect v-model="selectedLanguages" :options="languages" valuekey="id" displaykey="name"/>
+
 		<Loading :ajax="ajax">
 			<template v-if="articles && articles.length">
 				<div class="flex flex-wrap -mx-2">
@@ -38,6 +40,7 @@
 import Card from "../../components/Card";
 import Loading from '../../components/Loading';
 import News from "../../components/News";
+import Multiselect from '../../components/Multiselect'
 import Paginate from 'vuejs-paginate';
 import { getTrendingNews } from "../../api/news";
 import { imageProxy } from "../../api/imageProxy";
@@ -48,6 +51,7 @@ export default {
 		News,
 		Loading,
 		Paginate,
+		Multiselect
 	},
 	props: {
 		country: {
@@ -61,7 +65,13 @@ export default {
 			currentPageNumber: 1,
 			pageSize: 9,
 			numberTotalItems: 0,
-			ajax: null
+			ajax: null,
+			languages: [
+				{ id: "en", name: "English" },
+				{ id: "ms", name: "Bahasa Melayu" },
+				//{ id: "zh", name: "中文" }
+				],
+			selectedLanguages: []
 		}
 	},
 	mounted() {
@@ -76,13 +86,16 @@ export default {
 		country() {
 			this.loadData();
 		},
+		selectedLanguages() {
+			this.loadData();
+		},
 	},
 	methods: {
 		loadData() {
 			const limit = this.pageSize;
 			const offset = (this.currentPageNumber - 1) * limit;
 
-			this.ajax = getTrendingNews({ limit, offset, country: this.country.name })
+			this.ajax = getTrendingNews({ limit, offset, country: this.country.name, language: this.selectedLanguages.join(',') })
 				.then(data => {
 					this.articles = data.items.map(news => {
 						if (news.urlToImage.indexOf('http://') > -1) {
