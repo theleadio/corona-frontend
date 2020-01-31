@@ -1,7 +1,7 @@
 <template>
 	<div ref="trending-news">
 		<Card title="Trending News"></Card>
-		<Multiselect v-model="selectedLanguages" :options="languages" valuekey="id" displaykey="name"/>
+		<multi-select v-model="selectedLanguages" :options="languages" value-key="id" display-key="name"/>
 
 		<Loading :ajax="ajax">
 			<template v-if="articles && articles.length">
@@ -40,7 +40,7 @@
 import Card from "../../components/Card";
 import Loading from '../../components/Loading';
 import News from "../../components/News";
-import Multiselect from '../../components/Multiselect'
+import MultiSelect from '../../components/MultiSelect'
 import Paginate from 'vuejs-paginate';
 import { getTrendingNews } from "../../api/news";
 import { imageProxy } from "../../api/imageProxy";
@@ -48,10 +48,10 @@ import { imageProxy } from "../../api/imageProxy";
 export default {
 	components: {
 		Card,
-		News,
 		Loading,
-		Paginate,
-		Multiselect
+		MultiSelect,
+		News,
+		Paginate
 	},
 	props: {
 		country: {
@@ -71,7 +71,7 @@ export default {
 				{ id: "ms", name: "Bahasa Melayu" },
 				//{ id: "zh", name: "中文" }
 				],
-			selectedLanguages: []
+			selectedLanguages: ['en']
 		}
 	},
 	mounted() {
