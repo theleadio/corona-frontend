@@ -136,11 +136,12 @@ export default {
       this.$router.push({
         path: '/',
         query,
-      });
+      }).catch(() => {});
     },
     checkForPresetCountryCode() {
       const { country_code: countryCode } = this.$route.query;
       const country = this.countries.find(country => country.code === countryCode);
+
       this.selectCountry(country || this.global);
       this.closeOptions();
     },
