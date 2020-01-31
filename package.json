@@ -12,6 +12,7 @@
     "animated-number-vue": "^1.0.0",
     "axios": "^0.19.2",
     "core-js": "^3.4.4",
+    "d3": "^5.15.0",
     "flag-icon-css": "^3.4.5",
     "tailwindcss": "^1.1.4",
     "vue": "^2.6.10",
