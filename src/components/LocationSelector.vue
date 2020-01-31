@@ -132,15 +132,10 @@ export default {
       const query = country && country.code !== 'global' ? {
         country_code: country.code,
       } : null;
-      
+
       this.$router.push({
         path: '/',
         query,
-      });
-        path: '/',
-        query: {
-          country_code: country.code,
-        }
       });
     },
     checkForPresetCountryCode() {
