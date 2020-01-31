@@ -40,6 +40,7 @@ import Loading from '../../components/Loading';
 import News from "../../components/News";
 import Paginate from 'vuejs-paginate';
 import { getTrendingNews } from "../../api/news";
+import { imageProxy } from "../../api/imageProxy";
 
 export default {
 	components: {
@@ -83,7 +84,13 @@ export default {
 
 			this.ajax = getTrendingNews({ limit, offset, country: this.country.name })
 				.then(data => {
-					this.articles = data.items;
+					this.articles = data.items.map(news => {
+						if (news.urlToImage.indexOf('http://') > -1) {
+							news.urlToImage = imageProxy(news.urlToImage);
+						}
+
+						return news;
+					});
 					this.numberTotalItems = data.total;
 				});
 		},
