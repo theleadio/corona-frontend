@@ -9,8 +9,8 @@ import Sources from '../src/views/Sources';
 // Analytics
 import Analytics from '@/views/Analytics/Index';
 import VirusComparison from '@/views/Analytics/VirusComparison';
-import AdvancedAnalytics from '@/views/Analytics/AdvancedAnalytics';
-import Predictive from '@/views/Analytics/Predictive';
+import AdvancedAnalysis from '@/views/Analytics/AdvancedAnalysis';
+import PredictiveAnalysis from '@/views/Analytics/PredictiveAnalysis';
 import TravelPath from '@/views/Analytics/TravelPath';
 
 Vue.use(Router);
@@ -49,13 +49,13 @@ export default new Router({
       name: 'page.analytics.virus_comparison'
     },
     {
-      path: '/analytics/advanced-analytics',
-      component: AdvancedAnalytics,
-      name: 'page.analytics.advanced_analytics'
+      path: '/analytics/advanced-analysis',
+      component: AdvancedAnalysis,
+      name: 'page.analytics.advanced_analysis'
     },
     {
       path: '/analytics/predictive',
-      component: Predictive,
+      component: PredictiveAnalysis,
       name: 'page.analytics.predictive'
     },
     {
