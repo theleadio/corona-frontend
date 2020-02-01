@@ -66,6 +66,7 @@ export default {
 
   data () {
     return {
+      currentDate: new Date,
       totalConfirmed: 0,
       totalMortality: 0,
       totalRecovered: 0,
@@ -88,7 +89,7 @@ export default {
     },
 
     loadStatsByTrend () {
-      fetchTrendByDate('2020-01-27', '2020-02-01')
+      fetchTrendByDate('2020-01-27', this.currentDate.toISOString().slice(0, 10))
         .then(data => {
           this.trendData = data
         })
