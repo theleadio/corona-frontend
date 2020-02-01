@@ -23,23 +23,29 @@
     <div class='w-full'>
       <h2 class='pt-4 text-2xl font-bold mt-4 pb-2'>Heroes behind CoronaTracker</h2>
       <div class="flex flex-wrap -mb-4">
-        <div class="w-full md:w-1/3 mb-4 hero">
+        <div class="w-full md:w-1/4 mb-4 hero">
           <img src="../assets/image/lau_cher_han.jpg" alt="Dr. Lau Cher Han" />
           <div class="mt-4 font-bold">Project lead</div>
           <div>Dr. Lau Cher Han</div>
           <div>(<a class='underline' href='https://www.linkedin.com/in/drhanlau/' target="_blank">LinkedIn</a>)</div>
         </div>
-        <div class="w-full md:w-1/3 mb-4 hero">
+        <div class="w-full md:w-1/4 mb-4 hero">
           <img src="../assets/image/hafeez_nazri.jpg" alt="Hafeez Nazri" />
           <div class="mt-4 font-bold">Lead data scientist</div>
           <div class="">Hafeez Nazri</div>
           <div>(<a class='underline' href='https://www.linkedin.com/in/hafeeznazri/' target="_blank">LinkedIn</a>)</div>
         </div>
-        <div class="w-full md:w-1/3 mb-4 hero">
+        <div class="w-full md:w-1/4 mb-4 hero">
           <img src="../assets/image/tan_wei_seng.png" alt="Tan Wei Seng" />
           <div class="mt-4 font-bold">Lead frontend engineer</div>
           <div>Tan Wei Seng</div>
           <div>(<a class='underline' href='https://www.linkedin.com/in/wei-seng-tan-304ba78a/' target="_blank">LinkedIn</a>)</div>
+        </div>
+        <div class="w-full md:w-1/4 mb-4 hero">
+          <img src="../assets/image/shian.jpg" alt="Shian Poon" />
+          <div class="mt-4 font-bold">Lead mobile developer</div>
+          <div>Poon Chee Him/Shian</div>
+          <div>(<a class='underline' href='https://www.linkedin.com/in/poon-cheehim/' target="_blank">LinkedIn</a>)</div>
         </div>
       </div>
 
