@@ -98,7 +98,7 @@ export default {
 			this.ajax = getTrendingNews({ limit, offset, country: this.country.name, language: this.selectedLanguages.join(',') })
 				.then(data => {
 					this.articles = data.items.map(news => {
-						if (news.urlToImage.indexOf('http://') > -1) {
+						if (news.urlToImage && news.urlToImage.indexOf('http://') > -1) {
 							news.urlToImage = imageProxy(news.urlToImage);
 						}
 
