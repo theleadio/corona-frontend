@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import FlagIcon from 'vue-flag-icon';
-import 'flag-icon-css/css/flag-icon.min.css';
+import paginate from 'vuejs-paginate';
 
-Vue.use(FlagIcon);
+Vue.use(paginate);
