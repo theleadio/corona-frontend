@@ -66,7 +66,7 @@ export default {
       this.$emit("input", option[this.valuekey]);
     },
     showOptions(){
-        this.optionsShowed = true;
+        this.optionsShowed = this.optionsShowed ? false : true;
     },
     closeOptions(){
         this.optionsShowed = false;
