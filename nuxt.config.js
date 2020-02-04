@@ -44,6 +44,7 @@ export default {
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
       { rel: 'manifest', href: '/site.webmanifest' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/css/flag-icon.min.css'},
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css'},
     ]
   },
   /*
@@ -54,8 +55,6 @@ export default {
    ** Global CSS
    */
   css: [
-    './assets/css/tailwind.css',
-    '@fortawesome/fontawesome-free/css/all.min.css',
   ],
   /*
    ** Plugins to load before mounting the App
@@ -63,7 +62,6 @@ export default {
   plugins: [
     '~/plugins/api-factory.js',
     '~/plugins/vue-backtotop.client.js',
-    '~/plugins/vue-flag-icon.client.js',
     '~/plugins/vue-lazyload.client.js',
     '~/plugins/vue-moment.client.js',
     '~/plugins/vue-sticky-directive.client.js',

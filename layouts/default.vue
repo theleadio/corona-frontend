@@ -5,7 +5,7 @@
     </div>
     <Nav/>
     <nuxt/>
-    <back-to-top bottom="16px" right="16px">
+    <back-to-top bottom="16px" right="16px" style="position: fixed;">
       <button type="button" class="btn btn-info btn-to-top">
         <svg width="24" height="24" viewBox="0 -256 1792 1792">
           <g transform="matrix(1,0,0,-1,68.338983,1217.0847)">

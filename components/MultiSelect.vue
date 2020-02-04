@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="px-3 py-1 flex flex-wrap">
-      <div class="w-full md:w-5/6">
+    <div class="px-3 py-3 flex flex-wrap">
+      <div class="w-full md:w-5/6" style="margin-top: -0.5rem;">
         <span v-for="option in options" :key="option[valueKey]">
           <button
             v-if="itemSelected(option[valueKey])"

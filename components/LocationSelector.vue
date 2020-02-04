@@ -11,8 +11,7 @@
             {{currentCountry.name}}
           </div>
           <div v-else-if="currentCountry">
-<!--            <span :class="'cursor-pointer flag-icon flag-icon-'+currentCountry.code"></span>-->
-            <flag :iso="currentCountry.code" class="cursor-pointer" :squared="false" />
+            <span :class="'cursor-pointer flag-icon flag-icon-'+currentCountry.code"></span>
             {{currentCountry.name}}
           </div>
           <div v-else>Select Country</div>
@@ -32,8 +31,7 @@
           </li>
           <li v-for="country in countries" v-bind:key="country.code">
             <a class="cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" @click="selectCountry(country)">
-<!--              <span :class="'flag-icon flag-icon-'+country.code"></span>-->
-              <flag :iso="country.code" :squared="false" />
+              <span :class="'flag-icon flag-icon-' + country.code"></span>
               <span class="ml-2">{{country.name}}</span>
             </a>
           </li>
