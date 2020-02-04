@@ -8,7 +8,7 @@
     <div class="content  absolute bottom-0 w-full px-2 py-4 text-black">
       <h2 class="font-bold text-xl mb-2 leading-tight">{{ article.title | title(titleLength) }}</h2>
       <p>{{ article.description | summary(summaryLength) }}</p>
-      <p class="lg:mt-3 text-right font-semibold">{{ article.publishedAt | moment('from') }}</p>
+      <p class="lg:mt-3 text-right font-semibold"><!--{{ article.publishedAt | moment('from') }}--></p>
     </div>
   </a>
 </template>

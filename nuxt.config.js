@@ -63,7 +63,7 @@ export default {
     '~/plugins/api-factory.js',
     '~/plugins/vanilla-back-to-top.client.js',
     '~/plugins/vue-lazyload.client.js',
-    '~/plugins/vue-moment.client.js',
+    //'~/plugins/vue-moment.client.js',
     '~/plugins/vue-sticky-directive.client.js',
     '~/plugins/vuejs-paginate.client.js'
   ],
