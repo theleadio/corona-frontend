@@ -17,8 +17,8 @@
     },
     methods: {
       goHome: function() {
-        if (this.$route.name !== "page.home") {
-          this.$router.push({name: "page.home"});
+        if (this.$route.name !== 'index') {
+          this.$router.push({ name: 'index' });
         }
       }
     }
