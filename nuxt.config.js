@@ -74,7 +74,16 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    [
+      '@nuxtjs/google-analytics', {
+        id: process.env.GA_ID,
+        // debug: {
+        //   enabled: true,
+        //   sendHitTask: true
+        // }
+      }
+    ],
   ],
   /*
    ** Nuxt.js modules
@@ -85,7 +94,6 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
-    '@nuxtjs/google-gtag',
     'nuxt-svg-loader',
   ],
   /*
@@ -94,9 +102,6 @@ export default {
    */
   axios: {
     baseURL: process.env.API_BASE_URL + process.env.API_PATH,
-  },
-  'google-gtag': {
-    id: process.env.GTM_ID,
   },
   /*
    ** Build configuration
@@ -118,5 +123,5 @@ export default {
         })
       }
     }
-  }
+  },
 }
