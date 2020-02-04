@@ -1,4 +1,4 @@
 import Vue from 'vue';
-import backtotop from 'vue-backtotop';
+import BackToTop from 'vue-backtotop';
 
-Vue.use(backtotop);
+Vue.use(BackToTop);

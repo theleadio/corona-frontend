@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import paginate from 'vuejs-paginate';
+import Paginate from 'vuejs-paginate';
 
-Vue.use(paginate);
-
+Vue.component('paginate', Paginate);
