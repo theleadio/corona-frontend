@@ -1,7 +1,7 @@
 <template>
   <div class="app">
-    <div class="container">
-      <logo/>
+    <div class="container py-1">
+      <logo class="lg:hidden"/>
     </div>
     <Nav/>
     <nuxt/>

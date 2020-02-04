@@ -1,7 +1,7 @@
 <template>
-  <div class="flex items-center py-3 cursor-pointer" @click="goHome">
-    <img :src="logo" class="h-16 w-auto mr-4" alt="logo"/>
-    <div class="text-3xl font-bold">Corona<span class="text-red-600">Tracker</span></div>
+  <div class="flex items-center cursor-pointer" @click="goHome">
+    <img :src="logo" class="h-12 w-auto mr-3" alt="logo"/>
+    <div class="text-2xl font-bold text-black">Corona<span class="text-red-600">Tracker</span></div>
   </div>
 </template>
 
