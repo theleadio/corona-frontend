@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="bg-primary text-white font-bold p-2">{{ title }}</div>
+        <div class="border-l-5 border-primary text-primary font-bold p-2 uppercase"><span class="ml-1">{{ title }}</span></div>
         <div class="bg-gray-100">
             <slot></slot>
         </div>
