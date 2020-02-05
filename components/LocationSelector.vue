@@ -1,12 +1,12 @@
 <template>
-  <div class="bg-white rounded border-2 border-gray-200 p-4">
+  <div class="bg-white rounded border border-gray-400 p-4">
     <div class="flex flex-wrap md:flex-no-wrap md:flex-row">
-      <div class="w-full md:w-1/2">
-        <label class="block tracking-wide text-gray-700 text-s font-bold mb-2" for="select-country">
+      <div class="w-full md:w-5/6">
+        <label class="block tracking-wide text-s font-bold mb-2" for="select-country">
           I am from...
         </label>
         <div class="relative">
-          <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded w-full md:w-1/2 flex" @click="toggleOptions" v-on-clickaway="closeOptions">
+          <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded w-full md:w-3/4 flex" @click="toggleOptions" v-on-clickaway="closeOptions">
             <div v-if="currentCountry && currentCountry.code === 'global'">
               <i class="fas fa-globe"></i>
               {{currentCountry.name}}
