@@ -1,0 +1,47 @@
+<template>
+  <div class="w-full h-56 lg:h-full lg:w-1/5 bg-white shadow-md">
+    <div class="relative h-full min-h-screen pl-6">
+      <div class="xl:py-2">
+        <p class="text-2xl font-bold">2019-nCoV Reports</p>
+
+        <div v-for="link in links" :key="link.name" class="hidden lg:block pt-3">
+          <nuxt-link :to="{ name: link.name }">
+            <i :class="'fa fa-' + link.icon" class="mr-2"></i>
+            {{ link.display }}
+          </nuxt-link>
+        </div>
+
+        <div v-for="link in links" :key="'mob-'+link.name" class="lg:hidden pt-3">
+          <nuxt-link :to="{ name: link.name }">
+            <i :class="'fa fa-' + link.icon" class="mr-2"></i>
+            {{ link.display }}
+          </nuxt-link>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  computed: {
+    currentPage: function () {
+      return this.$route.name.replace('page.', '')
+    }
+  },
+
+  data () {
+    return {
+      links: [
+        { name: 'analytics2', display: 'Overview', icon: 'columns' },
+        { name: 'analytics2-virus-comparison', display: 'Virus Comparison', icon: 'search' },
+        { name: 'analytics2-advanced-analysis', display: 'Advanced Analysis', icon: 'chart-line' },
+        { name: 'analytics2-predictive-analysis', display: 'Predictive', icon: 'expand-alt' },
+        { name: 'analytics2-travel-path', display: 'Travel Path', icon: 'route' },
+      ],
+
+      showLinksMobile: false,
+    }
+  }
+}
+</script>
