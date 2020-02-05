@@ -2,13 +2,13 @@
   <a
     :href="article.url"
     target="_blank"
-    class="article block bg-cover bg-center bg-no-repeat h-64 w-full relative mb-4"
-    v-lazy:background-image="article.urlToImage"
+    class="article flex w-full relative mb-4"
   >
-    <div class="content  absolute bottom-0 w-full px-2 py-4 text-black">
-      <h2 class="font-bold text-xl mb-2 leading-tight">{{ article.title | title(titleLength) }}</h2>
+    <div v-lazy:background-image="article.urlToImage" class="image bg-cover bg-center bg-no-repeat"></div>
+    <div class="content w-full text-black">
+      <h2>{{ article.title | title(titleLength) }}</h2>
       <p>{{ article.description | summary(summaryLength) }}</p>
-      <p class="lg:mt-3 text-right font-semibold"><!--{{ article.publishedAt | moment('from') }}--></p>
+      <div class="source-date lg:mt-3"><!--{{ article.publishedAt | moment('from') }}--></div>
     </div>
   </a>
 </template>
@@ -46,11 +46,45 @@ export default {
 </script>
 
 <style scoped>
+.article {
+  padding: 20px 24px;
+  border: 1px solid #E2E2E2;
+  border-radius: 4px;
+}
+
+.image {
+  margin-right: 24px;
+  width: 96px;
+  height: 96px;
+  flex: 0 0 96px;
+  border-radius: 6px;
+}
+
 .content {
-  background: rgba(196, 196, 196, 0.7);
+  /*background: rgba(196, 196, 196, 0.7);*/
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.source-date {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: right;
+  color: #108885;
 }
 
 .article:hover .content {
-  background: rgba(196, 196, 196, 1);
+  /*background: rgba(196, 196, 196, 1);*/
 }
 </style>
