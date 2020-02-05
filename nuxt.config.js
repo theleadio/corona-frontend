@@ -65,7 +65,7 @@ export default {
     '~/plugins/vue-lazyload.client.js',
     //'~/plugins/vue-moment.client.js',
     '~/plugins/vue-sticky-directive.client.js',
-    '~/plugins/vuejs-paginate.client.js'
+    '~/plugins/vuejs-paginate.client.js',
   ],
   /*
    ** Nuxt.js dev-modules
@@ -122,6 +122,7 @@ export default {
           // },
         })
       }
-    }
+    },
+    transpile: ['vue-clamp', 'resize-detector']
   },
 }
