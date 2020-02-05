@@ -9,6 +9,10 @@
       </div>
       <div class="w-full md:w-1/3 px-2">
         <div class="mt-4 mb-4">
+          <LearnPrevention/>
+        </div>
+
+        <div class="mt-4 mb-4">
           <HealthcareInstitutions :country="country.code"/>
         </div>
 
@@ -29,6 +33,7 @@
   import Search from '~/components/Search';
   import TrendingNews from '~/components/TrendingNews';
   import LocationSelector from '~/components/LocationSelector';
+  import LearnPrevention from '~/components/LearnPrevention';
   import HealthcareInstitutions from '~/components/HealthcareInstitutions';
 
   export default {
@@ -41,6 +46,7 @@
       Search,
       TrendingNews,
       LocationSelector,
+      LearnPrevention,
       HealthcareInstitutions
     },
     mounted() {
