@@ -66,142 +66,93 @@
 
 		<div class="w-full ">
 			<div class="mt-5 p-5 team">
-				<h2 class="text-2xl font-bold mb-10 text-center">
-					Heroes behind CoronaTracker
-				</h2>
+				<h1 class="text-2xl font-bold mb-4 text-center ">
+					Heroes behind Corona<span class="text-red-500"
+						>Tracker</span
+					>
+				</h1>
+				<div class="w-full mb-10">
+					<div class="hero">
+						<div class="hero-info" style="border:none">
+							<img
+								src="../assets/image/lau_cher_han.jpg"
+								alt="Dr. Lau Cher Han"
+							/>
+							<h2 class="mt-4 font-bold text-orange-600">
+								Project lead
+							</h2>
+							<div>Dr. Lau Cher Han</div>
+							<div style="color:#273E4A">
+								(<a
+									class="underline"
+									href="https://www.linkedin.com/in/drhanlau/"
+									target="_blank"
+									>LinkedIn</a
+								>)
+							</div>
+						</div>
+					</div>
+				</div>
 				<div class="flex flex-wrap -mb-4">
-					<div class="w-full md:w-1/4 mb-4 hero">
-						<img
-							src="../assets/image/lau_cher_han.jpg"
-							alt="Dr. Lau Cher Han"
-						/>
-						<div class="mt-4 font-bold">Project lead</div>
-						<div>Dr. Lau Cher Han</div>
-						<div>
-							(<a
-								class="underline"
-								href="https://www.linkedin.com/in/drhanlau/"
-								target="_blank"
-								>LinkedIn</a
-							>)
+					<div class="w-full md:w-1/3 mb-4 hero ">
+						<div class="hero-info p-2">
+							<img
+								src="../assets/image/hafeez_nazri.jpg"
+								alt="Hafeez Nazri"
+							/>
+							<div class="mt-4 font-bold text-blue-600">
+								Lead data scientist
+							</div>
+							<div class="">Hafeez Nazri</div>
+							<div style="color:#273E4A">
+								(<a
+									class="underline"
+									href="https://www.linkedin.com/in/hafeeznazri/"
+									target="_blank"
+									>LinkedIn</a
+								>)
+							</div>
 						</div>
 					</div>
-					<div class="w-full md:w-1/4 mb-4 hero">
-						<img
-							src="../assets/image/hafeez_nazri.jpg"
-							alt="Hafeez Nazri"
-						/>
-						<div class="mt-4 font-bold">Lead data scientist</div>
-						<div class="">Hafeez Nazri</div>
-						<div>
-							(<a
-								class="underline"
-								href="https://www.linkedin.com/in/hafeeznazri/"
-								target="_blank"
-								>LinkedIn</a
-							>)
+					<div class="w-full md:w-1/3 mb-4 hero">
+						<div class="hero-info p-2">
+							<img
+								src="../assets/image/tan_wei_seng.png"
+								alt="Tan Wei Seng"
+							/>
+							<div class="mt-4 font-bold text-blue-600">
+								Lead frontend engineer
+							</div>
+							<div>Tan Wei Seng</div>
+							<div style="color:#273E4A">
+								(<a
+									class="underline"
+									href="https://www.linkedin.com/in/wei-seng-tan-304ba78a/"
+									target="_blank"
+									>LinkedIn</a
+								>)
+							</div>
 						</div>
 					</div>
-					<div class="w-full md:w-1/4 mb-4 hero">
-						<img
-							src="../assets/image/tan_wei_seng.png"
-							alt="Tan Wei Seng"
-						/>
-						<div class="mt-4 font-bold">Lead frontend engineer</div>
-						<div>Tan Wei Seng</div>
-						<div>
-							(<a
-								class="underline"
-								href="https://www.linkedin.com/in/wei-seng-tan-304ba78a/"
-								target="_blank"
-								>LinkedIn</a
-							>)
-						</div>
-					</div>
-					<div class="w-full md:w-1/4 mb-4 hero">
-						<img src="../assets/image/shian.jpg" alt="Shian Poon" />
-						<div class="mt-4 font-bold">Lead mobile developer</div>
-						<div>Poon Chee Him/Shian</div>
-						<div>
-							(<a
-								class="underline"
-								href="https://www.linkedin.com/in/poon-cheehim/"
-								target="_blank"
-								>LinkedIn</a
-							>)
+					<div class="w-full md:w-1/3 mb-4 hero">
+						<div class="hero-info p-2">
+							<img src="../assets/image/shian.jpg" alt="Shian Poon" />
+							<div class="mt-4 font-bold text-blue-600">
+								Lead mobile developer
+							</div>
+							<div>Poon Chee Him/Shian</div>
+							<div style="color:#273E4A">
+								(<a
+									class="underline"
+									href="https://www.linkedin.com/in/poon-cheehim/"
+									target="_blank"
+									>LinkedIn</a
+								>)
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="mt-5 mb-4 team">
-				<h2 class="text-2xl font-bold mt-4 mb-4 text-center">
-					Volunteers
-				</h2>
-				<div class="flex flex-wrap mt-4">
-					<div class="w-full md:w-1/4 mb-4 hero">
-						<img
-							src="../assets/image/lau_cher_han.jpg"
-							alt="Dr. Lau Cher Han"
-						/>
-						<div class="mt-4 font-bold">Project lead</div>
-						<div>Dr. Lau Cher Han</div>
-						<div>
-							(<a
-								class="underline"
-								href="https://www.linkedin.com/in/drhanlau/"
-								target="_blank"
-								>LinkedIn</a
-							>)
-						</div>
-					</div>
-					<div class="w-full md:w-1/4 mb-4 hero">
-						<img
-							src="../assets/image/hafeez_nazri.jpg"
-							alt="Hafeez Nazri"
-						/>
-						<div class="mt-4 font-bold">Lead data scientist</div>
-						<div class="">Hafeez Nazri</div>
-						<div>
-							(<a
-								class="underline"
-								href="https://www.linkedin.com/in/hafeeznazri/"
-								target="_blank"
-								>LinkedIn</a
-							>)
-						</div>
-					</div>
-					<div class="w-full md:w-1/4 mb-4 hero">
-						<img
-							src="../assets/image/tan_wei_seng.png"
-							alt="Tan Wei Seng"
-						/>
-						<div class="mt-4 font-bold">Lead frontend engineer</div>
-						<div>Tan Wei Seng</div>
-						<div>
-							(<a
-								class="underline"
-								href="https://www.linkedin.com/in/wei-seng-tan-304ba78a/"
-								target="_blank"
-								>LinkedIn</a
-							>)
-						</div>
-					</div>
-					<div class="w-full md:w-1/4 mb-4 hero">
-						<img src="../assets/image/shian.jpg" alt="Shian Poon" />
-						<div class="mt-4 font-bold">Lead mobile developer</div>
-						<div>Poon Chee Him/Shian</div>
-						<div>
-							(<a
-								class="underline"
-								href="https://www.linkedin.com/in/poon-cheehim/"
-								target="_blank"
-								>LinkedIn</a
-							>)
-						</div>
-					</div>
-				</div>
-			</div>
-			<hr />
 		</div>
 	</div>
 </template>
@@ -213,9 +164,9 @@
 	};
 </script>
 <style scoped>
-	.team {
-		border: 1px solid #e2e8f0;
-		border-radius: 10px;
+	.hero {
+		display: flex;
+		justify-content: center;
 	}
 	.hero img {
 		border-radius: 50%;
@@ -224,7 +175,10 @@
 		width: 100px;
 		margin: 0 auto;
 	}
-	.hero > div {
-		text-align: center;
+	.hero .hero-info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 </style>
