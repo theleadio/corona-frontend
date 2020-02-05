@@ -66,7 +66,7 @@ export default {
 			languages: [
 				{ id: "en", name: "English" },
 				{ id: "ms", name: "Bahasa Melayu" },
-				{ id: "zh", name: "简体中文" },
+				// { id: "zh", name: "简体中文" },
 				{ id: "zh_TW", name: "繁體中文" }
 				],
 			selectedLanguages: ['en']
