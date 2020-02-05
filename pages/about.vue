@@ -66,10 +66,12 @@
 
 		<div class="w-full ">
 			<div class="mt-5 p-5 team">
-				<h1 class="text-2xl font-bold mb-4 text-center ">
-					Heroes behind Corona<span class="text-red-500"
-						>Tracker</span
-					>
+				<h1
+					class="text-2xl font-bold mb-4 text-center"
+					style="color:#108885"
+				>
+					Heroes behind <span class="text-black">Corona</span
+					><span class="text-red-500">Tracker</span>
 				</h1>
 				<div class="w-full mb-10">
 					<div class="hero">
