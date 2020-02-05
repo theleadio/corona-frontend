@@ -3,7 +3,7 @@
     <div class="flex flex-wrap md:flex-no-wrap md:flex-row">
       <div class="w-full md:w-5/6">
         <label class="block tracking-wide text-s font-bold mb-2" for="select-country">
-          I am from...
+          Stats Overview
         </label>
         <div class="relative">
           <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded w-full md:w-3/4 flex" @click="toggleOptions" v-on-clickaway="closeOptions">
