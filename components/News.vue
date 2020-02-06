@@ -40,10 +40,18 @@
 <style scoped>
   .image {
     margin-right: 20px;
-    width: 96px;
-    height: 96px;
-    flex: 0 0 96px;
+    width: 72px;
+    height: 72px;
+    flex: 0 0 72px;
     border-radius: 6px;
+  }
+
+  @screen lg {
+    .image {
+      width: 96px;
+      height: 96px;
+      flex: 0 0 96px;
+    }
   }
 
   .source-date {
