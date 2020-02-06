@@ -2,7 +2,7 @@
   <nav v-sticky class="flex items-center flex-wrap bg-white text-primary">
     <div class="container flex flex-col flex-wrap items-center font-bold text-lg">
       <div class="w-full flex items-center justify-between">
-        <logo class="hidden lg:flex"/>
+        <logo class="lg:flex"/>
         <div class="flex">
           <div v-for="link in links" v-bind:key="link.name" class="hidden lg:block">
             <nuxt-link class="px-4 py-4 hover:bg-red-600 hover:text-white" :to="{ name: link.name }">
@@ -10,18 +10,18 @@
             </nuxt-link>
           </div>
         </div>
-      </div>
-      <div class="w-full flex justify-between lg:hidden">
-        <div class="capitalize">{{ currentPageName }}</div>
+        <!--div class="capitalize">{{ currentPageName }}</div-->
         <button
           id="hamburger"
-          class="flex items-center px-3 py-2 border rounded text-primary border-primary hover:text-red-600 hover:border-red-600 self-end"
+          class="lg:hidden flex self-center items-center px-3 py-2 border rounded text-primary border-primary 
+          hover:text-red-600 hover:border-red-600 self-end"
           @click="showMobileLinks = !showMobileLinks">
           <svg class="fill-current h-3 w-3" viewBox="0 0 20 20">
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
           </svg>
         </button>
       </div>
+
       <div v-for="link in links" v-bind:key="'mob-'+link.name" class="lg:hidden">
           <nuxt-link
               v-if="showMobileLinks"
