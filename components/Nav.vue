@@ -5,7 +5,8 @@
         <logo class="lg:flex"/>
         <div class="flex">
           <div v-for="link in links" v-bind:key="link.name" class="hidden lg:block">
-            <nuxt-link class="px-4 py-4 hover:bg-red-600 hover:text-white" :to="{ name: link.name }">
+            <nuxt-link class="px-4 py-4 hover:bg-red-600 hover:text-white"
+                       :to="{ name: link.name }">
               {{ link.display }}
             </nuxt-link>
           </div>
@@ -23,14 +24,14 @@
       </div>
 
       <div v-for="link in links" v-bind:key="'mob-'+link.name" class="lg:hidden">
-          <nuxt-link
-              v-if="showMobileLinks"
-              class="mr-4 hover:text-red-600"
-              :to="{ name: link.name }"
-              @click.native="showMobileLinks = false"
-          >
-            {{ link.display }}
-          </nuxt-link>
+        <nuxt-link
+          v-if="showMobileLinks"
+          class="mr-4 hover:text-red-600"
+          :to="{ name: link.name }"
+          @click.native="showMobileLinks = false"
+        >
+          {{ link.display }}
+        </nuxt-link>
       </div>
     </div>
   </nav>
@@ -53,12 +54,12 @@
     data: function() {
       return {
         links: [
-          {name: "index", display: "Home"},
-          {name: "causes", display: "What is 2019-nCov"},
-          {name: "prevention", display: "Prevention"},
-          {name: "sources", display: "Sources"},
-          {name: "analytics", display: "Analytics"},
-          {name: "about", display: "About"}
+          { name: "index", display: "Home" },
+          { name: "causes", display: "What is 2019-nCov" },
+          { name: "prevention", display: "Prevention" },
+          { name: "sources", display: "Sources" },
+          { name: "analytics", display: "Analytics" },
+          { name: "about", display: "About" }
         ],
         showMobileLinks: false,
       }
