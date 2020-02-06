@@ -151,6 +151,15 @@
 						</div>
 					</div>
 				</div>
+
+				<div>
+					<a
+						class="my-6 mx-auto text-center block text-2xl underline"
+						href="https://docs.google.com/spreadsheets/d/1cG1UmEa-0IUetdKzYsMKXpypGFWoO88eTzadvN4NS5Y"
+						target="_blank">
+						View more
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
