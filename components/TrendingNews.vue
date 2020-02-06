@@ -14,8 +14,7 @@
           <div
             v-for="(article, index) in articles"
             :key="article.id"
-            class="px-2"
-            :class="index === 0 ? 'w-full' : 'w-full md:w-1/2 '"
+            class="px-2 w-full"
           >
             <News
               :article="article"
