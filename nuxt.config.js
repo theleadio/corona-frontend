@@ -65,7 +65,11 @@ export default {
     '~/plugins/vue-lazyload.client.js',
     //'~/plugins/vue-moment.client.js',
     '~/plugins/vue-sticky-directive.client.js',
-    '~/plugins/vuejs-paginate.client.js'
+    '~/plugins/vuejs-paginate.client.js',
+    {
+      src: '~/plugins/vue-apexcharts.js',
+      ssr: false,
+    },
   ],
   /*
    ** Nuxt.js dev-modules
@@ -101,7 +105,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: process.env.API_BASE_URL + process.env.API_PATH,
+    baseURL: process.env.API_BASE_URL + process.env.API_PATH || 'http://localhost:3000',
   },
   /*
    ** Build configuration
