@@ -5,7 +5,7 @@
         <logo class="lg:flex"/>
         <div class="flex">
           <div v-for="link in links" v-bind:key="link.name" class="hidden lg:block">
-            <nuxt-link class="px-4 py-4 hover:bg-red-600 hover:text-white"
+            <nuxt-link class="mx-1 px-3 py-4 nav-link"
                        :to="{ name: link.name }">
               {{ link.display }}
             </nuxt-link>
@@ -26,7 +26,7 @@
       <div v-for="link in links" v-bind:key="'mob-'+link.name" class="lg:hidden">
         <nuxt-link
           v-if="showMobileLinks"
-          class="mr-4 hover:text-red-600"
+          class="py-2 block hover:text-red-600"
           :to="{ name: link.name }"
           @click.native="showMobileLinks = false"
         >
@@ -70,5 +70,33 @@
 <style>
   .top-sticky {
     box-shadow: 0 -4px 6px 6px #5a5a5a;
+  }
+
+  .nav-link {
+    position: relative;
+    transition: all ease-in-out .2s;
+  }
+
+  .nav-link:hover {
+    text-shadow: 0 0 1px #108885;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #108885;
+    transform: scale(0);
+    transform-origin: 50% 50%;
+    transition: all ease-in-out .2s;
+  }
+
+  .nuxt-link-exact-active::after,
+  .nav-link:hover::after {
+    transform: scale(1);
   }
 </style>
