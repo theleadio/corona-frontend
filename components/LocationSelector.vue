@@ -1,12 +1,13 @@
 <template>
-  <div class="bg-white rounded border-2 border-gray-200 p-4">
+  <div class="bg-white rounded border border-gray-400 p-4">
     <div class="flex flex-wrap md:flex-no-wrap md:flex-row">
-      <div class="w-full md:w-1/2">
-        <label class="block tracking-wide text-gray-700 text-s font-bold mb-2" for="select-country">
-          I am from...
-        </label>
-        <div class="relative">
-          <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded w-full md:w-1/2 flex" @click="toggleOptions" v-on-clickaway="closeOptions">
+      <div class="w-full h-full md:w-5/6 align-middle">
+        <p class="mt-2 mb-2 text-sm font-semibold">
+            <span class="text-red-600"><i class="far fa-dot-circle blink"></i> LIVE </span>
+            <!-- <span v-if="numLastUpdated">[Last Update: {{new Date(numLastUpdated).toDateString()}}]</span> -->
+          </p>
+          <label class="block text-s font-bold mb-2" for="select-country">Stats Overview</label>
+          <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded w-full md:w-3/4 flex" @click="toggleOptions" v-on-clickaway="closeOptions">
             <div v-if="currentCountry && currentCountry.code === 'global'">
               <i class="fas fa-globe"></i>
               {{currentCountry.name}}
@@ -37,14 +38,15 @@
               </a>
             </li>
           </ul>
-        </div>
       </div>
 
       <stats class="flex justify-center w-full md:justify-end mt-5 md:mt-0" :confirmed=numConfirm :recovered=numHeal :deaths=numDeath />
 
     </div>
 
-    <nuxt-link class="block text-right mt-6 underline text-blue-500 font-semibold" to="analytics">more details</nuxt-link>
+    <div class="block text-right mt-6 underline text-blue-500 font-semibold">
+      <nuxt-link to="analytics">more details</nuxt-link>
+    </div>
   </div>
 </template>
 
@@ -69,18 +71,21 @@ export default {
       global: {code: "global", name: "Global"},
       countries: [
         { code: "cn", name: "China" },
+        { code: "hk", name: "Hong Kong" },
         { code: "id", name: "Indonesia" },
         { code: "jp", name: "Japan" },
         { code: "kr", name: "South Korea" },
         { code: "my", name: "Malaysia" },
         { code: "ph", name: "Philippines" },
         { code: "sg", name: "Singapore" },
+        { code: "tw", name: "Taiwan" },
         { code: "th", name: "Thailand" },
         { code: "vn", name: "Vietnam" },
       ],
       numDeath: 0,
       numConfirm: 0,
       numHeal: 0,
+      numLastUpdated: null,
     };
   },
   methods: {
@@ -125,6 +130,7 @@ export default {
           this.numDeath = data.num_dead;
           this.numConfirm = data.num_confirm;
           this.numHeal = data.num_heal;
+          this.numLastUpdated = data.agg_date;
         });
     },
   },

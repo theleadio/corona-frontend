@@ -1,14 +1,11 @@
 <template>
   <div class="app">
-    <div class="container py-1">
-      <logo class="lg:hidden"/>
-    </div>
+    <div class="container py-1"></div>
     <Nav/>
     <nuxt/>
   </div>
 </template>
 <script>
-  import Logo from '~/components/Logo';
   import Nav from '~/components/Nav';
 
   export default {
@@ -22,8 +19,7 @@
       }
     },
     components: {
-      Nav,
-      Logo
+      Nav
     }
   }
 </script>

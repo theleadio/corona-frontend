@@ -1,10 +1,10 @@
 <template>
     <div>
-        <div class="bg-blue-100 rounded border-2 border-blue-200 p-3">
+        <div class="bg-blue-100 rounded border border-blue-200 p-3">
             <div class="flex mb-4">
-                <img :src="health" class="flex max-w-xs h-auto" alt="health"/>
+                <img :src="health" class="h-full w-auto" alt="health"/>
                 <div class="flex flex-wrap ml-3 content-around">
-                    <div class="font-bold text-md"><span class="text-green-600">10 easy</span> steps to prevent</div>
+                    <div class="font-bold text-md"><span class="text-green-600">Steps</span> to prevent coronavirus</div>
                     <div class="text-gray-600 text-sm">Read and share this with others</div>
                 </div>
             </div>
