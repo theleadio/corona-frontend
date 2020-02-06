@@ -29,6 +29,7 @@
     "save": "^2.4.0",
     "vanilla-back-to-top": "^7.2.1",
     "vue-apexcharts": "^1.5.2",
+    "vue-clamp": "^0.2.2",
     "vue-clickaway": "^2.2.2",
     "vue-flag-icon": "^1.0.6",
     "vue-gtag": "^1.2.0",

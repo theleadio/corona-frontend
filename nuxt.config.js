@@ -127,6 +127,7 @@ export default {
           // },
         })
       }
-    }
+    },
+    transpile: ['vue-clamp', 'resize-detector']
   },
 }
