@@ -8,6 +8,11 @@
         <TrendingNews :country="country" />
       </div>
       <div class="w-full md:w-1/3 px-2">
+
+        <div class="mt-4 mb-4">
+          <TopStats/>
+        </div>
+
         <div class="mt-4 mb-4">
           <LearnPrevention/>
         </div>
@@ -33,6 +38,7 @@
   import Search from '~/components/Search';
   import TrendingNews from '~/components/TrendingNews';
   import LocationSelector from '~/components/LocationSelector';
+  import TopStats from '~/components/TopStats';
   import LearnPrevention from '~/components/LearnPrevention';
   import HealthcareInstitutions from '~/components/HealthcareInstitutions';
 
@@ -46,6 +52,7 @@
       Search,
       TrendingNews,
       LocationSelector,
+      TopStats,
       LearnPrevention,
       HealthcareInstitutions
     },
