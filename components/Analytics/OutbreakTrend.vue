@@ -70,6 +70,11 @@ export default {
           categories: [],
           type: 'datetime',
           min: new Date(this.firstDate).getTime(),
+          labels: {
+            datetimeFormatter: {
+              month: 'MMM yyyy',
+            },
+          },
         },
 
         yaxis: [],
@@ -103,7 +108,7 @@ export default {
 
       this.$refs.chart.updateOptions({
         xaxis: {
-          categories
+          categories,
         },
         
         yaxis: [
