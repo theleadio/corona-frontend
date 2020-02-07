@@ -67,10 +67,7 @@ export default {
     //'~/plugins/vue-moment.client.js',
     '~/plugins/vue-sticky-directive.client.js',
     '~/plugins/vuejs-paginate.client.js',
-    {
-      src: '~/plugins/vue-apexcharts.js',
-      ssr: false,
-    },
+    '~/plugins/vue-apexcharts.client.js',
   ],
   /*
    ** Nuxt.js dev-modules
