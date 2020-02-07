@@ -37,7 +37,7 @@ export default {
     },
     data() {
         return {
-            limit: 7,
+            limit: '15',
             items: [],
             countries: [
                 { code: "cn", name: "Mainland China" },
@@ -51,6 +51,11 @@ export default {
                 { code: "tw", name: "Taiwan" },
                 { code: "th", name: "Thailand" },
                 { code: "vn", name: "Vietnam" },
+                { code: "us", name: "US" },
+                { code: "de", name: "Germany" },
+                { code: "au", name: "Australia" },
+                { code: "ca", name: "Canada" },
+                { code: "mo", name: "Macau" },
             ]
         }
     },
