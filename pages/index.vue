@@ -1,22 +1,27 @@
 <template>
   <div class="container">
-    <LocationSelector v-model="country"/>
 
     <div class="flex flex-wrap -mx-2">
       <div class="w-full md:w-2/3 px-2">
+        <LocationSelector v-model="country"/>
         <Search class="mt-4 mb-8"/>
         <TrendingNews :country="country" />
       </div>
+
       <div class="w-full md:w-1/3 px-2">
-        <div class="mt-4 mb-4">
+        <div class="">
+          <TopStats/>
+        </div>
+
+        <div class="my-4">
           <LearnPrevention/>
         </div>
 
-        <div class="mt-4 mb-4">
+        <div class="my-4">
           <HealthcareInstitutions :country="country.code" />
         </div>
 
-        <div class="mt-4 mb-4">
+        <div class="my-4">
           <!-- <RecentNews :country="country" /> -->
         </div>
 
@@ -33,6 +38,7 @@
   import Search from '~/components/Search';
   import TrendingNews from '~/components/TrendingNews';
   import LocationSelector from '~/components/LocationSelector';
+  import TopStats from '~/components/TopStats';
   import LearnPrevention from '~/components/LearnPrevention';
   import HealthcareInstitutions from '~/components/HealthcareInstitutions';
 
@@ -46,6 +52,7 @@
       Search,
       TrendingNews,
       LocationSelector,
+      TopStats,
       LearnPrevention,
       HealthcareInstitutions
     },

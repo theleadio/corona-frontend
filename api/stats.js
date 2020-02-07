@@ -8,4 +8,8 @@ export default axios => ({
     return axios.get(`/stats/latest`)
       .then(res => res.data);
   },
+  getTopStats: (limit) => {
+    return axios.get(`/stats/top?limit=${limit}`)
+      .then(res => res.data);
+  },
 });
