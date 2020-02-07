@@ -69,6 +69,8 @@ export default {
         xaxis: {
           categories: [],
         },
+
+        yaxis: [],
       },
 
       series: [],
@@ -96,7 +98,28 @@ export default {
       this.$refs.chart.updateOptions({
         xaxis: {
           categories
-        }
+        },
+        
+        yaxis: [
+          {
+            seriesName: 'Total Confirmed Cases',
+            title: {
+              text: 'Confirmed',
+            },
+          },
+          {
+            seriesName: 'Total Recovered', // this is actually 'total mortality' mapped to 'total recovered' axis
+            opposite: true,
+            show: false,
+          },
+          {
+            seriesName: 'Total Recovered',
+            opposite: true,
+            title: {
+              text: 'Deaths / Recovered',
+            },
+          },
+        ],
       })
 
       val.map(i => i).forEach((item) => {
