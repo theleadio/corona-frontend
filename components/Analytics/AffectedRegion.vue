@@ -102,7 +102,7 @@ export default {
 
       this.$refs.chart.updateOptions({
         xaxis: {
-          categories
+          categories,
         }
       })
 

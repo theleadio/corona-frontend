@@ -68,12 +68,16 @@ export default {
 
         xaxis: {
           categories: [],
+          type: 'datetime',
+          min: new Date(this.firstDate).getTime(),
         },
 
         yaxis: [],
       },
 
       series: [],
+
+      firstDate: null,
     }
   },  
 
@@ -94,6 +98,8 @@ export default {
           data: Array(categories.length).fill(0),
         },
       ]
+
+      this.firstDate = categories[0]
 
       this.$refs.chart.updateOptions({
         xaxis: {

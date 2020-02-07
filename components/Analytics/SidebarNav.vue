@@ -1,8 +1,8 @@
 <template>
-  <div class="w-full h-56 lg:h-full lg:w-1/5 bg-white shadow-md">
+  <div class="w-full h-56 lg:h-full lg:w-1/6 bg-white shadow-md">
     <div class="relative h-full min-h-screen pl-6">
       <div class="xl:py-2">
-        <p class="text-2xl font-bold">2019-nCoV Reports</p>
+        <p class="text-xl font-bold">2019-nCoV Reports</p>
 
         <div v-for="link in links" :key="link.name" class="hidden lg:block pt-3">
           <nuxt-link :to="{ name: link.name }">
