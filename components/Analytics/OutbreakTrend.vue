@@ -64,7 +64,7 @@ export default {
           },
         },
 
-        colors: ['#b7791f', '#c53030', '#38a169'], // yellow, red, green
+        colors: ['#e53e3e', '#718096', '#38a169'], // red, gray, green
 
         xaxis: {
           categories: [],
@@ -91,11 +91,11 @@ export default {
       const categories = val.map(i => moment(i.date_posted, 'YYYY-MM-DD').format('YYYY-MM-DD'))
       const series = [
         {
-          name: 'Total Confirmed Cases',
+          name: 'Total Confirmed',
           data: Array(categories.length).fill(0),
         },
         {
-          name: 'Total Mortality',
+          name: 'Total Deaths',
           data: Array(categories.length).fill(0),
         },
         {

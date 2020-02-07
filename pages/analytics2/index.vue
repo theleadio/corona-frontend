@@ -12,18 +12,18 @@
           <div class="max-w-full rounded shadow-md bg-white p-3 mb-5">
             <div class="flex flex-col lg:flex-row">
               <div class="px-5">
-                <p class="text-sm font-bold text-yellow-600">Total Confirmed Cases</p>
-                <p class="text-4xl font-bold text-yellow-600">{{ totalConfirmed.toLocaleString() }}</p>
-              </div>
-
-              <div class="px-5">
-                <p class="text-sm font-bold text-red-700">Total Mortality</p>
-                <p class="text-4xl font-bold text-red-700">{{ totalMortality.toLocaleString() }}</p>
+                <p class="text-sm font-bold text-red-600">Total Confirmed</p>
+                <p class="text-4xl font-bold text-red-600">{{ totalConfirmed.toLocaleString() }}</p>
               </div>
 
               <div class="px-5">
                 <p class="text-sm font-bold text-green-600">Total Recovered</p>
                 <p class="text-4xl font-bold text-green-600">{{ totalRecovered.toLocaleString() }}</p>
+              </div>
+
+              <div class="px-5">
+                <p class="text-sm font-bold text-gray-600">Total Deaths</p>
+                <p class="text-4xl font-bold text-gray-600">{{ totalMortality.toLocaleString() }}</p>
               </div>
             </div>
           </div>
