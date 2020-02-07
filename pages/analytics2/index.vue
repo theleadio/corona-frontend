@@ -12,34 +12,34 @@
           <div class="max-w-full rounded shadow-md bg-white p-4 mb-5">
             <div class="flex flex-col lg:flex-row">
               <div class="px-4">
-                <p class="text-sm font-bold text-red-700">Total Confirmed Cases</p>
-                <p class="text-5xl font-bold text-red-700">{{ totalConfirmed.toLocaleString() }}</p>
+                <p class="text-sm font-bold text-yellow-600">Total Confirmed Cases</p>
+                <p class="text-4xl font-bold text-yellow-600">{{ totalConfirmed.toLocaleString() }}</p>
               </div>
 
               <div class="px-4">
-                <p class="text-sm font-bold text-green-600">Total Mortality</p>
-                <p class="text-5xl font-bold text-green-600">{{ totalMortality.toLocaleString() }}</p>
+                <p class="text-sm font-bold text-red-700">Total Mortality</p>
+                <p class="text-4xl font-bold text-red-700">{{ totalMortality.toLocaleString() }}</p>
               </div>
 
               <div class="px-4">
                 <p class="text-sm font-bold text-green-600">Total Recovered</p>
-                <p class="text-5xl font-bold text-green-600">{{ totalRecovered.toLocaleString() }}</p>
+                <p class="text-4xl font-bold text-green-600">{{ totalRecovered.toLocaleString() }}</p>
               </div>
             </div>
           </div>
 
           <div class="max-w-full rounded shadow-md bg-white p-4 mb-5">
-            <OutbreakTrendChart :data="trendData"></OutbreakTrendChart>
+            <OutbreakTrendChart :data="outbreakTrendData"></OutbreakTrendChart>
           </div>
 
           <div class="max-w-full rounded shadow-md bg-white p-4 mb-5">
-            <AffectedRegion :data="trendData"></AffectedRegion>
+            <AffectedRegion :data="affectedRegionData"></AffectedRegion>
           </div>
         </div>
 
         <div class="w-full lg:w-1/2 px-2">
           <div class="max-w-full rounded shadow-md bg-white p-4 mb-5">
-            <AffectedCountry :data="trendData"></AffectedCountry>
+            <AffectedCountry :data="affectedCountryData"></AffectedCountry>
           </div>
         </div>
       </div>
@@ -59,7 +59,9 @@ export default {
   
   mounted () {
     this.loadStats()
-    this.loadStatsByTrend()
+    this.loadOutbreakTrend()
+    this.loadAffectedRegion()
+    this.loadAffectedCountry()
   },
 
   data () {
@@ -68,7 +70,9 @@ export default {
       totalConfirmed: 0,
       totalMortality: 0,
       totalRecovered: 0,
-      trendData: [],
+      outbreakTrendData: [],
+      affectedRegionData: [],
+      affectedCountryData: [],
     }
   },
 
@@ -86,12 +90,26 @@ export default {
         })
     },
 
-    loadStatsByTrend () {
+    loadOutbreakTrend () {
       this.$api.analytics.fetchTrendByDate('2020-01-27', this.currentDate.toISOString().slice(0, 10))
         .then(data => {
-          this.trendData = data
+          this.outbreakTrendData = data
         })
-    }
+    },
+
+    loadAffectedRegion () {
+      this.$api.analytics.fetchAffectedRegion()
+        .then(data => {
+          this.affectedRegionData = data
+        })
+    },
+
+    loadAffectedCountry () {
+      this.$api.analytics.fetchAffectedCountry()
+        .then(data => {
+          this.affectedCountryData = data
+        })
+    },
   }
 }
 </script>
