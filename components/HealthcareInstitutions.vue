@@ -37,7 +37,7 @@ import Card from "../components/Card";
 import Dropdown from "../components/Dropdown";
 
 export default {
-  name: "HealthcareInstituitions",
+  name: "HealthcareInstitutions",
   components: {
     Card,
     Dropdown
@@ -86,7 +86,7 @@ export default {
     },
   },
   created() {
-    this.$api.healthcareinstitutions.getHealthcareInstitutions().then(data => {
+    this.$api.healthcareInstitutions.getHealthcareInstitutions().then(data => {
       this.locations = data.hospitalsAndHealthcareProviders;
     })
   }

@@ -13,7 +13,7 @@
         </div>
 
         <div class="mt-4 mb-4">
-          <HealthcareInstitutions :country="country.code"/>
+          <HealthcareInstitutions :country="country.code" />
         </div>
 
         <div class="mt-4 mb-4">
