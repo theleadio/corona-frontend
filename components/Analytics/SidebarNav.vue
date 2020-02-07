@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-56 lg:h-full lg:w-1/6 bg-white shadow-md">
+  <div class="w-full h-56 lg:h-full lg:w-1/6 bg-white">
     <div class="relative h-full min-h-screen pl-6">
       <div class="xl:py-2">
         <p class="text-xl font-bold">2019-nCoV Reports</p>
