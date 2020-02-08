@@ -14,10 +14,10 @@
       </tr>
       </thead>
       <tbody class="font-bold">
-      <tr v-for="item in items" :key="item.country">
+      <tr v-for="item in items" :key="item.countryCode">
         <td class="bg-gray-200 text-xs border px-2 py-2">
-          <Flag :country-name="item.country"></Flag>
-          {{item.country}}
+          <Flag :country-code="item.countryCode"></Flag>
+          {{item.countryName}}
         </td>
         <td class="text-center border px-1 py-2">{{item.num_confirm | formatNumber}}</td>
         <td class="text-center border px-1 py-2">{{item.num_heal | formatNumber}}</td>
@@ -31,6 +31,7 @@
 <script>
   import Card from '~/components/Card';
   import Flag from '~/components/Flag';
+  import { countryListAlpha2 } from '~/constants/countries';
 
   export default {
     name: "TopStats",
@@ -47,12 +48,8 @@
     async created() {
       const data = await this.$api.stats.getTopStats(this.limit)
       this.items = data
-        .filter(a => a.country !== 'Others')
         .map(a => {
-          if (a.country === 'Mainland China') {
-            a.country = 'China';
-          }
-
+          a.countryName = countryListAlpha2[a.countryCode.toUpperCase()];
           return a;
         });
     }

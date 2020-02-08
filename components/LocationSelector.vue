@@ -127,9 +127,9 @@ export default {
       this.closeOptions();
     },
     loadStats() {
-      const selectedCountry = !this.selectedCountry || this.selectedCountry.code === 'global' ? '' : this.selectedCountry.name;
+      const selectedCountryCode = !this.selectedCountry || this.selectedCountry.code === 'global' ? '' : this.selectedCountry.code;
 
-      this.$api.stats.getStats(selectedCountry)
+      this.$api.stats.getStats(selectedCountryCode)
         .then(data => {
           this.numDeath = data.num_dead;
           this.numConfirm = data.num_confirm;
