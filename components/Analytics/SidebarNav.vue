@@ -31,11 +31,11 @@ export default {
   data () {
     return {
       links: [
-        { name: 'analytics2', display: 'Overview', icon: 'columns' },
-        // { name: 'analytics2-virus-comparison', display: 'Virus Comparison', icon: 'search' },
-        // { name: 'analytics2-advanced-analysis', display: 'Advanced Analysis', icon: 'chart-line' },
-        // { name: 'analytics2-predictive-analysis', display: 'Predictive', icon: 'expand-alt' },
-        // { name: 'analytics2-travel-path', display: 'Travel Path', icon: 'route' },
+        { name: 'analytics', display: 'Overview', icon: 'columns' },
+        // { name: 'analytics-virus-comparison', display: 'Virus Comparison', icon: 'search' },
+        // { name: 'analytics-advanced-analysis', display: 'Advanced Analysis', icon: 'chart-line' },
+        // { name: 'analytics-predictive-analysis', display: 'Predictive', icon: 'expand-alt' },
+        // { name: 'analytics-travel-path', display: 'Travel Path', icon: 'route' },
       ],
 
       showLinksMobile: false,
