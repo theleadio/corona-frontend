@@ -1,9 +1,13 @@
 .blink {
-    animation: blinker 3s linear infinite;
+  animation: blinker 3s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
   }
-  
-  @keyframes blinker {
-    50% {
-      opacity: 0;
-    }
-  }
+}
+
+main.container {
+  padding-top: 2rem;
+}

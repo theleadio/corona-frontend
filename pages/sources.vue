@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <main class="container">
     <div class="flex flex-wrap -mx-2">
       <div class="w-full px-2">
         <div>Here you can find a list of sources handpicked by the team.</div>
@@ -32,7 +32,7 @@
         <div>If you believe any of the source information above is inaccurate, please lodge a report using the following <a class='underline' href='https://docs.google.com/forms/d/1A5Sw_gdJ6tsHA74Bz2_2uVMKqf9k_APRMQIAEoSXSNY/viewform?edit_requested=true'>form</a>.</div>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 <script>
 export default {

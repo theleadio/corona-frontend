@@ -1,6 +1,5 @@
 <template>
-  <div class="container">
-
+  <main class="container">
     <div class="flex flex-wrap -mx-2">
       <div class="w-full md:w-2/3 px-2">
         <LocationSelector v-model="country"/>
@@ -30,7 +29,7 @@
         -->
       </div>
     </div>
-  </div>
+  </main>
 </template>
 <script>
   // import NotifyCard from "../components/NotifyCard";

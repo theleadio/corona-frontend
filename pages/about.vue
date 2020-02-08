@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<main class="container">
 		<div class="w-full bg-gray-300 rounded p-4">
 			<h1 class="text-2xl font-bold text-center">
 				About CoronaTracker
@@ -162,7 +162,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</main>
 </template>
 <script>
 	export default {

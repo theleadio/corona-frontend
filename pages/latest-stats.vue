@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <main class="container">
     <table class="table-auto">
       <thead>
       <tr>
@@ -22,7 +22,7 @@
     </table>
 
 
-  </div>
+  </main>
 </template>
 <script>
   export default {
