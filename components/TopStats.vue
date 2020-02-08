@@ -7,10 +7,10 @@
         <table class="table-auto w-full">
             <thead class="text-xs leading-tight border-b-2">
                 <tr>
-                    <th class="border px-2 py-2">Countries</th>
-                    <th class="border px-1 py-2">Number Of Infections</th>
+                    <th class="border px-2 py-2">Country</th>
+                    <th class="border px-1 py-2">Confirmed</th>
+                    <th class="border px-1 py-2">Recovered</th>
                     <th class="border px-1 py-2">Deaths</th>
-                    <th class="border px-1 py-2">Cured</th>
                 </tr>
             </thead>
             <tbody class="font-bold">
@@ -19,9 +19,9 @@
                         <span :class="'flag-icon flag-icon-'+findCountryCode(item.country)"></span>
                         {{item.country}}
                     </td>
-                    <td class="text-center border px-1 py-2">{{item.num_confirm}}</td>
-                    <td class="text-center border px-1 py-2">{{item.num_dead}}</td>
-                    <td class="text-center border px-1 py-2">{{item.num_heal}}</td>
+                    <td class="text-center border px-1 py-2">{{item.num_confirm | formatThousands}}</td>
+                    <td class="text-center border px-1 py-2">{{item.num_heal | formatThousands}}</td>
+                    <td class="text-center border px-1 py-2">{{item.num_dead | formatThousands}}</td>
                 </tr>
             </tbody>
         </table>
@@ -38,10 +38,10 @@ export default {
     },
     data() {
         return {
-            limit: '15',
+            limit: 15,
             items: [],
             countries: [
-                { code: "cn", name: "Mainland China" },
+                { code: "cn", name: "China" },
                 { code: "hk", name: "Hong Kong" },
                 { code: "id", name: "Indonesia" },
                 { code: "jp", name: "Japan" },
@@ -62,16 +62,21 @@ export default {
     },
     methods: {
         findCountryCode(country) {
-            const item = this.countries.filter(function(list) {
-                return list.name == country;
-            });
-            if (item[0]) {
-                return item[0].code;
-            }
+            const item = this.countries.find(a => a.name === country);
+            return item && item.code;
         }
     },
-    created() {
-        this.$api.stats.getTopStats(this.limit).then(data => this.items = data)
+    async created() {
+        const data = await this.$api.stats.getTopStats(this.limit)
+        this.items = data
+          .filter(a => a.country !== 'Others')
+          .map(a => {
+              if (a.country === 'Mainland China') {
+                  a.country = 'China';
+              }
+
+              return a;
+          });
     }
 }
 </script>
