@@ -1,20 +1,21 @@
 <template>
   <nav v-sticky class="flex items-center flex-wrap bg-white text-primary">
-    <div class="container flex flex-col flex-wrap items-center font-bold text-lg">
-      <div class="w-full flex items-center justify-between">
+    <div class="container items-center font-bold text-lg">
+      <div class="w-full flex items-center justify-between -my-2">
         <logo class="lg:flex"/>
         <div class="flex">
-          <div v-for="link in links" v-bind:key="link.name" class="hidden lg:block">
-            <nuxt-link class="mx-1 px-3 py-4 nav-link"
-                       :to="{ name: link.name }">
-              {{ link.display }}
-            </nuxt-link>
-          </div>
+          <nuxt-link
+            v-for="link in links"
+            class="mx-1 px-3 py-4 hidden lg:block nav-link"
+            :to="{ name: link.name }"
+          >
+            {{ link.display }}
+          </nuxt-link>
         </div>
         <!--div class="capitalize">{{ currentPageName }}</div-->
         <button
           id="hamburger"
-          class="lg:hidden flex self-center items-center px-3 py-2 border rounded text-primary border-primary 
+          class="lg:hidden flex self-center items-center px-3 py-2 border rounded text-primary border-primary
           hover:text-red-600 hover:border-red-600 self-end"
           @click="showMobileLinks = !showMobileLinks">
           <svg class="fill-current h-3 w-3" viewBox="0 0 20 20">
@@ -23,16 +24,15 @@
         </button>
       </div>
 
-      <div v-for="link in links" v-bind:key="'mob-'+link.name" class="lg:hidden">
-        <nuxt-link
-          v-if="showMobileLinks"
-          class="py-2 block hover:text-red-600"
-          :to="{ name: link.name }"
-          @click.native="showMobileLinks = false"
-        >
-          {{ link.display }}
-        </nuxt-link>
-      </div>
+      <nuxt-link
+        v-if="showMobileLinks"
+        v-for="link in links" v-bind:key="`mob-${link.name}`"
+        class="py-2 block hover:text-red-600 text-center lg:hidden"
+        :to="{ name: link.name }"
+        @click.native="showMobileLinks = false"
+      >
+        {{ link.display }}
+      </nuxt-link>
     </div>
   </nav>
 </template>
@@ -69,7 +69,11 @@
 
 <style>
   .top-sticky {
-    box-shadow: 0 -4px 6px 6px #5a5a5a;
+    box-shadow: 0 -4px 6px 6px #e8e8e8;
+  }
+
+  nav {
+    border-bottom: 1px solid #e2e8f0;
   }
 
   .nav-link {
