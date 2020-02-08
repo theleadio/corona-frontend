@@ -62,6 +62,7 @@ export default {
    */
   plugins: [
     '~/plugins/api-factory.js',
+    '~/plugins/filters/index.js',
     '~/plugins/vanilla-back-to-top.client.js',
     '~/plugins/vue-lazyload.client.js',
     //'~/plugins/vue-moment.client.js',
