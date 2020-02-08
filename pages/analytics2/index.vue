@@ -5,6 +5,10 @@
     <div class="w-full lg:w-5/6 px-5 pt-2 bg-gray-200">
       <div class="pl-2">
         <p class="text-2xl font-bold">2019-nCoV Overview</p>
+
+        <p class="text-xs font-bold leading-tight my-2 text-gray-600">
+          Data Sources: WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, and various international media
+        </p>
       </div>
 
       <div class="flex flex-wrap">

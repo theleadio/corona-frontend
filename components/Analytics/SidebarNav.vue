@@ -34,10 +34,10 @@ export default {
     return {
       links: [
         { name: 'analytics2', display: 'Overview', icon: 'columns' },
-        { name: 'analytics2-virus-comparison', display: 'Virus Comparison', icon: 'search' },
-        { name: 'analytics2-advanced-analysis', display: 'Advanced Analysis', icon: 'chart-line' },
-        { name: 'analytics2-predictive-analysis', display: 'Predictive', icon: 'expand-alt' },
-        { name: 'analytics2-travel-path', display: 'Travel Path', icon: 'route' },
+        // { name: 'analytics2-virus-comparison', display: 'Virus Comparison', icon: 'search' },
+        // { name: 'analytics2-advanced-analysis', display: 'Advanced Analysis', icon: 'chart-line' },
+        // { name: 'analytics2-predictive-analysis', display: 'Predictive', icon: 'expand-alt' },
+        // { name: 'analytics2-travel-path', display: 'Travel Path', icon: 'route' },
       ],
 
       showLinksMobile: false,
