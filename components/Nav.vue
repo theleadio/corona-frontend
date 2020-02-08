@@ -6,6 +6,7 @@
         <div class="flex">
           <nuxt-link
             v-for="link in links"
+            :key="link.name"
             class="mx-1 px-3 py-4 hidden lg:block nav-link"
             :to="{ name: link.name }"
           >
@@ -26,7 +27,8 @@
 
       <nuxt-link
         v-if="showMobileLinks"
-        v-for="link in links" v-bind:key="`mob-${link.name}`"
+        v-for="link in links"
+        :key="`mob-${link.name}`"
         class="py-2 block hover:text-red-600 text-center lg:hidden"
         :to="{ name: link.name }"
         @click.native="showMobileLinks = false"
