@@ -4,7 +4,7 @@
       <div class="h-16 pt-2 flex flex-auto items-center justify-center bg-red-100 text-xl lg:text-3xl font-bold font-sans">
         <span class="mx-2">
           <template v-if="typeof confirmed === 'number'">
-            <animated-number :value="confirmed" :round="1" :duration="300" :formatValue="formatNumber" />
+            <animated-number :value="confirmed" :round="1" :duration="300" :formatValue="formatThousands" />
           </template>
           <template v-else>
             {{ confirmed }}
@@ -19,7 +19,7 @@
       <div class="h-16 pt-2 flex flex-auto items-center justify-center bg-green-100 text-xl lg:text-3xl font-bold font-sans">
         <span class="mx-2">
           <template v-if="typeof recovered === 'number'">
-            <animated-number :value="recovered" :round="1" :duration="300" :formatValue="formatNumber" />
+            <animated-number :value="recovered" :round="1" :duration="300" :formatValue="formatThousands" />
           </template>
           <template v-else>
             {{ recovered }}
@@ -34,7 +34,7 @@
       <div class="h-16 pt-2 flex flex-auto items-center justify-center bg-gray-200 text-xl lg:text-3xl font-bold font-sans">
         <span class="mx-2">
           <template v-if="typeof deaths === 'number'">
-            <animated-number :value="deaths" :round="1" :duration="300" :formatValue="formatNumber" />
+            <animated-number :value="deaths" :round="1" :duration="300" :formatValue="formatThousands" />
           </template>
           <template v-else>
             {{ deaths }}
@@ -61,10 +61,8 @@ export default {
     AnimatedNumber
   },
   methods: {
-    formatNumber(value) {
-      // Format number with commas as thousands separator
-      // https://stackoverflow.com/a/2901298/11560579
-      return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    formatThousands(value) {
+      return this.$options.filters.formatThousands(value);
     }
   }
 }
