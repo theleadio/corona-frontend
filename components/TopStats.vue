@@ -2,8 +2,7 @@
   <div>
     <Card title="COUNTRIES AFFECTED"></Card>
     <div class="my-2 font-bold text-xs text-gray-500 leading-tight">
-      Source: National Health Commission of People's Republic of China and various international
-      medias
+      Source: WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, and various international media
     </div>
     <table class="table-auto w-full">
       <thead class="text-xs leading-tight border-b-2">
