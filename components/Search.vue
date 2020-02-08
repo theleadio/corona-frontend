@@ -47,9 +47,9 @@
         target="_blank"
         class="w-full result-link"
       >
-        <p class="p-4">
-          {{ result.title && result.title.substring(0, 100) + '...' }}
-        </p>
+        <v-clamp autoresize :max-lines="2" class="p-4">
+          {{ result.title }}
+        </v-clamp>
       </a>
     </div>
     <div
@@ -74,13 +74,16 @@
 </template>
 
 <script>
-  import axios from 'axios';
   import { directive as onClickaway } from 'vue-clickaway';
+  import VClamp from 'vue-clamp'
 
   export default {
     name: 'Search',
     directives: {
       onClickaway: onClickaway
+    },
+    components: {
+      VClamp,
     },
     data: function() {
       return {
@@ -155,7 +158,11 @@
     transition: background-color 0.25s ease-in-out;
   }
 
+  .result-link + .result-link {
+    border-top: 1px solid #e2e8f0;
+  }
+
   .result-link:hover {
-    background-color: #ccc;
+    background-color: #e4e4e4;
   }
 </style>
