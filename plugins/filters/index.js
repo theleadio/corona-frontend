@@ -1,4 +1,4 @@
 import Vue from 'vue';
-import formatThousands from './formatThousands';
+import formatNumber from './formatNumber';
 
-Vue.filter('formatThousands', formatThousands);
+Vue.filter('formatNumber', formatNumber);

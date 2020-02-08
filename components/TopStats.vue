@@ -20,9 +20,9 @@
           <span :class="'flag-icon flag-icon-'+findCountryCode(item.country)"></span>
           {{item.country}}
         </td>
-        <td class="text-center border px-1 py-2">{{item.num_confirm | formatThousands}}</td>
-        <td class="text-center border px-1 py-2">{{item.num_heal | formatThousands}}</td>
-        <td class="text-center border px-1 py-2">{{item.num_dead | formatThousands}}</td>
+        <td class="text-center border px-1 py-2">{{item.num_confirm | formatNumber}}</td>
+        <td class="text-center border px-1 py-2">{{item.num_heal | formatNumber}}</td>
+        <td class="text-center border px-1 py-2">{{item.num_dead | formatNumber}}</td>
       </tr>
       </tbody>
     </table>
