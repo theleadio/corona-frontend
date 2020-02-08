@@ -45,6 +45,7 @@ export default {
       { rel: 'manifest', href: '/site.webmanifest' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/css/flag-icon.min.css'},
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css'},
+      { rel: 'stylesheet', href: 'https://unpkg.com/leaflet@1.2.0/dist/leaflet.css' },
     ]
   },
   /*
