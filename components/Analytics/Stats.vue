@@ -53,9 +53,9 @@ import AnimatedNumber from "animated-number-vue";
 
 export default {
   props: {
-    confirmed: Number,
-    recovered: Number,
-    deaths: Number
+    confirmed: [Number, String],
+    recovered: [Number, String],
+    deaths: [Number, String],
   },
   components: {
     AnimatedNumber
