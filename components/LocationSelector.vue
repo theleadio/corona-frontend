@@ -11,7 +11,7 @@
                 @click="toggleOptions" v-on-clickaway="closeOptions">
           <div>
             <template v-if="selectedCountry">
-              <i :class="selectedCountryIconClass" class="text-center" style="width: 21px;"></i>
+              <Flag :country-code="selectedCountry.code" class="text-center" style="width: 21px;" />
               <span class="ml-2">{{ selectedCountry.name }}</span>
             </template>
             <template v-else>
@@ -30,7 +30,7 @@
           <li v-for="country in countries" :key="country.code">
             <a class="cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                @click="selectCountry(country)">
-              <i :class="getCountryIconClass(country)" class="text-center" style="width: 21px;"></i>
+              <Flag :country-code="country.code" class="text-center" style="width: 21px;" />
               <span class="ml-2">{{ country.name }}</span>
             </a>
           </li>
@@ -48,6 +48,7 @@
 </template>
 
 <script>
+import Flag from '~/components/Flag';
 import Stats from '~/components/Analytics/Stats';
 import AnimatedNumber from "animated-number-vue";
 import { directive as onClickaway } from 'vue-clickaway';
@@ -59,6 +60,7 @@ export default {
   },
   components: {
     AnimatedNumber,
+    Flag,
     Stats
   },
   data: function() {
@@ -90,11 +92,6 @@ export default {
       numLastUpdated: null,
     };
   },
-  computed: {
-    selectedCountryIconClass() {
-      return this.getCountryIconClass(this.selectedCountry);
-    },
-  },
   methods: {
     selectCountry(country) {
       this.selectedCountry = country;
@@ -111,17 +108,6 @@ export default {
     },
     toggleOptions() {
       this.optionsShowed = !this.optionsShowed;
-    },
-    getCountryIconClass(country) {
-      if (!country) {
-        return '';
-      }
-
-      if (country.code === 'global') {
-        return 'fas fa-globe';
-      }
-
-      return 'cursor-pointer flag-icon flag-icon-' + country.code.toLowerCase();
     },
     updateCountryCodeParam(country) {
       const query = country && country.code !== 'global' ? {
