@@ -10,6 +10,9 @@
       <div class="w-full md:w-1/3 px-2">
         <div class="">
           <TopStats/>
+          <div class="mt-2 text-center underline text-blue-500 font-semibold">
+            <nuxt-link to="analytics">Full list here</nuxt-link>
+          </div>
         </div>
 
         <div class="my-4">
