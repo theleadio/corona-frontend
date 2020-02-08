@@ -98,6 +98,7 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     'nuxt-svg-loader',
+    'nuxt-leaflet',
   ],
   /*
    ** Axios module configuration

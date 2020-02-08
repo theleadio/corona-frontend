@@ -64,14 +64,25 @@ export default {
           },
         },
 
-        colors: ['#b7791f', '#c53030', '#38a169'], // yellow, red, green
+        colors: ['#e53e3e', '#718096', '#38a169'], // red, gray, green
 
         xaxis: {
           categories: [],
+          type: 'datetime',
+          min: new Date(this.firstDate).getTime(),
+          labels: {
+            datetimeFormatter: {
+              month: 'MMM yyyy',
+            },
+          },
         },
+
+        yaxis: [],
       },
 
       series: [],
+
+      firstDate: null,
     }
   },  
 
@@ -80,11 +91,11 @@ export default {
       const categories = val.map(i => moment(i.date_posted, 'YYYY-MM-DD').format('YYYY-MM-DD'))
       const series = [
         {
-          name: 'Total Confirmed Cases',
+          name: 'Total Confirmed',
           data: Array(categories.length).fill(0),
         },
         {
-          name: 'Total Mortality',
+          name: 'Total Deaths',
           data: Array(categories.length).fill(0),
         },
         {
@@ -93,10 +104,33 @@ export default {
         },
       ]
 
+      this.firstDate = categories[0]
+
       this.$refs.chart.updateOptions({
         xaxis: {
-          categories
-        }
+          categories,
+        },
+        
+        yaxis: [
+          {
+            seriesName: 'Total Confirmed Cases',
+            title: {
+              text: 'Confirmed',
+            },
+          },
+          {
+            seriesName: 'Total Recovered', // this is actually 'total mortality' mapped to 'total recovered' axis
+            opposite: true,
+            show: false,
+          },
+          {
+            seriesName: 'Total Recovered',
+            opposite: true,
+            title: {
+              text: 'Deaths / Recovered',
+            },
+          },
+        ],
       })
 
       val.map(i => i).forEach((item) => {

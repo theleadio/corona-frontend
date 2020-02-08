@@ -7,3 +7,7 @@
       opacity: 0;
     }
   }
+
+.leaflet-popup-content p {
+  margin: 0 !important;
+}
