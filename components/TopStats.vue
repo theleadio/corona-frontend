@@ -15,8 +15,9 @@
             </thead>
             <tbody class="font-bold">
                 <tr v-for="item in items" :key="item.country">
-                    <td class="bg-gray-200 text-xs border px-2 py-2">{{item.country}}
+                    <td class="bg-gray-200 text-xs border px-2 py-2">
                         <span :class="'flag-icon flag-icon-'+findCountryCode(item.country)"></span>
+                        {{item.country}}
                     </td>
                     <td class="text-center border px-1 py-2">{{item.num_confirm}}</td>
                     <td class="text-center border px-1 py-2">{{item.num_dead}}</td>
