@@ -280,8 +280,6 @@
     },
     computed: {
       countryIconClass() {
-        console.log('countryIconClass: ' + this.countryCode);
-
         let countryCode = this.countryCode;
 
         if (this.isGlobal || countryCode === 'global') {
