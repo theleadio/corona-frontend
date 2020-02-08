@@ -4,8 +4,16 @@ export default axios => ({
       .then(res => res.data);
   },
 
-  getTrendingNews: ({ limit, offset, country = '', language = 'en' }) => {
-    return axios.get(`/news/trending?offset=${offset}&limit=${limit}&country=${country}&language=${language}`)
+  getTrendingNews: ({ limit, offset, countryCode = '', country = '', language = 'en' }) => {
+    return axios.get(`/news/trending`, {
+      params: {
+        limit,
+        offset,
+        countryCode,
+        country,
+        language
+      },
+    })
       .then(res => res.data);
   },
 

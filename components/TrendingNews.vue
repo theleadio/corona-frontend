@@ -99,6 +99,7 @@
             .getTrendingNews({
               limit,
               offset,
+              countryCode: this.country.code,
               country: this.country.name,
               language: this.selectedLanguages.join(",")
             })
