@@ -9,7 +9,7 @@
           :center="center"
           :zoom="zoom"
           :minZoom="1"
-          :maxBounds="[[-90,-180], [90,180]]"
+          :maxBounds="[[-130, -220], [130, 220]]"
           @update:bounds="updateBounds"
           @update:zoom="updateZoom"
           @update:center="updateCenter">
@@ -26,14 +26,6 @@
             <l-popup>
               <p class="text-xs">
                 <span class="font-bold">Country:</span> {{ loc.country }}
-              </p>
-
-              <p class="text-xs">
-                <span class="font-bold">Longitude:</span> {{ loc.lng }}
-              </p>
-
-              <p class="text-xs">
-                <span class="font-bold">Latitude:</span> {{ loc.lat }}
               </p>
 
               <p class="text-xs">
@@ -126,3 +118,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.leaflet-popup-content p {
+  margin: 0 !important;
+}
+</style>
