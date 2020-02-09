@@ -59,7 +59,6 @@
           { name: "index", display: "Home" },
           { name: "causes", display: "What is 2019-nCov" },
           { name: "prevention", display: "Prevention" },
-          { name: "sources", display: "Sources" },
           { name: "analytics", display: "Analytics" },
           { name: "about", display: "About" }
         ],
