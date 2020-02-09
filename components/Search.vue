@@ -110,6 +110,12 @@
             console.log(err);
             this.state = 'error';
           });
+
+        this.$ga.event({
+          eventCategory: 'News',
+          eventAction: 'search',
+          eventLabel: this.term,
+        });
       },
       typedSearch: function() {
         this.state = 'idle';
