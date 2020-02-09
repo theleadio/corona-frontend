@@ -54,18 +54,8 @@
         Please select another country or region
       </p>
     </div>
-    <div class="bg-gray-300 p-3 text-sm block justify-center">
-      <p class="text-center text-primary">
-        <a
-          target="_blank"
-          href="https://play.google.com/store/apps/details?id=com.coronatracker.corona_flutter&hl=en"
-        >
-          <i class="fab fa-google-play"></i> Download app from Google
-          Store
-        </a>
-      </p>
-    </div>
-    <div class="bg-gray-300 p-3 mt-3 text-sm block justify-center">
+
+    <div class="mt-4 p-3 block justify-center bg-gray-300 text-sm">
       <p class="text-center mt-2">
         Help us collate the locations for your country!
       </p>
@@ -75,13 +65,6 @@
           href="https://t.me/joinchat/Jc3F5hR2yrcJ6OYlN9kXgw?fbclid=IwAR1oBafFFEo7HAnoUSX1T9nzdtFroXLtTUxn67yACnRRLrT2o-syWBZG_vI"
         >
           <i class="fab fa-telegram"></i> Join our Telegram group
-        </a>
-        <br/>
-        <a
-          target="_blank"
-          href="https://www.facebook.com/coronatracker/"
-        >
-          <i class="fab fa-facebook"></i> Follow our Facebook page
         </a>
       </p>
     </div>

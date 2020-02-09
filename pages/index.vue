@@ -21,6 +21,29 @@
 
         <div class="my-4">
           <HealthcareInstitutions :country="country.code" />
+
+          <div class="mt-4 p-3 block justify-center bg-gray-300 text-sm">
+            <p class="font-bold text-center text-primary text-lg">
+              <a
+                target="_blank"
+                href="https://www.facebook.com/coronatracker/"
+              >
+                <i class="fab fa-facebook"></i> Follow our Facebook page
+              </a>
+            </p>
+          </div>
+
+          <div class="mt-4 p-3 block justify-center bg-gray-300 text-sm">
+            <p class="font-bold text-center text-primary text-lg">
+              <a
+                target="_blank"
+                href="https://play.google.com/store/apps/details?id=com.coronatracker.corona_flutter&hl=en"
+              >
+                <i class="fab fa-google-play"></i> Download app from Google
+                Store
+              </a>
+            </p>
+          </div>
         </div>
 
         <div class="my-4">
