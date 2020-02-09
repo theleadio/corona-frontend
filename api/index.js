@@ -2,14 +2,14 @@ import analyticsApiFactory from './analytics';
 import healthcareInstitutionsApiFactory from './healthcareInstitutions'
 import newsApiFactory from './news';
 import statsApiFactory from './stats';
-import travelBanApiFactory from './travelBan';
+import travelAlertApiFactory from './travelAlert';
 
 const apiFactory = axios => ({
   analytics: analyticsApiFactory(axios),
   healthcareInstitutions: healthcareInstitutionsApiFactory(axios),
   news: newsApiFactory(axios),
   stats: statsApiFactory(axios),
-  travelBan: travelBanApiFactory(axios),
+  travelAlert: travelAlertApiFactory(axios),
 });
 
 export default apiFactory;
