@@ -112,7 +112,6 @@
     },
     computed: {
       filteredRegions: function() {
-        console.dir(this.country);
         if (this.country === '' || this.country === 'global') {
           return this.regions;
         } else {
