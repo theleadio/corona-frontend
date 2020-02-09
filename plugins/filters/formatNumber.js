@@ -1,3 +1,4 @@
 export default function formatNumber(value) {
-  return parseInt(value).toLocaleString();
+  const number = parseInt(value);
+  return isNaN(number) ? value : number.toLocaleString();
 }

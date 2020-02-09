@@ -10,6 +10,9 @@
       <div class="w-full md:w-1/3 px-2">
         <div class="">
           <TopStats/>
+          <div class="mt-2 text-center underline text-blue-500 font-semibold">
+            <nuxt-link to="analytics">Full list here</nuxt-link>
+          </div>
         </div>
 
         <div class="my-4">
@@ -18,6 +21,29 @@
 
         <div class="my-4">
           <HealthcareInstitutions :country="country.code" />
+
+          <div class="mt-4 p-3 block justify-center bg-gray-300 text-sm">
+            <p class="font-bold text-center text-primary text-lg">
+              <a
+                target="_blank"
+                href="https://www.facebook.com/coronatracker/"
+              >
+                <i class="fab fa-facebook"></i> Follow our Facebook page
+              </a>
+            </p>
+          </div>
+
+          <div class="mt-4 p-3 block justify-center bg-gray-300 text-sm">
+            <p class="font-bold text-center text-primary text-lg">
+              <a
+                target="_blank"
+                href="https://play.google.com/store/apps/details?id=com.coronatracker.corona_flutter&hl=en"
+              >
+                <i class="fab fa-google-play"></i> Download app from Google
+                Store
+              </a>
+            </p>
+          </div>
         </div>
 
         <div class="my-4">
