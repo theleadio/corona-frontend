@@ -173,11 +173,11 @@
     },
   }
 </script>
-<style>
-a.anchor {
-  display: block;
-  position: relative;
-  top: -120px;
-  visibility: hidden;
-}
+<style scoped>
+  a.anchor {
+    display: block;
+    position: relative;
+    top: -120px;
+    visibility: hidden;
+  }
 </style>
