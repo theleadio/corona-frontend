@@ -140,9 +140,9 @@
           return a;
         });
 
-        const sortedCountries = countries
-          .filter(country => {
-            return data.find(a => a.countryCode === country.code);
+        const sortedCountries = data
+          .map(d => {
+            return { name: d.countryName, code: d.countryCode };
           })
           .sort((a, b) => {
             if (a.name === b.name) { return 0; }
