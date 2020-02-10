@@ -29,15 +29,15 @@
               </p>
 
               <p class="text-xs">
-                <span class="font-bold">Total Confirmed:</span> {{ parseInt(loc.total_confirmed).toLocaleString() }}
+                <span class="font-bold">Total Confirmed:</span> {{ loc.total_confirmed | formatNumber }}
               </p>
 
               <p class="text-xs">
-                <span class="font-bold">Total Recovered:</span> {{ parseInt(loc.total_recovered).toLocaleString() }}
+                <span class="font-bold">Total Recovered:</span> {{ loc.total_recovered | formatNumber }}
               </p>
 
               <p class="text-xs">
-                <span class="font-bold">Total Dead:</span> {{ parseInt(loc.total_dead).toLocaleString() }}
+                <span class="font-bold">Total Deaths:</span> {{ loc.total_dead | formatNumber }}
               </p>
             </l-popup>
           </l-circle-marker>
@@ -45,8 +45,8 @@
       </client-only>
     </div>
 
-    <div class="mt-3" style="max-height: 30rem; overflow: scroll;">
-      <table class="table-fixed w-full border">
+    <div class="mt-3" style="max-height: 36.3rem; overflow: auto;">
+      <!--<table class="table-fixed w-full border">
         <thead class="text-xs text-center font-bold leading-tight">
           <tr>
             <td class="border">Country</td>
@@ -64,18 +64,50 @@
             <td class="border px-1 py-2">{{ parseInt(loc.total_dead).toLocaleString() }}</td>
           </tr>
         </tbody>
+      </table>-->
+
+      <table class="table-auto w-full">
+        <thead class="text-xs leading-tight border-b-2">
+        <tr>
+          <th class="border px-2 py-2">Country</th>
+          <th class="border px-1 py-2">Total Confirmed</th>
+          <th class="border px-1 py-2">Total Recovered</th>
+          <th class="border px-1 py-2">Total Deaths</th>
+        </tr>
+        </thead>
+        <tbody class="font-bold">
+        <tr v-for="loc in countries" :key="loc.country">
+          <td class="bg-gray-200 text-xs border px-2 py-2">
+            <Flag :country-name="loc.country"></Flag>
+            {{loc.country}}<a v-if="loc.country === 'Others'" href="#notes-on-others">*</a>
+          </td>
+          <td class="text-center border px-1 py-2">{{ loc.total_confirmed | formatNumber }}</td>
+          <td class="text-center border px-1 py-2">{{ loc.total_recovered | formatNumber }}</td>
+          <td class="text-center border px-1 py-2">{{ loc.total_dead | formatNumber }}</td>
+        </tr>
+        </tbody>
       </table>
+      <div class="my-2 font-bold text-xs text-gray-600 leading-tight">
+        * Cases identified on a cruise ship currently in Japanese territorial waters.
+        <a name="notes-on-others" class="anchor"></a>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Flag from '~/components/Flag';
+
 export default {
   props: {
     data: {
       type: Array,
       default: null,
     }
+  },
+
+  components: {
+    Flag,
   },
 
   data () {
@@ -91,6 +123,7 @@ export default {
     countries () {
       return this.data.filter(i => i.total_confirmed).map(item => ({
         ...item,
+        country: item.country === 'Mainland China' ? 'China' : item.country,
         radius: this.scale(item.total_confirmed)
       }))
     },
