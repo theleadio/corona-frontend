@@ -120,7 +120,7 @@
 								alt="Tan Wei Seng"
 							/>
 							<div class="mt-4 font-bold text-blue-600">
-								Lead frontend engineer
+								Lead full stack engineer
 							</div>
 							<div>Tan Wei Seng</div>
 							<div style="color:#273E4A">
