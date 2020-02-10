@@ -56,7 +56,7 @@
       v-else-if="state === 'done' && !results.length"
       class="flex flex-col w-full overflow-auto bg-white text-black shadow-md list p-4"
     >
-      We could not found anything
+      Sorry. No search results found.
     </div>
     <div
       v-else-if="state === 'loading'"
@@ -68,7 +68,7 @@
       v-else-if="state == 'error'"
       class="flex flex-col w-full overflow-auto bg-white text-black shadow-md list p-4"
     >
-      Could not perform search request
+      Could not perform search request.
     </div>
   </div>
 </template>
