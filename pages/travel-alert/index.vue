@@ -1,6 +1,12 @@
 <template>
   <main class="container mb-64">
-    <h1 class="mb-8 text-lg font-bold">Travel Alert Information</h1>
+    <h1 class="text-lg font-bold">Travel Alert Information</h1>
+    <div class="mb-4 font-bold text-xs text-gray-500 leading-tight">
+      Source: <a
+      href="https://www.iatatravelcentre.com/international-travel-document-news/1580226297.htm"
+      target="_blank"
+      class="underline">IATA</a>
+    </div>
 
     <div class="w-full h-full md:w-1/3 align-middle relative">
       <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded w-full flex"
