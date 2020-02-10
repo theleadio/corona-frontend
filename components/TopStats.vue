@@ -17,7 +17,7 @@
       <tr v-for="item in items" :key="item.country">
         <td class="bg-gray-200 text-xs border px-2 py-2">
           <Flag :country-name="item.country"></Flag>
-          {{item.country}}
+          {{item.country}}<a v-if="item.country === 'Others'" href="#notes-on-others">*</a>
         </td>
         <td class="text-center border px-1 py-2">{{item.num_confirm | formatNumber}}</td>
         <td class="text-center border px-1 py-2">{{item.num_heal | formatNumber}}</td>
@@ -25,6 +25,10 @@
       </tr>
       </tbody>
     </table>
+    <div class="my-2 font-bold text-xs text-gray-600 leading-tight">
+      * Cases identified on a cruise ship currently in Japanese territorial waters.
+      <a name="notes-on-others" class="anchor"></a>
+    </div>
   </div>
 </template>
 
@@ -47,7 +51,6 @@
     async created() {
       const data = await this.$api.stats.getTopStats(this.limit)
       this.items = data
-        .filter(a => a.country !== 'Others')
         .map(a => {
           if (a.country === 'Mainland China') {
             a.country = 'China';
