@@ -86,6 +86,7 @@
 									class="underline"
 									href="https://www.linkedin.com/in/drhanlau/"
 									target="_blank"
+									rel="noopener"
 									>LinkedIn</a
 								>)
 							</div>
@@ -108,6 +109,7 @@
 									class="underline"
 									href="https://www.linkedin.com/in/hafeeznazri/"
 									target="_blank"
+									rel="noopener"
 									>LinkedIn</a
 								>)
 							</div>
@@ -128,6 +130,7 @@
 									class="underline"
 									href="https://www.linkedin.com/in/wei-seng-tan-304ba78a/"
 									target="_blank"
+									rel="noopener"
 									>LinkedIn</a
 								>)
 							</div>
@@ -145,6 +148,7 @@
 									class="underline"
 									href="https://www.linkedin.com/in/poon-cheehim/"
 									target="_blank"
+									rel="noopener"
 									>LinkedIn</a
 								>)
 							</div>
@@ -156,7 +160,8 @@
 					<a
 						class="my-6 mx-auto text-center block text-2xl underline"
 						href="https://docs.google.com/spreadsheets/d/1cG1UmEa-0IUetdKzYsMKXpypGFWoO88eTzadvN4NS5Y"
-						target="_blank">
+						target="_blank"
+						rel="noopener">
 						View more
 					</a>
 				</div>
@@ -181,17 +186,17 @@
 				</thead>
 				<tbody>
 					<tr>
-					<td class="border px-4 py-2"><a class="hover:underline" target="_blank" href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30185-9/fulltext">Discovery of a novel coronavirus associated with the recent pneumonia outbreak in humans and its potential bat origin</a></td>
+					<td class="border px-4 py-2"><a class="hover:underline" target="_blank" rel="noopener" href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30185-9/fulltext">Discovery of a novel coronavirus associated with the recent pneumonia outbreak in humans and its potential bat origin</a></td>
 					<td class="border px-4 py-2">A report by Jasper Fuk-Woo Chan and colleagues, documented infections in health-care workers caring for patients with 2019-nCoV indicate human-to-human transmission and thus the risk of much wider spread of the disease.</td>
 					<td class="border px-4 py-2">The Lancet</td>
 					</tr>
 					<tr class="bg-gray-100">
-					<td class="border px-4 py-2"><a class="hover:underline" target="_blank" href="https://www.nejm.org/doi/full/10.1056/NEJMe2001126">Another year, another coronavirus</a></td>
+					<td class="border px-4 py-2"><a class="hover:underline" target="_blank" rel="noopener" href="https://www.nejm.org/doi/full/10.1056/NEJMe2001126">Another year, another coronavirus</a></td>
 					<td class="border px-4 py-2">For the third time in as many decades, a zoonotic coronavirus has crossed species to infect human populations. This virus, provisionally called 2019-nCoV, was first identified in Wuhan, China, in persons exposed to a seafood or wet market. </td>
 					<td class="border px-4 py-2">The New England Journal of Medcine</td>
 					</tr>
 					<tr>
-					<td class="border px-4 py-2"><a class="hover:underline" target="_blank" href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6">Wuhan Coronavirus (2019-nCoV) Global Cases (by JHU CSSE)</a></td>
+					<td class="border px-4 py-2"><a class="hover:underline" target="_blank" rel="noopener" href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6">Wuhan Coronavirus (2019-nCoV) Global Cases (by JHU CSSE)</a></td>
 					<td class="border px-4 py-2">An online dashboard to visualize and track the reported cases on a daily timescale</td>
 					<td class="border px-4 py-2">John Hopkins University</td>
 					</tr>

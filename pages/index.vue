@@ -26,6 +26,7 @@
             <p class="font-bold text-center text-primary text-lg">
               <a
                 target="_blank"
+                rel="noopener"
                 href="https://www.facebook.com/coronatracker/"
               >
                 <i class="fab fa-facebook"></i> Follow our Facebook page
@@ -37,6 +38,7 @@
             <p class="font-bold text-center text-primary text-lg">
               <a
                 target="_blank"
+                rel="noopener"
                 href="https://play.google.com/store/apps/details?id=com.coronatracker.corona_flutter&hl=en"
               >
                 <i class="fab fa-google-play"></i> Download app from Google

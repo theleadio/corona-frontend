@@ -62,6 +62,7 @@
       <p class="font-bold text-center text-primary text-lg">
         <a
           target="_blank"
+          rel="noopener"
           href="https://t.me/joinchat/Jc3F5hR2yrcJ6OYlN9kXgw?fbclid=IwAR1oBafFFEo7HAnoUSX1T9nzdtFroXLtTUxn67yACnRRLrT2o-syWBZG_vI"
         >
           <i class="fab fa-telegram"></i> Join our Telegram group

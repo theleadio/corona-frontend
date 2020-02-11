@@ -45,6 +45,7 @@
         :key="result.nid"
         :href="result.url"
         target="_blank"
+        rel="noopener"
         class="w-full result-link"
       >
         <v-clamp autoresize :max-lines="2" class="p-4">

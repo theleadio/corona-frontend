@@ -5,6 +5,7 @@
       Source: <a
       href="https://www.iatatravelcentre.com/international-travel-document-news/1580226297.htm"
       target="_blank"
+      rel="noopener"
       class="underline">IATA</a>
     </div>
 

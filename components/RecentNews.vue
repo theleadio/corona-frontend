@@ -7,6 +7,7 @@
             v-for="news in recentNews" :key="news.id"
             :href="news.url"
             target="_blank"
+            rel="noopener"
             class="bg-gray-100 p-3 text-sm block"
         >
           <p class="leading-normal"><span class="font-bold">{{ news.title }}</span> - {{ news.description }}</p>

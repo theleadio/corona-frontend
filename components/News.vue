@@ -2,6 +2,7 @@
   <a
     :href="article.url"
     target="_blank"
+    rel="noopener"
     class="p-4 border-gray-400 border border-solid rounded flex w-full relative mb-4"
   >
     <div v-lazy:background-image="article.urlToImage"
