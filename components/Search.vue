@@ -17,6 +17,7 @@
       />
       <button
         class="h-12 w-12 flex items-center justify-center"
+        aria-label="search"
         v-on:click="search"
       >
         <svg

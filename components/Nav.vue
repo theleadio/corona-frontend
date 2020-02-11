@@ -18,7 +18,9 @@
           id="hamburger"
           class="lg:hidden flex self-center items-center px-3 py-2 border rounded text-primary border-primary
           hover:text-red-600 hover:border-red-600 self-end"
-          @click="showMobileLinks = !showMobileLinks">
+          @click="showMobileLinks = !showMobileLinks"
+          aria-label="Menu"
+        >
           <svg class="fill-current h-3 w-3" viewBox="0 0 20 20">
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
           </svg>
