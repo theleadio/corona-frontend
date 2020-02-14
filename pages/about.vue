@@ -63,6 +63,98 @@
 				the fight!</em
 			>
 		</div>
+		<div class="flex flex-wrap -mx-2 my-4">
+			<div class="w-full px-2">
+				<h1 class="text-2xl font-bold mb-4 text-center text-primary">
+					Sources
+				</h1>
+				<div>
+					Here you can find a list of sources handpicked by the team.
+				</div>
+
+				<table class="table-auto mt-4 mb-4">
+					<thead>
+						<tr>
+							<th class="px-4 py-2 w-1/3">Title</th>
+							<th class="px-4 py-2 w-1/2">Description</th>
+							<th class="px-4 py-2">Source</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="border px-4 py-2">
+								<a
+									class="hover:underline"
+									target="_blank"
+									rel="noopener"
+									href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30185-9/fulltext"
+									>Discovery of a novel coronavirus associated with
+									the recent pneumonia outbreak in humans and its
+									potential bat origin</a
+								>
+							</td>
+							<td class="border px-4 py-2">
+								A report by Jasper Fuk-Woo Chan and colleagues,
+								documented infections in health-care workers caring
+								for patients with 2019-nCoV indicate human-to-human
+								transmission and thus the risk of much wider spread of
+								the disease.
+							</td>
+							<td class="border px-4 py-2">The Lancet</td>
+						</tr>
+						<tr class="bg-gray-100">
+							<td class="border px-4 py-2">
+								<a
+									class="hover:underline"
+									target="_blank"
+									rel="noopener"
+									href="https://www.nejm.org/doi/full/10.1056/NEJMe2001126"
+									>Another year, another coronavirus</a
+								>
+							</td>
+							<td class="border px-4 py-2">
+								For the third time in as many decades, a zoonotic
+								coronavirus has crossed species to infect human
+								populations. This virus, provisionally called
+								2019-nCoV, was first identified in Wuhan, China, in
+								persons exposed to a seafood or wet market.
+							</td>
+							<td class="border px-4 py-2">
+								The New England Journal of Medcine
+							</td>
+						</tr>
+						<tr>
+							<td class="border px-4 py-2">
+								<a
+									class="hover:underline"
+									target="_blank"
+									rel="noopener"
+									href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6"
+									>Wuhan Coronavirus (2019-nCoV) Global Cases (by JHU
+									CSSE)</a
+								>
+							</td>
+							<td class="border px-4 py-2">
+								An online dashboard to visualize and track the
+								reported cases on a daily timescale
+							</td>
+							<td class="border px-4 py-2">
+								John Hopkins University
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="mt-8">
+					If you believe any of the source information above is
+					inaccurate, please lodge a report using the following
+					<a
+						class="underline"
+						href="https://docs.google.com/forms/d/1A5Sw_gdJ6tsHA74Bz2_2uVMKqf9k_APRMQIAEoSXSNY/viewform?edit_requested=true"
+						>form</a
+					>.
+				</div>
+			</div>
+		</div>
 
 		<div class="w-full ">
 			<div class="mt-5 p-5 team">
@@ -70,7 +162,7 @@
 					Heroes behind <span class="text-black">Corona</span
 					><span class="text-red-600">Tracker</span>
 				</h1>
-				<div class="w-full mb-10">
+				<div class="w-full mb-4">
 					<div class="hero">
 						<div class="hero-info" style="border:none">
 							<img
@@ -154,55 +246,194 @@
 							</div>
 						</div>
 					</div>
-				</div>
 
+					<div class="w-full md:w-1/3 mb-4 hero">
+						<div class="hero-info p-2">
+							<img
+								src="../assets/image/dominic.jpeg"
+								alt="Dominic Ligot"
+							/>
+							<div class="mt-4 font-bold text-blue-600">
+								Lead analyst
+							</div>
+							<div>Dominic Ligot</div>
+							<div style="color:#273E4A">
+								(<a
+									class="underline"
+									href="https://www.linkedin.com/in/docligot/"
+									target="_blank"
+									rel="noopener"
+									>LinkedIn</a
+								>)
+							</div>
+						</div>
+					</div>
+					<div class="w-full md:w-1/3 mb-4 hero">
+						<div class="hero-info p-2">
+							<img
+								src="../assets/image/ummi.jpg"
+								alt="Ummi Hasanah Zaidon"
+							/>
+							<div class="mt-4 font-bold text-blue-600">
+								Head of Public Relation
+							</div>
+							<div>Ummi Hasanah Zaidon</div>
+							<div style="color:#273E4A">
+								(<a
+									class="underline"
+									href="https://www.linkedin.com/in/ummi-hasanah-zaidon-32148280/"
+									target="_blank"
+									rel="noopener"
+									>LinkedIn</a
+								>)
+							</div>
+						</div>
+					</div>
+					<div class="w-full md:w-1/3 mb-4 hero">
+						<div class="hero-info p-2">
+							<img
+								src="../assets/image/marcus.png"
+								alt="Marcus Chia"
+							/>
+							<div class="mt-4 font-bold text-blue-600">
+								Head of Product
+							</div>
+							<div>Marcus Chia</div>
+							<div style="color:#273E4A">
+								(<a
+									class="underline"
+									href="https://www.linkedin.com/in/marcuschiam5/"
+									target="_blank"
+									rel="noopener"
+									>LinkedIn</a
+								>)
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="flex flex-wrap mt-4 ">
+					<div class="w-full md:w-1/4 member mb-4">
+						<h2 class="text-xl font-bold text-center">
+							Team Analytics
+						</h2>
+						<ul>
+							<li>
+								<a href="" target="_blank">Chin Hwee Ong</a>
+							</li>
+							<li><a href="" target="_blank">Roland Salunga</a></li>
+						</ul>
+					</div>
+					<div class="w-full md:w-1/4 member mb-4">
+						<h2 class="text-xl font-bold text-center">
+							Team Research
+						</h2>
+						<ul>
+							<li>
+								<a
+									href="https://www.linkedin.com/in/yiranjing/"
+									target="_blank"
+									rel="noopener"
+									>Yiran Jing</a
+								>
+							</li>
+							<li>
+								<a
+									href="https://www.linkedin.com/in/kennykcy/"
+									target="_blank"
+									rel="noopener"
+									>Kenny Kang</a
+								>
+							</li>
+							<li>
+								<a
+									href="https://www.linkedin.com/in/khursan"
+									target="_blank"
+									>Sani</a
+								>
+							</li>
+							<li>
+								<a
+									href="http://linkedin.com/in/debbie-huang-b034a789"
+									target="_blank"
+									>Debbie</a
+								>
+							</li>
+							<li>
+								<a
+									href="https://www.linkedin.com/in/david-lee-guanhua/"
+									target="_blank"
+									>Guanhua Lee</a
+								>
+							</li>
+							<li>
+								<a
+									href="https://www.linkedin.com/in/nikkingyh"
+									target="_blank"
+									>Nikki</a
+								>
+							</li>
+							<li>
+								<a
+									href="https://www.linkedin.com/in/sypang/"
+									target="_blank"
+									>Pang Shi Yong</a
+								>
+							</li>
+							<li>
+								<a
+									href="https://linkedin.com/in/ongchinhwee"
+									target="_blank"
+									>Chin Hwee Ong</a
+								>
+							</li>
+						</ul>
+					</div>
+					<div class="w-full md:w-1/4 member mb-4">
+						<h2 class="text-xl font-bold text-center">
+							Team Engineering
+						</h2>
+						<ul>
+							<li><a href="" target="_blank">Gibson Tang</a></li>
+							<li><a href="" target="_blank">Samuel Lee</a></li>
+							<li><a href="" target="_blank">Kedai</a></li>
+							<li><a href="" target="_blank">Qi Xiang</a></li>
+							<li><a href="" target="_blank">Almond Heng</a></li>
+							<li><a href="" target="_blank">Joshua Hui</a></li>
+							<li><a href="" target="_blank">Renyi Khor</a></li>
+							<li><a href="" target="_blank">Deojeff Lai</a></li>
+							<li>
+								<a href="" target="_blank">Poon Chee Him/Shian</a>
+							</li>
+						</ul>
+					</div>
+					<div class="w-full md:w-1/4 member mb-4">
+						<h2 class="text-xl font-bold text-center">
+							Team Design
+						</h2>
+						<ul>
+							<li><a href="" target="_blank">Hazi</a></li>
+							<li>
+								<a
+									href="https://www.linkedin.com/in/vu-hai-dang-6157081a1/"
+									target="_blank"
+									>Tjjone98</a
+								>
+							</li>
+							<li><a href="" target="_blank">Daniel Low</a></li>
+							<li><a href="" target="_blank">Guanhua Lee</a></li>
+						</ul>
+					</div>
+				</div>
 				<div>
 					<a
 						class="my-6 mx-auto text-center block text-2xl underline"
 						href="https://docs.google.com/spreadsheets/d/1cG1UmEa-0IUetdKzYsMKXpypGFWoO88eTzadvN4NS5Y"
 						target="_blank"
-						rel="noopener">
+						rel="noopener"
+					>
 						View more
 					</a>
 				</div>
-			</div>
-		</div>
-
-		<hr>
-		<div class="flex flex-wrap -mx-2 my-4">
-			<div class="w-full px-2">
-				<h1 class="text-2xl font-bold mb-4 text-center text-primary">
-					Sources
-				</h1>
-				<div>Here you can find a list of sources handpicked by the team.</div>
-
-				<table class="table-auto m-4">
-				<thead>
-					<tr>
-					<th class="px-4 py-2 w-1/3">Title</th>
-					<th class="px-4 py-2 w-1/2">Description</th>
-					<th class="px-4 py-2">Source</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-					<td class="border px-4 py-2"><a class="hover:underline" target="_blank" rel="noopener" href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30185-9/fulltext">Discovery of a novel coronavirus associated with the recent pneumonia outbreak in humans and its potential bat origin</a></td>
-					<td class="border px-4 py-2">A report by Jasper Fuk-Woo Chan and colleagues, documented infections in health-care workers caring for patients with 2019-nCoV indicate human-to-human transmission and thus the risk of much wider spread of the disease.</td>
-					<td class="border px-4 py-2">The Lancet</td>
-					</tr>
-					<tr class="bg-gray-100">
-					<td class="border px-4 py-2"><a class="hover:underline" target="_blank" rel="noopener" href="https://www.nejm.org/doi/full/10.1056/NEJMe2001126">Another year, another coronavirus</a></td>
-					<td class="border px-4 py-2">For the third time in as many decades, a zoonotic coronavirus has crossed species to infect human populations. This virus, provisionally called 2019-nCoV, was first identified in Wuhan, China, in persons exposed to a seafood or wet market. </td>
-					<td class="border px-4 py-2">The New England Journal of Medcine</td>
-					</tr>
-					<tr>
-					<td class="border px-4 py-2"><a class="hover:underline" target="_blank" rel="noopener" href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6">Wuhan Coronavirus (2019-nCoV) Global Cases (by JHU CSSE)</a></td>
-					<td class="border px-4 py-2">An online dashboard to visualize and track the reported cases on a daily timescale</td>
-					<td class="border px-4 py-2">John Hopkins University</td>
-					</tr>
-				</tbody>
-				</table>
-				<div>If you believe any of the source information above is inaccurate, please lodge a report using the following <a class="underline" href="https://docs.google.com/forms/d/1A5Sw_gdJ6tsHA74Bz2_2uVMKqf9k_APRMQIAEoSXSNY/viewform?edit_requested=true">form</a>.</div>
 			</div>
 		</div>
 	</main>
@@ -215,6 +446,9 @@
 	};
 </script>
 <style scoped>
+	li a:hover {
+		color: #38a169;
+	}
 	.hero {
 		display: flex;
 		justify-content: center;
@@ -231,5 +465,8 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+	}
+	.member {
+		text-align: center;
 	}
 </style>
