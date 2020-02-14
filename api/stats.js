@@ -1,6 +1,6 @@
 export default axios => ({
-  getStats: (country) => {
-    return axios.get(`/stats?country=${country}`)
+  getStats: (countryCode) => {
+    return axios.get(`/v2/stats?countryCode=${countryCode}`)
       .then(res => res.data);
   },
 
@@ -9,7 +9,7 @@ export default axios => ({
       .then(res => res.data);
   },
   getTopStats: (limit) => {
-    return axios.get(`/stats/top?limit=${limit}`)
+    return axios.get(`/v2/stats/top?limit=${limit}`)
       .then(res => res.data);
   },
 });

@@ -37,7 +37,12 @@
         </ul>
       </div>
 
-      <stats class="flex justify-center w-full md:justify-end mt-5 md:mt-0" :confirmed=numConfirm :recovered=numHeal :deaths=numDeath />
+      <stats
+        class="flex justify-center w-full md:justify-end mt-5 md:mt-0"
+        :confirmed="confirmed"
+        :recovered="recovered"
+        :deaths="deaths"
+      />
 
     </div>
 
@@ -86,9 +91,9 @@ export default {
       },
       selectedCountry: null,
       optionsShowed: false,
-      numDeath: 0,
-      numConfirm: 0,
-      numHeal: 0,
+      deaths: 0,
+      confirmed: 0,
+      recovered: 0,
       numLastUpdated: null,
     };
   },
@@ -127,13 +132,13 @@ export default {
       this.closeOptions();
     },
     loadStats() {
-      const selectedCountry = !this.selectedCountry || this.selectedCountry.code === 'global' ? '' : this.selectedCountry.name;
+      const selectedCountryCode = !this.selectedCountry || this.selectedCountry.code === 'global' ? '' : this.selectedCountry.code;
 
-      this.$api.stats.getStats(selectedCountry)
+      this.$api.stats.getStats(selectedCountryCode)
         .then(data => {
-          this.numDeath = data.num_dead;
-          this.numConfirm = data.num_confirm;
-          this.numHeal = data.num_heal;
+          this.deaths = data.deaths;
+          this.confirmed = data.confirmed;
+          this.recovered = data.recovered;
           this.numLastUpdated = data.agg_date;
         });
     },

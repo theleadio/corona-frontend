@@ -25,19 +25,19 @@
             color="red">
             <l-popup>
               <p class="text-xs">
-                <span class="font-bold">Country:</span> {{ loc.country }}
+                <span class="font-bold">Country:</span> {{ loc.countryName }}
               </p>
 
               <p class="text-xs">
-                <span class="font-bold">Total Confirmed:</span> {{ loc.total_confirmed | formatNumber }}
+                <span class="font-bold">Total Confirmed:</span> {{ loc.confirmed | formatNumber }}
               </p>
 
               <p class="text-xs">
-                <span class="font-bold">Total Recovered:</span> {{ loc.total_recovered | formatNumber }}
+                <span class="font-bold">Total Recovered:</span> {{ loc.recovered | formatNumber }}
               </p>
 
               <p class="text-xs">
-                <span class="font-bold">Total Deaths:</span> {{ loc.total_dead | formatNumber }}
+                <span class="font-bold">Total Deaths:</span> {{ loc.deaths | formatNumber }}
               </p>
             </l-popup>
           </l-circle-marker>
@@ -76,14 +76,14 @@
         </tr>
         </thead>
         <tbody class="font-bold">
-        <tr v-for="loc in countries" :key="loc.country">
+        <tr v-for="loc in countries" :key="loc.countryName">
           <td class="bg-gray-200 text-xs border px-2 py-2">
-            <Flag :country-name="loc.country"></Flag>
-            {{loc.country}}<a v-if="loc.country === 'Others'" href="#notes-on-others">*</a>
+            <Flag :country-code="loc.countryCode"></Flag>
+            {{loc.countryName}}<a v-if="loc.countryName === 'Others'" href="#notes-on-others">*</a>
           </td>
-          <td class="text-center border px-1 py-2">{{ loc.total_confirmed | formatNumber }}</td>
-          <td class="text-center border px-1 py-2">{{ loc.total_recovered | formatNumber }}</td>
-          <td class="text-center border px-1 py-2">{{ loc.total_dead | formatNumber }}</td>
+          <td class="text-center border px-1 py-2">{{ loc.confirmed | formatNumber }}</td>
+          <td class="text-center border px-1 py-2">{{ loc.recovered | formatNumber }}</td>
+          <td class="text-center border px-1 py-2">{{ loc.deaths | formatNumber }}</td>
         </tr>
         </tbody>
       </table>
@@ -121,10 +121,9 @@ export default {
 
   computed: {
     countries () {
-      return this.data.filter(i => i.total_confirmed).map(item => ({
+      return this.data.filter(i => i.confirmed).map(item => ({
         ...item,
-        country: item.country === 'Mainland China' ? 'China' : item.country,
-        radius: this.scale(item.total_confirmed)
+        radius: this.scale(item.confirmed)
       }))
     },
   },

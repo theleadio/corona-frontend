@@ -14,14 +14,14 @@
       </tr>
       </thead>
       <tbody class="font-bold">
-      <tr v-for="item in items" :key="item.country">
+      <tr v-for="item in items" :key="item.countryCode">
         <td class="bg-gray-200 text-xs border px-2 py-2">
-          <Flag :country-name="item.country"></Flag>
-          {{item.country}}<a v-if="item.country === 'Others'" href="#notes-on-others">*</a>
+          <Flag :country-code="item.countryCode"></Flag>
+          {{item.countryName}}<a v-if="item.countryName === 'Others'" href="#notes-on-others">*</a>
         </td>
-        <td class="text-center border px-1 py-2">{{item.num_confirm | formatNumber}}</td>
-        <td class="text-center border px-1 py-2">{{item.num_heal | formatNumber}}</td>
-        <td class="text-center border px-1 py-2">{{item.num_dead | formatNumber}}</td>
+        <td class="text-center border px-1 py-2">{{item.confirmed | formatNumber}}</td>
+        <td class="text-center border px-1 py-2">{{item.recovered | formatNumber}}</td>
+        <td class="text-center border px-1 py-2">{{item.deaths | formatNumber}}</td>
       </tr>
       </tbody>
     </table>
@@ -49,15 +49,7 @@
       }
     },
     async created() {
-      const data = await this.$api.stats.getTopStats(this.limit)
-      this.items = data
-        .map(a => {
-          if (a.country === 'Mainland China') {
-            a.country = 'China';
-          }
-
-          return a;
-        });
+      this.items = await this.$api.stats.getTopStats(this.limit)
     }
   }
 </script>

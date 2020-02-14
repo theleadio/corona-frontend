@@ -10,7 +10,7 @@ export default axios => ({
   },
 
   fetchAffectedCountry: () => {
-    return axios.get(`/analytics/country`)
+    return axios.get(`/v2/analytics/country`)
       .then(res => res.data)
   },
 });

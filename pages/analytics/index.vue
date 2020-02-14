@@ -17,17 +17,17 @@
             <div class="flex flex-col lg:flex-row">
               <div class="px-5">
                 <p class="text-sm font-bold text-red-600">Total Confirmed</p>
-                <p class="text-4xl font-bold text-red-600">{{ totalConfirmed.toLocaleString() }}</p>
+                <p class="text-4xl font-bold text-red-600">{{ confirmed | formatNumber }}</p>
               </div>
 
               <div class="px-5">
                 <p class="text-sm font-bold text-green-600">Total Recovered</p>
-                <p class="text-4xl font-bold text-green-600">{{ totalRecovered.toLocaleString() }}</p>
+                <p class="text-4xl font-bold text-green-600">{{ recovered | formatNumber }}</p>
               </div>
 
               <div class="px-5">
                 <p class="text-sm font-bold text-gray-600">Total Deaths</p>
-                <p class="text-4xl font-bold text-gray-600">{{ totalMortality.toLocaleString() }}</p>
+                <p class="text-4xl font-bold text-gray-600">{{ deaths | formatNumber }}</p>
               </div>
             </div>
           </div>
@@ -70,9 +70,9 @@ export default {
   data () {
     return {
       currentDate: new Date,
-      totalConfirmed: 0,
-      totalMortality: 0,
-      totalRecovered: 0,
+      confirmed: 0,
+      deaths: 0,
+      recovered: 0,
       outbreakTrendData: [],
       affectedRegionData: [],
       affectedCountryData: [],
@@ -87,9 +87,9 @@ export default {
     loadStats () {
       this.$api.stats.getStats('')
         .then(data => {
-          this.totalConfirmed = data.num_confirm
-          this.totalMortality = data.num_dead
-          this.totalRecovered = data.num_heal
+          this.confirmed = data.confirmed
+          this.deaths = data.deaths
+          this.recovered = data.recovered
         })
     },
 
