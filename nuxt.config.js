@@ -106,7 +106,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: process.env.API_BASE_URL + process.env.API_PATH || 'http://localhost:3000',
+    baseURL: process.env.API_BASE_URL || 'http://localhost:3000',
   },
   /*
    ** Build configuration
