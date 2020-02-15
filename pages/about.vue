@@ -320,7 +320,7 @@
               <div class="mt-4 font-bold text-blue-600">
                 Lead Researcher
               </div>
-              <div>Dr. Fairoza Amira Binti Hamzah</div>
+              <div class="text-center">Assistant Professor Dr. Fairoza Amira<br>Binti Hamzah</div>
               <div style="color:#273E4A">
                 (<a
                 class="underline"
