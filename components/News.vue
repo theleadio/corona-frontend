@@ -26,7 +26,7 @@
       >
         {{ article.description }}
       </v-clamp>
-      <div class="source-date lg:mt-3">
+      <div class="source-date mt-1 lg:mt-3">
         {{ publishTime }}
       </div>
     </div>
