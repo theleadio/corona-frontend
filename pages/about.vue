@@ -310,6 +310,28 @@
 							</div>
 						</div>
 					</div>
+
+					<div class="w-full md:w-1/3 mb-4 hero">
+						<div class="hero-info p-2">
+							<img
+								src="../assets/image/fairoza.png"
+								alt="Dr. Fairoza Amira Binti Hamzah"
+							/>
+							<div class="mt-4 font-bold text-blue-600">
+								Lead Researcher
+							</div>
+							<div>Dr. Fairoza Amira Binti Hamzah</div>
+							<div style="color:#273E4A">
+								(<a
+								class="underline"
+								href="https://www.linkedin.com/in/fairoza-amira-binti-hamzah/"
+								target="_blank"
+								rel="noopener"
+							>LinkedIn</a
+							>)
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="flex flex-wrap mt-4 ">
 					<div class="w-full md:w-1/4 member mb-4">
