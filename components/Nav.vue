@@ -59,6 +59,7 @@
       return {
         links: [
           { name: "index", display: "Home" },
+          { name: "travel-alert", display: "Travel Alert" },
           { name: "causes", display: "What is 2019-nCov" },
           { name: "prevention", display: "Prevention" },
           { name: "analytics", display: "Analytics" },
