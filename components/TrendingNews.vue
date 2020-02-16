@@ -70,6 +70,8 @@
           // { id: "zh", name: "简体中文" },
           { id: "zh_TW", name: "繁體中文" },
           { id: "ja", name: "日本語" },
+          { id: "id", name: "Bahasa Indonesia" },
+          { id: "vi", name: "tiếng Việt" },
         ],
         selectedLanguages: ["en"]
       };
