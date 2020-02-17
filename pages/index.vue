@@ -25,21 +25,6 @@
 					<HealthcareInstitutions :country="country.code" />
 
 					<div
-						class="mt-4 p-3 block justify-center text-sm rounded border border-gray-400"
-					>
-						<p class="font-bold text-center text-primary text-lg">
-							<a
-								target="_blank"
-								rel="noopener"
-								href="https://www.facebook.com/coronatracker/"
-							>
-								<i class="fab fa-facebook"></i> Follow our Facebook
-								page
-							</a>
-						</p>
-					</div>
-
-					<div
 						class="mt-4 p-1 block justify-center text-sm rounded border border-gray-400"
 					>
 						<div
