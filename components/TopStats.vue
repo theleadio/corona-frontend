@@ -26,7 +26,6 @@
       </tbody>
     </table>
     <div class="my-2 font-bold text-xs text-gray-600 leading-tight">
-      * Cases identified on a cruise ship currently in Japanese territorial waters.
       <a name="notes-on-others" class="anchor"></a>
     </div>
   </div>
