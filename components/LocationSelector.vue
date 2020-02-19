@@ -119,10 +119,10 @@ export default {
         country_code: country.code,
       } : null;
 
-      this.$router.push({
+      this.$router.push(this.localePath({
         path: '/',
         query,
-      });
+      }));
     },
     checkForPresetCountryCode() {
       const { country_code: countryCode } = this.$route.query;

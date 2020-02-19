@@ -18,7 +18,7 @@
     methods: {
       goHome: function() {
         if (this.$route.name !== 'index') {
-          this.$router.push({ name: 'index' });
+          this.$router.push(this.localePath('index'));
         }
       }
     }

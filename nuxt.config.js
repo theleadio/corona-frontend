@@ -100,6 +100,7 @@ export default {
     '@nuxtjs/dotenv',
     'nuxt-svg-loader',
     'nuxt-leaflet',
+    'nuxt-i18n',
   ],
   /*
    ** Axios module configuration
@@ -107,6 +108,22 @@ export default {
    */
   axios: {
     baseURL: process.env.API_BASE_URL || 'http://localhost:3000',
+  },
+  /* i18n module configuration */
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        file: 'en.js',
+      },
+      {
+        code: 'ms',
+        file: 'ms.js',
+      }
+    ],
+    defaultLocale: 'en',
+    lazy: true,
+    langDir: 'lang/'
   },
   /*
    ** Build configuration

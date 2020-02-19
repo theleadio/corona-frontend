@@ -8,9 +8,9 @@
             v-for="link in links"
             :key="link.name"
             class="mx-1 px-3 py-4 hidden lg:block nav-link"
-            :to="{ name: link.name }"
+            :to="localePath(link.name)"
           >
-            {{ link.display }}
+            {{ $t(link.display) }}
           </nuxt-link>
         </div>
         <!--div class="capitalize">{{ currentPageName }}</div-->
@@ -35,7 +35,7 @@
         :to="{ name: link.name }"
         @click.native="showMobileLinks = false"
       >
-        {{ link.display }}
+        {{ $t(link.display) }}
       </nuxt-link>
     </div>
   </nav>
@@ -58,12 +58,12 @@
     data: function() {
       return {
         links: [
-          { name: "index", display: "Home" },
-          { name: "travel-alert", display: "Travel Alert" },
-          { name: "causes", display: "What is 2019-nCov" },
-          { name: "prevention", display: "Prevention" },
-          { name: "analytics", display: "Analytics" },
-          { name: "about", display: "About" }
+          { name: "index", display: 'menu.Home' },
+          { name: "travel-alert", display: "menu.Travel Alert" },
+          { name: "causes", display: "menu.What is 2019-nCov" },
+          { name: "prevention", display: "menu.Prevention" },
+          { name: "analytics", display: "menu.Analytics" },
+          { name: "about", display: 'menu.About' }
         ],
         showMobileLinks: false,
       }
