@@ -24,6 +24,7 @@
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "nuxt": "^2.6.3",
+    "nuxt-i18n": "^6.5.0",
     "nuxt-leaflet": "0.0.19",
     "nuxt-svg-loader": "^1.2.0",
     "popper.js": "^1.16.1",
