@@ -1,8 +1,8 @@
 <template>
   <main class="container mb-64">
-    <h1 class="text-lg font-bold">Travel Alert Information</h1>
+    <h1 class="text-lg font-bold">{{ $t('Travel Alert Information') }}</h1>
     <div class="mb-4 font-bold text-xs text-gray-500 leading-tight">
-      Source: <a
+      {{ $t('Source') }}: <a
       href="https://www.iatatravelcentre.com/international-travel-document-news/1580226297.htm"
       target="_blank"
       rel="noopener"
@@ -12,7 +12,7 @@
     <div class="w-full h-full md:w-1/3 align-middle relative">
       <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded w-full flex"
               @click="toggleOptions" v-on-clickaway="closeOptions">
-        <div>Select Country</div>
+        <div>{{ $t('Select Country') }}</div>
 
         <div class="self-center ml-auto">
           <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -155,7 +155,7 @@
             if (a.name === b.name) { return 0; }
             return a.name > b.name ? 1 : -1;
           });
-        console.log("sortedCountries:", sortedCountries.map(a => a.name));
+        // console.log("sortedCountries:", sortedCountries.map(a => a.name));
 
         this.countries = sortedCountries;
       },

@@ -2,82 +2,51 @@
   <main class="container">
     <div class="w-full bg-gray-300 rounded p-4">
       <h1 class="text-2xl font-bold text-center">
-        About CoronaTracker
+        {{ $t('About CoronaTracker') }}
       </h1>
       <p class="pt-4">
-        CORONATRACKER.com is a community-based project powered by over
-        460 volunteers from across the globe, ranging from data
-        scientists, medical professionals, UI/UX designers, fullstack
-        developers, to the general public.
+        {{ $t('CORONATRACKER.com is a community-based project powered by over 460 volunteers from across the globe, ranging from data scientists, medical professionals, UI/UX designers, fullstack developers, to the general public.') }}
       </p>
 
       <p class="pt-4">
-        It acts as a portal for the public to keep track of the latest
-        news development about the 2019-nCov, alongside collecting
-        data for further analysis. All the contents are handpicked,
-        filtered, and curated by volunteers to our best extent to
-        ensure that sources are reliable with minimal hoaxes and fake
-        news, in the best benefit of the public. Natural Language
-        Processing (NLP) is used to analyze trending content and
-        identify meaningful topics over various news sources and
-        social media platforms prior to being verified by our team.
+        {{ $t('It acts as a portal for the public to keep track of the latest news development about the 2019-nCov, alongside collecting data for further analysis. All the contents are handpicked, filtered, and curated by volunteers to our best extent to ensure that sources are reliable with minimal hoaxes and fake news, in the best benefit of the public. Natural Language Processing (NLP) is used to analyze trending content and identify meaningful topics over various news sources and social media platforms prior to being verified by our team.') }}
       </p>
 
       <p class="pt-4">
-        CORONATRACKER.com also aims to gather data for in-depth
-        analysis (e.g. time series to monitor the growth, spread of
-        the virus) and localized news (e.g. news related to Malaysia,
-        or KL only).The platform is vital for information
-        consolidation, and all gathered information is open to use for
-        the public.This is a 100% open source project, all information
-        and publishable data are available on Github as well. Everyone
-        is welcomed to contribute through our telegram channel.
+        {{ $t('CORONATRACKER.com also aims to gather data for in-depth analysis (e.g. time series to monitor the growth, spread of the virus) and localized news (e.g. news related to Malaysia, or KL only).The platform is vital for information consolidation, and all gathered information is open to use for the public.This is a 100% open source project, all information and publishable data are available on Github as well. Everyone is welcomed to contribute through our telegram channel.') }}
       </p>
 
       <p class="pt-4">
-        Our team of data scientists use OSEMN framework to collect,
-        clean, explore, model, and run their own analysis. For ease of
-        public understanding, it is presented using graphic
-        visualizations and dashboards. Through the data obtained, we
-        hope to build machine learning models very soon.
+        {{ $t('Our team of data scientists use OSEMN framework to collect, clean, explore, model, and run their own analysis. For ease of public understanding, it is presented using graphic visualizations and dashboards. Through the data obtained, we hope to build machine learning models very soon.') }}
       </p>
 
       <p class="pt-4">
-        We were inspired by the Coronavirus Outbreak Map by John
-        Hopkins University that was very informative. We also
-        recognised the difficulty to gather data for in-depth analysis
-        through various other sources of scattered data on different
-        news portals as well as in different languages.
+        {{ $t('We were inspired by the Coronavirus Outbreak Map by John Hopkins University that was very informative. We also recognised the difficulty to gather data for in-depth analysis through various other sources of scattered data on different news portals as well as in different languages.') }}
       </p>
 
       <p class="pt-4 pb-4">
-        Works started on the 25th of January, the first day of the
-        Lunar New Year. Our team has been working relentlessly to make
-        this a success, and launched officially on the 27th of
-        January.
+        {{ $t('Works started on the 25th of January, the first day of the Lunar New Year. Our team has been working relentlessly to make this a success, and launched officially on the 27th of January.') }}
       </p>
 
-      <em class="pt-4"
-      >We aim to use technology and make information more
-        accessible, gather talented people all around the world to win
-        the fight!</em
-      >
+      <em class="pt-4">
+        {{ $t('We aim to use technology and make information more accessible, gather talented people all around the world to win the fight!') }}
+      </em>
     </div>
     <div class="flex flex-wrap -mx-2 my-4">
       <div class="w-full px-2">
         <h1 class="text-2xl font-bold mb-4 text-center text-primary">
-          Sources
+          {{ $t('Sources') }}
         </h1>
         <div>
-          Here you can find a list of sources handpicked by the team.
+          {{ $t('Here you can find a list of sources handpicked by the team.') }}
         </div>
 
         <table class="table-auto mt-4 mb-4">
           <thead>
           <tr>
-            <th class="px-4 py-2 w-1/3">Title</th>
-            <th class="px-4 py-2 w-1/2">Description</th>
-            <th class="px-4 py-2">Source</th>
+            <th class="px-4 py-2 w-1/3">{{ $t('Title') }}</th>
+            <th class="px-4 py-2 w-1/2">{{ $t('Description') }}</th>
+            <th class="px-4 py-2">{{ $t('Source') }}</th>
           </tr>
           </thead>
           <tbody>
@@ -94,11 +63,7 @@
               >
             </td>
             <td class="border px-4 py-2">
-              A report by Jasper Fuk-Woo Chan and colleagues,
-              documented infections in health-care workers caring
-              for patients with 2019-nCoV indicate human-to-human
-              transmission and thus the risk of much wider spread of
-              the disease.
+              {{ $t('A report by Jasper Fuk-Woo Chan and colleagues, documented infections in health-care workers caring for patients with 2019-nCoV indicate human-to-human transmission and thus the risk of much wider spread of the disease.') }}
             </td>
             <td class="border px-4 py-2">The Lancet</td>
           </tr>
@@ -113,11 +78,7 @@
               >
             </td>
             <td class="border px-4 py-2">
-              For the third time in as many decades, a zoonotic
-              coronavirus has crossed species to infect human
-              populations. This virus, provisionally called
-              2019-nCoV, was first identified in Wuhan, China, in
-              persons exposed to a seafood or wet market.
+              {{ $t('For the third time in as many decades, a zoonotic coronavirus has crossed species to infect human populations. This virus, provisionally called 2019-nCoV, was first identified in Wuhan, China, in persons exposed to a seafood or wet market.') }}
             </td>
             <td class="border px-4 py-2">
               The New England Journal of Medcine
@@ -135,8 +96,7 @@
               >
             </td>
             <td class="border px-4 py-2">
-              An online dashboard to visualize and track the
-              reported cases on a daily timescale
+              {{ $t('An online dashboard to visualize and track the reported cases on a daily timescale') }}
             </td>
             <td class="border px-4 py-2">
               John Hopkins University
@@ -145,12 +105,11 @@
           </tbody>
         </table>
         <div class="mt-8">
-          If you believe any of the source information above is
-          inaccurate, please lodge a report using the following
+          {{ $t('If you believe any of the source information above is inaccurate, please lodge a report using the following') }}
           <a
             class="underline"
             href="https://docs.google.com/forms/d/1A5Sw_gdJ6tsHA74Bz2_2uVMKqf9k_APRMQIAEoSXSNY/viewform?edit_requested=true"
-          >form</a
+          >{{ $t('form') }}</a
           >.
         </div>
       </div>
@@ -159,7 +118,7 @@
     <div class="w-full ">
       <div class="mt-5 p-5 team">
         <h1 class="text-2xl font-bold mb-4 text-center text-primary">
-          Heroes behind <span class="text-black">Corona</span
+          {{ $t('Heroes behind') }} <span class="text-black">Corona</span
         ><span class="text-red-600">Tracker</span>
         </h1>
         <div class="w-full mb-4">
@@ -170,7 +129,7 @@
                 alt="Dr. Lau Cher Han"
               />
               <h2 class="mt-4 font-bold text-orange-600">
-                Project lead
+                {{ $t('Project Lead') }}
               </h2>
               <div>Dr. Lau Cher Han</div>
               <div style="color:#273E4A">
@@ -193,7 +152,7 @@
                 alt="Hafeez Nazri"
               />
               <div class="mt-4 font-bold text-blue-600">
-                Lead data scientist
+                {{ $t('Lead Data Scientist') }}
               </div>
               <div class="">Hafeez Nazri</div>
               <div style="color:#273E4A">
@@ -214,7 +173,7 @@
                 alt="Tan Wei Seng"
               />
               <div class="mt-4 font-bold text-blue-600">
-                Lead full stack engineer
+                {{ $t('Lead Full Stack Engineer') }}
               </div>
               <div>Tan Wei Seng</div>
               <div style="color:#273E4A">
@@ -232,7 +191,7 @@
             <div class="hero-info p-2">
               <img src="~assets/image/shian.jpg" alt="Shian Poon"/>
               <div class="mt-4 font-bold text-blue-600">
-                Lead mobile developer
+                {{ $t('Lead Mobile Developer') }}
               </div>
               <div>Poon Chee Him/Shian</div>
               <div style="color:#273E4A">
@@ -254,7 +213,7 @@
                 alt="Dominic Ligot"
               />
               <div class="mt-4 font-bold text-blue-600">
-                Lead analyst
+                {{ $t('Lead Analyst') }}
               </div>
               <div>Dominic Ligot</div>
               <div style="color:#273E4A">
@@ -275,7 +234,7 @@
                 alt="Ummi Hasanah Zaidon"
               />
               <div class="mt-4 font-bold text-blue-600">
-                Head of Public Relation
+                {{ $t('Head of Public Relation') }}
               </div>
               <div>Ummi Hasanah Zaidon</div>
               <div style="color:#273E4A">
@@ -296,7 +255,7 @@
                 alt="Marcus Chia"
               />
               <div class="mt-4 font-bold text-blue-600">
-                Head of Product
+                {{ $t('Head of Product') }}
               </div>
               <div>Marcus Chia</div>
               <div style="color:#273E4A">
@@ -318,7 +277,7 @@
                 alt="Dr. Fairoza Amira Binti Hamzah"
               />
               <div class="mt-4 font-bold text-blue-600">
-                Lead Researcher
+                {{ $t('Lead Researcher') }}
               </div>
               <div class="text-center">Assistant Professor Dr. Fairoza Amira<br>Binti Hamzah</div>
               <div style="color:#273E4A">
@@ -336,7 +295,7 @@
         <div class="flex flex-wrap mt-4 ">
           <div class="w-full md:w-1/4 member mb-4">
             <h2 class="text-xl font-bold text-center">
-              Team Analytics
+              {{ $t('Team Analytics') }}
             </h2>
             <ul>
               <li>
@@ -347,7 +306,7 @@
           </div>
           <div class="w-full md:w-1/4 member mb-4">
             <h2 class="text-xl font-bold text-center">
-              Team Research
+              {{ $t('Team Research') }}
             </h2>
             <ul>
               <li>
@@ -412,7 +371,7 @@
           </div>
           <div class="w-full md:w-1/4 member mb-4">
             <h2 class="text-xl font-bold text-center">
-              Team Engineering
+              {{ $t('Team Engineering') }}
             </h2>
             <ul>
               <li><a href="" target="_blank">Gibson Tang</a></li>
@@ -431,7 +390,7 @@
           </div>
           <div class="w-full md:w-1/4 member mb-4">
             <h2 class="text-xl font-bold text-center">
-              Team Design
+              {{ $t('Team Design') }}
             </h2>
             <ul>
               <li><a href="" target="_blank">Hazi</a></li>
@@ -454,7 +413,7 @@
             target="_blank"
             rel="noopener"
           >
-            View more
+            {{ $t('View more') }}
           </a>
         </div>
       </div>

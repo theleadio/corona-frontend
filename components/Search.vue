@@ -13,7 +13,7 @@
         type="text"
         style="border:none"
         class="appearance-none block w-full text-gray-700 border py-3 px-4 leading-tight outline-none focus:bg-white "
-        placeholder="Search..."
+        :placeholder="$t('Search') + '...'"
       />
       <button
         class="h-12 w-12 flex items-center justify-center"

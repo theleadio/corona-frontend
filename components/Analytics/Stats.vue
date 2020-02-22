@@ -13,7 +13,7 @@
         </span>
       </div>
       <div class="py-1 w-full bg-red-200 text-sm lg:text-base font-semibold font-sans">
-        <span class="mx-2">Confirmed</span>
+        <span class="mx-2">{{ $t('Confirmed') }}</span>
       </div>
     </div>
     <div class="w-1/3 mx-2 flex flex-col rounded overflow-hidden shadow text-center text-green-600">
@@ -29,7 +29,7 @@
         </span>
       </div>
       <div class="py-1 w-full bg-green-200 text-sm lg:text-base font-semibold font-sans">
-        <span class="mx-2">Recovered</span>
+        <span class="mx-2">{{ $t('Recovered') }}</span>
       </div>
     </div>
     <div class="w-1/3 flex flex-col rounded overflow-hidden shadow text-center text-gray-600">
@@ -45,7 +45,7 @@
         </span>
       </div>
       <div class="py-1 w-full bg-gray-300 text-sm lg:text-base font-semibold font-sans">
-        <span class="mx-2">Deaths</span>
+        <span class="mx-2">{{ $t('Deaths') }}</span>
       </div>
     </div>
   </div>

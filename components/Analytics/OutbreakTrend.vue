@@ -21,7 +21,7 @@ export default {
     return {
       options: {
         title: {
-          text: 'Outbreak trend over time',
+          text: this.$t('Outbreak trend over time'),
           align: 'left',
         },
 
@@ -91,15 +91,15 @@ export default {
       const categories = val.map(i => moment(i.date_posted, 'YYYY-MM-DD').format('YYYY-MM-DD'))
       const series = [
         {
-          name: 'Total Confirmed',
+          name: this.$t('Total Confirmed'),
           data: Array(categories.length).fill(0),
         },
         {
-          name: 'Total Deaths',
+          name: this.$t('Total Deaths'),
           data: Array(categories.length).fill(0),
         },
         {
-          name: 'Total Recovered',
+          name: this.$t('Total Recovered'),
           data: Array(categories.length).fill(0),
         },
       ]
@@ -113,21 +113,21 @@ export default {
         
         yaxis: [
           {
-            seriesName: 'Total Confirmed Cases',
+            seriesName: this.$t('Total Confirmed Cases'),
             title: {
-              text: 'Confirmed',
+              text: this.$t('Confirmed'),
             },
           },
           {
-            seriesName: 'Total Recovered', // this is actually 'total mortality' mapped to 'total recovered' axis
+            seriesName: this.$t('Total Recovered'), // this is actually 'total mortality' mapped to 'total recovered' axis
             opposite: true,
             show: false,
           },
           {
-            seriesName: 'Total Recovered',
+            seriesName: this.$t('Total Recovered'),
             opposite: true,
             title: {
-              text: 'Deaths / Recovered',
+              text: this.$t('Deaths') + ' / ' + this.$t('Recovered'),
             },
           },
         ],

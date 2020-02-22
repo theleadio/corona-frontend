@@ -3,10 +3,10 @@
     <div class="flex flex-wrap md:flex-no-wrap md:flex-row">
       <div class="w-full md:w-2/5 h-full mr-2 align-middle relative">
         <p class="mt-2 mb-2 text-sm font-semibold">
-          <span class="text-red-600"><i class="far fa-dot-circle blink"></i> LIVE </span>
+          <span class="text-red-600 uppercase"><i class="far fa-dot-circle blink"></i> {{ $t('Live') }}</span>
           <!-- <span v-if="numLastUpdated">[Last Update: {{new Date(numLastUpdated).toDateString()}}]</span> -->
         </p>
-        <label class="block text-s font-bold mb-2">Stats Overview</label>
+        <label class="block text-s font-bold mb-2">{{ $t('Stats Overview') }}</label>
         <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded w-full flex"
                 @click="toggleOptions" v-on-clickaway="closeOptions">
           <div>
@@ -15,7 +15,7 @@
               <span class="ml-2">{{ selectedCountry.name }}</span>
             </template>
             <template v-else>
-              Select Country
+              {{ $t('Select Country') }}
             </template>
           </div>
 
@@ -47,7 +47,7 @@
     </div>
 
     <div class="block text-center md:text-right mt-6 underline text-blue-500 font-semibold">
-      <nuxt-link to="/analytics">more details</nuxt-link>
+      <nuxt-link to="/analytics">{{ $t('more details') }}</nuxt-link>
     </div>
   </div>
 </template>
@@ -87,7 +87,7 @@ export default {
       countries: [{ code: 'global', name: 'Global'}, ...countries],
       global: {
         code: 'global',
-        name: 'Global',
+        name: this.$t('Global'),
       },
       selectedCountry: null,
       optionsShowed: false,

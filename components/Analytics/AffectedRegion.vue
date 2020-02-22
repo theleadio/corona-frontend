@@ -21,7 +21,7 @@ export default {
     return {
       options: {
         title: {
-          text: 'Most affected regions',
+          text: this.$t('Most affected regions'),
           align: 'left',
         },
 
@@ -87,15 +87,15 @@ export default {
       const categories = val.map(i => i.state)
       const series = [
         {
-          name: 'Total Confirmed',
+          name: this.$t('Total Confirmed'),
           data: Array(categories.length).fill(0),
         },
         {
-          name: 'Total Deaths',
+          name: this.$t('Total Deaths'),
           data: Array(categories.length).fill(0),
         },
         {
-          name: 'Total Recovered',
+          name: this.$t('Total Recovered'),
           data: Array(categories.length).fill(0),
         },
       ]

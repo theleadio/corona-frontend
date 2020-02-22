@@ -13,7 +13,7 @@
 					<div
 						class="mt-2 text-center underline text-blue-500 font-semibold"
 					>
-						<nuxt-link to="analytics">Full list here</nuxt-link>
+						<nuxt-link to="analytics">{{ $t('Full list here') }}</nuxt-link>
 					</div>
 				</div>
 
@@ -39,7 +39,7 @@
 								rel="noopener"
 								href="https://play.google.com/store/apps/details?id=com.coronatracker.corona_flutter&hl=en"
 							>
-								<div class="text-left">GET IT ON</div>
+								<div class="text-left">{{ $t('GET IT ON') }}</div>
 								<span class="font-bold text-xl">Google Play</span>
 							</a>
 						</div>
