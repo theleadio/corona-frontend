@@ -343,7 +343,7 @@
                 <a href="https://www.linkedin.com/in/ongchinhwee" target="_blank" rel="noopener">Chin Hwee Ong</a>
               </li>
               <li>
-                <a href="#" target="_blank" rel="noopener">Roland Salunga</a>
+                <a href="#" rel="noopener">Roland Salunga</a>
               </li>
             </ul>
           </div>
@@ -377,16 +377,16 @@
                 <a href="https://www.linkedin.com/in/ongchinhwee" target="_blank" rel="noopener">Chin Hwee Ong</a>
               </li>
               <li>
-                <a href="#" target="_blank" rel="noopener">Tan Cheng Liang</a>
+                <a href="https://www.linkedin.com/in/liang-chen-95577012a" target="_blank" rel="noopener">Tan Chen Liang</a>
               </li>
               <li>
-                <a href="#" target="_blank" rel="noopener">Associate Professor Dr. Adina Binti Abdullah</a>
+                <a href="#" rel="noopener">Associate Professor Dr. Adina Binti Abdullah</a>
               </li>
               <li>
-                <a href="#" target="_blank" rel="noopener">Nathaniel Lee</a>
+                <a href="#" rel="noopener">Nathaniel Lee</a>
               </li>
               <li>
-                <a href="#" target="_blank" rel="noopener">Chew PY</a>
+                <a href="#" rel="noopener">Chew PY</a>
               </li>
             </ul>
           </div>
@@ -402,22 +402,22 @@
                 <a href="https://www.linkedin.com/in/samueljklee/" target="_blank" rel="noopener">Samuel Lee</a>
               </li>
               <li>
-                <a href="#" target="_blank" rel="noopener">Kedai</a>
+                <a href="#" rel="noopener">Kedai</a>
               </li>
               <li>
                 <a href="https://www.linkedin.com/in/qi-xiang/" target="_blank" rel="noopener">Qi Xiang</a>
               </li>
               <li>
-                <a href="#" target="_blank" rel="noopener">Almond Heng</a>
+                <a href="#" rel="noopener">Almond Heng</a>
               </li>
               <li>
-                <a href="#" target="_blank" rel="noopener">Joshua Hui</a>
+                <a href="#" rel="noopener">Joshua Hui</a>
               </li>
               <li>
-                <a href="#" target="_blank" rel="noopener">Renyi Khor</a>
+                <a href="#" rel="noopener">Renyi Khor</a>
               </li>
               <li>
-                <a href="#" target="_blank" rel="noopener">Deojeff Lai</a>
+                <a href="#" rel="noopener">Deojeff Lai</a>
               </li>
               <li>
                 <a href="https://www.linkedin.com/in/zi-qing-a-809828150/" target="_blank" rel="noopener">Ang Zi Qing</a>
@@ -429,7 +429,7 @@
                 <a href="https://www.linkedin.com/in/ryantanzh/" target="_blank" rel="noopener">Ryan Tan</a>
               </li>
               <li>
-                <a href="#" target="_blank" rel="noopener">Roland Salunga</a>
+                <a href="#" rel="noopener">Roland Salunga</a>
               </li>
             </ul>
           </div>
@@ -439,7 +439,7 @@
             </h2>
             <ul>
               <li>
-                <a href="#" target="_blank" rel="noopener">Hazi</a>
+                <a href="#" rel="noopener">Hazi</a>
               </li>
               <li>
                 <a href="https://www.linkedin.com/in/vu-hai-dang-6157081a1/" target="_blank" rel="noopener">Tjjone98</a>
@@ -448,7 +448,7 @@
                 <a href="https://www.linkedin.com/in/daniellowjh" target="_blank" rel="noopener">Daniel Low</a>
               </li>
               <li>
-                <a href="#" target="_blank" rel="noopener">Guanhua Lee</a>
+                <a href="#" rel="noopener">Guanhua Lee</a>
               </li>
             </ul>
           </div>
