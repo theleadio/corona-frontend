@@ -18,7 +18,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'One stop platform for data and news related to 2019-nCov'
+        content: 'One stop platform for data and news related to COVID-19'
       },
       { name: 'msapplication-TileColor', content: '#da532c' },
       { name: 'theme-color', content: '#ffffff' },
@@ -27,14 +27,14 @@ export default {
       { property: 'og:type', content: 'website' },
       { property: 'og:url', content: 'https://www.coronatracker.com/' },
       { property: 'og:title', content: 'Corona Tracker' },
-      { property: 'og:description', content: 'One stop platform for data and news related to 2019-nCov' },
+      { property: 'og:description', content: 'One stop platform for data and news related to COVID-19' },
       { property: 'og:image', content: 'https://www.coronatracker.com/og-corona.png' },
 
       // Twitter
       { property: 'twitter:card', content: 'https://www.coronatracker.com/og-corona.png' },
       { property: 'twitter:url', content: 'https://www.coronatracker.com/' },
       { property: 'twitter:title', content: 'Corona Tracker' },
-      { property: 'twitter:description', content: 'One stop platform for data and news related to 2019-nCov' },
+      { property: 'twitter:description', content: 'One stop platform for data and news related to COVID-19' },
       { property: 'twitter:image', content: 'https://www.coronatracker.com/og-corona.png' },
     ],
     link: [

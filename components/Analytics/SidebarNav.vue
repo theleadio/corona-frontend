@@ -1,7 +1,7 @@
 <template>
   <div class="w-full lg:w-1/6 bg-white relative lg:min-h-screen px-5 py-3">
     <div class="xl:py-2">
-      <p class="text-xl font-bold">2019-nCoV {{ $t('Reports') }}</p>
+      <p class="text-xl font-bold">COVID-19 {{ $t('Reports') }}</p>
 
       <div v-for="link in links" :key="link.name" class="hidden lg:block pt-3">
         <nuxt-link :to="{ name: link.name }">

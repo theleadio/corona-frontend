@@ -4,7 +4,7 @@
 
     <div class="w-full lg:w-4/5 px-5 pt-2 bg-gray-200">
       <div class="pl-2">
-        <p class="text-2xl font-bold">2019-nCoV Predictive Analysis</p>
+        <p class="text-2xl font-bold">COVID-19 Predictive Analysis</p>
       </div>
     </div>
   </div>

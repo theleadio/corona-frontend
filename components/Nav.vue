@@ -60,7 +60,7 @@
         links: [
           { name: "index", display: 'menu.Home' },
           { name: "travel-alert", display: "menu.Travel Alert" },
-          { name: "causes", display: "menu.What is 2019-nCov" },
+          { name: "causes", display: "menu.What is COVID-19" },
           { name: "prevention", display: "menu.Prevention" },
           { name: "analytics", display: "menu.Analytics" },
           { name: "about", display: 'menu.About' }

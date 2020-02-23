@@ -9,7 +9,7 @@
       </p>
 
       <p class="pt-4">
-        {{ $t('It acts as a portal for the public to keep track of the latest news development about the 2019-nCov, alongside collecting data for further analysis. All the contents are handpicked, filtered, and curated by volunteers to our best extent to ensure that sources are reliable with minimal hoaxes and fake news, in the best benefit of the public. Natural Language Processing (NLP) is used to analyze trending content and identify meaningful topics over various news sources and social media platforms prior to being verified by our team.') }}
+        {{ $t('It acts as a portal for the public to keep track of the latest news development about the COVID-19, alongside collecting data for further analysis. All the contents are handpicked, filtered, and curated by volunteers to our best extent to ensure that sources are reliable with minimal hoaxes and fake news, in the best benefit of the public. Natural Language Processing (NLP) is used to analyze trending content and identify meaningful topics over various news sources and social media platforms prior to being verified by our team.') }}
       </p>
 
       <p class="pt-4">
@@ -63,7 +63,7 @@
               >
             </td>
             <td class="border px-4 py-2">
-              {{ $t('A report by Jasper Fuk-Woo Chan and colleagues, documented infections in health-care workers caring for patients with 2019-nCoV indicate human-to-human transmission and thus the risk of much wider spread of the disease.') }}
+              {{ $t('A report by Jasper Fuk-Woo Chan and colleagues, documented infections in health-care workers caring for patients with COVID-19 indicate human-to-human transmission and thus the risk of much wider spread of the disease.') }}
             </td>
             <td class="border px-4 py-2">The Lancet</td>
           </tr>
@@ -78,7 +78,7 @@
               >
             </td>
             <td class="border px-4 py-2">
-              {{ $t('For the third time in as many decades, a zoonotic coronavirus has crossed species to infect human populations. This virus, provisionally called 2019-nCoV, was first identified in Wuhan, China, in persons exposed to a seafood or wet market.') }}
+              {{ $t('For the third time in as many decades, a zoonotic coronavirus has crossed species to infect human populations. This virus, provisionally called COVID-19, was first identified in Wuhan, China, in persons exposed to a seafood or wet market.') }}
             </td>
             <td class="border px-4 py-2">
               The New England Journal of Medcine
@@ -91,7 +91,7 @@
                 target="_blank"
                 rel="noopener"
                 href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6"
-              >Wuhan Coronavirus (2019-nCoV) Global Cases (by JHU
+              >Wuhan Coronavirus (COVID-19) Global Cases (by JHU
                 CSSE)</a
               >
             </td>
