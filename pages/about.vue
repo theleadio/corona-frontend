@@ -299,9 +299,11 @@
             </h2>
             <ul>
               <li>
-                <a href="" target="_blank">Chin Hwee Ong</a>
+                <a href="https://www.linkedin.com/in/ongchinhwee" target="_blank" rel="noopener">Chin Hwee Ong</a>
               </li>
-              <li><a href="" target="_blank">Roland Salunga</a></li>
+              <li>
+                <a href="#" rel="noopener">Roland Salunga</a>
+              </li>
             </ul>
           </div>
           <div class="w-full md:w-1/4 member mb-4">
@@ -310,62 +312,40 @@
             </h2>
             <ul>
               <li>
-                <a
-                  href="https://www.linkedin.com/in/yiranjing/"
-                  target="_blank"
-                  rel="noopener"
-                >Yiran Jing</a
-                >
+                <a href="https://www.linkedin.com/in/yiranjing/" target="_blank" rel="noopener">Yiran Jing</a>
               </li>
               <li>
-                <a
-                  href="https://www.linkedin.com/in/kennykcy/"
-                  target="_blank"
-                  rel="noopener"
-                >Kenny Kang</a
-                >
+                <a href="https://www.linkedin.com/in/kennykcy/" target="_blank" rel="noopener">Kenny Kang</a>
               </li>
               <li>
-                <a
-                  href="https://www.linkedin.com/in/khursan"
-                  target="_blank"
-                >Sani</a
-                >
+                <a href="https://www.linkedin.com/in/khursan" target="_blank" rel="noopener">Sani</a>
               </li>
               <li>
-                <a
-                  href="http://linkedin.com/in/debbie-huang-b034a789"
-                  target="_blank"
-                >Debbie</a
-                >
+                <a href="http://linkedin.com/in/debbie-huang-b034a789" target="_blank" rel="noopener">Debbie</a>
               </li>
               <li>
-                <a
-                  href="https://www.linkedin.com/in/david-lee-guanhua/"
-                  target="_blank"
-                >Guanhua Lee</a
-                >
+                <a href="https://www.linkedin.com/in/david-lee-guanhua/" target="_blank" rel="noopener">Guanhua Lee</a>
               </li>
               <li>
-                <a
-                  href="https://www.linkedin.com/in/nikkingyh"
-                  target="_blank"
-                >Nikki</a
-                >
+                <a href="https://www.linkedin.com/in/nikkingyh" target="_blank" rel="noopener">Nikki</a>
               </li>
               <li>
-                <a
-                  href="https://www.linkedin.com/in/sypang/"
-                  target="_blank"
-                >Pang Shi Yong</a
-                >
+                <a href="https://www.linkedin.com/in/sypang/" target="_blank" rel="noopener">Pang Shi Yong</a>
               </li>
               <li>
-                <a
-                  href="https://linkedin.com/in/ongchinhwee"
-                  target="_blank"
-                >Chin Hwee Ong</a
-                >
+                <a href="https://www.linkedin.com/in/ongchinhwee" target="_blank" rel="noopener">Chin Hwee Ong</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/liang-chen-95577012a" target="_blank" rel="noopener">Tan Chen Liang</a>
+              </li>
+              <li>
+                <a href="#" rel="noopener">Associate Professor Dr. Adina Binti Abdullah</a>
+              </li>
+              <li>
+                <a href="#" rel="noopener">Nathaniel Lee</a>
+              </li>
+              <li>
+                <a href="#" rel="noopener">Chew PY</a>
               </li>
             </ul>
           </div>
@@ -374,17 +354,41 @@
               {{ $t('Team Engineering') }}
             </h2>
             <ul>
-              <li><a href="" target="_blank">Gibson Tang</a></li>
-              <li><a href="" target="_blank">Samuel Lee</a></li>
-              <li><a href="" target="_blank">Kedai</a></li>
-              <li><a href="" target="_blank">Qi Xiang</a></li>
-              <li><a href="" target="_blank">Almond Heng</a></li>
-              <li><a href="" target="_blank">Joshua Hui</a></li>
-              <li><a href="" target="_blank">Renyi Khor</a></li>
-              <li><a href="" target="_blank">Deojeff Lai</a></li>
-              <li><a href="" target="_blank">Ang Zi Qing</a></li>
               <li>
-                <a href="" target="_blank">Poon Chee Him/Shian</a>
+                <a href="https://www.linkedin.com/in/qi-xiang/" target="_blank" rel="noopener">Gibson Tang</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/samueljklee/" target="_blank" rel="noopener">Samuel Lee</a>
+              </li>
+              <li>
+                <a href="#" rel="noopener">Kedai</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/qi-xiang/" target="_blank" rel="noopener">Qi Xiang</a>
+              </li>
+              <li>
+                <a href="#" rel="noopener">Almond Heng</a>
+              </li>
+              <li>
+                <a href="#" rel="noopener">Joshua Hui</a>
+              </li>
+              <li>
+                <a href="#" rel="noopener">Renyi Khor</a>
+              </li>
+              <li>
+                <a href="#" rel="noopener">Deojeff Lai</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/zi-qing-a-809828150/" target="_blank" rel="noopener">Ang Zi Qing</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/poon-cheehim/" target="_blank" rel="noopener">Poon Chee Him/Shian</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/ryantanzh/" target="_blank" rel="noopener">Ryan Tan</a>
+              </li>
+              <li>
+                <a href="#" rel="noopener">Roland Salunga</a>
               </li>
             </ul>
           </div>
@@ -393,18 +397,30 @@
               {{ $t('Team Design') }}
             </h2>
             <ul>
-              <li><a href="" target="_blank">Hazi</a></li>
               <li>
-                <a
-                  href="https://www.linkedin.com/in/vu-hai-dang-6157081a1/"
-                  target="_blank"
-                >Tjjone98</a
-                >
+                <a href="#" rel="noopener">Hazi</a>
               </li>
-              <li><a href="" target="_blank">Daniel Low</a></li>
-              <li><a href="" target="_blank">Guanhua Lee</a></li>
+              <li>
+                <a href="https://www.linkedin.com/in/vu-hai-dang-6157081a1/" target="_blank" rel="noopener">Tjjone98</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/daniellowjh" target="_blank" rel="noopener">Daniel Low</a>
+              </li>
+              <li>
+                <a href="#" rel="noopener">Guanhua Lee</a>
+              </li>
             </ul>
           </div>
+        </div>
+        <div class="w-full md:w-1/4 member mb-4">
+          <h2 class="text-xl font-bold text-center">
+            Team Public Relation
+          </h2>
+          <ul>
+            <li>
+              <a href="https://www.linkedin.com/in/richardmoh/" target="_blank" rel="noopener">Richard Moh</a>
+            </li>
+          </ul>
         </div>
         <div>
           <a
