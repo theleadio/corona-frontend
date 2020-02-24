@@ -88,7 +88,9 @@
           { id: 'zh_TW', name: '繁體中文' },
           { id: 'ja', name: '日本語' },
           { id: 'id', name: 'Bahasa Indonesia' },
-          { id: 'vi', name: 'Tiếng Việt' }
+          { id: 'vi', name: 'Tiếng Việt' },
+          { id: 'th', name: 'ไทย' },
+          { id: 'ko', name: '한국어' }
         ],
         selectedLanguages: ['en']
       };
