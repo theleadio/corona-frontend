@@ -90,7 +90,8 @@
           { id: 'id', name: 'Bahasa Indonesia' },
           { id: 'vi', name: 'Tiếng Việt' },
           { id: 'th', name: 'ภาษาไทย' },
-          { id: 'ko', name: '코리언' }
+          { id: 'ko', name: '코리언' },
+          { id: 'it', name: 'Italiano' }
         ],
         selectedLanguages: ['en']
       };
