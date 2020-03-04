@@ -7,6 +7,8 @@
 ``` bash
 # install dependencies
 $ npm run install
+or for Mac
+$ npm install
 
 # Setup environment variables
 Copy `.env.example` to `.env`
