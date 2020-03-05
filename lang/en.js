@@ -24,6 +24,7 @@ export default {
   "and various international media": "and various international media",
   "Country": "Country",
   "Full list here": "Full list here",
+  "Cases identified on a cruise ship currently in Japanese territorial water.": "Cases identified on a cruise ship currently in Japanese territorial water.",
   "Steps": "Steps",
   "to prevent coronavirus": "to prevent coronavirus",
   "Read and share this with others": "Read and share this with others",

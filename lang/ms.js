@@ -24,6 +24,7 @@ export default {
   "and various international media": "dan pelbagai media antarabangsa",
   "Country": "Negara",
   "Full list here": "Senarai penuh disini",
+  "Cases identified on a cruise ship currently in Japanese territorial water.": "Cases identified on a cruise ship currently in Japanese territorial water.",
   "Steps": "Langkah-langkah",
   "to prevent coronavirus": "untuk menghalang coronavirus",
   "Read and share this with others": "Baca dan kongsi dengan yang lain",
