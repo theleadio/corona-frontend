@@ -14,14 +14,14 @@
 			<div
 				v-for="location in filteredLocations"
 				:key="location.name"
-				class="bg-gray-100 p-3 text-sm block"
+				class="bg-gray-100 p-3 text-sm block screening-centre-item"
 			>
 				<p class="leading-normal font-bold capitalize">
 					<i class="fas fa-map-marker-alt"></i> {{ location.name }}
 				</p>
 				<p class="text-xs">{{ location.address }}</p>
 				<p class="text-right font-semibold">
-					<i class="fas fa-phone"></i> {{ location.telNo }}
+					<a :href="`tel:${location.telNo}`"><i class="fas fa-phone"></i> {{ location.telNo }}</a>
 				</p>
 			</div>
 		</div>
@@ -145,4 +145,8 @@
 	};
 </script>
 
-<style scoped></style>
+<style scoped>
+	.screening-centre-item + .screening-centre-item {
+		border-top: 2px solid #edf2f7;
+	}
+</style>
