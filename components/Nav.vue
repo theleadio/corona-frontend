@@ -1,6 +1,6 @@
 <template>
   <nav v-sticky class="flex items-center flex-wrap bg-white text-primary">
-    <div class="container items-center font-bold text-lg">
+    <div class="container py-2 px-2 items-center font-bold text-lg">
       <div class="w-full flex items-center justify-between -my-2">
         <logo class="lg:flex"/>
         <div class="flex">
