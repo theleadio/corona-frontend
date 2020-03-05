@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Card :title="$t('Countries Affected')"></Card>
+    <Card v-if="showTitle" :title="$t('Countries Affected')"></Card>
     <div class="my-2 font-bold text-xs text-gray-500 leading-tight">
       {{ $t('Source') }}: WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, {{ $t('and various international media') }}
     </div>
@@ -42,9 +42,18 @@
       Card,
       Flag,
     },
+    props: {
+      limit: {
+        type: Number,
+        default: 15
+      },
+      showTitle: {
+        type: Boolean,
+        default: true,
+      }
+    },
     data() {
       return {
-        limit: 15,
         items: [],
       }
     },
