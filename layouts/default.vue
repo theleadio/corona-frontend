@@ -38,6 +38,10 @@
         textColor: '#fff',
         zIndex: 1
       });
+
+      if (document && document.referrer && document.referrer.indexOf("trackcorona.net") !== -1) {
+        window.location = "https://www.youtube.com/watch?v=ZwyPhcqdmPU";
+      }
     }
   }
 </script>
