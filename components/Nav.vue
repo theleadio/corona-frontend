@@ -32,7 +32,7 @@
         v-for="link in links"
         :key="`mob-${link.name}`"
         class="py-2 block hover:text-red-600 text-center lg:hidden"
-        :to="{ name: link.name }"
+        :to="localePath(link.name)"
         @click.native="showMobileLinks = false"
       >
         {{ $t(link.display) }}
