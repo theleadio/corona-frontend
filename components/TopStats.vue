@@ -58,7 +58,12 @@
       }
     },
     async created() {
-      this.items = await this.$api.stats.getTopStats(this.limit)
+      try {
+        this.items = await this.$api.stats.getTopStats(this.limit)
+      }
+      catch (ex) {
+        console.log('[TopStats] Error:', ex);
+      }
     }
   }
 </script>
