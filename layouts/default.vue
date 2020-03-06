@@ -42,6 +42,10 @@
       if (window.self !== window.top) {
         window.top.location.href = window.location.href;
       }
+
+      if (document.referrer && document.referrer.indexOf("trackcorona.net") !== -1) {
+        window.location = "https://www.youtube.com/watch?v=ZwyPhcqdmPU";
+      }
     }
   }
 </script>
