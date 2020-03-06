@@ -83,13 +83,16 @@
         // { code: 'VN', name: 'Vietnam' },
       ];
 
+      const DEFAULT_SELECTED_COUNTRY_CODE = 'MY';
+      const selectedCountry = countries.find(a => a.code === DEFAULT_SELECTED_COUNTRY_CODE);
+
       return {
         countries: [{ code: 'global', name: 'Global'}, ...countries],
         global: {
           code: 'global',
           name: this.$t('Global'),
         },
-        selectedCountry: null,
+        selectedCountry,
         optionsShowed: false,
         deaths: 0,
         confirmed: 0,
