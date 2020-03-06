@@ -1,6 +1,9 @@
 <template>
   <div class="container">
-    <logo class="lg:flex mb-4" />
+    <a href="/" target="_blank">
+      <logo class="lg:flex mb-4" style="pointer-events:none;" />
+    </a>
+
     <TopStats :limit="999" :show-title="false" />
   </div>
 </template>
