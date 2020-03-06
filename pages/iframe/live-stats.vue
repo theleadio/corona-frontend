@@ -45,6 +45,10 @@
         :deaths="deaths"
       />
     </div>
+
+    <div class="block text-center md:text-right mt-6 underline text-blue-500 font-semibold">
+      <a href="/" target="_blank">{{ $t('more details') }}</a>
+    </div>
   </div>
 </template>
 <script>
