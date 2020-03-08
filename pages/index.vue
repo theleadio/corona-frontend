@@ -24,7 +24,7 @@
 				<div class="my-4">
 					<HealthcareInstitutions :country="country.code" />
 
-					<div
+					<!--<div
 						class="mt-4 p-1 block justify-center text-sm rounded border border-gray-400"
 					>
 						<div
@@ -43,7 +43,7 @@
 								<span class="font-bold text-xl">Google Play</span>
 							</a>
 						</div>
-					</div>
+					</div>-->
 				</div>
 
 				<div class="my-4">
