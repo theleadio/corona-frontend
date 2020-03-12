@@ -37,6 +37,28 @@
         </ul>
       </div>
 
+      <div class="w-full md:w-2/5 h-full mr-2 align-middle relative">
+        <p class="mt-2 mb-2 text-sm font-semibold">
+          <span class="text-red-600 uppercase"><i class="far"></i></span>
+          <!-- <span v-if="numLastUpdated">[Last Update: {{new Date(numLastUpdated).toDateString()}}]</span> -->
+        </p>
+        <label class="block text-s font-bold mb-2">{{ $t('Language') }}</label>
+        
+
+        <ul class="absolute shadow text-gray-700 mt-1 z-50 w-full">
+          <li>
+            <a href="/" class="cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap">
+              <span class="ml-2">English</span>
+            </a>
+          </li>
+          <li>
+            <a href="ms" class="cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap">
+              <span class="ml-2">Malay</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
       <stats
         class="flex justify-center w-full md:justify-end mt-5 md:mt-0"
         :confirmed="confirmed"
