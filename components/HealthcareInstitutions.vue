@@ -139,7 +139,7 @@
 			this.$api.healthcareInstitutions
 				.getHealthcareInstitutions()
 				.then((data) => {
-					this.locations = data.hospitalsAndHealthcareProviders;
+					this.locations = data.hospitalsAndHealthcareProviders || [];
 				});
 		}
 	};
