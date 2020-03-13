@@ -113,11 +113,18 @@ export default {
     locales: [
       {
         code: 'en',
+        name: 'English',
         file: 'en.js',
       },
       {
         code: 'ms',
+        name: 'Bahasa Melayu',
         file: 'ms.js',
+      },
+      {
+        code: 'vi',
+        name: 'Tiếng Việt',
+        file: 'vi.js',
       }
     ],
     defaultLocale: 'en',
