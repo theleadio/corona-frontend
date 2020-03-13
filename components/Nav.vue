@@ -12,6 +12,7 @@
           >
             {{ $t(link.display) }}
           </nuxt-link>
+          <LanguageSelector />
         </div>
         <!--div class="capitalize">{{ currentPageName }}</div-->
         <button
@@ -37,16 +38,19 @@
       >
         {{ $t(link.display) }}
       </nuxt-link>
+      <LanguageSelector v-if="showMobileLinks" />
     </div>
   </nav>
 </template>
 
 <script>
   import Logo from '../components/Logo';
+  import LanguageSelector from './LanguageSelector'
 
   export default {
     name: "Nav",
     components: {
+      LanguageSelector,
       Logo
     },
     computed: {
