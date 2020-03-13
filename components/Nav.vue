@@ -3,7 +3,7 @@
     <div class="container py-2 px-2 items-center font-bold text-lg">
       <div class="w-full flex items-center justify-between -my-2">
         <logo class="lg:flex"/>
-        <div class="flex">
+        <div class="flex ml-auto mr-1">
           <nuxt-link
             v-for="link in links"
             :key="link.name"
@@ -38,7 +38,6 @@
       >
         {{ $t(link.display) }}
       </nuxt-link>
-      <LanguageSelector v-if="showMobileLinks" />
     </div>
   </nav>
 </template>
