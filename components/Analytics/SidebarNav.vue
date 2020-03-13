@@ -4,14 +4,14 @@
       <p class="text-xl font-bold">COVID-19 {{ $t('Reports') }}</p>
 
       <div v-for="link in links" :key="link.name" class="hidden lg:block pt-3">
-        <nuxt-link :to="{ name: link.name }">
+        <nuxt-link :to="localePath(link.name)">
           <i :class="'fa fa-' + link.icon" class="mr-2"></i>
           {{ $t(link.display) }}
         </nuxt-link>
       </div>
 
       <div v-for="link in links" :key="'mob-'+link.name" class="lg:hidden pt-3">
-        <nuxt-link :to="{ name: link.name }">
+        <nuxt-link :to="localePath(link.name)">
           <i :class="'fa fa-' + link.icon" class="mr-2"></i>
           {{ $t(link.display) }}
         </nuxt-link>

@@ -13,7 +13,7 @@
 					<div
 						class="mt-2 text-center underline text-blue-500 font-semibold"
 					>
-						<nuxt-link to="analytics">{{ $t('Full list here') }}</nuxt-link>
+						<nuxt-link :to="localePath('analytics')">{{ $t('Full list here') }}</nuxt-link>
 					</div>
 				</div>
 

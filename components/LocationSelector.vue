@@ -47,7 +47,7 @@
     </div>
 
     <div class="block text-center md:text-right mt-6 underline text-blue-500 font-semibold">
-      <nuxt-link to="/analytics">{{ $t('more details') }}</nuxt-link>
+      <nuxt-link :to="localePath('analytics')">{{ $t('more details') }}</nuxt-link>
     </div>
   </div>
 </template>
