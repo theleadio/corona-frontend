@@ -16,7 +16,7 @@
           <l-tile-layer :url="mapUrl" :noWrap="true"></l-tile-layer>
 
           <l-circle-marker
-            v-for="(loc, idx) in countries"
+            v-for="(loc, idx) in countriesForMapDisplay"
             :key="idx"
             :lat-lng="[+loc.lat, +loc.lng]"
             :stroke="false"
@@ -121,7 +121,10 @@ export default {
 
   computed: {
     countries () {
-      return this.data.filter(i => i.confirmed).map(item => ({
+      return this.data.filter(i => i.confirmed)
+    },
+    countriesForMapDisplay() {
+      return this.data.filter(i => i.confirmed && i.lat && i.lng).map(item => ({
         ...item,
         radius: this.scale(item.confirmed)
       }))
