@@ -118,6 +118,10 @@ export default {
       {
         code: 'ms',
         file: 'ms.js',
+      },
+      {
+        code: 'vi',
+        file: 'vi.js',
       }
     ],
     defaultLocale: 'en',
