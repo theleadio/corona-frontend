@@ -1,5 +1,5 @@
 <template>
-	<main class="container">
+	<main class="container" style="padding-bottom: 96px;">
 		<div class="flex flex-wrap -mx-2">
 			<div class="w-full md:w-2/3 px-2">
 				<LocationSelector v-model="country" />
@@ -24,6 +24,7 @@
 				<div class="my-4">
 					<HealthcareInstitutions :country="country.code" />
 
+					<BuyMeACoffee />
 					<!--<div
 						class="mt-4 p-1 block justify-center text-sm rounded border border-gray-400"
 					>
@@ -66,6 +67,7 @@
 	import TopStats from '~/components/TopStats';
 	import LearnPrevention from '~/components/LearnPrevention';
 	import HealthcareInstitutions from '~/components/HealthcareInstitutions';
+	import BuyMeACoffee from '~/components/BuyMeACoffee';
 
 	export default {
 		metaInfo: {
@@ -79,7 +81,8 @@
 			LocationSelector,
 			TopStats,
 			LearnPrevention,
-			HealthcareInstitutions
+			HealthcareInstitutions,
+			BuyMeACoffee,
 		},
 		mounted() {},
 		data: function() {
