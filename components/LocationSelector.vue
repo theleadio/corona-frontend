@@ -52,7 +52,7 @@
             </a>
           </li>
           <li>
-            <a href="ms" class="cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap">
+            <a href="/ms" class="cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap">
               <span class="ml-2">Malay</span>
             </a>
           </li>
