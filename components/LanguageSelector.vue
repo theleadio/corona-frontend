@@ -1,6 +1,6 @@
 <template>
   <div class="relative px-1 py-2 cursor-pointer">
-    <div class="flex px-2 py-2 bg-gray-200" @click="showOptions" v-on-clickaway="closeOptions">
+    <div class="flex px-2 py-2 bg-gray-200 rounded" @click="showOptions" v-on-clickaway="closeOptions">
       <div>{{ currentLocale.code.toUpperCase() }}</div>
       <div class="self-center ml-auto">
         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
