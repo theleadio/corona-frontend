@@ -1,6 +1,7 @@
 export default axios => ({
   getStats: (countryCode) => {
-    return axios.get(`/v2/stats?countryCode=${countryCode}`)
+    //return axios.get(`/v2/stats?countryCode=${countryCode}`)
+    return axios.get(`/v3/stats/bno?countryCode=${countryCode}`)
       .then(res => res.data);
   },
 
