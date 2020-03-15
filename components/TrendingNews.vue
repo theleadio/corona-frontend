@@ -92,7 +92,8 @@
           { id: 'th', name: 'ภาษาไทย' },
           { id: 'ko', name: '코리언' },
           { id: 'it', name: 'Italiano' },
-          { id: 'de', name: 'Deutsch' }
+          { id: 'de', name: 'Deutsch' },
+          { id: 'nl', name: 'Nederlands' }
         ],
         selectedLanguages: ['en']
       };
