@@ -2,12 +2,12 @@
   <div class="bg-white rounded border border-gray-400 p-1 w-full sm: w-1/2" >
     <div class="flex flex-wrap">  
       <div class="w-full sm:w-1/3">
-      <apexcharts ref="chart" type="donut" width="100%" height="150px" :options="options" :series="series"></apexcharts>
+      <apexcharts ref="chart" type="donut" width="100%" height="150px" :options="options" :series="series" ></apexcharts>
       </div>  
       <div class="w-full sm:w-2/3 flex flex-col py-2 pl-2 justify-center">
         <strong class="mb-2">Positive Rate</strong>
         <small class="mb-2">Time taken from confirmation to discharge</small>
-        <strong> {{ totalDays }} days</strong>
+        <strong> {{ days }} days</strong>
       </div>
     </div>
   </div>
@@ -20,12 +20,19 @@
 
 export default {
   name: "PositiveRate",
-  components: {
+  props:{
+    days: {
+      type: Number, 
+      default: 0,
+    },
+    series: {
+      type: Array,
+      required: true,
+    }
   },
   data: function() {
     return {
       totalDays: 11,
-      series: [46.1,53.9],
       options: {
         chart: {
           type: 'donut',
@@ -37,12 +44,29 @@ export default {
         fill:{
           colors: [ '#CCCCCC', '#4DAFF7']
         },
+        tooltip: {
+          enabled: false,
+        },
         dataLabels:{
           enabled: false,
+        },
+        states: {
+          hover: {
+              filter: {
+                  type: 'none',
+              }
+          },
+          active: {
+            allowMultipleDataPointsSelection: false,
+            filter: {
+                type: 'none',
+            }
+          },
         },
         plotOptions: {
           pie: {
             customScale: 0.9,
+            expandOnClick: false,
             donut: {
               size: '85%',
               labels: {
@@ -50,15 +74,20 @@ export default {
                 name: {
                   offsetY : 20,
                   color: "#828282",
+                  formatter: function (a, b, all) {
+                    return 'OFF TOTAL CASES';
+                  },
                 },
                 value:{
                   offsetY: -15,
                   fontSize: '25px',
                   color: "#000000",
+                  formatter: function (a,all) {
+                    return all.config.series[1] + "%";
+                  }
                 },
                 total: {
                   show: true,
-                  
                   label: 'OFF TOTAL CASES',
                   fontSize: '9px',
                   formatter: function (value) {
@@ -72,16 +101,6 @@ export default {
         },
       },
     };
-  },
-  methods: {
-    
-    showOptions(){
-      this.optionsShowed = true;
-    },
-    
-  },
-  created() {
-    
   },
 };
 </script>

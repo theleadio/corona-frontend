@@ -7,7 +7,7 @@
       <div class="w-full sm:w-2/3 flex flex-col py-2 pl-2 justify-center">
         <strong class="mb-2">Fatality Rate</strong>
         <small class="mb-2">Time taken from confirmation to discharge</small>
-        <strong>10.0 days</strong>
+        <strong>{{ days }} days</strong>
       </div>
     </div>
   </div>
@@ -20,12 +20,18 @@
 
 export default {
   name: "PositiveRate",
-  components: {
+  props:{
+    days: {
+      type: Number, 
+      default: 0,
+    },
+    series: {
+      type: Array,
+      required: true,
+    }
   },
   data: function() {
     return {
-      
-      series: [46.1,53.9],
       options: {
         chart: {
           type: 'donut',
@@ -37,12 +43,29 @@ export default {
         fill:{
           colors: [ '#CCCCCC', '#FF9AB2']
         },
+        tooltip: {
+          enabled: false,
+        },
         dataLabels:{
           enabled: false,
+        },
+        states: {
+          hover: {
+              filter: {
+                  type: 'none',
+              }
+          },
+          active: {
+            allowMultipleDataPointsSelection: false,
+            filter: {
+                type: 'none',
+            }
+          },
         },
         plotOptions: {
           pie: {
             customScale: 0.9,
+            expandOnClick: false,
             donut: {
               size: '85%',
               labels: {
@@ -50,15 +73,20 @@ export default {
                 name: {
                   offsetY : 20,
                   color: "#828282",
+                  formatter: function (a, b, all) {
+                    return 'OFF TOTAL CASES';
+                  },
                 },
                 value:{
                   offsetY: -15,
                   fontSize: '25px',
                   color: "#000000",
+                  formatter: function (a,all) {
+                    return all.config.series[1] + "%";
+                  }
                 },
                 total: {
                   show: true,
-                  
                   label: 'OFF TOTAL CASES',
                   fontSize: '9px',
                   formatter: function (value) {
@@ -72,16 +100,6 @@ export default {
         },
       },
     };
-  },
-  methods: {
-    
-    showOptions(){
-      this.optionsShowed = true;
-    },
-    
-  },
-  created() {
-    
   },
 };
 </script>
