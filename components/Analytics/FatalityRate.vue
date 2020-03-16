@@ -2,7 +2,9 @@
   <div class="bg-white rounded border border-gray-400 p-1 py-3 w-full sm: w-1/2" >
     <div class="flex flex-wrap">  
       <div class="w-full sm:w-1/3">
-      <apexcharts ref="chart" type="donut" width="100%" height="150px" :options="options" :series="series"></apexcharts>
+        <client-only placeholder="Loading...">
+          <apexcharts ref="chart" type="donut" width="100%" height="150px" :options="options" :series="series"></apexcharts>
+        </client-only>
       </div>  
       <div class="w-full sm:w-2/3 flex flex-col py-2 pl-2 justify-center">
         <strong class="mb-2">{{ $t('Fatality Rate') }}</strong>

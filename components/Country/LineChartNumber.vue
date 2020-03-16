@@ -11,11 +11,13 @@
         </p>
       </div>
       <div class="z-0 chart-wrapper -mb-4">
-        <apexcharts
-          :options="chartOptions"
-          :series="series"
-          :height="height"
-        ></apexcharts>
+        <client-only placeholder="Loading...">
+          <apexcharts
+            :options="chartOptions"
+            :series="series"
+            :height="height"
+          ></apexcharts>
+        </client-only>
       </div>
     </div>
   </div>
