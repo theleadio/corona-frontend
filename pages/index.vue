@@ -1,8 +1,10 @@
 <template>
 	<main class="container" style="padding-bottom: 96px;">
 		<div class="flex flex-wrap -mx-2">
+
 			<div class="w-full md:w-2/3 px-2">
 				<LocationSelector v-model="country" />
+								
 				<Search class="mt-4 mb-8" />
 				<TrendingNews :country="country" />
 			</div>
@@ -69,6 +71,9 @@
 	import HealthcareInstitutions from '~/components/HealthcareInstitutions';
 	import BuyMeACoffee from '~/components/BuyMeACoffee';
 
+
+	
+
 	export default {
 		metaInfo: {
 			title: 'Home'
@@ -83,6 +88,7 @@
 			LearnPrevention,
 			HealthcareInstitutions,
 			BuyMeACoffee,
+			
 		},
 		mounted() {},
 		data: function() {
