@@ -1,5 +1,9 @@
 require('dotenv').config();
 
+const { locales, countries } = require('./utils/constants.js');
+const { generateRoutes } = require('./utils/generateRoutes.js');
+const routes = generateRoutes(locales, countries);
+
 export default {
   // mode: 'spa',
   /*
@@ -70,6 +74,9 @@ export default {
     '~/plugins/vuejs-paginate.client.js',
     '~/plugins/vue-apexcharts.client.js',
   ],
+  generate: {
+    routes,
+  },
   /*
    ** Nuxt.js dev-modules
    */
@@ -110,28 +117,7 @@ export default {
   },
   /* i18n module configuration */
   i18n: {
-    locales: [
-      {
-        code: 'en',
-        name: 'English',
-        file: 'en.js',
-      },
-      {
-        code: 'ms',
-        name: 'Bahasa Melayu',
-        file: 'ms.js',
-      },
-      {
-        code: 'vi',
-        name: 'Tiếng Việt',
-        file: 'vi.js',
-      },
-      {
-        code: 'ar',
-        name: 'العربية',
-        file: 'ar.js',
-      },
-    ],
+    locales,
     defaultLocale: 'en',
     lazy: true,
     langDir: 'lang/'
