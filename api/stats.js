@@ -13,4 +13,9 @@ export default axios => ({
     return axios.get(`/v2/stats/top?limit=${limit}`)
       .then(res => res.data);
   },
+
+  getDiffStatsCountry: (countryCode) => {
+    return axios.get(`/v2/stats/diff/country`)
+      .then(res => res.data);
+  }
 });
