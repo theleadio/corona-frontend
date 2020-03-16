@@ -125,7 +125,12 @@ export default {
         code: 'vi',
         name: 'Tiếng Việt',
         file: 'vi.js',
-      }
+      },
+      {
+        code: 'ar',
+        name: 'العربية',
+        file: 'ar.js',
+      },
     ],
     defaultLocale: 'en',
     lazy: true,
