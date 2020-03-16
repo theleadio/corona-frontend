@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-1 relative overflow-hidden mb-8 ml-4 mr-4">
+  <div class="flex-1 relative overflow-hidden mb-8">
     <div class="border border-gray-400 p-4 rounded relative ">
       <div class="z-10 relative">
         <div class="text-gray-900 font-bold text-xl mb-2">{{ title }}</div>
