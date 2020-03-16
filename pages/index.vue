@@ -1,8 +1,19 @@
 <template>
 	<main class="container" style="padding-bottom: 96px;">
+		<div class="flex flex-wrap">
+			<div class="w-full md:w-1/2">
+				<PositiveFatalityStats />
+			</div>
+			<div class="w-full md:w-1/2">
+				<!-- <PositiveFatalityStats /> -->
+			</div>
+		</div>
 		<div class="flex flex-wrap -mx-2">
+
 			<div class="w-full md:w-2/3 px-2">
 				<LocationSelector v-model="country" />
+				<PositiveRate />
+				
 				<Search class="mt-4 mb-8" />
 				<TrendingNews :country="country" />
 			</div>
@@ -68,6 +79,11 @@
 	import LearnPrevention from '~/components/LearnPrevention';
 	import HealthcareInstitutions from '~/components/HealthcareInstitutions';
 	import BuyMeACoffee from '~/components/BuyMeACoffee';
+	import PositiveRate from '~/components/Analytics/PositiveRate';
+	import PositiveFatalityStats from '~/components/PositiveFatalityStats';
+
+
+	
 
 	export default {
 		metaInfo: {
@@ -83,6 +99,9 @@
 			LearnPrevention,
 			HealthcareInstitutions,
 			BuyMeACoffee,
+			PositiveRate,
+			PositiveFatalityStats,
+			
 		},
 		mounted() {},
 		data: function() {
