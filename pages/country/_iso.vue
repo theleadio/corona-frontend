@@ -2,22 +2,18 @@
   <div class="flex flex-wrap">
     <div class="w-full px-5 pt-2">
       <div class="flex flex-wrap">
-        <div class="w-full lg:w-1/2 px-2">
-            <Overview :info="overviewInfo"></Overview>
-          </div>
-        <div class="w-full lg:w-1/2 px-2">
-            <div class="flex flex-wrap">
-              <div class="w-full lg:w-1/2">
-                <p>Fatality Rate Component Placeholder</p>
-              </div>
-              <div class="w-full lg:w-1/2">
-                <p>Positive Rate Component Placeholder</p>
-              </div>
-            </div>
-          </div>
+        <div class="w-full lg:w-1/2 p-2">
+          <Overview :info="overviewInfo"></Overview>
         </div>
+        <div class="w-full lg:w-1/4 p-2">
+          <FatalityRate :days="11" :series="[46.5,53.5]"/>
+        </div>
+        <div class="w-full lg:w-1/4 p-2">
+          <PositiveRate :days="10" :series="[46.1,53.9]"/>
+        </div>
+      </div>
       <div class="flex flex-wrap">
-        <div class="w-full md:w-1/2 lg:w-1/4 px-2">
+        <div class="w-full md:w-1/2 lg:w-1/4 p-2">
           <line-chart-number
             :height="180"
             :data="[0, 10, 20, 10, 40, 20, 50, 60]"
@@ -27,7 +23,7 @@
             number="148"
           />
         </div>
-        <div class="w-full md:w-1/2 lg:w-1/4 px-2">
+        <div class="w-full md:w-1/2 lg:w-1/4 p-2">
           <line-chart-number
             :height="180"
             :data="[0, 10, 20, 10, 40, 20, 50, 60]"
@@ -37,7 +33,7 @@
             number="82"
           />
         </div>
-        <div class="w-full md:w-1/2 lg:w-1/4 px-2">
+        <div class="w-full md:w-1/2 lg:w-1/4 p-2">
           <line-chart-number
             :height="180"
             :data="[0, 10, 20, 10, 40, 20, 50, 60]"
@@ -53,13 +49,17 @@
 </template>
 
 <script>
-import Overview from '~/components/Country/Overview'
+import FatalityRate from '../../components/Analytics/FatalityRate'
 import LineChartNumber from '~/components/Country/LineChartNumber'
+import Overview from '~/components/Country/Overview'
+import PositiveRate from '../../components/Analytics/PositiveRate'
 
 export default {
   components: {
+    FatalityRate,
     LineChartNumber,
     Overview,
+    PositiveRate,
    },
 
   mounted () {
