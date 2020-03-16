@@ -103,5 +103,14 @@ export default {
 	'Team Research': 'Nhóm nghiên cứu',
 	'Team Engineering': 'Nhóm kĩ sư',
 	'Team Design': 'Nhóm thiết kế',
-	'View more': 'Xem thêm'
+	'View more': 'Xem thêm',
+
+	"Serious Cases": "Serious Cases",
+	"in ICU": "in ICU",
+	"Positive Rate": "Positive Rate",
+	"Fatality Rate": "Fatality Rate",
+	"Time taken from confirmation to discharge": "Time taken from confirmation to discharge",
+	"{number} days": "{number} days",
+	"OF TOTAL CASES": "OF TOTAL CASES",
+	"+{number} since yesterday": "+{number} since yesterday"
 };

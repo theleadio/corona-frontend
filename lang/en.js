@@ -83,4 +83,13 @@ export default {
   "Team Engineering": "Team Engineering",
   "Team Design": "Team Design",
   "View more": "View more",
+
+  "Serious Cases": "Serious Cases",
+  "in ICU": "in ICU",
+  "Positive Rate": "Positive Rate",
+  "Fatality Rate": "Fatality Rate",
+  "Time taken from confirmation to discharge": "Time taken from confirmation to discharge",
+  "{number} days": "{number} days",
+  "OF TOTAL CASES": "OF TOTAL CASES",
+  "+{number} since yesterday": "+{number} since yesterday"
 };

@@ -1,13 +1,13 @@
 <template>
-  <div class="bg-white rounded border border-gray-400 p-1 w-full sm: w-1/2" >
+  <div class="bg-white rounded border border-gray-400 p-1 py-3 w-full sm: w-1/2" >
     <div class="flex flex-wrap">  
       <div class="w-full sm:w-1/3">
       <apexcharts ref="chart" type="donut" width="100%" height="150px" :options="options" :series="series" ></apexcharts>
       </div>  
       <div class="w-full sm:w-2/3 flex flex-col py-2 pl-2 justify-center">
-        <strong class="mb-2">Positive Rate</strong>
-        <small class="mb-2">Time taken from confirmation to discharge</small>
-        <strong> {{ days }} days</strong>
+        <strong class="mb-2">{{ $t('Positive Rate') }}</strong>
+        <small class="mb-2">{{ $t('Time taken from confirmation to discharge') }}</small>
+        <strong>{{ $t('{number} days', { number: days }) }}</strong>
       </div>
     </div>
   </div>
@@ -74,8 +74,8 @@ export default {
                 name: {
                   offsetY : 20,
                   color: "#828282",
-                  formatter: function (a, b, all) {
-                    return 'OFF TOTAL CASES';
+                  formatter: (a, b, all) => {
+                    return this.$t('OF TOTAL CASES');
                   },
                 },
                 value:{
@@ -88,7 +88,7 @@ export default {
                 },
                 total: {
                   show: true,
-                  label: 'OFF TOTAL CASES',
+                  label: this.$t('OF TOTAL CASES'),
                   fontSize: '9px',
                   formatter: function (value) {
                     return value.config.series[1] + "%";
