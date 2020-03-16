@@ -1,13 +1,5 @@
 <template>
 	<main class="container" style="padding-bottom: 96px;">
-		<div class="flex flex-wrap">
-			<div class="w-full md:w-1/2">
-				<PositiveFatalityStats />
-			</div>
-			<div class="w-full md:w-1/2">
-				<!-- <PositiveFatalityStats /> -->
-			</div>
-		</div>
 		<div class="flex flex-wrap -mx-2">
 
 			<div class="w-full md:w-2/3 px-2">
@@ -78,7 +70,6 @@
 	import LearnPrevention from '~/components/LearnPrevention';
 	import HealthcareInstitutions from '~/components/HealthcareInstitutions';
 	import BuyMeACoffee from '~/components/BuyMeACoffee';
-	import PositiveFatalityStats from '~/components/PositiveFatalityStats';
 
 
 	
@@ -97,7 +88,6 @@
 			LearnPrevention,
 			HealthcareInstitutions,
 			BuyMeACoffee,
-			PositiveFatalityStats,
 			
 		},
 		mounted() {},
