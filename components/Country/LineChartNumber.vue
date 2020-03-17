@@ -1,7 +1,7 @@
 <template>
   <div class="flex-1 relative overflow-hidden">
     <div class="border border-gray-400 p-4 rounded relative ">
-      <div class="z-10 relative">
+      <div class="relative">
         <div class="text-gray-900 font-bold text-xl mb-2">{{ $t(title) }}</div>
         <div class="text-gray-900 font-bold text-4xl mb-2">{{ number }}</div>
         <p class="text-gray-700 text-base">

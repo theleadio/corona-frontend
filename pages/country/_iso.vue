@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-wrap">
+  <div class="flex flex-wrap" style="padding-bottom: 96px;">
     <div class="w-full px-5 pt-2">
       <div class="flex flex-wrap">
         <div class="w-full lg:w-1/2 p-2">
@@ -45,8 +45,8 @@
         </div>
       </div>
       <div class="flex flex-wrap">
-        <div class="w-3/4"></div>
-        <div class="w-1/4">
+        <div class="w-full md:w-3/4 p-2"></div>
+        <div class="w-full md:w-1/4 p-2">
           <client-only>
             <TwitterFeed twitter-handle="thewuhanvirus"/>
           </client-only>
@@ -62,14 +62,15 @@ import LineChartNumber from '~/components/Country/LineChartNumber'
 import Overview from '~/components/Country/Overview'
 import PositiveRate from '../../components/Analytics/PositiveRate'
 import TwitterFeed from '~/components/TwitterFeed'
+
 export default {
   components: {
     FatalityRate,
     LineChartNumber,
     Overview,
     PositiveRate,
-    TwitterFeed
-   },
+    TwitterFeed,
+  },
 
   mounted () {
     // Method calls should use route params to get the data
