@@ -44,6 +44,14 @@
           />
         </div>
       </div>
+      <div class="flex flex-wrap">
+        <div class="w-3/4"></div>
+        <div class="w-1/4">
+          <client-only>
+            <TwitterFeed twitter-handle="thewuhanvirus"/>
+          </client-only>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -53,13 +61,14 @@ import FatalityRate from '../../components/Analytics/FatalityRate'
 import LineChartNumber from '~/components/Country/LineChartNumber'
 import Overview from '~/components/Country/Overview'
 import PositiveRate from '../../components/Analytics/PositiveRate'
-
+import TwitterFeed from '~/components/TwitterFeed'
 export default {
   components: {
     FatalityRate,
     LineChartNumber,
     Overview,
     PositiveRate,
+    TwitterFeed
    },
 
   mounted () {
