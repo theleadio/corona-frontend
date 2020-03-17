@@ -6,10 +6,10 @@
           <Overview :info="overviewInfo"></Overview>
         </div>
         <div class="w-full lg:w-1/4 p-2">
-          <FatalityRate :days="11" :series="[46.5,53.5]"/>
+          <FatalityRate :days="fatalityRate.days" :series="fatalityRate.data"/>
         </div>
         <div class="w-full lg:w-1/4 p-2">
-          <PositiveRate :days="10" :series="[46.1,53.9]"/>
+          <PositiveRate :days="positiveRate.days" :series="positiveRate.data"/>
         </div>
       </div>
       <div class="flex flex-wrap">
@@ -73,9 +73,7 @@ export default {
   },
 
   mounted () {
-    // Method calls should use route params to get the data
-    // ISO country code: this.$route.params.iso
-    this.loadDiffStats()
+    this.loadDiffStats(this.$route.params.iso)
   },
 
   data () {
@@ -86,8 +84,16 @@ export default {
         deaths: 0,
         diffDeaths: 0,
         recovered: 0,
-        diffRecovered: 0,
-      }
+        diffRecovered: 0
+      },
+      fatalityRate: {
+        days: 0,
+        data:[]
+      },
+      positiveRate: {
+        days: 0,
+        data:[]
+      },
     }
   },
 
@@ -97,21 +103,28 @@ export default {
 
   methods: {
 
-    // Ideally this method and underlying API call should receive "ISO code" of the country to route params
-    // and URL to access this page for Singapore could be https://coronatracker.com/country/sg
-    // Needs little refactoring after we have diff stats API in place filtered by the country
-    loadDiffStats(countryCode = "Singapore"){
+    loadDiffStats(countryCode){
       this.$api.stats.getDiffStatsCountry(countryCode)
-      .then(data => {
-        // This is a workaround. Current api returns data for all countries
-        // without the country ISO code in the results
-        const info = data.find(m => m.countryName == countryCode)
+      .then(info => {
         this.overviewInfo.confirmed = info.todayConfirmed
-        this.overviewInfo.recovered = info.todayRecover
-        this.overviewInfo.deaths = info.todayDeath
+        this.overviewInfo.recovered = info.todayRecovered
+        this.overviewInfo.deaths = info.todayDeaths
         this.overviewInfo.diffConfirmed = info.diffConfirmed
-        this.overviewInfo.diffRecovered = info.diffRecover
-        this.overviewInfo.diffDeaths = info.diffDeath
+        this.overviewInfo.diffRecovered = info.diffRecovered
+        this.overviewInfo.diffDeaths = info.diffDeaths
+
+        // Data prep for FR and PR components
+        const FRU = info.tdyFR.toFixed(1)
+        const PRU = info.tdyPR.toFixed(1)
+        const FRL = 100-FRU
+        const PRL = 100-PRU
+
+        // Days information is hard-coded for now
+        this.fatalityRate.days = 10
+        this.fatalityRate.data = [Number(FRL),Number(FRU)]
+        // Days information is hard-coded for now
+        this.positiveRate.days = 10
+        this.positiveRate.data = [Number(PRL), Number(PRU)]
       })
     },
   }
