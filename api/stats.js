@@ -15,7 +15,7 @@ export default axios => ({
   },
 
   getDiffStatsCountry: (countryCode) => {
-    return axios.get(`/v2/stats/diff/country`)
+    return axios.get(`/v3/stats/bno/diff/country?countryCode=${countryCode}`)
       .then(res => res.data);
   }
 });

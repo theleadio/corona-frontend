@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-full rounded shadow-md bg-white p-3">
+  <div class="max-w-full rounded border border-gray-400 bg-white p-3">
     <p class="text-xl font-bold pl-2">{{ $t('Overview') }}</p>
     <div class="flex flex-col lg:flex-row">
       <div class="px-5 text-center">
