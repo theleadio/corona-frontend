@@ -41,7 +41,8 @@ export default {
 
   "What is COVID-19?": "Apa itu COVID-19?",
 
-  "We will update this page with resources related to nCov prevention, here is a quick guide from WHO.": "Kami akan mengemaskini laman sesawang ini dengan sumber yang berkaitan dengan nCov, berikut adalah maklumat ringkas dari",
+  "We will update this page with resources related to nCov prevention, here is a quick guide from": "Kami akan mengemaskini laman sesawang ini dengan sumber yang berkaitan dengan nCov, berikut adalah maklumat ringkas dari",
+  "WHO": "WHO",
 
   "Overview": "Secara Keseluruhan",
   "Reports": "Senarai Laporan",
