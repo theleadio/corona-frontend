@@ -1,6 +1,5 @@
 export default axios => ({
   getStats: (countryCode) => {
-    //return axios.get(`/v2/stats?countryCode=${countryCode}`)
     return axios.get(`/v3/stats/bno?countryCode=${countryCode}`)
       .then(res => res.data);
   },
@@ -14,8 +13,13 @@ export default axios => ({
       .then(res => res.data);
   },
 
-  getDiffStatsCountry: (countryCode) => {
-    return axios.get(`/v3/stats/bno/diff/country?countryCode=${countryCode}`)
+  getTotalCasesByCountry: (countryCode) => {
+    return axios.get(`/v3/stats/bno/total_daily_cases/country?countryCode=${countryCode}`)
       .then(res => res.data);
+  },
+
+  getDailyCasesByCountry: (countryCode) => {
+    return axios.get(`/v3/stats/bno/daily_cases/country?countryCode=${countryCode}`)
+    .then(res => res.data);
   }
 });
