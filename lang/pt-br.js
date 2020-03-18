@@ -41,7 +41,8 @@ export default {
 
   "What is COVID-19?": "O que é o COVID-19?",
 
-  "We will update this page with resources related to nCov prevention, here is a quick guide from WHO.": "Nós iremos atualizar essa página com referências relacionadas à prevenção do coronavírus, aqui está um guia rápido da OMS.",
+  "We will update this page with resources related to nCov prevention, here is a quick guide from": "Nós iremos atualizar essa página com referências relacionadas à prevenção do coronavírus, aqui está um guia rápido da",
+  "WHO": "OMS",
 
   "Overview": "Geral",
   "Reports": "Relatórios",

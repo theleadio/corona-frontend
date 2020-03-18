@@ -45,8 +45,9 @@ export default {
 
 	'What is COVID-19?': 'COVID-19 là gì?',
 
-	'We will update this page with resources related to nCov prevention, here is a quick guide from WHO.':
-		'Chúng tôi sẽ cập nhật với các bên liên quan đến phòng chống COVID-19, đây là hướng dẫn nhanh từ WHO.',
+	'We will update this page with resources related to nCov prevention, here is a quick guide from':
+		'Chúng tôi sẽ cập nhật với các bên liên quan đến phòng chống COVID-19, đây là hướng dẫn nhanh từ',
+	'WHO': 'WHO',
 
 	Overview: 'Tổng quan',
 	Reports: 'Báo cáo',
