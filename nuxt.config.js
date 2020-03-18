@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const { locales, COUNTRIES } = require('./utils/constants.js');
+const { defaultLocale, locales, COUNTRIES } = require('./utils/constants.js');
 const { generateRoutes } = require('./utils/generateRoutes.js');
 const routes = generateRoutes(locales, COUNTRIES);
 
@@ -118,7 +118,7 @@ export default {
   /* i18n module configuration */
   i18n: {
     locales,
-    defaultLocale: 'en',
+    defaultLocale,
     lazy: true,
     langDir: 'lang/'
   },
