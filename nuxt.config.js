@@ -117,7 +117,28 @@ export default {
   },
   /* i18n module configuration */
   i18n: {
-    locales,
+    locales: [
+      {
+        code: 'en',
+        name: 'English',
+        file: 'en.js',
+      },
+      {
+        code: 'ms',
+        name: 'Bahasa Melayu',
+        file: 'ms.js',
+      },
+      {
+        code: 'ptbr',
+        name: 'Português (Brasil)',
+        file: 'pt-br.js',
+      },
+      {
+        code: 'vi',
+        name: 'Tiếng Việt',
+        file: 'vi.js',
+      }
+    ],
     defaultLocale: 'en',
     lazy: true,
     langDir: 'lang/'
