@@ -86,12 +86,15 @@ export default {
   'Team Pulic Relations': 'Team Public Relations',
   "View more": "Lain-lain",
 
-  "Serious Cases": "Serious Cases",
-  "in ICU": "in ICU",
-  "Positive Rate": "Positive Rate",
   "Fatality Rate": "Fatality Rate",
+  "Positive Rate": "Positive Rate",
+  "OF TOTAL CASES": "OF TOTAL CASES",
   "Time taken from confirmation to discharge": "Time taken from confirmation to discharge",
   "{number} days": "{number} days",
-  "OF TOTAL CASES": "OF TOTAL CASES",
-  "+{number} since yesterday": "+{number} since yesterday"
+  "+{number} since yesterday": "+{number} since yesterday",
+  "Critical Cases": "Critical Cases",
+  "in ICU": "in ICU",
+  "Cases Currently In Hospital": "Cases Currently In Hospital",
+  "Cases Recovered": "Cases Recovered",
+  "of total cases": "of total cases"
 };

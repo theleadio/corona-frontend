@@ -85,4 +85,16 @@ export default {
   "Team Design": "Time de Design",
   "Team Pulic Relations": "Time de Relações Públicas",
   "View more": "Ver mais",
+
+  "Fatality Rate": "Fatality Rate",
+  "Positive Rate": "Positive Rate",
+  "OF TOTAL CASES": "OF TOTAL CASES",
+  "Time taken from confirmation to discharge": "Time taken from confirmation to discharge",
+  "{number} days": "{number} days",
+  "+{number} since yesterday": "+{number} since yesterday",
+  "Critical Cases": "Critical Cases",
+  "in ICU": "in ICU",
+  "Cases Currently In Hospital": "Cases Currently In Hospital",
+  "Cases Recovered": "Cases Recovered",
+  "of total cases": "of total cases"
 };
