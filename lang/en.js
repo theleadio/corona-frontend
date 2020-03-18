@@ -82,6 +82,7 @@ export default {
   "Team Research": "Team Research",
   "Team Engineering": "Team Engineering",
   "Team Design": "Team Design",
+  "Team Pulic Relations": "Team Public Relations",
   "View more": "View more",
 
   "Serious Cases": "Serious Cases",
