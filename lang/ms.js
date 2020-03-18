@@ -82,5 +82,6 @@ export default {
   "Team Research": "Pasukan Penyelidikan",
   "Team Engineering": "Pasukan Kejuruteraan",
   "Team Design": "Pasukan Reka Bentuk",
+  'Team Pulic Relations': 'Team Public Relations',
   "View more": "Lain-lain",
 };
