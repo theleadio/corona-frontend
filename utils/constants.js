@@ -1,4 +1,4 @@
-export const countries = [
+export const COUNTRIES = [
   { code: 'CN', name: 'China', urlAliases: ['cn', 'china'] },
   { code: 'HK', name: 'Hong Kong', urlAliases: ['hk', 'hong-kong'] },
   { code: 'ID', name: 'Indonesia', urlAliases: ['id', 'indonesia'] },
@@ -10,6 +10,7 @@ export const countries = [
   { code: 'TH', name: 'Thailand', urlAliases: ['th', 'thailand'] },
   { code: 'TW', name: 'Taiwan', urlAliases: ['tw', 'taiwan'] },
   { code: 'VN', name: 'Vietnam', urlAliases: ['vn', 'vietnam'] },
+  { code: 'IT', name: 'Italy', urlAliases: ['it', 'italy'] },
 ];
 
 export const locales = [

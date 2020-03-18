@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white rounded border border-gray-400 p-1 py-3 w-full sm: w-1/2" >
+  <div class="bg-white rounded border border-gray-400 p-1 w-full sm: w-1/2" >
     <div class="flex flex-wrap">
       <div class="w-full sm:w-1/2">
         <client-only placeholder="Loading...">
@@ -21,7 +21,7 @@
 <script>
 
 export default {
-  name: "PositiveRate",
+  name: "FatalityRate",
   props:{
     days: {
       type: Number,
