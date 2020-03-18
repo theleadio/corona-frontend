@@ -1,8 +1,8 @@
 require('dotenv').config();
 
-const { locales, countries } = require('./utils/constants.js');
+const { locales, COUNTRIES } = require('./utils/constants.js');
 const { generateRoutes } = require('./utils/generateRoutes.js');
-const routes = generateRoutes(locales, countries);
+const routes = generateRoutes(locales, COUNTRIES);
 
 export default {
   // mode: 'spa',

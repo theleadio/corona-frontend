@@ -1,6 +1,12 @@
 <template>
   <div class="flex flex-wrap" style="padding-bottom: 96px;">
-    <div class="w-full px-5 pt-2">
+    <div class="px-5 text-center" v-if="pageState === PAGE_STATES.LOADING">
+      Loading...
+    </div>
+    <div class="px-5 text-center" v-else-if="pageState === PAGE_STATES.HAS_ERROR">
+      {{error}}
+    </div>
+    <div class="w-full px-5 pt-2" v-else-if="pageState === PAGE_STATES.HAS_FETCHED">
       <div class="flex flex-wrap">
         <div class="w-full lg:w-1/2 p-2">
           <Overview :info="overviewInfo"></Overview>
@@ -13,13 +19,17 @@
         </div>
       </div>
       <div class="flex flex-wrap">
+<!--        <div class="w-full md:w-1/2 lg:w-1/4 p-2">-->
+<!--          <growth-rate :confirmed="overviewInfo.confirmed"-->
+<!--                       :ytdConfirmed="overviewInfo.diffConfirmed"/>-->
+<!--        </div>-->
         <div class="w-full md:w-1/2 lg:w-1/3 p-2">
           <line-chart-number
             :height="180"
             :data="[0, 10, 20, 10, 40, 20, 50, 60]"
-            title="Critical Cases"
+            :title="$t('Serious Cases')"
             :subtitleRed="criticalCases.inICUCount"
-            subtitle="in ICU"
+            :subtitle="$t('in ICU')"
             :number="criticalCases.totalCount"
           />
         </div>
@@ -27,9 +37,9 @@
           <line-chart-number
             :height="180"
             :data="[0, 10, 20, 10, 40, 20, 50, 60]"
-            title="Case Currently In Hospital"
+            :title="$t('Case Currently In Hospital')"
             :subtitleRed="`${activeCases.percentage}%`"
-            subtitle="of total cases"
+            :subtitle="$t('of total cases')"
             :number="activeCases.totalCount"
           />
         </div>
@@ -37,22 +47,20 @@
           <line-chart-number
             :height="180"
             :data="[0, 10, 20, 10, 40, 20, 50, 60]"
-            title="Cases Recovered"
+            :title="$t('Cases Discharged')"
             :subtitleBlue="`${recoveredCases.percentage}%`"
-            subtitle="of total cases"
+            :subtitle="$t('of total cases')"
             :number="recoveredCases.totalCount"
           />
         </div>
       </div>
       <div class="flex flex-wrap">
         <div class="w-full md:w-3/4 p-2">
-            <LocationSelector v-model="country" />
-            <Search class="mt-4 mb-8" />
-            <TrendingNews :country="country" />
+          <TrendingNews :country="country" />
         </div>
         <div class="w-full md:w-1/4 p-2">
           <client-only>
-            <TwitterFeed twitter-handle="WHO" data-height="1750"/>
+            <TwitterFeed twitter-handle="WHO" :data-height="1750"/>
           </client-only>
         </div>
       </div>
@@ -67,9 +75,12 @@ import Overview from '~/components/Country/Overview'
 import PositiveRate from '../../components/Analytics/PositiveRate'
 import TwitterFeed from '~/components/TwitterFeed'
 import TrendingNews from '~/components/TrendingNews';
+import GrowthRate from '~/components/Country/GrowthRate';
+import {COUNTRIES} from "../../utils/constants";
 
 export default {
   components: {
+    GrowthRate,
     FatalityRate,
     LineChartNumber,
     Overview,
@@ -79,12 +90,20 @@ export default {
   },
 
   mounted () {
-    this.loadInformation(this.$route.params.iso)
+    this.loadInformation(this.countryCode)
   },
 
   data () {
+    const PAGE_STATES = {
+      LOADING: 'LOADING',
+      HAS_FETCHED: 'HAS_FETCHED',
+      HAS_ERROR: 'HAS_ERROR',
+    };
+
     return {
       country: {},
+      PAGE_STATES,
+      pageState: PAGE_STATES.LOADING,
       overviewInfo: {
         confirmed: 0,
         diffConfirmed: 0,
@@ -118,16 +137,37 @@ export default {
     }
   },
 
+  computed: {
+    countryCode() {
+      const countryToFind = this.$route.params.country
+      const countryEntry = COUNTRIES.find(country => country.urlAliases.includes(countryToFind));
+      console.log("countryEntry:", countryEntry);
+
+      return countryEntry?.code
+    }
+  },
+
   metaInfo: {
     title: 'Country Specific Analytics',
   },
 
   methods: {
 
-    async loadInformation(countryCode){
-      const totalCases = await this.$api.stats.getTotalCasesByCountry(countryCode)
-      const dailyCases = await this.$api.stats.getDailyCasesByCountry(countryCode)
+    async loadInformation(countryCode) {
+      let totalCases;
+      let dailyCases;
 
+      try {
+        totalCases = await this.$api.stats.getTotalCasesByCountry(countryCode)
+        dailyCases = await this.$api.stats.getDailyCasesByCountry(countryCode)
+      }
+      catch (err) {
+        this.pageState = this.PAGE_STATES.HAS_ERROR
+        this.error = err.data?.message ?? 'Something went wrong.'
+        return;
+      }
+
+      this.pageState = this.PAGE_STATES.HAS_FETCHED
 
       // Total cases information
       this.overviewInfo.confirmed = totalCases.confirmed
@@ -143,11 +183,11 @@ export default {
       // Data prep for FR and PR components
       const FRU = dailyCases.tdyFR.toFixed(1)
       const PRU = dailyCases.tdyPR.toFixed(1)
-      const FRL = 100-FRU
-      const PRL = 100-PRU
+      const FRL = 100 - FRU
+      const PRL = 100 - PRU
 
       this.fatalityRate.days = 10
-      this.fatalityRate.data = [Number(FRL),Number(FRU)]
+      this.fatalityRate.data = [Number(FRL), Number(FRU)]
 
       this.positiveRate.days = 10
       this.positiveRate.data = [Number(PRL), Number(PRU)]
@@ -158,11 +198,13 @@ export default {
 
       // Active Cases
       this.activeCases.totalCount = totalCases.activeCases
-      this.activeCases.percentage = ((totalCases.activeCases/totalCases.confirmed)*100).toFixed(1)
+      this.activeCases.percentage =
+        ((totalCases.activeCases / totalCases.confirmed) * 100).toFixed(1)
 
       // Recovered Cases
       this.recoveredCases.totalCount = dailyCases.diffDailyRecovered
-      this.recoveredCases.percentage = ((dailyCases.diffDailyRecovered/totalCases.recovered) * 100).toFixed(1)
+      this.recoveredCases.percentage =
+        ((dailyCases.diffDailyRecovered / totalCases.recovered) * 100).toFixed(1)
     },
   }
 }
