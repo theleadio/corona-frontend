@@ -24,6 +24,11 @@ export const locales = [
     file: 'ms.js',
   },
   {
+    code: 'ptbr',
+    name: 'Português (Brasil)',
+    file: 'pt-br.js',
+  },
+  {
     code: 'vi',
     name: 'Tiếng Việt',
     file: 'vi.js',

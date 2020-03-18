@@ -414,7 +414,7 @@
         </div>
         <div class="w-full md:w-1/4 member mb-4">
           <h2 class="text-xl font-bold text-center">
-            Team Public Relation
+            {{ $t('Team Public Relations') }}
           </h2>
           <ul>
             <li>
