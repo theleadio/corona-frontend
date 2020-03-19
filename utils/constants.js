@@ -307,3 +307,16 @@ export const locales = [
     file: 'ar.js',
   },
 ];
+
+export const twitterHandles = [
+    {
+      code: "my",
+      name: "Malaysia",
+      account: "KKMPutrajaya"
+    },
+    {
+      code: "au",
+      name: "Australia",
+      account: "healthgovau"
+    }
+]

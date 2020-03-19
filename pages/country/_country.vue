@@ -60,7 +60,7 @@
         </div>
         <div class="w-full md:w-1/4 p-2">
           <client-only>
-            <TwitterFeed twitter-handle="WHO" :data-height="1750"/>
+            <TwitterFeed :twitter-handle="handle" :data-height="1750"/>
           </client-only>
         </div>
       </div>
@@ -76,7 +76,7 @@ import PositiveRate from '../../components/Analytics/PositiveRate'
 import TwitterFeed from '~/components/TwitterFeed'
 import TrendingNews from '~/components/TrendingNews';
 import GrowthRate from '~/components/Country/GrowthRate';
-import {COUNTRIES} from "../../utils/constants";
+import {COUNTRIES, twitterHandles} from "../../utils/constants";
 
 export default {
   components: {
@@ -144,6 +144,10 @@ export default {
       console.log("countryEntry:", countryEntry);
 
       return countryEntry?.code
+    },
+    handle(){
+      const countryEntry = twitterHandles.find(country => this.countryCode.toLowerCase() == country.code)
+      return countryEntry?.account || "WHO"
     }
   },
 
