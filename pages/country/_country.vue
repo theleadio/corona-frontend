@@ -68,7 +68,7 @@
 
         <div class="w-full md:w-1/4 p-2">
           <client-only>
-            <TwitterFeed twitter-handle="WHO" :data-height="1750"/>
+            <TwitterFeed :twitter-handle="handle" :data-height="1750"/>
           </client-only>
         </div>
       </div>
@@ -77,15 +77,15 @@
 </template>
 
 <script>
-import FatalityRate from '../../components/Analytics/FatalityRate'
+import FatalityRate from '~/components/Analytics/FatalityRate'
 import LineChartNumber from '~/components/Country/LineChartNumber'
 import BarChartNumber from '~/components/Country/BarChartNumber'
 import Overview from '~/components/Country/Overview'
-import PositiveRate from '../../components/Analytics/PositiveRate'
+import PositiveRate from '~/components/Analytics/PositiveRate'
 import TwitterFeed from '~/components/TwitterFeed'
 import TrendingNews from '~/components/TrendingNews';
 import GrowthRate from '~/components/Country/GrowthRate';
-import {COUNTRIES} from "../../utils/constants";
+import {COUNTRIES, twitterHandles} from "~/utils/constants";
 
 export default {
   components: {
@@ -111,7 +111,6 @@ export default {
     };
 
     return {
-      country: {},
       PAGE_STATES,
       pageState: PAGE_STATES.LOADING,
       overviewInfo: {
@@ -150,12 +149,21 @@ export default {
   },
 
   computed: {
+    country() {
+      const countryToFind = this.$route.params.country
+      const countryEntry = COUNTRIES.find(country => country.urlAliases.includes(countryToFind));
+      return countryEntry || {}
+    },
     countryCode() {
       const countryToFind = this.$route.params.country
       const countryEntry = COUNTRIES.find(country => country.urlAliases.includes(countryToFind));
       console.log("countryEntry:", countryEntry);
 
       return countryEntry?.code
+    },
+    handle(){
+      const countryEntry = twitterHandles.find(country => this.countryCode == country.code)
+      return countryEntry?.account || "WHO"
     }
   },
 
@@ -199,8 +207,8 @@ export default {
 
       // Fatality Rate & Positive Rate
       // Data prep for FR and PR components
-      const FRU = dailyCases.tdyFR.toFixed(1)
-      const PRU = dailyCases.tdyPR.toFixed(1)
+      const FRU =  ((totalCases.deaths/totalCases.confirmed)*100).toFixed(1)
+      const PRU = ((totalCases.recovered/totalCases.confirmed)*100).toFixed(1)
       const FRL = 100 - FRU
       const PRL = 100 - PRU
 
