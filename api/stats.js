@@ -21,5 +21,11 @@ export default axios => ({
   getDailyCasesByCountry: (countryCode) => {
     return axios.get(`/v3/stats/bno/daily_cases/country?countryCode=${countryCode}`)
     .then(res => res.data);
+  },
+
+  getTrendByCountry: (countryCode, startDate, endDate) => {
+    return axios.get(`/analytics/trend/country?country_code=${countryCode}&start_date=${startDate}&end_date=${endDate}`)
+    .then(res => res.data);
   }
+
 });
