@@ -17,7 +17,7 @@
       <tr v-for="item in items" :key="item.countryCode">
         <td class="bg-gray-200 text-xs border hover:bg-primary hover:text-white px-2 py-2">
           <span v-if="item.countryName === 'Others'">{{item.countryName}}</span>
-          <nuxt-link :to="`/country/${item.countryCode.toLowerCase()}`" v-else>
+          <nuxt-link :to="`/country/${item.countryCode.toLowerCase()}`" style="display:block" v-else>
             <Flag :country-code="item.countryCode"></Flag>
             {{item.countryName}}
           </nuxt-link>
