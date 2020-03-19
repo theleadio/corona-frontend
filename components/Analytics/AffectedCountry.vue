@@ -77,9 +77,9 @@
         </thead>
         <tbody class="font-bold">
         <tr v-for="loc in countries" :key="loc.countryName">
-          <td class="bg-gray-200 text-xs border px-2 py-2">
+          <td class="bg-gray-200 text-xs border px-2 py-2 hover:bg-primary hover:text-white">
             <span v-if="loc.countryName === 'Others'">{{loc.countryName}}</span>
-            <nuxt-link :to="`/country/${loc.countryCode.toLowerCase()}`" class="hover:text-primary" v-else>
+            <nuxt-link :to="`/country/${loc.countryCode.toLowerCase()}`" v-else>
               <Flag :country-code="loc.countryCode"></Flag>
               {{loc.countryName}}
             </nuxt-link>
