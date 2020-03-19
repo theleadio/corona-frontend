@@ -69,14 +69,14 @@
 </template>
 
 <script>
-import FatalityRate from '../../components/Analytics/FatalityRate'
+import FatalityRate from '~/components/Analytics/FatalityRate'
 import LineChartNumber from '~/components/Country/LineChartNumber'
 import Overview from '~/components/Country/Overview'
-import PositiveRate from '../../components/Analytics/PositiveRate'
+import PositiveRate from '~/components/Analytics/PositiveRate'
 import TwitterFeed from '~/components/TwitterFeed'
 import TrendingNews from '~/components/TrendingNews';
 import GrowthRate from '~/components/Country/GrowthRate';
-import {COUNTRIES, twitterHandles} from "../../utils/constants";
+import {COUNTRIES, twitterHandles} from "~/utils/constants";
 
 export default {
   components: {
@@ -101,7 +101,6 @@ export default {
     };
 
     return {
-      country: {},
       PAGE_STATES,
       pageState: PAGE_STATES.LOADING,
       overviewInfo: {
@@ -138,6 +137,11 @@ export default {
   },
 
   computed: {
+    country() {
+      const countryToFind = this.$route.params.country
+      const countryEntry = COUNTRIES.find(country => country.urlAliases.includes(countryToFind));
+      return countryEntry || {}
+    },
     countryCode() {
       const countryToFind = this.$route.params.country
       const countryEntry = COUNTRIES.find(country => country.urlAliases.includes(countryToFind));
