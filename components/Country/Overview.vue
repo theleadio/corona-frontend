@@ -1,6 +1,9 @@
 <template>
   <div class="max-w-full rounded border border-gray-400 bg-white p-3">
-    <p class="text-xl font-bold pl-2">{{ $t('Overview') }}</p>
+    <p class="text-xl font-bold pl-2">
+      <Flag :country-code="country.code"></Flag>
+      {{country.name}} {{ $t('Overview') }}
+      </p>
     <div class="flex flex-col lg:flex-row">
       <div class="px-5 text-center">
         <p class="text-4xl font-bold text-red-600">{{ info.confirmed | formatNumber }}</p>
@@ -24,13 +27,21 @@
 </template>
 
 <script>
+import Flag from "~/components/Flag"
 export default {
   props: {
     info: {
       type: Object,
       required: true,
     },
+    country: {
+      type: Object,
+      required: true
+    }
   },
+  components: {
+    Flag
+  }
 }
 </script>
 

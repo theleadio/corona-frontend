@@ -9,7 +9,7 @@
     <div class="w-full px-5 pt-2" v-else-if="pageState === PAGE_STATES.HAS_FETCHED">
       <div class="flex flex-wrap">
         <div class="w-full lg:w-1/2 p-2">
-          <Overview :info="overviewInfo"></Overview>
+          <Overview :info="overviewInfo" :country="country"></Overview>
         </div>
         <div class="w-full lg:w-1/4 p-2">
           <FatalityRate :days="fatalityRate.days" :series="fatalityRate.data"/>
@@ -68,7 +68,7 @@
 
         <div class="w-full md:w-1/4 p-2">
           <client-only>
-            <TwitterFeed :twitter-handle="handle" :data-height="1750"/>
+            <TwitterFeed :twitter-handle="handle"/>
           </client-only>
         </div>
       </div>
