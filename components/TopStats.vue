@@ -16,8 +16,12 @@
       <tbody class="font-bold">
       <tr v-for="item in items" :key="item.countryCode">
         <td class="bg-gray-200 text-xs border px-2 py-2">
-          <Flag :country-code="item.countryCode"></Flag>
-          {{item.countryName}}<a v-if="item.countryName === 'Others'" href="#notes-on-others">*</a>
+          <span v-if="item.countryName === 'Others'">{{item.countryName}}</span>
+          <nuxt-link :to="`/country/${item.countryCode.toLowerCase()}`" v-else>
+            <Flag :country-code="item.countryCode"></Flag>
+            {{item.countryName}}
+          </nuxt-link>
+          <a v-if="item.countryName === 'Others'" href="#notes-on-others">*</a>
         </td>
         <td class="text-center border px-1 py-2">{{item.confirmed | formatNumber}}</td>
         <td class="text-center border px-1 py-2">{{item.recovered | formatNumber}}</td>
