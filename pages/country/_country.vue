@@ -241,8 +241,8 @@ export default {
       let confirmedLastMax = 0
       let recoveredLastMax = 0
       let deadLastMax = 0
+
       countryTrendRaw.forEach(country => {
-        // In case corrupted data
         confirmedLastMax = Math.max(country["confirmed"], confirmedLastMax)
         recoveredLastMax = Math.max(country["recovered"], recoveredLastMax)
         deadLastMax = Math.max(country["dead"], deadLastMax)

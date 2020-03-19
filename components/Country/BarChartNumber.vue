@@ -57,14 +57,14 @@ export default {
           stacked: true,
         },
         grid: {
-          show: false,
+          show: false
         },
         dataLabels: {
           enabled: false
         },
         yaxis: {
           show: true,
-          opposite: true,
+          opposite: true
         },
         xaxis: {
           type: 'datetime',
