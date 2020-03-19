@@ -68,7 +68,7 @@
 
         <div class="w-full md:w-1/4 p-2">
           <client-only>
-            <TwitterFeed :twitter-handle="handle" :data-height="1750"/>
+            <TwitterFeed :twitter-handle="handle"/>
           </client-only>
         </div>
       </div>
