@@ -103,8 +103,8 @@ export default {
   position: absolute;
   bottom: 0;
   padding: 10;
-  width: 95%;
-  opacity: 0.4;
+  width: 100%;
+  opacity: 0.7;
   overflow: hidden;
 }
 .barchart-box {
