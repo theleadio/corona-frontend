@@ -50,7 +50,23 @@ export default {
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/css/flag-icon.min.css'},
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css'},
       { rel: 'stylesheet', href: 'https://unpkg.com/leaflet@1.2.0/dist/leaflet.css' },
-    ]
+
+      // Used by buy-me-a-coffee
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Cookie' }
+    ],
+    script: [
+      {
+        src: 'https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js',
+        'data-name': 'BMC-Widget',
+        'data-id': 'coronatracker',
+        'data-description': 'Support me on Buy me a coffee!',
+        'data-message': 'Thank you for visiting. You can now buy me a coffee!',
+        'data-color': '#FF813F',
+        'data-position': 'left',
+        'data-x_margin': '18',
+        'data-y_margin': '18',
+      }
+    ],
   },
   /*
    ** Customize the progress-bar color

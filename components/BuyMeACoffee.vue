@@ -30,7 +30,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
   .bmc-button img {
     height: 34px !important;
     width: 35px !important;
