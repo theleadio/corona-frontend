@@ -78,8 +78,12 @@
         <tbody class="font-bold">
         <tr v-for="loc in countries" :key="loc.countryName">
           <td class="bg-gray-200 text-xs border px-2 py-2">
-            <Flag :country-code="loc.countryCode"></Flag>
-            {{loc.countryName}}<a v-if="loc.countryName === 'Others'" href="#notes-on-others">*</a>
+            <span v-if="loc.countryName === 'Others'">{{loc.countryName}}</span>
+            <nuxt-link :to="`/country/${loc.countryCode.toLowerCase()}`" v-else>
+              <Flag :country-code="loc.countryCode"></Flag>
+              {{loc.countryName}}
+            </nuxt-link>
+            <a v-if="loc.countryName === 'Others'" href="#notes-on-others">*</a>
           </td>
           <td class="text-center border px-1 py-2">{{ loc.confirmed | formatNumber }}</td>
           <td class="text-center border px-1 py-2">{{ loc.recovered | formatNumber }}</td>

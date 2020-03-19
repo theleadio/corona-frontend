@@ -310,12 +310,12 @@ export const locales = [
 
 export const twitterHandles = [
     {
-      code: "my",
+      code: "MY",
       name: "Malaysia",
       account: "KKMPutrajaya"
     },
     {
-      code: "au",
+      code: "AU",
       name: "Australia",
       account: "healthgovau"
     }

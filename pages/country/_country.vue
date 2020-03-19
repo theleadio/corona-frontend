@@ -150,7 +150,7 @@ export default {
       return countryEntry?.code
     },
     handle(){
-      const countryEntry = twitterHandles.find(country => this.countryCode.toLowerCase() == country.code)
+      const countryEntry = twitterHandles.find(country => this.countryCode == country.code)
       return countryEntry?.account || "WHO"
     }
   },
