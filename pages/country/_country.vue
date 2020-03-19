@@ -189,8 +189,8 @@ export default {
 
       // Fatality Rate & Positive Rate
       // Data prep for FR and PR components
-      const FRU = dailyCases.tdyFR.toFixed(1)
-      const PRU = dailyCases.tdyPR.toFixed(1)
+      const FRU =  ((totalCases.deaths/totalCases.confirmed)*100).toFixed(1)
+      const PRU = ((totalCases.recovered/totalCases.confirmed)*100).toFixed(1)
       const FRL = 100 - FRU
       const PRL = 100 - PRU
 
