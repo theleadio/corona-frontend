@@ -238,10 +238,18 @@ export default {
       let countryTrendConfirmed = []
       let countryTrendRecovered = []
       let countryTrendDeath = []
+      let confirmedLastMax = 0
+      let recoveredLastMax = 0
+      let deadLastMax = 0
+
       countryTrendRaw.forEach(country => {
-        countryTrendConfirmed.push(country["confirmed"])
-        countryTrendRecovered.push(country["recovered"])
-        countryTrendDeath.push(country["dead"])
+        confirmedLastMax = Math.max(country["confirmed"], confirmedLastMax)
+        recoveredLastMax = Math.max(country["recovered"], recoveredLastMax)
+        deadLastMax = Math.max(country["dead"], deadLastMax)
+
+        countryTrendConfirmed.push(confirmedLastMax)
+        countryTrendRecovered.push(recoveredLastMax)
+        countryTrendDeath.push(deadLastMax)
 
         this.countryTrend.trendDates.push(country["date_posted"])
       });

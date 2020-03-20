@@ -56,11 +56,15 @@ export default {
           },
           stacked: true,
         },
+        grid: {
+          show: false
+        },
         dataLabels: {
           enabled: false
         },
         yaxis: {
-          show: true
+          show: true,
+          opposite: true
         },
         xaxis: {
           type: 'datetime',
@@ -68,9 +72,25 @@ export default {
           show: true
         },
         legend: {
-          position: 'left',
-          offsetX: -20,
-          offsetY: 125
+          position: 'bottom',
+          offsetX: 0,
+          offsetY: -5
+        },
+        tooltip: {
+          shared: true,
+          y: [{
+            formatter: function (y) {
+              return y;
+            }
+          }, {
+            formatter: function (y) {
+              return y;
+            }
+          }, {
+            formatter: function (y) {
+              return y;
+            }
+          }]
         },
       }
     };
@@ -83,8 +103,8 @@ export default {
   position: absolute;
   bottom: 0;
   padding: 10;
-  width: 95%;
-  opacity: 0.4;
+  width: 100%;
+  opacity: 0.7;
   overflow: hidden;
 }
 .barchart-box {
