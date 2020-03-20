@@ -2,8 +2,8 @@
   <div class="flex-1 relative overflow-hidden">
     <div class="border border-gray-400 p-4 rounded relative ">
       <div class="relative">
-        <div class="text-gray-900 font-bold text-xl mb-2">{{ title }}</div>
-        <div class="text-gray-900 font-bold text-4xl mb-2">{{ number }}</div>
+        <div class="text-gray-900 font-bold text-l mb-2">{{ title }}</div>
+        <div class="text-gray-900 font-bold text-2xl mb-2">{{ number }}</div>
         <p class="text-gray-700 text-base">
           <span class="text-red-600" v-if="subtitleRed">{{ subtitleRed }}</span>
           <span class="text-blue-600" v-if="subtitleBlue">{{ subtitleBlue }}</span>
