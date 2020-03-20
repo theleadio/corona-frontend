@@ -11,10 +11,10 @@
         <div class="w-full lg:w-1/2 p-2">
           <Overview :info="overviewInfo" :country="country"></Overview>
         </div>
-        <div class="w-full lg:w-1/4 p-2">
+        <div class="w-1/2 lg:w-1/4 p-2">
           <FatalityRate :days="fatalityRate.days" :series="fatalityRate.data"/>
         </div>
-        <div class="w-full lg:w-1/4 p-2">
+        <div class="w-1/2 lg:w-1/4 p-2">
           <PositiveRate :days="positiveRate.days" :series="positiveRate.data"/>
         </div>
       </div>
