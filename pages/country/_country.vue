@@ -27,7 +27,7 @@
           <line-chart-number
             :height="180"
             :data="[0, 10, 20, 10, 40, 20, 50, 60]"
-            :title="$t('Critical Cases')"
+            :title="$t('Daily Cases')"
             :subtitleRed="criticalCases.inICUCount"
             :subtitle="$t('in ICU')"
             :number="criticalCases.totalCount"
@@ -37,7 +37,7 @@
           <line-chart-number
             :height="180"
             :data="[0, 10, 20, 10, 40, 20, 50, 60]"
-            :title="$t('Case Currently In Hospital')"
+            :title="$t('Daily Cases Receiving Treatment')"
             :subtitleRed="`${activeCases.percentage}%`"
             :subtitle="$t('of total cases')"
             :number="activeCases.totalCount"
@@ -47,7 +47,7 @@
           <line-chart-number
             :height="180"
             :data="[0, 10, 20, 10, 40, 20, 50, 60]"
-            :title="$t('Cases Recovered')"
+            :title="$t('Daily Recovered Cases')"
             :subtitleBlue="`${recoveredCases.percentage}%`"
             :subtitle="$t('of total cases')"
             :number="recoveredCases.totalCount"
