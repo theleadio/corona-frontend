@@ -93,6 +93,23 @@ import AffectedCountry from '~/components/Analytics/AffectedCountry'
 import Flag from '~/components/Flag';
 
 export default {
+  head() {
+    const title = this.$t('COVID-19 related analytics, graphs, and charts');
+    const description = this.$t('Visual presentations of COVID-19 related data from verified sources such as WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, and various international media.');
+
+    return {
+      title,
+      meta: [
+        { hid: 'title', name: 'title', content: title },
+        { hid: 'description', name: 'description', content: description },
+        { hid: 'og-title', property: 'og:title', content: title },
+        { hid: 'og-description', property: 'og:title', content: description },
+        { hid: 'twitter-title', property: 'twitter:title', content: title },
+        { hid: 'twitter-description', property: 'twitter:title', content: description },
+      ],
+    };
+  },
+
   components: { SidebarNav, OutbreakTrendChart, AffectedRegion, AffectedCountry, Flag },
 
   mounted () {
@@ -112,10 +129,6 @@ export default {
       affectedRegionData: [],
       affectedCountryData: [],
     }
-  },
-
-  metaInfo: {
-    title: 'Analytics',
   },
 
   computed: {

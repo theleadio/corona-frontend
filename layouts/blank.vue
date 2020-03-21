@@ -7,16 +7,14 @@
 <script>
   export default {
     name: 'app',
-    metaInfo: {
-      title: 'App',
-      titleTemplate: '%s | Corona Tracker',
-      htmlAttrs: {
-        lang: 'en',
-        amp: true
+    head() {
+      return {
+        titleTemplate: '%s | CoronaTracker',
+        htmlAttrs: {
+          lang: this.$i18n.locale,
+        },
       }
     },
-    components: {
-    }
   }
 </script>
 

@@ -16,6 +16,7 @@ export default {
       { 'http-equiv': "X-UA-Compatible", content: 'IE=edge' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
+        hid: 'title',
         name: 'title',
         content: 'Corona Tracker',
       },
@@ -30,15 +31,15 @@ export default {
       // Open Graph / Faceboook
       { property: 'og:type', content: 'website' },
       { property: 'og:url', content: 'https://www.coronatracker.com/' },
-      { property: 'og:title', content: 'Corona Tracker' },
-      { property: 'og:description', content: 'One stop platform for data and news related to COVID-19' },
+      { hid: 'og-title', property: 'og:title', content: 'Corona Tracker' },
+      { hid: 'og-description', property: 'og:description', content: 'One stop platform for data and news related to COVID-19' },
       { property: 'og:image', content: 'https://www.coronatracker.com/og-corona.png' },
 
       // Twitter
       { property: 'twitter:card', content: 'https://www.coronatracker.com/og-corona.png' },
       { property: 'twitter:url', content: 'https://www.coronatracker.com/' },
-      { property: 'twitter:title', content: 'Corona Tracker' },
-      { property: 'twitter:description', content: 'One stop platform for data and news related to COVID-19' },
+      { hid: 'twitter-title', property: 'twitter:title', content: 'Corona Tracker' },
+      { hid: 'twitter-description', property: 'twitter:description', content: 'One stop platform for data and news related to COVID-19' },
       { property: 'twitter:image', content: 'https://www.coronatracker.com/og-corona.png' },
     ],
     link: [

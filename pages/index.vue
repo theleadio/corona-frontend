@@ -79,12 +79,23 @@
 	import HealthcareInstitutions from '~/components/HealthcareInstitutions';
 	import BuyMeACoffee from '~/components/BuyMeACoffee';
 
-
-
-
 	export default {
-		metaInfo: {
-			title: 'Home'
+		head() {
+			const title = this.$t('COVID-19 Corona Tracker');
+			const description = this.$t('COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.');
+
+			return {
+				title,
+				titleTemplate: '%s',
+				meta: [
+					{ hid: 'title', name: 'title', content: title },
+					{ hid: 'description', name: 'description', content: description },
+					{ hid: 'og-title', property: 'og:title', content: title },
+					{ hid: 'og-description', property: 'og:title', content: description },
+					{ hid: 'twitter-title', property: 'twitter:title', content: title },
+					{ hid: 'twitter-description', property: 'twitter:title', content: description },
+				],
+			};
 		},
 		components: {
 			// NotifyCard,
