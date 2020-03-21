@@ -32,8 +32,6 @@
 				</div>
 
 				<div class="my-4">
-					<HealthcareInstitutions :country="country.code" />
-
 					<BuyMeACoffee />
 					<!--<div
 						class="mt-4 p-1 block justify-center text-sm rounded border border-gray-400"
@@ -76,7 +74,6 @@
 	import LocationSelector from '~/components/LocationSelector';
 	import TopStats from '~/components/TopStats';
 	import LearnPrevention from '~/components/LearnPrevention';
-	import HealthcareInstitutions from '~/components/HealthcareInstitutions';
 	import BuyMeACoffee from '~/components/BuyMeACoffee';
 
 	export default {
@@ -105,7 +102,6 @@
 			LocationSelector,
 			TopStats,
 			LearnPrevention,
-			HealthcareInstitutions,
 			BuyMeACoffee,
 
 		},
