@@ -15,19 +15,53 @@
         <div class="w-full lg:w-1/2 px-2">
           <div class="max-w-full rounded shadow-md bg-white p-3 mb-5">
             <div class="flex flex-col lg:flex-row">
-              <div class="px-5">
+              <div class="px-3">
                 <p class="text-sm font-bold text-red-600">{{ $t('Total Confirmed') }}</p>
-                <p class="text-4xl font-bold text-red-600">{{ confirmed | formatNumber }}</p>
+                <p class="text-2xl font-bold text-red-600">{{ confirmed | formatNumber }}</p>
               </div>
 
-              <div class="px-5">
+              <div class="px-3">
                 <p class="text-sm font-bold text-green-600">{{ $t('Total Recovered') }}</p>
-                <p class="text-4xl font-bold text-green-600">{{ recovered | formatNumber }}</p>
+                <p class="text-2xl font-bold text-green-600">{{ recovered | formatNumber }}</p>
               </div>
 
-              <div class="px-5">
+              <div class="px-3">
                 <p class="text-sm font-bold text-gray-600">{{ $t('Total Deaths') }}</p>
-                <p class="text-4xl font-bold text-gray-600">{{ deaths | formatNumber }}</p>
+                <p class="text-2xl font-bold text-gray-600">{{ deaths | formatNumber }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full rounded shadow-md bg-white p-3 mb-5 block lg:hidden">
+            <div class="mt-3" style="max-height: 36.3rem; overflow: auto;">
+              <table class="table-auto w-full">
+                <thead class="text-xs leading-tight border-b-2">
+                <tr>
+                  <th class="border px-2 py-2">{{ $t('Country') }}</th>
+                  <th class="border px-1 py-2">{{ $t('Total Confirmed') }}</th>
+                  <th class="border px-1 py-2">{{ $t('Total Recovered') }}</th>
+                  <th class="border px-1 py-2">{{ $t('Total Deaths') }}</th>
+                </tr>
+                </thead>
+                <tbody class="font-bold">
+                <tr v-for="loc in affectedCountries" :key="loc.countryName">
+                  <td class="bg-gray-200 text-xs border px-2 py-2 hover:bg-primary hover:text-white">
+                    <span v-if="loc.countryName === 'Others'">{{loc.countryName}}</span>
+                    <nuxt-link :to="`/country/${loc.countryCode.toLowerCase()}`" style="display:block" v-else>
+                      <Flag :country-code="loc.countryCode"></Flag>
+                      {{loc.countryName}}
+                    </nuxt-link>
+                    <a v-if="loc.countryName === 'Others'" href="#notes-on-others">*</a>
+                  </td>
+                  <td class="text-center border px-1 py-2">{{ loc.confirmed | formatNumber }}</td>
+                  <td class="text-center border px-1 py-2">{{ loc.recovered | formatNumber }}</td>
+                  <td class="text-center border px-1 py-2">{{ loc.deaths | formatNumber }}</td>
+                </tr>
+                </tbody>
+              </table>
+              <div class="my-2 font-bold text-xs text-gray-600 leading-tight">
+                * {{ $t('Cases identified on a cruise ship currently in Japanese territorial waters.') }}
+                <a name="notes-on-others" class="anchor"></a>
               </div>
             </div>
           </div>
@@ -56,10 +90,11 @@ import SidebarNav from '~/components/Analytics/SidebarNav'
 import OutbreakTrendChart from '~/components/Analytics/OutbreakTrend'
 import AffectedRegion from '~/components/Analytics/AffectedRegion'
 import AffectedCountry from '~/components/Analytics/AffectedCountry'
+import Flag from '~/components/Flag';
 
 export default {
-  components: { SidebarNav, OutbreakTrendChart, AffectedRegion, AffectedCountry },
-  
+  components: { SidebarNav, OutbreakTrendChart, AffectedRegion, AffectedCountry, Flag },
+
   mounted () {
     this.loadStats()
     this.loadOutbreakTrend()
@@ -81,6 +116,12 @@ export default {
 
   metaInfo: {
     title: 'Analytics',
+  },
+
+  computed: {
+    affectedCountries() {
+      return this.affectedCountryData.filter(i => i.confirmed)
+    }
   },
 
   methods: {

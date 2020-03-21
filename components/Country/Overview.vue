@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-full rounded border border-gray-400 bg-white p-3">
+  <div class="max-w-full rounded border border-gray-400 bg-white p-3 h-full">
     <p class="text-xl font-bold pl-2">
       <Flag :country-code="country.code"></Flag>
       {{country.name}} {{ $t('Overview') }}
