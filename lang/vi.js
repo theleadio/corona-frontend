@@ -117,5 +117,8 @@ export default {
 	"in ICU": "in ICU",
 	"Daily Cases Receiving Treatment": "Daily Cases Receiving Treatment",
 	"Daily Recovered Cases": "Daily Recovered Cases",
-	"of total cases": "of total cases"
+	"of total cases": "of total cases",
+
+	"COVID-19 {country} Corona Tracker": "COVID-19 {country} Corona Tracker",
+	"{country} COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.": "{country} COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.",
 };

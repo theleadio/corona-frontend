@@ -89,7 +89,7 @@ import {COUNTRIES, twitterHandles} from "~/utils/constants";
 
 export default {
   head() {
-    const country = this.country;
+    const country = this.country && this.country.name;
     const title = this.$t('COVID-19 {country} Corona Tracker', { country });
     const description = this.$t('{country} COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.', {
       country,
