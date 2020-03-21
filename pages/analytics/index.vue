@@ -2,7 +2,7 @@
   <div class="flex flex-wrap">
     <SidebarNav></SidebarNav>
 
-    <div class="w-full lg:w-5/6 px-5 pt-2 bg-gray-200">
+    <div class="w-full lg:w-5/6 px-2 pt-2 bg-gray-200">
       <div class="pl-2">
         <p class="text-2xl font-bold">COVID-19 {{ $t('Overview') }}</p>
 
@@ -14,20 +14,20 @@
       <div class="flex flex-wrap">
         <div class="w-full lg:w-1/2 px-2">
           <div class="max-w-full rounded shadow-md bg-white p-3 mb-5">
-            <div class="flex flex-col lg:flex-row">
-              <div class="px-3">
+            <div class="flex flex-row lg:flex-row">
+              <div class="px-2">
                 <p class="text-sm font-bold text-red-600">{{ $t('Total Confirmed') }}</p>
-                <p class="text-2xl font-bold text-red-600">{{ confirmed | formatNumber }}</p>
+                <p class="text-xl font-bold text-red-600">{{ confirmed | formatNumber }}</p>
               </div>
 
-              <div class="px-3">
+              <div class="px-2">
                 <p class="text-sm font-bold text-green-600">{{ $t('Total Recovered') }}</p>
-                <p class="text-2xl font-bold text-green-600">{{ recovered | formatNumber }}</p>
+                <p class="text-xl font-bold text-green-600">{{ recovered | formatNumber }}</p>
               </div>
 
-              <div class="px-3">
+              <div class="px-2">
                 <p class="text-sm font-bold text-gray-600">{{ $t('Total Deaths') }}</p>
-                <p class="text-2xl font-bold text-gray-600">{{ deaths | formatNumber }}</p>
+                <p class="text-xl font-bold text-gray-600">{{ deaths | formatNumber }}</p>
               </div>
             </div>
           </div>
