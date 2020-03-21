@@ -4,13 +4,21 @@
 
 			<div class="w-full md:w-2/3 px-2">
 				<LocationSelector v-model="country" />
-								
+				<div class="w-full block md:hidden mt-4 mb-8">
+					<TopStats />
+					<div
+						class="mt-2 text-center underline text-blue-500 font-semibold"
+					>
+						<nuxt-link :to="localePath('analytics')">{{ $t('Full list here') }}</nuxt-link>
+					</div>
+				</div>
+
 				<Search class="mt-4 mb-8" />
 				<TrendingNews :country="country" />
 			</div>
 
 			<div class="w-full md:w-1/3 px-2">
-				<div class="">
+				<div class="hidden md:block">
 					<TopStats />
 					<div
 						class="mt-2 text-center underline text-blue-500 font-semibold"
@@ -72,7 +80,7 @@
 	import BuyMeACoffee from '~/components/BuyMeACoffee';
 
 
-	
+
 
 	export default {
 		metaInfo: {
@@ -88,7 +96,7 @@
 			LearnPrevention,
 			HealthcareInstitutions,
 			BuyMeACoffee,
-			
+
 		},
 		mounted() {},
 		data: function() {
