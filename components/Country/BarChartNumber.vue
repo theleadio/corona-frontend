@@ -4,24 +4,30 @@
       <div class="relative">
         <div class="text-gray-900 font-bold text-xl">{{ title }}</div>
         <div class="text-gray-900 font-bold text-xs mb-2">({{ startDate }} - {{ endDate }})</div>
-        
       </div>
       <div class="z-0 chart-wrapper">
         <client-only placeholder="Loading...">
           <apexcharts
+            :type="selectedChartType.type"
             :options="chartOptions"
             :series="trendData"
             :height="height"
           ></apexcharts>
         </client-only>
       </div>
+
+      <BarChartSelector :defaultChartType="selectedChartType"></BarChartSelector>
     </div>
   </div>
 </template>
 
 <script>
+import BarChartSelector from '~/components/Country/BarChartSelector.vue';
+
 export default {
-  components: {},
+  components: {
+    BarChartSelector
+  },
   mounted() {},
   props: {
     height: {
@@ -41,13 +47,13 @@ export default {
       default: "Past 30 Days Chart"
     },
   },
-  data: function() {
+  data() {
     return {
+      selectedChartType: { name: "Bar", type: "bar" },
       startDate: this.trendDates[0].slice(0,10),
       endDate: this.trendDates[this.trendDates.length-1].slice(0,10),
       chartOptions: {
         chart: {
-          type: "bar",
           zoom: {
             enabled: false
           },
@@ -94,7 +100,7 @@ export default {
         },
       }
     };
-  }
+  },
 };
 </script>
 
