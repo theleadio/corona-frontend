@@ -309,14 +309,17 @@ export const locales = [
 ];
 
 export const twitterHandles = [
-    {
-      code: "MY",
-      name: "Malaysia",
-      account: "KKMPutrajaya"
-    },
-    {
-      code: "AU",
-      name: "Australia",
-      account: "healthgovau"
-    }
+  { code: "AU", name: "Australia", account: "healthgovau" },
+  { code: "BG", name: "Bulgaria", account: "MoHBulgaria" },
+  { code: "BN", name: "Brunei", account: "mohbrunei2035" },
+  { code: "BO", name: "Bolivia", account: "MinSaludBolivia" },
+  { code: "EG", name: "Egypt", account: "mohpegypt" },
+  { code: "ET", name: "Ethiopia", account: "FMoHealth" },
+  { code: "KE", name: "Kenya", account: "MOH_Kenya" },
+  { code: "MY", name: "Malaysia", account: "KKMPutrajaya" },
+  { code: "IN", name: "India", account: "MoHFW_INDIA" },
+  { code: "IT", name: "Italy", account: "MinisteroSalute" },
+  { code: "NA", name: "Namibia ", account: "MoHSS_Namibia" },
+  { code: "PH", name: "Philippines", account: "DOHgovph" },
+  { code: "SE", name: "Sweden ", account: "Folkhalsomynd" },
 ]
