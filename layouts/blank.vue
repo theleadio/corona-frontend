@@ -9,7 +9,7 @@
     name: 'app',
     head() {
       return {
-        titleTemplate: '%s | CoronaTracker',
+        titleTemplate: '%s | Corona Tracker',
         htmlAttrs: {
           lang: this.$i18n.locale,
         },

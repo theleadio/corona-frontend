@@ -29,6 +29,7 @@ export default {
       { name: 'theme-color', content: '#ffffff' },
 
       // Open Graph / Faceboook
+      { property: 'og:site_name', content: 'Corona Tracker' },
       { property: 'og:type', content: 'website' },
       { property: 'og:url', content: 'https://www.coronatracker.com/' },
       { hid: 'og-title', property: 'og:title', content: 'Corona Tracker' },
