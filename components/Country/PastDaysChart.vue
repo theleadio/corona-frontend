@@ -1,11 +1,11 @@
 <template>
   <div class="flex-1 relative overflow-hidden">
-    <div class="border border-gray-400 p-4 rounded relative barchart-box">
+    <div class="border border-gray-400 p-4 rounded relative past-days-chart-wrapper">
       <div class="relative">
         <div class="text-gray-900 font-bold text-xl">{{ title }}</div>
         <div class="text-gray-900 font-bold text-xs mb-2">({{ startDate }} - {{ endDate }})</div>
       </div>
-      <div class="z-0 chart-wrapper">
+      <div class="z-0 apex-chart-wrapper">
         <client-only placeholder="Loading...">
           <apexcharts
             :type="selectedChartType.type"
@@ -16,17 +16,18 @@
         </client-only>
       </div>
 
-      <BarChartSelector :defaultChartType="selectedChartType"></BarChartSelector>
+      <PastDaysChartSelector :defaultChartType="selectedChartType" :chartOptions="chartOptions"/>
     </div>
   </div>
 </template>
 
 <script>
-import BarChartSelector from '~/components/Country/BarChartSelector.vue';
+import PastDaysChartSelector from '~/components/Country/PastDaysChartSelector.vue';
 
 export default {
+  name: 'PastDaysChart',
   components: {
-    BarChartSelector
+    PastDaysChartSelector
   },
   mounted() {},
   props: {
@@ -44,14 +45,18 @@ export default {
     },
     title: {
       type: String,
-      default: "Past 30 Days Chart"
+      default: 'Past 30 Days Chart'
     },
   },
   data() {
     return {
-      selectedChartType: { name: "Bar", type: "bar" },
       startDate: this.trendDates[0].slice(0,10),
       endDate: this.trendDates[this.trendDates.length-1].slice(0,10),
+      selectedChartType: { 
+        name: 'Bar', 
+        type: 'bar',
+        stacked: true
+      },
       chartOptions: {
         chart: {
           zoom: {
@@ -101,11 +106,12 @@ export default {
       }
     };
   },
+  methods: {}
 };
 </script>
 
 <style scoped>
-.chart-wrapper {
+.apex-chart-wrapper {
   position: absolute;
   bottom: 0;
   padding: 10;
@@ -113,7 +119,7 @@ export default {
   opacity: 0.7;
   overflow: hidden;
 }
-.barchart-box {
+.past-days-chart-wrapper {
   height: 360px;
 }
 </style>

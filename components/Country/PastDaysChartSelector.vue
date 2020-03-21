@@ -12,10 +12,10 @@
     </button>
 
     <ul class="shadow text-gray-700 mt-1 z-50 w-full" v-if="optionsShowed">
-      <li v-for="(chartName, chartType, index) in chartTypes" :key="chartType">
+      <li v-for="chartConfig in chartTypes" :key="chartConfig.type">
         <a class="cursor-pointer bg-gray-200 hover:bg-gray-400 py-1 px-2 block whitespace-no-wrap"
-            @click="changeChartConfig(chartName, chartType)">
-          <span class="ml-2">{{ chartName }}</span>
+            @click="changeChartConfig(chartConfig)">
+          <span class="ml-2">{{ chartConfig.name }}</span>
         </a>
       </li>
     </ul>
@@ -25,31 +25,53 @@
 <script>
 import { directive as onClickaway } from 'vue-clickaway';
 export default {
+  name: 'PastDaysChartSelector',
   directives: {
     onClickaway: onClickaway,
   },
   props: {
     defaultChartType: {
       type: Object,
-      default: { name: "Bar", type: "bar" }
+      default: {
+        type: 'bar', 
+        name: 'Bar',
+        stacked: true
+      }
+    },
+    chartOptions: {
+      type: Object,
+      default: {}
     }
   },
   data() {
-    const chartTypes = {
-      bar: "Bar",
-      area: "Area",
-      line: "Line"
-    }
+    const chartTypes = [
+      {
+        type: 'bar', 
+        name: 'Bar',
+        stacked: true
+      },
+      {
+        type: 'area',
+        name: 'Area',
+        stacked: false
+      },
+      {
+        type: 'line',
+        name: 'Line',
+        stacked: false
+      }
+    ]
     return {
       chartTypes: chartTypes,
       optionsShowed: false,
-      selectedChartType: this.defaultChartType,
+      selectedChartType: this.defaultChartType
     }
   },
   methods: {
-    changeChartConfig(chartName, chartType) {
-      this.selectedChartType.name = chartName
-      this.selectedChartType.type = chartType
+    changeChartConfig(chartConfig) {
+      this.selectedChartType.name = chartConfig.name
+      this.selectedChartType.type = chartConfig.type
+      this.chartOptions.chart.stacked = chartConfig.stacked
     },
     showOptions() {
       this.optionsShowed = true;

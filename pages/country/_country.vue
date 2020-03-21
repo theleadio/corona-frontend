@@ -56,7 +56,7 @@
       </div>
       <div class="flex flex-wrap">
         <div class="w-full md:w-3/4 p-2">
-            <bar-chart-number
+            <PastDaysChart
               :height="360"
               :trendData="countryTrend.trendData"
               :trendDates="countryTrend.trendDates"
@@ -79,7 +79,7 @@
 <script>
 import FatalityRate from '~/components/Analytics/FatalityRate'
 import LineChartNumber from '~/components/Country/LineChartNumber'
-import BarChartNumber from '~/components/Country/BarChartNumber'
+import PastDaysChart from '~/components/Country/PastDaysChart'
 import Overview from '~/components/Country/Overview'
 import PositiveRate from '~/components/Analytics/PositiveRate'
 import TwitterFeed from '~/components/TwitterFeed'
@@ -113,7 +113,7 @@ export default {
     GrowthRate,
     FatalityRate,
     LineChartNumber,
-    BarChartNumber,
+    PastDaysChart,
     Overview,
     PositiveRate,
     TwitterFeed,
