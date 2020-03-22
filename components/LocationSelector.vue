@@ -7,7 +7,7 @@
           <!-- <span v-if="numLastUpdated">[Last Update: {{new Date(numLastUpdated).toDateString()}}]</span> -->
         </p>
         <label class="block text-s font-bold mb-2">{{ $t('Stats Overview') }}</label>
-        <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded w-full flex focus:outline-none"
+        <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded w-full flex focus:outline-none rounded-b-none"
                 @click="toggleOptions">
           <div>
              <template v-if="selectedCountry">
@@ -29,18 +29,18 @@
         <div class="" v-if="optionsShowed">
           <input
             type="text"
-            class="absolute py-1 pl-4 leading-loose w-full focus:outline-none"
+            class="absolute py-1 pl-4 leading-loose w-full focus:outline-none border border-gray-200"
             placeholder="Search country"
             v-model="search"
             v-on-clickaway="closeOptions"
             />
         </div>
-        <ul class="absolute shadow text-gray-700 mt-10 z-50 w-full" v-if="optionsShowed" style="max-height: 36.3rem; overflow-y: auto; overflow-x:hidden">
-          <li v-for="country in filteredCountries" :key="country.code">
-            <a class="cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+        <ul class="absolute shadow text-gray-700 mt-10 w-full " v-if="optionsShowed" style="max-height: 36.3rem; z-index:1; overflow-y: auto; overflow-x:hidden">
+          <li v-for="country in filteredCountries" :key="country.code" class="first:border-t-0">
+            <a class="cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block flex"
                @click="selectCountry(country)">
-              <Flag :country-code="country.code" class="text-center" style="width: 21px;" />
-              <span class="ml-2">{{ country.name }}</span>
+              <Flag :country-code="country.code" class="text-center flex-none" style="width:21px" />
+              <span class="ml-2 leading-none">{{ country.name }}</span>
             </a>
           </li>
         </ul>
