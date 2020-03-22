@@ -55,7 +55,9 @@ export default {
 	'Total Recovered': 'Tổng số phục hồi',
 	'Total Deaths': 'Tổng số tử vong',
 	'Outbreak trend over time': 'Xu hướng bùng phát theo thời gian',
-	'Most affected regions': 'Khu vực bị ảnh hưởng nhiều nhất',
+	'Top countries with daily new cases': 'Top countries with daily new cases',
+	'Daily New Cases': 'Daily New Cases',
+	'Daily New Deaths': 'Daily New Deaths',
 
 	'About CoronaTracker': 'Mô tả CoronaTracker',
 	'CORONATRACKER.com is a community-based project powered by over 460 volunteers from across the globe, ranging from data scientists, medical professionals, UI/UX designers, fullstack developers, to the general public.':
@@ -118,10 +120,12 @@ export default {
 	"Daily Cases Receiving Treatment": "Daily Cases Receiving Treatment",
 	"Daily Recovered Cases": "Daily Recovered Cases",
 	"of total cases": "of total cases",
-    "Past 30 Days Chart": "Past 30 Days Chart",
+  "Past 30 Days Chart": "Past 30 Days Chart",
 
 	"COVID-19 Corona Tracker": "COVID-19 Corona Tracker",
 	"COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.": "COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.",
 	"COVID-19 {country} Corona Tracker": "COVID-19 {country} Corona Tracker",
 	"{country} COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.": "{country} COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.",
+	"COVID-19 related analytics, graphs, and charts": "COVID-19 related analytics, graphs, and charts",
+	"Visual presentations of COVID-19 related data from verified sources such as WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, and various international media.": "Visual presentations of COVID-19 related data from verified sources such as WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, and various international media.",
 };

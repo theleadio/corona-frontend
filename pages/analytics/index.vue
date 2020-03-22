@@ -71,7 +71,7 @@
           </div>
 
           <div class="max-w-full rounded shadow-md bg-white p-3 mb-5">
-            <AffectedRegion :data="affectedRegionData"></AffectedRegion>
+            <TopCountryWithDailyNewCases :data="topCountryWithDailyNewCasesData"/>
           </div>
         </div>
 
@@ -88,7 +88,7 @@
 <script>
 import SidebarNav from '~/components/Analytics/SidebarNav'
 import OutbreakTrendChart from '~/components/Analytics/OutbreakTrend'
-import AffectedRegion from '~/components/Analytics/AffectedRegion'
+import TopCountryWithDailyNewCases from '~/components/Analytics/TopCountryWithDailyNewCases'
 import AffectedCountry from '~/components/Analytics/AffectedCountry'
 import Flag from '~/components/Flag';
 
@@ -110,12 +110,12 @@ export default {
     };
   },
 
-  components: { SidebarNav, OutbreakTrendChart, AffectedRegion, AffectedCountry, Flag },
+  components: { SidebarNav, OutbreakTrendChart, TopCountryWithDailyNewCases, AffectedCountry, Flag },
 
   mounted () {
     this.loadStats()
     this.loadOutbreakTrend()
-    this.loadAffectedRegion()
+    this.loadTopCountryWithDailyNewCases()
     this.loadAffectedCountry()
   },
 
@@ -126,7 +126,7 @@ export default {
       deaths: 0,
       recovered: 0,
       outbreakTrendData: [],
-      affectedRegionData: [],
+      topCountryWithDailyNewCasesData: [],
       affectedCountryData: [],
     }
   },
@@ -154,15 +154,15 @@ export default {
         })
     },
 
-    loadAffectedRegion () {
-      this.$api.analytics.fetchAffectedRegion()
+    loadTopCountryWithDailyNewCases () {
+      this.$api.analytics.fetchTopCountryWithDailyNewCases()
         .then(data => {
-          this.affectedRegionData = data
+          this.topCountryWithDailyNewCasesData = data
         })
     },
 
     loadAffectedCountry () {
-      this.$api.analytics.fetchAffectedCountry()
+      this.$api.analytics.fetchAllAffectedCountry()
         .then(data => {
           this.affectedCountryData = data
         })
