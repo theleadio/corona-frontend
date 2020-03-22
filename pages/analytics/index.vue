@@ -139,11 +139,11 @@ export default {
 
   methods: {
     loadStats () {
-      this.$api.stats.getStats('')
+      this.$api.stats.getGlobalStats()
         .then(data => {
-          this.confirmed = data.confirmed
-          this.deaths = data.deaths
-          this.recovered = data.recovered
+          this.confirmed = data.totalConfirmed
+          this.deaths = data.totalDeaths
+          this.recovered = data.totalRecovered
         })
     },
 
