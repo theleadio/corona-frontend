@@ -35,14 +35,14 @@ export default {
     "Help us collate the locations for your country!": "ساعدنا في تجميع المراكز في دولتك",
     "Join our Telegram group": "انضم إلى قناتنا على التليجرام",
     "GET IT ON": "GET IT ON",
-  
+
     "Travel Alert Information": "معلومات عن تحذيرات السفر",
     "Select Country": "اختر الدولة",
-  
+
     "What is COVID-19?": "ما هو فيروس كورونا المستجد (COVID-19)؟",
-  
+
     "We will update this page with resources related to nCov prevention, here is a quick guide from WHO.": "سنقوم بتحديث هذه الصفحة بمصادر تتعلق بسبل الوقاية من فيروس كورونا المستجد. في الوقت الراهن، يمكنك الإطلاع على هذا الدليل المختصر من منظمة الصحة العالمية.",
-  
+
     "Overview": "نظرة عامة",
     "Reports": "تقارير",
     "Total Confirmed": "الحالات المؤكدة",
@@ -50,7 +50,7 @@ export default {
     "Total Deaths": "الحالات المتوفية",
     "Outbreak trend over time": "ميل تفشي الفيروس مع مرور الوقت",
     "Most affected regions": "أكثر المناطق المتأثرة",
-  
+
     "About CoronaTracker": "عن CoronaTracker",
     "CORONATRACKER.com is a community-based project powered by over 460 volunteers from across the globe, ranging from data scientists, medical professionals, UI/UX designers, fullstack developers, to the general public.": "يعتمد مشروع CORONATRACKER.com بالكامل على المشاركة المجتمعية بمساهمة أكثر من 460 متطوع من حول العالم، ما بين علماء بيانات، عاملين في المجال الطبي، مصممي واجهات مستخدم، مبرمجي ويب، و مساهمين من العامة.",
     "It acts as a portal for the public to keep track of the latest news development about the COVID-19, alongside collecting data for further analysis. All the contents are handpicked, filtered, and curated by volunteers to our best extent to ensure that sources are reliable with minimal hoaxes and fake news, in the best benefit of the public. Natural Language Processing (NLP) is used to analyze trending content and identify meaningful topics over various news sources and social media platforms prior to being verified by our team.": "يعمل المشروع بمثابة منصة متاحة للعامة للاطلاع على آخر الأخبار و التطورات المتعلقة بفيروس كورونا المستجد (COVID-19)، كما يعمل المشروع على تجميع بيانات و داتا بغرض تحليلها بشكل معمق. جميع المحتوى المعروض على الموقع يتم اختياره يدويا، تصفيته، و تنقيحه من قبل متطوعينا من أجل التأكد من أن كل المصادر موثوقة و يعتمد عليها، و خالية تماما من أي أخبار كاذبة أو غير موثوقة بغرض حصول العامة على أكبر قدر من الاستفادة. كما أننا نستخدم تقنية معالجة اللغة الطبيعية (Natural Language Processing NLP) لتحليل المحتوى الرائج المرتبط بفيروس كورونا على شبكات التواصل الاجتماعي و مصادر الأخبار المختلفة قبل أن يتم مراجعتها و التأكد منها من قبل فريقنا.",
@@ -82,6 +82,7 @@ export default {
     "Team Research": "فريق البحث",
     "Team Engineering": "فريق البرمجة",
     "Team Design": "فريق التصميم",
+    "Team Public Relations": "Team Public Relations",
     "View more": "عرض المزيد",
 
     "Serious Cases": "Serious Cases",

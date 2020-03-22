@@ -75,7 +75,7 @@ export default {
   "Lead Full Stack Engineer": "Lead Full Stack Engineer",
   "Lead Mobile Developer": "Lead Mobile Developer",
   "Lead Analyst": "Lead Analyst",
-  "Head of Public Relation": "Head of Public Relation",
+  "Head of Public Relation": "Head of Public Relations",
   "Head of Product": "Head of Product",
   "Lead Researcher": "Lead Researcher",
   "LinkedIn": "LinkedIn",
@@ -83,7 +83,7 @@ export default {
   "Team Research": "Team Research",
   "Team Engineering": "Team Engineering",
   "Team Design": "Team Design",
-  "Team Pulic Relations": "Team Public Relations",
+  "Team Public Relations": "Team Public Relations",
   "View more": "View more",
 
   "Serious Cases": "Serious Cases",

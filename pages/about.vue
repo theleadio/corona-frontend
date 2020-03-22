@@ -81,7 +81,7 @@
               {{ $t('For the third time in as many decades, a zoonotic coronavirus has crossed species to infect human populations. This virus, provisionally called COVID-19, was first identified in Wuhan, China, in persons exposed to a seafood or wet market.') }}
             </td>
             <td class="border px-4 py-2">
-              The New England Journal of Medcine
+              The New England Journal of Medicine
             </td>
           </tr>
           <tr>
