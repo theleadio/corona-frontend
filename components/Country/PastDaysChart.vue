@@ -45,7 +45,7 @@ export default {
     },
     title: {
       type: String,
-      default: 'Past 30 Days Chart'
+      default: ''
     },
   },
   data() {
