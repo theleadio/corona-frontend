@@ -9,8 +9,19 @@ export default axios => ({
       .then(res => res.data)
   },
 
+  // deprecating
   fetchAffectedCountry: () => {
     return axios.get(`/v2/analytics/country`)
+      .then(res => res.data)
+  },
+
+  fetchAllAffectedCountry: () => {
+    return axios.get(`/v3/analytics/country`)
+      .then(res => res.data)
+  },
+
+  fetchTopCountryWithDailyNewCases: () => {
+    return axios.get(`/v3/analytics/daily`)
       .then(res => res.data)
   },
 });
