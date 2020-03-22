@@ -2,7 +2,7 @@
   <div class="flex flex-wrap">
     <SidebarNav></SidebarNav>
 
-    <div class="w-full lg:w-5/6 px-5 pt-2 bg-gray-200">
+    <div class="w-full lg:w-5/6 px-2 pt-2 bg-gray-200">
       <div class="pl-2">
         <p class="text-2xl font-bold">COVID-19 {{ $t('Overview') }}</p>
 
@@ -14,20 +14,54 @@
       <div class="flex flex-wrap">
         <div class="w-full lg:w-1/2 px-2">
           <div class="max-w-full rounded shadow-md bg-white p-3 mb-5">
-            <div class="flex flex-col lg:flex-row">
-              <div class="px-5">
+            <div class="flex flex-row lg:flex-row">
+              <div class="px-2">
                 <p class="text-sm font-bold text-red-600">{{ $t('Total Confirmed') }}</p>
-                <p class="text-4xl font-bold text-red-600">{{ confirmed | formatNumber }}</p>
+                <p class="text-xl font-bold text-red-600">{{ confirmed | formatNumber }}</p>
               </div>
 
-              <div class="px-5">
+              <div class="px-2">
                 <p class="text-sm font-bold text-green-600">{{ $t('Total Recovered') }}</p>
-                <p class="text-4xl font-bold text-green-600">{{ recovered | formatNumber }}</p>
+                <p class="text-xl font-bold text-green-600">{{ recovered | formatNumber }}</p>
               </div>
 
-              <div class="px-5">
+              <div class="px-2">
                 <p class="text-sm font-bold text-gray-600">{{ $t('Total Deaths') }}</p>
-                <p class="text-4xl font-bold text-gray-600">{{ deaths | formatNumber }}</p>
+                <p class="text-xl font-bold text-gray-600">{{ deaths | formatNumber }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full rounded shadow-md bg-white p-3 mb-5 block lg:hidden">
+            <div class="mt-3" style="max-height: 36.3rem; overflow: auto;">
+              <table class="table-auto w-full">
+                <thead class="text-xs leading-tight border-b-2">
+                <tr>
+                  <th class="border px-2 py-2">{{ $t('Country') }}</th>
+                  <th class="border px-1 py-2">{{ $t('Total Confirmed') }}</th>
+                  <th class="border px-1 py-2">{{ $t('Total Recovered') }}</th>
+                  <th class="border px-1 py-2">{{ $t('Total Deaths') }}</th>
+                </tr>
+                </thead>
+                <tbody class="font-bold">
+                <tr v-for="loc in affectedCountries" :key="loc.countryName">
+                  <td class="bg-gray-200 text-xs border px-2 py-2 hover:bg-primary hover:text-white">
+                    <span v-if="loc.countryName === 'Others'">{{loc.countryName}}</span>
+                    <nuxt-link :to="`/country/${loc.countryCode.toLowerCase()}`" style="display:block" v-else>
+                      <Flag :country-code="loc.countryCode"></Flag>
+                      {{loc.countryName}}
+                    </nuxt-link>
+                    <a v-if="loc.countryName === 'Others'" href="#notes-on-others">*</a>
+                  </td>
+                  <td class="text-center border px-1 py-2">{{ loc.confirmed | formatNumber }}</td>
+                  <td class="text-center border px-1 py-2">{{ loc.recovered | formatNumber }}</td>
+                  <td class="text-center border px-1 py-2">{{ loc.deaths | formatNumber }}</td>
+                </tr>
+                </tbody>
+              </table>
+              <div class="my-2 font-bold text-xs text-gray-600 leading-tight">
+                * {{ $t('Cases identified on a cruise ship currently in Japanese territorial waters.') }}
+                <a name="notes-on-others" class="anchor"></a>
               </div>
             </div>
           </div>
@@ -37,7 +71,7 @@
           </div>
 
           <div class="max-w-full rounded shadow-md bg-white p-3 mb-5">
-            <AffectedRegion :data="affectedRegionData"></AffectedRegion>
+            <TopCountryWithDailyNewCases :data="topCountryWithDailyNewCasesData"/>
           </div>
         </div>
 
@@ -54,16 +88,34 @@
 <script>
 import SidebarNav from '~/components/Analytics/SidebarNav'
 import OutbreakTrendChart from '~/components/Analytics/OutbreakTrend'
-import AffectedRegion from '~/components/Analytics/AffectedRegion'
+import TopCountryWithDailyNewCases from '~/components/Analytics/TopCountryWithDailyNewCases'
 import AffectedCountry from '~/components/Analytics/AffectedCountry'
+import Flag from '~/components/Flag';
 
 export default {
-  components: { SidebarNav, OutbreakTrendChart, AffectedRegion, AffectedCountry },
-  
+  head() {
+    const title = this.$t('COVID-19 related analytics, graphs, and charts');
+    const description = this.$t('Visual presentations of COVID-19 related data from verified sources such as WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, and various international media.');
+
+    return {
+      title,
+      meta: [
+        { hid: 'title', name: 'title', content: title },
+        { hid: 'description', name: 'description', content: description },
+        { hid: 'og-title', property: 'og:title', content: title },
+        { hid: 'og-description', property: 'og:title', content: description },
+        { hid: 'twitter-title', property: 'twitter:title', content: title },
+        { hid: 'twitter-description', property: 'twitter:title', content: description },
+      ],
+    };
+  },
+
+  components: { SidebarNav, OutbreakTrendChart, TopCountryWithDailyNewCases, AffectedCountry, Flag },
+
   mounted () {
     this.loadStats()
     this.loadOutbreakTrend()
-    this.loadAffectedRegion()
+    this.loadTopCountryWithDailyNewCases()
     this.loadAffectedCountry()
   },
 
@@ -74,22 +126,24 @@ export default {
       deaths: 0,
       recovered: 0,
       outbreakTrendData: [],
-      affectedRegionData: [],
+      topCountryWithDailyNewCasesData: [],
       affectedCountryData: [],
     }
   },
 
-  metaInfo: {
-    title: 'Analytics',
+  computed: {
+    affectedCountries() {
+      return this.affectedCountryData.filter(i => i.confirmed)
+    }
   },
 
   methods: {
     loadStats () {
-      this.$api.stats.getStats('')
+      this.$api.stats.getGlobalStats()
         .then(data => {
-          this.confirmed = data.confirmed
-          this.deaths = data.deaths
-          this.recovered = data.recovered
+          this.confirmed = data.totalConfirmed
+          this.deaths = data.totalDeaths
+          this.recovered = data.totalRecovered
         })
     },
 
@@ -100,15 +154,15 @@ export default {
         })
     },
 
-    loadAffectedRegion () {
-      this.$api.analytics.fetchAffectedRegion()
+    loadTopCountryWithDailyNewCases () {
+      this.$api.analytics.fetchTopCountryWithDailyNewCases()
         .then(data => {
-          this.affectedRegionData = data
+          this.topCountryWithDailyNewCasesData = data
         })
     },
 
     loadAffectedCountry () {
-      this.$api.analytics.fetchAffectedCountry()
+      this.$api.analytics.fetchAllAffectedCountry()
         .then(data => {
           this.affectedCountryData = data
         })

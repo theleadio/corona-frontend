@@ -16,7 +16,7 @@ export default {
   props: {
     wrapperClass: {
       type: String,
-      default: "bg-white rounded border border-gray-400"
+      default: "bg-white rounded border border-gray-400 h-full"
     },
     twitterHandle: {
       type: String,
@@ -31,8 +31,8 @@ export default {
       default: "#2B7BB9"
     },
     dataHeight: {
-      type: Number,
-      default: 600
+      type: String,
+      default: "100%"
     }
   },
   created() {

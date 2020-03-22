@@ -11,8 +11,21 @@
 </template>
 <script>
 export default {
-  metaInfo: {
-    title: 'Prevention',
+  head() {
+    const title = this.$t('Prevention tips and care towards COVID-19');
+    const description = this.$t('Prevention care and tips from WHO (World Health Organization) related to COVID-19.');
+
+    return {
+      title,
+      meta: [
+        { hid: 'title', name: 'title', content: title },
+        { hid: 'description', name: 'description', content: description },
+        { hid: 'og-title', property: 'og:title', content: title },
+        { hid: 'og-description', property: 'og:title', content: description },
+        { hid: 'twitter-title', property: 'twitter:title', content: title },
+        { hid: 'twitter-description', property: 'twitter:title', content: description },
+      ],
+    };
   },
 }
 </script>

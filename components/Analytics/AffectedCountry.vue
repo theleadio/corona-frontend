@@ -45,26 +45,7 @@
       </client-only>
     </div>
 
-    <div class="mt-3" style="max-height: 36.3rem; overflow: auto;">
-      <!--<table class="table-fixed w-full border">
-        <thead class="text-xs text-center font-bold leading-tight">
-          <tr>
-            <td class="border">Country</td>
-            <td class="border">Total Confirmed</td>
-            <td class="border">Total Recovered</td>
-            <td class="border">Total Deaths</td>
-          </tr>
-        </thead>
-
-        <tbody class="text-xs text-center leading-tight">
-          <tr v-for="loc in countries" :key="loc.country">
-            <td class="border px-1 py-2">{{ loc.country }}</td>
-            <td class="border px-1 py-2">{{ parseInt(loc.total_confirmed).toLocaleString() }}</td>
-            <td class="border px-1 py-2">{{ parseInt(loc.total_recovered).toLocaleString() }}</td>
-            <td class="border px-1 py-2">{{ parseInt(loc.total_dead).toLocaleString() }}</td>
-          </tr>
-        </tbody>
-      </table>-->
+    <div class="mt-3 hidden lg:block" style="max-height: 36.3rem; overflow: auto;">
 
       <table class="table-auto w-full">
         <thead class="text-xs leading-tight border-b-2">
@@ -77,9 +58,13 @@
         </thead>
         <tbody class="font-bold">
         <tr v-for="loc in countries" :key="loc.countryName">
-          <td class="bg-gray-200 text-xs border px-2 py-2">
-            <Flag :country-code="loc.countryCode"></Flag>
-            {{loc.countryName}}<a v-if="loc.countryName === 'Others'" href="#notes-on-others">*</a>
+          <td class="bg-gray-200 text-xs border px-2 py-2 hover:bg-primary hover:text-white">
+            <span v-if="loc.countryName === 'Others'">{{loc.countryName}}</span>
+            <nuxt-link :to="`/country/${loc.countryCode.toLowerCase()}`" style="display:block" v-else>
+              <Flag :country-code="loc.countryCode"></Flag>
+              {{loc.countryName}}
+            </nuxt-link>
+            <a v-if="loc.countryName === 'Others'" href="#notes-on-others">*</a>
           </td>
           <td class="text-center border px-1 py-2">{{ loc.confirmed | formatNumber }}</td>
           <td class="text-center border px-1 py-2">{{ loc.recovered | formatNumber }}</td>

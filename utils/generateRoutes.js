@@ -1,3 +1,5 @@
+import { defaultLocale } from './constants';
+
 Object.defineProperty(Array.prototype, 'flat', {
   value: function(depth = 1) {
     return this.reduce(function (flat, toFlatten) {
@@ -14,10 +16,9 @@ export const generateRoutes = (locales, countries) => {
 
   const localeRoutes = locales
     .map(a => a.code)
-    .map(c => {
-      return countryAliases.map(a => `${c}/${a}`);
-    })
+    .map(a => a === defaultLocale ? '' : `/${a}`)
+    .map(locale => countryAliases.map(countryAlias => `${locale}/${countryAlias}`))
     .flat();
 
-  return countryAliases.concat(localeRoutes);
+  return localeRoutes;
 }

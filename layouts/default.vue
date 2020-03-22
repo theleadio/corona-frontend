@@ -11,12 +11,12 @@
 
   export default {
     name: 'app',
-    metaInfo: {
-      title: 'App',
-      titleTemplate: '%s | Corona Tracker',
-      htmlAttrs: {
-        lang: 'en',
-        amp: true
+    head() {
+      return {
+        titleTemplate: '%s | Corona Tracker',
+        htmlAttrs: {
+          lang: this.$i18n.locale,
+        },
       }
     },
     components: {

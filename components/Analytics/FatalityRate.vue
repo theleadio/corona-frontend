@@ -1,15 +1,15 @@
 <template>
-  <div class="bg-white rounded border border-gray-400 p-1 py-3 w-full sm: w-1/2" >
-    <div class="flex flex-wrap">  
-      <div class="w-full sm:w-1/3">
+  <div class="bg-white rounded border border-gray-400 p-1 w-full sm: w-1/2 h-full" >
+    <div class="flex flex-wrap">
+      <div class="w-full sm:w-1/2">
         <client-only placeholder="Loading...">
           <apexcharts ref="chart" type="donut" width="100%" height="150px" :options="options" :series="series"></apexcharts>
         </client-only>
-      </div>  
-      <div class="w-full sm:w-2/3 flex flex-col py-2 pl-2 justify-center">
+      </div>
+      <div class="w-full sm:w-1/2 flex flex-col py-2 pl-2 justify-center text-center sm:text-left">
         <strong class="mb-2">{{ $t('Fatality Rate') }}</strong>
-        <small class="mb-2">{{ $t('Time taken from confirmation to discharge') }}</small>
-        <strong>{{ $t('{number} days', { number: days }) }}</strong>
+        <!-- <small class="mb-2">{{ $t('Time taken from confirmation to discharge') }}</small> -->
+        <!-- <strong>{{ $t('{number} days', { number: days }) }}</strong> -->
       </div>
     </div>
   </div>
@@ -21,10 +21,10 @@
 <script>
 
 export default {
-  name: "PositiveRate",
+  name: "FatalityRate",
   props:{
     days: {
-      type: Number, 
+      type: Number,
       default: 0,
     },
     series: {
