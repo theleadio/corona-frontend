@@ -21,7 +21,7 @@ export default {
     return {
       options: {
         title: {
-          text: this.$t('Most affected regions'),
+          text: this.$t('Top countries with daily new cases'),
           align: 'left',
         },
 
@@ -47,7 +47,7 @@ export default {
         },
 
         tooltip: {
-          theme: 'light'
+          theme: 'light',
         },
 
         dataLabels: {
@@ -84,18 +84,14 @@ export default {
 
   watch: {
     data (val) {
-      const categories = val.map(i => i.state)
+      const categories = val.map(i => i.country)
       const series = [
         {
-          name: this.$t('Total Confirmed'),
+          name: this.$t('Daily New Cases'),
           data: Array(categories.length).fill(0),
         },
         {
-          name: this.$t('Total Deaths'),
-          data: Array(categories.length).fill(0),
-        },
-        {
-          name: this.$t('Total Recovered'),
+          name: this.$t('Daily New Deaths'),
           data: Array(categories.length).fill(0),
         },
       ]
@@ -107,10 +103,9 @@ export default {
       })
 
       val.map(i => i).forEach((item) => {
-        const categoryIdx = categories.indexOf(item.state)
-        series[0].data[categoryIdx] += item.total_confirmed
-        series[1].data[categoryIdx] += item.total_dead
-        series[2].data[categoryIdx] += item.total_recovered
+        const categoryIdx = categories.indexOf(item.country)
+        series[0].data[categoryIdx] += item.daily_cases
+        series[1].data[categoryIdx] += item.daily_deaths
       })
 
       this.$refs.chart.updateSeries(series)

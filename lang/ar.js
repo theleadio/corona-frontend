@@ -49,7 +49,9 @@ export default {
     "Total Recovered": "الحالات المتعافية",
     "Total Deaths": "الحالات المتوفية",
     "Outbreak trend over time": "ميل تفشي الفيروس مع مرور الوقت",
-    "Most affected regions": "أكثر المناطق المتأثرة",
+    "Top countries with daily new cases": "Top countries with daily new cases",
+    "Daily New Cases": "Daily New Cases",
+    "Daily New Deaths": "Daily New Deaths",
   
     "About CoronaTracker": "عن CoronaTracker",
     "CORONATRACKER.com is a community-based project powered by over 460 volunteers from across the globe, ranging from data scientists, medical professionals, UI/UX designers, fullstack developers, to the general public.": "يعتمد مشروع CORONATRACKER.com بالكامل على المشاركة المجتمعية بمساهمة أكثر من 460 متطوع من حول العالم، ما بين علماء بيانات، عاملين في المجال الطبي، مصممي واجهات مستخدم، مبرمجي ويب، و مساهمين من العامة.",
@@ -100,4 +102,6 @@ export default {
     "COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.": "COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.",
     "COVID-19 {country} Corona Tracker": "COVID-19 {country} Corona Tracker",
     "{country} COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.": "{country} COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.",
+    "COVID-19 related analytics, graphs, and charts": "COVID-19 related analytics, graphs, and charts",
+    "Visual presentations of COVID-19 related data from verified sources such as WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, and various international media.": "Visual presentations of COVID-19 related data from verified sources such as WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, and various international media.",
   };
