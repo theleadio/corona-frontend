@@ -119,6 +119,11 @@ export default {
   i18n: {
     locales: [
       {
+        code: 'ar',
+        name: 'Arabic',
+        file: 'ar.js',
+      },
+      {
         code: 'en',
         name: 'English',
         file: 'en.js',
