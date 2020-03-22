@@ -4,6 +4,16 @@ export default axios => ({
       .then(res => res.data);
   },
 
+  getCountrySpecificStats: (countryCode) => {
+    return axios.get(`/v3/stats/worldometer/country?countryCode=${countryCode}`)
+      .then(res => res.data);
+  },
+
+  getGlobalStats: () => {
+    return axios.get(`/v3/stats/worldometer/global`)
+      .then(res => res.data);
+  },
+
   getLatestStats: () => {
     return axios.get(`/stats/latest`)
       .then(res => res.data);

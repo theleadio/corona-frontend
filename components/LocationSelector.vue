@@ -134,13 +134,24 @@ export default {
     loadStats() {
       const selectedCountryCode = !this.selectedCountry || this.selectedCountry.code === 'global' ? '' : this.selectedCountry.code;
 
-      this.$api.stats.getStats(selectedCountryCode)
-        .then(data => {
-          this.deaths = data.deaths;
-          this.confirmed = data.confirmed;
-          this.recovered = data.recovered;
-          this.numLastUpdated = data.agg_date;
-        });
+      if (selectedCountryCode === '') {
+        this.$api.stats.getGlobalStats()
+          .then(data => {
+            this.deaths = data.totalDeaths;
+            this.confirmed = data.totalConfirmed;
+            this.recovered = data.totalRecovered;
+            this.numLastUpdated = data.created;
+          });
+      } else {
+        this.$api.stats.getCountrySpecificStats(selectedCountryCode)
+          .then(data => {
+            this.deaths = data[0].totalDeaths;
+            this.confirmed = data[0].totalConfirmed;
+            this.recovered = data[0].totalRecovered;
+            this.numLastUpdated = data[0].lastUpdated;
+          });
+      }
+
     },
   },
   created() {
