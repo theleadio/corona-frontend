@@ -7,10 +7,10 @@
           <!-- <span v-if="numLastUpdated">[Last Update: {{new Date(numLastUpdated).toDateString()}}]</span> -->
         </p>
         <label class="block text-s font-bold mb-2">{{ $t('Stats Overview') }}</label>
-        <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded w-full flex"
-                @click="toggleOptions" v-on-clickaway="closeOptions">
+        <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded w-full flex focus:outline-none rounded-b-none"
+                @click="toggleOptions">
           <div>
-            <template v-if="selectedCountry">
+             <template v-if="selectedCountry">
               <Flag :country-code="selectedCountry.code" class="text-center" style="width: 21px;" />
               <span class="ml-2">{{ selectedCountry.name }}</span>
             </template>
@@ -26,12 +26,21 @@
           </div>
         </button>
 
-        <ul class="absolute shadow text-gray-700 mt-1 z-50 w-full" v-if="optionsShowed">
-          <li v-for="country in countries" :key="country.code">
-            <a class="cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+        <div class="" v-if="optionsShowed">
+          <input
+            type="text"
+            class="absolute py-1 pl-4 leading-loose w-full focus:outline-none border border-gray-200"
+            placeholder="Search country"
+            v-model="search"
+            v-on-clickaway="closeOptions"
+            />
+        </div>
+        <ul class="absolute shadow text-gray-700 mt-10 w-full " v-if="optionsShowed" style="max-height: 36.3rem; z-index:1; overflow-y: auto; overflow-x:hidden">
+          <li v-for="country in filteredCountries" :key="country.code" class="first:border-t-0">
+            <a class="cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block flex"
                @click="selectCountry(country)">
-              <Flag :country-code="country.code" class="text-center" style="width: 21px;" />
-              <span class="ml-2">{{ country.name }}</span>
+              <Flag :country-code="country.code" class="text-center flex-none" style="width:21px" />
+              <span class="ml-2 leading-none">{{ country.name }}</span>
             </a>
           </li>
         </ul>
@@ -69,22 +78,9 @@ export default {
     Stats
   },
   data: function() {
-    const countries = [
-      { code: 'CN', name: 'China' },
-      { code: 'HK', name: 'Hong Kong' },
-      { code: 'ID', name: 'Indonesia' },
-      { code: 'JP', name: 'Japan' },
-      { code: 'KR', name: 'South Korea' },
-      { code: 'MY', name: 'Malaysia' },
-      { code: 'PH', name: 'Philippines' },
-      { code: 'SG', name: 'Singapore' },
-      { code: 'TW', name: 'Taiwan' },
-      { code: 'TH', name: 'Thailand' },
-      { code: 'VN', name: 'Vietnam' },
-    ];
 
     return {
-      countries: [{ code: 'global', name: 'Global'}, ...countries],
+      countries: [],
       global: {
         code: 'global',
         name: this.$t('Global'),
@@ -95,7 +91,15 @@ export default {
       confirmed: 0,
       recovered: 0,
       numLastUpdated: null,
+      search: ''
     };
+  },
+
+  computed: {
+    filteredCountries(){
+      const reg = new RegExp(this.search, "i")
+      return this.countries.filter(m => reg.test(m.name))
+    }
   },
   methods: {
     selectCountry(country) {
@@ -104,6 +108,7 @@ export default {
       this.$emit('input', country && country.code === 'global' ? {} : country);
       this.updateCountryCodeParam(country);
       this.loadStats();
+      this.search = ""
     },
     showOptions(){
       this.optionsShowed = true;
@@ -113,6 +118,7 @@ export default {
     },
     toggleOptions() {
       this.optionsShowed = !this.optionsShowed;
+      this.search = ""
     },
     updateCountryCodeParam(country) {
       const query = country && country.code !== 'global' ? {
@@ -142,10 +148,25 @@ export default {
           this.numLastUpdated = data.agg_date;
         });
     },
+
+    loadAffectedCountry () {
+      this.$api.analytics.fetchAffectedCountry()
+        .then(data => {
+          const mappedInfo = data.map(m => {
+              return {
+                code: m.countryCode,
+                name: m.countryName
+              }
+          }).filter(m => m.code != "OT")
+
+          this.countries = [{ code: 'global', name: 'Global'}, ...mappedInfo]
+        })
+    },
   },
   created() {
     this.checkForPresetCountryCode();
     this.loadStats();
+    this.loadAffectedCountry()
   },
 };
 </script>
