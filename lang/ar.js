@@ -97,6 +97,7 @@ export default {
     "Daily Cases Receiving Treatment": "Daily Cases Receiving Treatment",
     "Daily Recovered Cases": "Daily Recovered Cases",
     "of total cases": "of total cases",
+    "Past 30 Days Chart": "Past 30 Days Chart",
 
     "COVID-19 Corona Tracker": "COVID-19 Corona Tracker",
     "COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.": "COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.",
