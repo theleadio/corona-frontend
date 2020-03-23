@@ -46,12 +46,16 @@
                 <tbody class="font-bold">
                 <tr v-for="loc in affectedCountries" :key="loc.countryName">
                   <td class="bg-gray-200 text-xs border px-2 py-2 hover:bg-primary hover:text-white">
-                    <span v-if="loc.countryName === 'Others'">{{loc.countryName}}</span>
-                    <nuxt-link :to="`/country/${loc.countryCode.toLowerCase()}`" style="display:block" v-else>
-                      <Flag :country-code="loc.countryCode"></Flag>
-                      {{loc.countryName}}
-                    </nuxt-link>
-                    <a v-if="loc.countryName === 'Others'" href="#notes-on-others">*</a>
+                    <template v-if="loc.countryName === 'Others'">
+                      <span>{{loc.countryName}}</span>
+                      <a href="#notes-on-others">*</a>
+                    </template>
+                    <template v-else-if="loc.countryCode">
+                      <nuxt-link :to="`/country/${loc.countryCode.toLowerCase()}`" style="display: block;">
+                        <Flag :country-code="loc.countryCode"></Flag>
+                        {{loc.countryName}}
+                      </nuxt-link>
+                    </template>
                   </td>
                   <td class="text-center border px-1 py-2">{{ loc.confirmed | formatNumber }}</td>
                   <td class="text-center border px-1 py-2">{{ loc.recovered | formatNumber }}</td>
