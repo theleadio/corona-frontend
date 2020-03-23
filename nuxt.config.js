@@ -1,5 +1,9 @@
 require('dotenv').config();
 
+const { defaultLocale, locales, COUNTRIES } = require('./utils/constants.js');
+const { generateRoutes } = require('./utils/generateRoutes.js');
+const routes = generateRoutes(locales, COUNTRIES);
+
 export default {
   // mode: 'spa',
   /*
@@ -12,6 +16,7 @@ export default {
       { 'http-equiv': "X-UA-Compatible", content: 'IE=edge' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
+        hid: 'title',
         name: 'title',
         content: 'Corona Tracker',
       },
@@ -24,17 +29,18 @@ export default {
       { name: 'theme-color', content: '#ffffff' },
 
       // Open Graph / Faceboook
+      { property: 'og:site_name', content: 'Corona Tracker' },
       { property: 'og:type', content: 'website' },
       { property: 'og:url', content: 'https://www.coronatracker.com/' },
-      { property: 'og:title', content: 'Corona Tracker' },
-      { property: 'og:description', content: 'One stop platform for data and news related to COVID-19' },
+      { hid: 'og-title', property: 'og:title', content: 'Corona Tracker' },
+      { hid: 'og-description', property: 'og:description', content: 'One stop platform for data and news related to COVID-19' },
       { property: 'og:image', content: 'https://www.coronatracker.com/og-corona.png' },
 
       // Twitter
       { property: 'twitter:card', content: 'https://www.coronatracker.com/og-corona.png' },
       { property: 'twitter:url', content: 'https://www.coronatracker.com/' },
-      { property: 'twitter:title', content: 'Corona Tracker' },
-      { property: 'twitter:description', content: 'One stop platform for data and news related to COVID-19' },
+      { hid: 'twitter-title', property: 'twitter:title', content: 'Corona Tracker' },
+      { hid: 'twitter-description', property: 'twitter:description', content: 'One stop platform for data and news related to COVID-19' },
       { property: 'twitter:image', content: 'https://www.coronatracker.com/og-corona.png' },
     ],
     link: [
@@ -46,7 +52,23 @@ export default {
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/css/flag-icon.min.css'},
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css'},
       { rel: 'stylesheet', href: 'https://unpkg.com/leaflet@1.2.0/dist/leaflet.css' },
-    ]
+
+      // Used by buy-me-a-coffee
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Cookie' }
+    ],
+    script: [
+      {
+        src: 'https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js',
+        'data-name': 'BMC-Widget',
+        'data-id': 'coronatracker',
+        'data-description': 'Support me on Buy me a coffee!',
+        'data-message': 'Thank you for visiting. You can now buy me a coffee!',
+        'data-color': '#FF813F',
+        'data-position': 'left',
+        'data-x_margin': '18',
+        'data-y_margin': '18',
+      }
+    ],
   },
   /*
    ** Customize the progress-bar color
@@ -70,6 +92,9 @@ export default {
     '~/plugins/vuejs-paginate.client.js',
     '~/plugins/vue-apexcharts.client.js',
   ],
+  generate: {
+    routes,
+  },
   /*
    ** Nuxt.js dev-modules
    */
@@ -110,24 +135,8 @@ export default {
   },
   /* i18n module configuration */
   i18n: {
-    locales: [
-      {
-        code: 'en',
-        name: 'English',
-        file: 'en.js',
-      },
-      {
-        code: 'ms',
-        name: 'Bahasa Melayu',
-        file: 'ms.js',
-      },
-      {
-        code: 'vi',
-        name: 'Tiếng Việt',
-        file: 'vi.js',
-      }
-    ],
-    defaultLocale: 'en',
+    locales,
+    defaultLocale,
     lazy: true,
     langDir: 'lang/'
   },

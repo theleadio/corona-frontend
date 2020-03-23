@@ -11,8 +11,21 @@
 
 <script>
 export default {
-  metaInfo: {
-    title: 'Causes',
+  head() {
+    const title = this.$t('What is COVID-19 and its causes?');
+    const description = this.$t('Causes released by WHO (World Health Organization) related to COVID-19.');
+
+    return {
+      title,
+      meta: [
+        { hid: 'title', name: 'title', content: title },
+        { hid: 'description', name: 'description', content: description },
+        { hid: 'og-title', property: 'og:title', content: title },
+        { hid: 'og-description', property: 'og:title', content: description },
+        { hid: 'twitter-title', property: 'twitter:title', content: title },
+        { hid: 'twitter-description', property: 'twitter:title', content: description },
+      ],
+    };
   },
 }
 </script>

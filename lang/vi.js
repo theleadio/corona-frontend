@@ -45,8 +45,9 @@ export default {
 
 	'What is COVID-19?': 'COVID-19 là gì?',
 
-	'We will update this page with resources related to nCov prevention, here is a quick guide from WHO.':
-		'Chúng tôi sẽ cập nhật với các bên liên quan đến phòng chống COVID-19, đây là hướng dẫn nhanh từ WHO.',
+	'We will update this page with resources related to nCov prevention, here is a quick guide from':
+		'Chúng tôi sẽ cập nhật với các bên liên quan đến phòng chống COVID-19, đây là hướng dẫn nhanh từ',
+	'WHO': 'WHO',
 
 	Overview: 'Tổng quan',
 	Reports: 'Báo cáo',
@@ -54,15 +55,17 @@ export default {
 	'Total Recovered': 'Tổng số phục hồi',
 	'Total Deaths': 'Tổng số tử vong',
 	'Outbreak trend over time': 'Xu hướng bùng phát theo thời gian',
-	'Most affected regions': 'Khu vực bị ảnh hưởng nhiều nhất',
+	'Top countries with daily new cases': 'Top countries with daily new cases',
+	'Daily New Cases': 'Daily New Cases',
+	'Daily New Deaths': 'Daily New Deaths',
 
 	'About CoronaTracker': 'Mô tả CoronaTracker',
 	'CORONATRACKER.com is a community-based project powered by over 460 volunteers from across the globe, ranging from data scientists, medical professionals, UI/UX designers, fullstack developers, to the general public.':
 		'CORONATRACKER.com là một dự án dựa trên cộng đồng được cung cấp bởi hơn 460 tình nguyện viên trên toàn cầu, từ các nhà khoa học dữ liệu, chuyên gia y tế, nhà thiết kế UI / UX, nhà phát triển fullstack, cho đến công chúng.',
 	'It acts as a portal for the public to keep track of the latest news development about the COVID-19, alongside collecting data for further analysis. All the contents are handpicked, filtered, and curated by volunteers to our best extent to ensure that sources are reliable with minimal hoaxes and fake news, in the best benefit of the public. Natural Language Processing (NLP) is used to analyze trending content and identify meaningful topics over various news sources and social media platforms prior to being verified by our team.':
 		'Nó hoạt động như một cổng thông tin để công chúng theo dõi sự phát triển tin tức mới nhất về COVID-19, bên cạnh việc thu thập dữ liệu để phân tích thêm. Tất cả các nội dung đều được các tình nguyện viên lựa chọn cẩn thận, được lọc và quản lý ở mức độ tốt nhất của chúng tôi để đảm bảo rằng các nguồn đáng tin cậy, vì lợi ích tốt nhất của công chúng. Xử lý ngôn ngữ tự nhiên (NLP) được sử dụng để phân tích xu hướng nội dung và xác định các chủ đề có ý nghĩa trên các nguồn tin tức và nền tảng truyền thông xã hội khác nhau trước khi được nhóm của chúng tôi xác minh.',
-	'CORONATRACKER.com also aims to gather data for in-depth analysis (e.g. time series to monitor the growth, spread of the virus) and localized news (e.g. news related to Malaysia, or KL only).The platform is vital for information consolidation, and all gathered information is open to use for the public.This is a 100% open source project, all information and publishable data are available on Github as well. Everyone is welcomed to contribute through our telegram channel.':
-		'CORONATRACKER.com cũng nhằm mục đích thu thập dữ liệu để phân tích chuyên sâu (ví dụ: chuỗi thời gian để theo dõi sự phát triển, lây lan của virus) và tin tức địa phương (ví dụ: tin tức liên quan đến Malaysia hoặc chỉ KL). Nền tảng này rất quan trọng để củng cố thông tin, và tất cả thông tin thu thập được mở để sử dụng cho công chúng. Đây là một dự án nguồn mở 100%, tất cả thông tin và dữ liệu có thể xuất bản cũng có sẵn trên Github. Mọi người đều được hoan nghênh đóng góp thông qua kênh telegram của chúng tôi.',
+	'CORONATRACKER.com also aims to gather data for in-depth analysis (e.g. time series to monitor the growth, spread of the virus) and localized news (e.g. news related to Malaysia, or KL only).The platform is vital for information consolidation, and all gathered information is open to use for the public.This is a 100% open source project, all information and publishable data are available on Github as well. Everyone is welcomed to contribute through our Telegram channel.':
+		'CORONATRACKER.com cũng nhằm mục đích thu thập dữ liệu để phân tích chuyên sâu (ví dụ: chuỗi thời gian để theo dõi sự phát triển, lây lan của virus) và tin tức địa phương (ví dụ: tin tức liên quan đến Malaysia hoặc chỉ KL). Nền tảng này rất quan trọng để củng cố thông tin, và tất cả thông tin thu thập được mở để sử dụng cho công chúng. Đây là một dự án nguồn mở 100%, tất cả thông tin và dữ liệu có thể xuất bản cũng có sẵn trên Github. Mọi người đều được hoan nghênh đóng góp thông qua kênh Telegram của chúng tôi.',
 	'Our team of data scientists use OSEMN framework to collect, clean, explore, model, and run their own analysis. For ease of public understanding, it is presented using graphic visualizations and dashboards. Through the data obtained, we hope to build machine learning models very soon.':
 		'Nhóm các nhà khoa học dữ liệu của chúng tôi sử dụng khung OSEMN để thu thập, dọn dẹp, khám phá, mô hình hóa và chạy phân tích của riêng họ. Để dễ hiểu cho công chúng, nó được trình bày bằng cách sử dụng trực quan hóa và bảng điều khiển. Thông qua dữ liệu thu được, chúng tôi hy vọng sẽ sớm xây dựng các mô hình học máy',
 	'We were inspired by the Coronavirus Outbreak Map by John Hopkins University that was very informative. We also recognised the difficulty to gather data for in-depth analysis through various other sources of scattered data on different news portals as well as in different languages.':
@@ -103,5 +106,26 @@ export default {
 	'Team Research': 'Nhóm nghiên cứu',
 	'Team Engineering': 'Nhóm kĩ sư',
 	'Team Design': 'Nhóm thiết kế',
-	'View more': 'Xem thêm'
+	'Team Public Relations': 'Team Public Relations',
+	'View more': 'Xem thêm',
+
+	"Fatality Rate": "Fatality Rate",
+	"Positive Rate": "Positive Rate",
+	"OF TOTAL CASES": "OF TOTAL CASES",
+	"Time taken from confirmation to discharge": "Time taken from confirmation to discharge",
+	"{number} days": "{number} days",
+	"+{number} since yesterday": "+{number} since yesterday",
+	"Critical Cases treated in ICU": "Critical Cases treated in ICU",
+	"of total cases": "of total cases",
+	"Daily Cases Receiving Treatment": "Daily Cases Receiving Treatment",
+	"Daily Confirmed Cases": "Daily Confirmed Cases",
+  	"Per Million Population": "Per Million Population",
+  	"Past 30 Days Chart": "Past 30 Days Chart",
+
+	"COVID-19 Corona Tracker": "COVID-19 Corona Tracker",
+	"COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.": "COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.",
+	"COVID-19 {country} Corona Tracker": "COVID-19 {country} Corona Tracker",
+	"{country} COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.": "{country} COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.",
+	"COVID-19 related analytics, graphs, and charts": "COVID-19 related analytics, graphs, and charts",
+	"Visual presentations of COVID-19 related data from verified sources such as WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, and various international media.": "Visual presentations of COVID-19 related data from verified sources such as WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, and various international media.",
 };

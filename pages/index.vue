@@ -1,14 +1,24 @@
 <template>
 	<main class="container" style="padding-bottom: 96px;">
 		<div class="flex flex-wrap -mx-2">
+
 			<div class="w-full md:w-2/3 px-2">
 				<LocationSelector v-model="country" />
+				<div class="w-full block md:hidden mt-4 mb-8">
+					<TopStats />
+					<div
+						class="mt-2 text-center underline text-blue-500 font-semibold"
+					>
+						<nuxt-link :to="localePath('analytics')">{{ $t('Full list here') }}</nuxt-link>
+					</div>
+				</div>
+
 				<Search class="mt-4 mb-8" />
 				<TrendingNews :country="country" />
 			</div>
 
 			<div class="w-full md:w-1/3 px-2">
-				<div class="">
+				<div class="hidden md:block">
 					<TopStats />
 					<div
 						class="mt-2 text-center underline text-blue-500 font-semibold"
@@ -22,8 +32,6 @@
 				</div>
 
 				<div class="my-4">
-					<HealthcareInstitutions :country="country.code" />
-
 					<BuyMeACoffee />
 					<!--<div
 						class="mt-4 p-1 block justify-center text-sm rounded border border-gray-400"
@@ -66,12 +74,25 @@
 	import LocationSelector from '~/components/LocationSelector';
 	import TopStats from '~/components/TopStats';
 	import LearnPrevention from '~/components/LearnPrevention';
-	import HealthcareInstitutions from '~/components/HealthcareInstitutions';
 	import BuyMeACoffee from '~/components/BuyMeACoffee';
 
 	export default {
-		metaInfo: {
-			title: 'Home'
+		head() {
+			const title = this.$t('COVID-19 Corona Tracker');
+			const description = this.$t('COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.');
+
+			return {
+				title,
+				titleTemplate: '%s',
+				meta: [
+					{ hid: 'title', name: 'title', content: title },
+					{ hid: 'description', name: 'description', content: description },
+					{ hid: 'og-title', property: 'og:title', content: title },
+					{ hid: 'og-description', property: 'og:title', content: description },
+					{ hid: 'twitter-title', property: 'twitter:title', content: title },
+					{ hid: 'twitter-description', property: 'twitter:title', content: description },
+				],
+			};
 		},
 		components: {
 			// NotifyCard,
@@ -81,8 +102,8 @@
 			LocationSelector,
 			TopStats,
 			LearnPrevention,
-			HealthcareInstitutions,
 			BuyMeACoffee,
+
 		},
 		mounted() {},
 		data: function() {

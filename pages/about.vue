@@ -81,7 +81,7 @@
               {{ $t('For the third time in as many decades, a zoonotic coronavirus has crossed species to infect human populations. This virus, provisionally called COVID-19, was first identified in Wuhan, China, in persons exposed to a seafood or wet market.') }}
             </td>
             <td class="border px-4 py-2">
-              The New England Journal of Medcine
+              The New England Journal of Medicine
             </td>
           </tr>
           <tr>
@@ -414,7 +414,7 @@
         </div>
         <div class="w-full md:w-1/4 member mb-4">
           <h2 class="text-xl font-bold text-center">
-            Team Public Relation
+            {{ $t('Team Public Relations') }}
           </h2>
           <ul>
             <li>
@@ -438,9 +438,22 @@
 </template>
 <script>
   export default {
-    metaInfo: {
-      title: 'About'
-    }
+    head() {
+      const title = this.$t('About CoronaTracker');
+      const description = this.$t('About the team members related to COVID-19.');
+
+      return {
+        title,
+        meta: [
+          { hid: 'title', name: 'title', content: title },
+          { hid: 'description', name: 'description', content: description },
+          { hid: 'og-title', property: 'og:title', content: title },
+          { hid: 'og-description', property: 'og:title', content: description },
+          { hid: 'twitter-title', property: 'twitter:title', content: title },
+          { hid: 'twitter-description', property: 'twitter:title', content: description },
+        ],
+      };
+    },
   };
 </script>
 <style scoped>
