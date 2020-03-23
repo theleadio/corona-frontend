@@ -80,7 +80,10 @@ export default {
         xaxis: {
           type: 'datetime',
           categories: this.trendDates,
-          show: true
+          show: true,
+          labels: {
+            format: 'dd MMM'
+          }
         },
         legend: {
           position: 'bottom',
