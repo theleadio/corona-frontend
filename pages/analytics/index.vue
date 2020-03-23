@@ -137,7 +137,7 @@ export default {
 
   computed: {
     affectedCountries() {
-      return this.affectedCountryData.filter(i => i.confirmed)
+      return this.affectedCountryData.filter(i => i.confirmed && i.countryCode)
     }
   },
 

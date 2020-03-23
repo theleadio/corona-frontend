@@ -110,7 +110,7 @@ export default {
 
   computed: {
     countries () {
-      return this.data.filter(i => i.confirmed)
+      return this.data.filter(i => i.confirmed && i.countryCode)
     },
     countriesForMapDisplay() {
       return this.data.filter(i => i.confirmed && i.lat && i.lng).map(item => ({

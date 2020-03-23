@@ -67,7 +67,8 @@
     },
     async created() {
       try {
-        this.items = await this.$api.stats.getTopNCountryStats(this.limit)
+        const items = await this.$api.stats.getTopNCountryStats(this.limit)
+        this.items = items.filter(a => a.countryCode);
       }
       catch (ex) {
         console.log('[TopStats] Error:', ex);
