@@ -4,6 +4,11 @@ export default axios => ({
       .then(res => res.data);
   },
 
+  getTopNCountryStats: (limit) => {
+    return axios.get(`/v3/stats/worldometer/top?limit=${limit}`)
+      .then(res => res.data);
+  },
+
   getCountrySpecificStats: (countryCode) => {
     return axios.get(`/v3/stats/worldometer/country?countryCode=${countryCode}`)
       .then(res => res.data);
@@ -18,6 +23,7 @@ export default axios => ({
     return axios.get(`/stats/latest`)
       .then(res => res.data);
   },
+
   getTopStats: (limit) => {
     return axios.get(`/v2/stats/top?limit=${limit}`)
       .then(res => res.data);
