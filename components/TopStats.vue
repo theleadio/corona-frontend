@@ -16,12 +16,16 @@
       <tbody class="font-bold">
       <tr v-for="item in items" :key="item.countryCode">
         <td class="bg-gray-200 text-xs border hover:bg-primary hover:text-white px-2 py-2">
-          <span v-if="item.countryCode === 'OT'">{{item.country}}</span>
-          <nuxt-link :to="`/country/${item.countryCode.toLowerCase()}`" style="display:block" v-else>
-            <Flag :country-code="item.countryCode"></Flag>
-            {{item.country}}
-          </nuxt-link>
-          <a v-if="item.countryCode === 'OT'" href="#notes-on-others">*</a>
+          <template v-if="item.countryCode === 'OT'">
+            <span>{{item.country}}</span>
+            <a href="#notes-on-others">*</a>
+          </template>
+          <template v-else-if="item.countryCode">
+            <nuxt-link :to="`/country/${item.countryCode.toLowerCase()}`" style="display: block;">
+              <Flag :country-code="item.countryCode"></Flag>
+              {{item.country}}
+            </nuxt-link>
+          </template>
         </td>
         <td class="text-center border px-1 py-2">{{item.totalConfirmed | formatNumber}}</td>
         <td class="text-center border px-1 py-2">{{item.totalRecovered | formatNumber}}</td>
