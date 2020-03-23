@@ -119,8 +119,8 @@ export default {
 	"in ICU": "in ICU",
 	"Daily Cases Receiving Treatment": "Daily Cases Receiving Treatment",
 	"Daily Confirmed Cases": "Daily Confirmed Cases",
-  "Per Million": "Per Million",
-  "Past 30 Days Chart": "Past 30 Days Chart",
+  	"Per Million": "Per Million",
+  	"Past 30 Days Chart": "Past 30 Days Chart",
 
 	"COVID-19 Corona Tracker": "COVID-19 Corona Tracker",
 	"COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.": "COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.",
