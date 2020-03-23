@@ -27,9 +27,9 @@
           <line-chart-number
             :height="180"
             :data="[0, 10, 20, 10, 40, 20, 50, 60]"
-            :title="$t('Daily Cases')"
-            :subtitleRed="criticalCases.inICUCount"
-            :subtitle="$t('in ICU')"
+            :title="$t('Critical Cases treated in ICU')"
+            :subtitleRed="`${criticalCases.inICUCount}%`"
+            :subtitle="$t('of total cases')"
             :number="criticalCases.totalCount"
           />
         </div>
@@ -49,7 +49,7 @@
             :data="[0, 10, 20, 10, 40, 20, 50, 60]"
             :title="$t('Daily Confirmed Cases')"
             :number="perMillionConfirmedCases.totalCount"
-            :subtitle = "$t('Per Million')"
+            :subtitle = "$t('Per Million Population')"
           />
         </div>
       </div>
@@ -237,8 +237,8 @@ export default {
       this.positiveRate.data = [Number(PRL), Number(PRU)]
 
       // Critical Cases
-      this.criticalCases.totalCount = (totalCases.activeCases - totalCases.totalCritical)
-      this.criticalCases.inICUCount = totalCases.totalCritical?.toString()
+      this.criticalCases.totalCount = totalCases.totalCritical
+      this.criticalCases.inICUCount = ((totalCases.totalCritical / totalCases.totalConfirmed) * 100)?.toFixed(1)
 
       // Active Cases
       this.activeCases.totalCount = totalCases.activeCases
