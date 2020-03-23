@@ -14,7 +14,7 @@
       <div class="px-2 text-center">
         <p class="text-2xl font-bold text-green-600">{{ info.recovered | formatNumber }}</p>
         <p class="text-l font-bold text-gray-600">{{ $t('Recovered') }}</p>
-        <p class="text-xs font-bold text-green-600">{{ $t('+{number} since yesterday', { number: $options.filters.formatNumber(info.diffRecovered) }) }}</p>
+        <!-- <p class="text-xs font-bold text-green-600">{{ $t('+{number} since yesterday', { number: $options.filters.formatNumber(info.diffRecovered) }) }}</p> -->
       </div>
 
       <div class="px-2 text-center">
