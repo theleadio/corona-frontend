@@ -97,8 +97,8 @@ export default {
   "Daily Cases": "Casos Diários",
   "in ICU": "na UTI",
   "Daily Cases Receiving Treatment": "Casos Recebendo Tratamento Diariamente",
-  "Daily Recovered Cases": "Casos Curados Diariamente",
-  "of total cases": "do total de casos",
+  "Daily Confirmed Cases": "Daily Confirmed Cases",
+  "Per Million": "Per Million",
   "Past 30 Days Chart": "Gráfico dos Últimos 30 Dias",
 
   "COVID-19 Corona Tracker": "Rastreador de Corona COVID-19",
