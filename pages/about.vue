@@ -355,7 +355,7 @@
             </h2>
             <ul>
               <li>
-                <a href="https://www.linkedin.com/in/qi-xiang/" target="_blank" rel="noopener">Gibson Tang</a>
+                <a href="https://www.linkedin.com/in/gibsontang/" target="_blank" rel="noopener">Gibson Tang</a>
               </li>
               <li>
                 <a href="https://www.linkedin.com/in/samueljklee/" target="_blank" rel="noopener">Samuel Lee</a>
@@ -367,13 +367,13 @@
                 <a href="https://www.linkedin.com/in/qi-xiang/" target="_blank" rel="noopener">Qi Xiang</a>
               </li>
               <li>
-                <a href="#" rel="noopener">Almond Heng</a>
+                <a href="https://www.linkedin.com/in/almondheng/" rel="noopener">Almond Heng</a>
               </li>
               <li>
                 <a href="#" rel="noopener">Joshua Hui</a>
               </li>
               <li>
-                <a href="#" rel="noopener">Renyi Khor</a>
+                <a href="https://www.linkedin.com/in/renyikhor/" rel="noopener">Renyi Khor</a>
               </li>
               <li>
                 <a href="#" rel="noopener">Deojeff Lai</a>
