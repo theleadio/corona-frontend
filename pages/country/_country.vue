@@ -47,10 +47,9 @@
           <line-chart-number
             :height="180"
             :data="[0, 10, 20, 10, 40, 20, 50, 60]"
-            :title="$t('Daily Recovered Cases')"
-            :subtitleBlue="`${recoveredCases.percentage}%`"
-            :subtitle="$t('of total cases')"
-            :number="recoveredCases.totalCount"
+            :title="$t('Daily Confirmed Cases')"
+            :number="perMillionConfirmedCases.totalCount"
+            :subtitle = "$t('Per Million')"
           />
         </div>
       </div>
@@ -158,9 +157,8 @@ export default {
         totalCount: 0,
         percentage: 0
       },
-      recoveredCases: {
-        totalCount: 0,
-        percentage: 0
+      perMillionConfirmedCases: {
+        totalCount: 0
       },
       countryTrend: {
         trendData: [],
@@ -196,12 +194,10 @@ export default {
 
     async loadInformation(countryCode) {
       let totalCases;
-      let dailyCases;
       let countryTrendRaw;
 
       try {
-        totalCases = await this.$api.stats.getTotalCasesByCountry(countryCode)
-        dailyCases = await this.$api.stats.getDailyCasesByCountry(countryCode)
+        totalCases = (await this.$api.stats.getCountrySpecificStats(countryCode))?.[0]
         countryTrendRaw = await this.$api.stats.getTrendByCountry(
           countryCode,
           new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10),
@@ -217,19 +213,18 @@ export default {
       this.pageState = this.PAGE_STATES.HAS_FETCHED
 
       // Total cases information
-      this.overviewInfo.confirmed = totalCases.confirmed
-      this.overviewInfo.recovered = totalCases.recovered
-      this.overviewInfo.deaths = totalCases.deaths
+      this.overviewInfo.confirmed = totalCases.totalConfirmed
+      this.overviewInfo.recovered = totalCases.totalRecovered
+      this.overviewInfo.deaths = totalCases.totalDeaths
 
       // Daily change information
-      this.overviewInfo.diffConfirmed = dailyCases.diffDailyConfirmed
-      this.overviewInfo.diffRecovered = dailyCases.diffDailyRecovered
-      this.overviewInfo.diffDeaths = dailyCases.diffDailyDeaths
+      this.overviewInfo.diffConfirmed = totalCases.dailyConfirmed
+      this.overviewInfo.diffDeaths = totalCases.dailyDeaths
 
       // Fatality Rate & Positive Rate
       // Data prep for FR and PR components
-      const FRU =  ((totalCases.deaths/totalCases.confirmed)*100).toFixed(1)
-      const PRU = ((totalCases.recovered/totalCases.confirmed)*100).toFixed(1)
+      const FRU =  Number(totalCases.FR).toFixed(1)
+      const PRU =  Number(totalCases.PR).toFixed(1)
       const FRL = 100 - FRU
       const PRL = 100 - PRU
 
@@ -242,18 +237,14 @@ export default {
       this.positiveRate.data = [Number(PRL), Number(PRU)]
 
       // Critical Cases
-      this.criticalCases.totalCount = totalCases.serious
-      this.criticalCases.inICUCount = totalCases.critical
+      this.criticalCases.totalCount = (totalCases.activeCases - totalCases.totalCritical)
+      this.criticalCases.inICUCount = totalCases.totalCritical?.toString()
 
       // Active Cases
       this.activeCases.totalCount = totalCases.activeCases
-      this.activeCases.percentage =
-        ((totalCases.activeCases / totalCases.confirmed) * 100).toFixed(1)
+      this.activeCases.percentage = ((totalCases.activeCases / totalCases.totalConfirmed)*100)?.toFixed(1)
 
-      // Recovered Cases
-      this.recoveredCases.totalCount = dailyCases.diffDailyRecovered
-      this.recoveredCases.percentage =
-        ((dailyCases.diffDailyRecovered / totalCases.recovered) * 100).toFixed(1)
+      this.perMillionConfirmedCases.totalCount = totalCases.totalConfirmedPerMillionPopulation
 
       // Country Trend
       let countryTrendConfirmed = []
