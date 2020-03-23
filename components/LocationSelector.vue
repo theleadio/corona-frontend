@@ -9,10 +9,10 @@
         <label class="block text-s font-bold mb-2">{{ $t('Stats Overview') }}</label>
         <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded w-full flex focus:outline-none rounded-b-none"
                 @click="toggleOptions">
-          <div>
+          <div class="flex">
              <template v-if="selectedCountry">
-              <Flag :country-code="selectedCountry.code" class="text-center" style="width: 21px;" />
-              <span class="ml-2">{{ selectedCountry.name }}</span>
+              <Flag :country-code="selectedCountry.code" class="text-center flex-none" style="width: 21px;" />
+              <span class="ml-2 leading-none">{{ selectedCountry.name }}</span>
             </template>
             <template v-else>
               {{ $t('Select Country') }}
