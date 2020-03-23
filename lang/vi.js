@@ -106,7 +106,7 @@ export default {
 	'Team Research': 'Nhóm nghiên cứu',
 	'Team Engineering': 'Nhóm kĩ sư',
 	'Team Design': 'Nhóm thiết kế',
-	'Team Pulic Relations': 'Team Public Relations',
+	'Team Public Relations': 'Team Public Relations',
 	'View more': 'Xem thêm',
 
 	"Fatality Rate": "Fatality Rate",
