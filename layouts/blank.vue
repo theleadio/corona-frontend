@@ -13,6 +13,7 @@
         htmlAttrs: {
           lang: this.$i18n.locale,
         },
+        // Do not put buymeacoffee script. This is intended to keep the page off buymeacoffee widget.
       }
     },
   }
