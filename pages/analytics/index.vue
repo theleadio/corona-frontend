@@ -114,12 +114,12 @@ export default {
     };
   },
 
-  components: { SidebarNav, OutbreakTrendChart, TopCountryWithDailyNewCases, AffectedCountry, Flag },
+  components: { SidebarNav, OutbreakTrendChart, TopCountryWithDailyNewStats, AffectedCountry, Flag },
 
   mounted () {
     this.loadStats()
     this.loadOutbreakTrend()
-    this.loadTopCountryWithDailyNewCases()
+    this.loadTopCountryWithDailyNewStats()
     this.loadAffectedCountry()
   },
 
@@ -158,7 +158,7 @@ export default {
         })
     },
 
-    loadTopCountryWithDailyNewCases () {
+    loadTopCountryWithDailyNewStats () {
       this.$api.analytics.fetchTopCountryWithDailyNewStatsSortByNewCases()
         .then(data => {
           this.topCountryWithDailyNewStatsData = data
