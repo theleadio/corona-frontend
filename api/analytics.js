@@ -21,7 +21,7 @@ export default axios => ({
   },
 
   fetchTopCountryWithDailyNewCases: () => {
-    return axios.get(`/v3/analytics/daily`)
+    return axios.get(`/v3/analytics/dailyNewStats`)
       .then(res => res.data)
   },
 });

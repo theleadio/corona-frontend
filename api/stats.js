@@ -5,7 +5,7 @@ export default axios => ({
   },
   
   getTopNCountryStats: (limit) => {
-    const endPoint = limit ? `/v3/stats/worldometer/top?limit=${limit}` : '/v3/stats/worldometer/top'
+    const endPoint = limit ? `/v3/stats/worldometer/topCountry?limit=${limit}` : '/v3/stats/worldometer/top'
     return axios.get(endPoint)
       .then(res => res.data);
   },
