@@ -121,6 +121,7 @@ export default {
 
   mounted () {
     this.loadInformation(this.countryCode)
+    this.loadCountryTrendData(this.countryCode)
   },
 
   data () {
@@ -194,15 +195,9 @@ export default {
 
     async loadInformation(countryCode) {
       let totalCases;
-      let countryTrendRaw;
 
       try {
         totalCases = (await this.$api.stats.getCountrySpecificStats(countryCode))?.[0]
-        countryTrendRaw = await this.$api.stats.getTrendByCountry(
-          countryCode,
-          new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10),
-          new Date().toISOString().slice(0, 10)
-        );
       }
       catch (err) {
         this.pageState = this.PAGE_STATES.HAS_ERROR
@@ -245,6 +240,24 @@ export default {
       this.activeCases.percentage = ((totalCases.activeCases / totalCases.totalConfirmed)*100)?.toFixed(1)
 
       this.perMillionConfirmedCases.totalCount = totalCases.totalConfirmedPerMillionPopulation
+
+    },
+
+    async loadCountryTrendData(countryCode) {
+      let countryTrendRaw;
+
+      try {
+        countryTrendRaw = await this.$api.stats.getTrendByCountry(
+          countryCode,
+          new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10),
+          new Date().toISOString().slice(0, 10)
+        );
+      }
+      catch (err) {
+        this.pageState = this.PAGE_STATES.HAS_ERROR
+        this.error = err.data?.message ?? 'Something went wrong.'
+        return;
+      }
 
       // Country Trend
       let countryTrendConfirmed = []

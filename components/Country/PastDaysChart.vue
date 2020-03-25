@@ -50,8 +50,8 @@ export default {
   },
   data() {
     return {
-      startDate: this.trendDates[0].slice(0,10),
-      endDate: this.trendDates[this.trendDates.length-1].slice(0,10),
+      startDate: (this.trendDates.length > 0) ? this.trendDates[0].slice(0,10) : "",
+      endDate: (this.trendDates.length > 0) ? this.trendDates[this.trendDates.length-1].slice(0,10) : "",
       selectedChartType: { 
         name: 'Bar', 
         type: 'bar',
