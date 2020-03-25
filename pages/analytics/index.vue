@@ -75,7 +75,7 @@
           </div>
 
           <div class="max-w-full rounded shadow-md bg-white p-3 mb-5">
-            <TopCountryWithDailyNewCases :data="topCountryWithDailyNewCasesData"/>
+            <TopCountryWithDailyNewStats :data="topCountryWithDailyNewStatsData"/>
           </div>
         </div>
 
@@ -92,7 +92,7 @@
 <script>
 import SidebarNav from '~/components/Analytics/SidebarNav'
 import OutbreakTrendChart from '~/components/Analytics/OutbreakTrend'
-import TopCountryWithDailyNewCases from '~/components/Analytics/TopCountryWithDailyNewCases'
+import TopCountryWithDailyNewStats from '~/components/Analytics/TopCountryWithDailyNewStats'
 import AffectedCountry from '~/components/Analytics/AffectedCountry'
 import Flag from '~/components/Flag';
 
@@ -130,7 +130,7 @@ export default {
       deaths: 0,
       recovered: 0,
       outbreakTrendData: [],
-      topCountryWithDailyNewCasesData: [],
+      topCountryWithDailyNewStatsData: [],
       affectedCountryData: [],
     }
   },
@@ -159,9 +159,9 @@ export default {
     },
 
     loadTopCountryWithDailyNewCases () {
-      this.$api.analytics.fetchTopCountryWithDailyNewCases()
+      this.$api.analytics.fetchTopCountryWithDailyNewStatsSortByNewCases()
         .then(data => {
-          this.topCountryWithDailyNewCasesData = data
+          this.topCountryWithDailyNewStatsData = data
         })
     },
 

@@ -20,8 +20,8 @@ export default axios => ({
       .then(res => res.data)
   },
 
-  fetchTopCountryWithDailyNewCases: () => {
-    return axios.get(`/v3/analytics/daily`)
+  fetchTopCountryWithDailyNewStatsSortByNewCases: () => {
+    return axios.get(`/v3/analytics/dailyNewStats`)
       .then(res => res.data)
   },
 });
