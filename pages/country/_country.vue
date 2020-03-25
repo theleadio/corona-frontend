@@ -248,8 +248,8 @@ export default {
       try {
         countryTrendRaw = await this.$api.stats.getTrendByCountryDate(
           countryCode,
-          new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10),
-          new Date().toISOString().slice(0, 10)
+          new Date(Date.now() - 13 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10),
+          new Date(Date.now() + 1 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10)
         );
       }
       catch (err) {
