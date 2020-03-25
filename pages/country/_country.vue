@@ -59,7 +59,7 @@
               :height="360"
               :trendData="countryTrend.trendData"
               :trendDates="countryTrend.trendDates"
-              :title="$t('Past 30 Days Chart')"
+              :title="$t('Past 14 Days Chart')"
               style="margin-bottom: 12px;"
             />
             <TrendingNews :country="country" />
@@ -200,7 +200,7 @@ export default {
         totalCases = (await this.$api.stats.getCountrySpecificStats(countryCode))?.[0]
         countryTrendRaw = await this.$api.stats.getTrendByCountry(
           countryCode,
-          new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10),
+          new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10),
           new Date().toISOString().slice(0, 10)
         );
       }
