@@ -43,6 +43,10 @@ export default axios => ({
   getTrendByCountry: (countryCode, startDate, endDate) => {
     return axios.get(`/analytics/trend/country?country_code=${countryCode}&start_date=${startDate}&end_date=${endDate}`)
     .then(res => res.data);
-  }
+  },
 
+  getTrendByCountryDate: (countryCode, startDate, endDate) => {
+    return axios.get(`/v3/analytics/trend/country?countryCode=${countryCode}&startDate=${startDate}&endDate=${endDate}`)
+    .then(res => res.data);
+  }
 });

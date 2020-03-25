@@ -240,14 +240,13 @@ export default {
       this.activeCases.percentage = ((totalCases.activeCases / totalCases.totalConfirmed)*100)?.toFixed(1)
 
       this.perMillionConfirmedCases.totalCount = totalCases.totalConfirmedPerMillionPopulation
-
     },
 
     async loadCountryTrendData(countryCode) {
       let countryTrendRaw;
 
       try {
-        countryTrendRaw = await this.$api.stats.getTrendByCountry(
+        countryTrendRaw = await this.$api.stats.getTrendByCountryDate(
           countryCode,
           new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10),
           new Date().toISOString().slice(0, 10)
@@ -268,15 +267,15 @@ export default {
       let deadLastMax = 0
 
       countryTrendRaw.forEach(country => {
-        confirmedLastMax = Math.max(country["confirmed"], confirmedLastMax)
-        recoveredLastMax = Math.max(country["recovered"], recoveredLastMax)
-        deadLastMax = Math.max(country["dead"], deadLastMax)
+        confirmedLastMax = Math.max(country["total_confirmed"], confirmedLastMax)
+        recoveredLastMax = Math.max(country["total_recovered"], recoveredLastMax)
+        deadLastMax = Math.max(country["total_deaths"], deadLastMax)
 
         countryTrendConfirmed.push(confirmedLastMax)
         countryTrendRecovered.push(recoveredLastMax)
         countryTrendDeath.push(deadLastMax)
 
-        this.countryTrend.trendDates.push(country["date_posted"])
+        this.countryTrend.trendDates.push(country["last_updated"])
       });
       this.countryTrend.trendData = [{
         "name": "confirmed",
