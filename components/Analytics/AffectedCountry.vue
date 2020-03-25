@@ -57,7 +57,7 @@
         </tr>
         </thead>
         <tbody class="font-bold">
-        <tr v-for="loc in countries" :key="loc.country">
+        <tr v-for="loc in data" :key="loc.country">
           <td class="bg-gray-200 text-xs border px-2 py-2 hover:bg-primary hover:text-white">
             <template v-if="loc.countryCode === 'OT'">
               <span>{{loc.country}}</span>
@@ -109,9 +109,6 @@ export default {
   },
 
   computed: {
-    countries () {
-      return this.data.filter(i => i.totalConfirmed && i.countryCode)
-    },
     countriesForMapDisplay() {
       return this.data.filter(i => i.totalConfirmed && i.lat && i.lng).map(item => ({
         ...item,

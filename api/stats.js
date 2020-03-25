@@ -3,7 +3,7 @@ export default axios => ({
     return axios.get(`/v3/stats/bno?countryCode=${countryCode}`)
       .then(res => res.data);
   },
-
+  
   getTopNCountryStats: (limit) => {
     const limitQuery = limit ? `?limit=${limit}` : ``
     return axios.get('/v3/stats/worldometer/topCountry' + limitQuery)
