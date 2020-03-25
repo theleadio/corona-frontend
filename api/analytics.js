@@ -16,12 +16,12 @@ export default axios => ({
   },
 
   fetchAllAffectedCountry: () => {
-    return axios.get(`/v3/analytics/country`)
+    return axios.get(`/v3/stats/worldometer/country`)
       .then(res => res.data)
   },
 
-  fetchTopCountryWithDailyNewCases: () => {
-    return axios.get(`/v3/analytics/daily`)
+  fetchTopCountryWithDailyNewStatsSortByNewCases: () => {
+    return axios.get(`/v3/analytics/dailyNewStats`)
       .then(res => res.data)
   },
 });
