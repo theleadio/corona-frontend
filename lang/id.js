@@ -32,7 +32,7 @@ export default {
   "Learn how": "Pelajari lebih lanjut",
   "Screening Centres": "Pusat Penyaringan",
   "Select Region": "Pilih daerah",
-  "Help us collate the locations for your country!": "Bantu kami menyusun lokasi untuk negara Anda!",
+  "Help us collate the locations for your country!": "Bantu kami menyusun lokasi untuk negara anda!",
   "Join our Telegram group": "Bergabung dengan grup Telegram kami",
   "GET IT ON": "DAPATKAN SEKARANG",
 
@@ -42,7 +42,7 @@ export default {
   "What is COVID-19?": "Apa itu COVID-19?",
 
   "We will update this page with resources related to nCov prevention, here is a quick guide from": "Kami akan memperbarui halaman ini dengan sumber daya yang terkait dengan pencegahan nCov, berikut adalah panduan singkat dari",
-  "WHO": "SIAPA",
+  "WHO": "WHO",
 
   "Overview": "Gambaran Umum",
   "Reports": "Laporan",
@@ -50,7 +50,7 @@ export default {
   "Total Recovered": "Total Disembuhkan",
   "Total Deaths": "Total Meninggal",
   "Outbreak trend over time": "Tren wabah dari waktu ke waktu",
-  "Top countries with daily new cases": "Negara dengan kasus harian Tertinggi",
+  "Top countries with daily new cases": "Negara dengan kasus harian tertinggi",
   "Daily New Cases": "Kasus baru setiap hari",
   "Daily New Deaths": "Kematian baru setiap hari",
 
@@ -71,7 +71,7 @@ export default {
     "Kami bertujuan untuk menggunakan teknologi dan membuat informasi lebih mudah diakses, mengumpulkan orang-orang berbakat di seluruh dunia untuk memenangkan pertarungan!",
   "Sources": "Sumber",
   "Here you can find a list of sources handpicked by the team.":
-    "Di sini Anda dapat menemukan daftar sumber yang dipilih oleh tim.",
+    "Di sini anda dapat menemukan daftar sumber yang dipilih oleh tim.",
   "Title": "Judul",
   "Description": "Deskripsi",
   "A report by Jasper Fuk-Woo Chan and colleagues, documented infections in health-care workers caring for patients with COVID-19 indicate human-to-human transmission and thus the risk of much wider spread of the disease.":
@@ -81,8 +81,8 @@ export default {
   "An online dashboard to visualize and track the reported cases on a daily timescale":
     "Dashboard online untuk memvisualisasikan dan melacak kasus yang dilaporkan pada skala waktu harian",
   "If you believe any of the source information above is inaccurate, please lodge a report using the following":
-    "Jika Anda yakin ada salah satu sumber informasi di atas tidak akurat, silakan ajukan laporan dibawah sebagai berikut",
-  "form": "Formulir",
+    "Jika anda yakin ada salah satu sumber informasi di atas tidak akurat, silakan ajukan laporan pada bagian",
+  "form": "formulir berikut",
   "Heroes behind": "Pejuang dibelakangnya",
   "Project Lead": "Pimpinan Proyek",
   "Lead Data Scientist": "Pimpinan Data Scientist",
