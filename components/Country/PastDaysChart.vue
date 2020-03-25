@@ -49,9 +49,9 @@ export default {
     },
   },
   data() {
+    let startDate = ""
+    let endDate = ""
     return {
-      startDate: "",
-      endDate: "",
       selectedChartType: { 
         name: 'Bar', 
         type: 'bar',
