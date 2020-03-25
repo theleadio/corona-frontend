@@ -99,7 +99,7 @@ export default {
   "Daily Cases Receiving Treatment": "Casos Recebendo Tratamento Diariamente",
   "Daily Confirmed Cases": "Daily Confirmed Cases",
   "Per Million Population": "Per Million Population",
-  "Past 30 Days Chart": "Gráfico dos Últimos 30 Dias",
+  "Past 14 Days Chart": "Gráfico dos Últimos 30 Dias",
 
   "COVID-19 Corona Tracker": "Rastreador de Corona COVID-19",
   "COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.": "Rastreador de Corona COVID-19: A única plataforma centralizada reconhecida pela Organização Mundial de Saúde (OMS) para dados verificados e notícias.",
