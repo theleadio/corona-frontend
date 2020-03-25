@@ -306,6 +306,11 @@ export const locales = [
     name: 'العربية',
     file: 'ar.js',
   },
+  {
+    code: 'ja',
+    name: '日本語',
+    file: 'ja.js',
+  },
 ];
 
 export const twitterHandles = [
