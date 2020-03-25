@@ -275,7 +275,7 @@ export default {
         countryTrendRecovered.push(recoveredLastMax)
         countryTrendDeath.push(deadLastMax)
 
-        this.countryTrend.trendDates.push(country["last_updated"])
+        this.countryTrend.trendDates.push(country["last_updated"].slice(0,10))
       });
       this.countryTrend.trendData = [{
         "name": "confirmed",
