@@ -292,6 +292,11 @@ export const locales = [
     file: 'ms.js',
   },
   {
+    code: 'id',
+    name: 'Bahasa Indonesia',
+    file: 'id.js',
+  },
+  {
     code: 'ptbr',
     name: 'Português (Brasil)',
     file: 'pt-br.js',
@@ -305,6 +310,11 @@ export const locales = [
     code: 'ar',
     name: 'العربية',
     file: 'ar.js',
+  },
+  {
+    code: 'ja',
+    name: '日本語',
+    file: 'ja.js',
   },
 ];
 

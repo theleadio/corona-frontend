@@ -57,22 +57,22 @@
         </tr>
         </thead>
         <tbody class="font-bold">
-        <tr v-for="loc in countries" :key="loc.countryName">
+        <tr v-for="loc in data" :key="loc.country">
           <td class="bg-gray-200 text-xs border px-2 py-2 hover:bg-primary hover:text-white">
-            <template v-if="loc.countryName === 'Others'">
-              <span>{{loc.countryName}}</span>
+            <template v-if="loc.countryCode === 'OT'">
+              <span>{{loc.country}}</span>
               <a href="#notes-on-others">*</a>
             </template>
             <template v-else-if="loc.countryCode">
-              <nuxt-link :to="`/country/${loc.countryCode.toLowerCase()}`" style="display: block;">
+              <nuxt-link :to="localePath(`/country/${loc.countryCode.toLowerCase()}`)" style="display: block;">
                 <Flag :country-code="loc.countryCode"></Flag>
-                {{loc.countryName}}
+                {{loc.country}}
               </nuxt-link>
             </template>
           </td>
-          <td class="text-center border px-1 py-2">{{ loc.confirmed | formatNumber }}</td>
-          <td class="text-center border px-1 py-2">{{ loc.recovered | formatNumber }}</td>
-          <td class="text-center border px-1 py-2">{{ loc.deaths | formatNumber }}</td>
+          <td class="text-center border px-1 py-2">{{ loc.totalConfirmed | formatNumber }}</td>
+          <td class="text-center border px-1 py-2">{{ loc.totalRecovered | formatNumber }}</td>
+          <td class="text-center border px-1 py-2">{{ loc.totalDeaths | formatNumber }}</td>
         </tr>
         </tbody>
       </table>
@@ -109,13 +109,10 @@ export default {
   },
 
   computed: {
-    countries () {
-      return this.data.filter(i => i.confirmed && i.countryCode)
-    },
     countriesForMapDisplay() {
-      return this.data.filter(i => i.confirmed && i.lat && i.lng).map(item => ({
+      return this.data.filter(i => i.totalConfirmed && i.lat && i.lng).map(item => ({
         ...item,
-        radius: this.scale(item.confirmed)
+        radius: this.scale(item.totalConfirmed)
       }))
     },
   },

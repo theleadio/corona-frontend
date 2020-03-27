@@ -21,7 +21,7 @@
             <a href="#notes-on-others">*</a>
           </template>
           <template v-else-if="item.countryCode">
-            <nuxt-link :to="`/country/${item.countryCode.toLowerCase()}`" style="display: block;">
+            <nuxt-link :to="localePath(`/country/${item.countryCode.toLowerCase()}`)" style="display: block;">
               <Flag :country-code="item.countryCode"></Flag>
               {{item.country}}
             </nuxt-link>

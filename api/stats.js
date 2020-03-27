@@ -3,9 +3,10 @@ export default axios => ({
     return axios.get(`/v3/stats/bno?countryCode=${countryCode}`)
       .then(res => res.data);
   },
-
+  
   getTopNCountryStats: (limit) => {
-    return axios.get(`/v3/stats/worldometer/top?limit=${limit}`)
+    const limitQuery = limit ? `?limit=${limit}` : ``
+    return axios.get('/v3/stats/worldometer/topCountry' + limitQuery)
       .then(res => res.data);
   },
 
@@ -42,6 +43,10 @@ export default axios => ({
   getTrendByCountry: (countryCode, startDate, endDate) => {
     return axios.get(`/analytics/trend/country?country_code=${countryCode}&start_date=${startDate}&end_date=${endDate}`)
     .then(res => res.data);
-  }
+  },
 
+  getTrendByCountryDate: (countryCode, startDate, endDate) => {
+    return axios.get(`/v3/analytics/trend/country?countryCode=${countryCode}&startDate=${startDate}&endDate=${endDate}`)
+    .then(res => res.data);
+  }
 });

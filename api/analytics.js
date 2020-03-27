@@ -3,6 +3,12 @@ export default axios => ({
     return axios.get(`/analytics/trend?start_date=${start_date}&end_date=${end_date}`)
       .then(res => res.data)
   },
+
+  fetchTopTrendingCases: (limit) => {
+    const limitQuery = limit ? `?limit=${limit}` : ``
+    return axios.get(`/v3/stats/worldometer/totalTrendingCases` + limitQuery)
+      .then(res => res.data)
+  },
   
   fetchAffectedRegion: () => {
     return axios.get(`/analytics/area`)
@@ -16,12 +22,12 @@ export default axios => ({
   },
 
   fetchAllAffectedCountry: () => {
-    return axios.get(`/v3/analytics/country`)
+    return axios.get(`/v3/stats/worldometer/country`)
       .then(res => res.data)
   },
 
-  fetchTopCountryWithDailyNewCases: () => {
-    return axios.get(`/v3/analytics/daily`)
+  fetchTopCountryWithDailyNewStatsSortByNewCases: () => {
+    return axios.get(`/v3/analytics/dailyNewStats`)
       .then(res => res.data)
   },
 });

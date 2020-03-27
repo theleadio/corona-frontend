@@ -4,7 +4,7 @@
       <Flag :country-code="country.code"></Flag>
       {{country.name}} {{ $t('Overview') }}
       </p>
-    <div class="flex flex-row lg:flex-row pt-3 justify-center sm:justify-start md:justify-start lg:justify-start">
+    <div class="flex flex-row lg:flex-row pt-3 justify-around sm:justify-around md:justify-around lg:justify-around">
       <div class="px-2 text-center">
         <p class="text-2xl font-bold text-red-600">{{ info.confirmed | formatNumber }}</p>
         <p class="text-l font-bold text-gray-600">{{ $t('Confirmed') }}</p>

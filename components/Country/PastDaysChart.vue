@@ -50,8 +50,8 @@ export default {
   },
   data() {
     return {
-      startDate: this.trendDates[0].slice(0,10),
-      endDate: this.trendDates[this.trendDates.length-1].slice(0,10),
+      startDate: "",
+      endDate: "",
       selectedChartType: { 
         name: 'Bar', 
         type: 'bar',
@@ -106,10 +106,20 @@ export default {
             }
           }]
         },
-      }
+      },
     };
   },
-  methods: {}
+  methods: {},
+  watch: {
+    trendDates(data) {
+      this.trendDates = data
+      this.startDate = this.trendDates[0]
+      this.endDate = this.trendDates[this.trendDates.length-1]
+    },
+    trendData(data) {
+      this.trendData = data
+    }
+  }
 };
 </script>
 

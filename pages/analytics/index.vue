@@ -44,22 +44,22 @@
                 </tr>
                 </thead>
                 <tbody class="font-bold">
-                <tr v-for="loc in affectedCountries" :key="loc.countryName">
+                <tr v-for="loc in affectedCountryData" :key="loc.country">
                   <td class="bg-gray-200 text-xs border px-2 py-2 hover:bg-primary hover:text-white">
-                    <template v-if="loc.countryName === 'Others'">
-                      <span>{{loc.countryName}}</span>
+                    <template v-if="loc.countryCode === 'OT'">
+                      <span>{{loc.country}}</span>
                       <a href="#notes-on-others">*</a>
                     </template>
                     <template v-else-if="loc.countryCode">
                       <nuxt-link :to="`/country/${loc.countryCode.toLowerCase()}`" style="display: block;">
                         <Flag :country-code="loc.countryCode"></Flag>
-                        {{loc.countryName}}
+                        {{loc.country}}
                       </nuxt-link>
                     </template>
                   </td>
-                  <td class="text-center border px-1 py-2">{{ loc.confirmed | formatNumber }}</td>
-                  <td class="text-center border px-1 py-2">{{ loc.recovered | formatNumber }}</td>
-                  <td class="text-center border px-1 py-2">{{ loc.deaths | formatNumber }}</td>
+                  <td class="text-center border px-1 py-2">{{ loc.totalConfirmed | formatNumber }}</td>
+                  <td class="text-center border px-1 py-2">{{ loc.totalRecovered | formatNumber }}</td>
+                  <td class="text-center border px-1 py-2">{{ loc.totalDeaths | formatNumber }}</td>
                 </tr>
                 </tbody>
               </table>
@@ -75,7 +75,7 @@
           </div>
 
           <div class="max-w-full rounded shadow-md bg-white p-3 mb-5">
-            <TopCountryWithDailyNewCases :data="topCountryWithDailyNewCasesData"/>
+            <TopCountryWithDailyNewStats :data="topCountryWithDailyNewStatsData"/>
           </div>
         </div>
 
@@ -92,7 +92,7 @@
 <script>
 import SidebarNav from '~/components/Analytics/SidebarNav'
 import OutbreakTrendChart from '~/components/Analytics/OutbreakTrend'
-import TopCountryWithDailyNewCases from '~/components/Analytics/TopCountryWithDailyNewCases'
+import TopCountryWithDailyNewStats from '~/components/Analytics/TopCountryWithDailyNewStats'
 import AffectedCountry from '~/components/Analytics/AffectedCountry'
 import Flag from '~/components/Flag';
 
@@ -114,12 +114,12 @@ export default {
     };
   },
 
-  components: { SidebarNav, OutbreakTrendChart, TopCountryWithDailyNewCases, AffectedCountry, Flag },
+  components: { SidebarNav, OutbreakTrendChart, TopCountryWithDailyNewStats, AffectedCountry, Flag },
 
   mounted () {
     this.loadStats()
     this.loadOutbreakTrend()
-    this.loadTopCountryWithDailyNewCases()
+    this.loadTopCountryWithDailyNewStats()
     this.loadAffectedCountry()
   },
 
@@ -130,14 +130,8 @@ export default {
       deaths: 0,
       recovered: 0,
       outbreakTrendData: [],
-      topCountryWithDailyNewCasesData: [],
+      topCountryWithDailyNewStatsData: [],
       affectedCountryData: [],
-    }
-  },
-
-  computed: {
-    affectedCountries() {
-      return this.affectedCountryData.filter(i => i.confirmed && i.countryCode)
     }
   },
 
@@ -152,25 +146,25 @@ export default {
     },
 
     loadOutbreakTrend () {
-      this.$api.analytics.fetchTrendByDate('2020-01-27', this.currentDate.toISOString().slice(0, 10))
+      const limit = 100
+      this.$api.analytics.fetchTopTrendingCases(limit)
         .then(data => {
           this.outbreakTrendData = data
         })
     },
 
-    loadTopCountryWithDailyNewCases () {
-      this.$api.analytics.fetchTopCountryWithDailyNewCases()
+    loadTopCountryWithDailyNewStats () {
+      this.$api.analytics.fetchTopCountryWithDailyNewStatsSortByNewCases()
         .then(data => {
-          this.topCountryWithDailyNewCasesData = data
+          this.topCountryWithDailyNewStatsData = data
         })
     },
 
-    loadAffectedCountry () {
-      this.$api.analytics.fetchAllAffectedCountry()
-        .then(data => {
-          this.affectedCountryData = data
-        })
-    },
+    async loadAffectedCountry() {
+      const items = await this.$api.stats.getTopNCountryStats()
+      this.affectedCountryData = items.filter(a => a.countryCode && a.totalConfirmed)
+    }
+
   }
 }
 </script>
