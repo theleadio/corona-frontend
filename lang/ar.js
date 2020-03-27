@@ -66,6 +66,8 @@ export default {
   "Here you can find a list of sources handpicked by the team.": "هنا قائمة بالمصادر التي اختارها فريقنا بشكل يدوي و دقيق.",
   "Title": "العنوان",
   "Description": "الوصف",
+  "Discovery of a novel coronavirus associated with the recent pneumonia outbreak in humans and its potential bat origin": "Discovery of a novel coronavirus associated with the recent pneumonia outbreak in humans and its potential bat origin",
+  "Another year, another coronavirus": "Another year, another coronavirus",
   "A report by Jasper Fuk-Woo Chan and colleagues, documented infections in health-care workers caring for patients with COVID-19 indicate human-to-human transmission and thus the risk of much wider spread of the disease.": "تقرير بواسطة جاسبر فوك وو تشان و زملاء آخرين يوثق انتقال العدوى بين عاملي المجال الطبي القائمين على رعاية مرضى فيروس كورونا المستجد و يوضح أن الفيروس يمكنه أن ينتقل من شخص إلى أخر، و لذا فإن المرض يمكنه الانتشار بشكل موسع.",
   "For the third time in as many decades, a zoonotic coronavirus has crossed species to infect human populations. This virus, provisionally called COVID-19, was first identified in Wuhan, China, in persons exposed to a seafood or wet market.": "للمرة الثالثة خلال عقدين، ينتقل فيروس تاجي يصيب الحيوانات فقط إلى البشر. و كان أول ظهور لهذا الفيروس، و الذي تمت تسميته مؤقتا باسم  فيروس كورونا المستجد 2019-nCoV، في سوق للمأكولات البحرية في مدينة ووهان بالصين.",
   "An online dashboard to visualize and track the reported cases on a daily timescale": "لوحة عرض بيانية تفاعلية ترسم و تتبع الحالات المسجلة بشكل يومي.",
