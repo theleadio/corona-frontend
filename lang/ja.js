@@ -66,6 +66,8 @@ export default {
   "Here you can find a list of sources handpicked by the team.": "チームが厳選した情報源のリストはこちらからご覧になれます",
   "Title": "表題",
   "Description": "詳細",
+  "Discovery of a novel coronavirus associated with the recent pneumonia outbreak in humans and its potential bat origin": "Discovery of a novel coronavirus associated with the recent pneumonia outbreak in humans and its potential bat origin",
+  "Another year, another coronavirus": "Another year, another coronavirus",
   "A report by Jasper Fuk-Woo Chan and colleagues, documented infections in health-care workers caring for patients with COVID-19 indicate human-to-human transmission and thus the risk of much wider spread of the disease.": "Jasper Fuk-Woo Chanとその同僚による報告では、2019-nCoVの患者の世話をする医療従事者の感染が報告されており、ヒトからヒトへの感染が確認され、このウィルスの感染が大幅に広がるリスクが示されています。",
   "For the third time in as many decades, a zoonotic coronavirus has crossed species to infect human populations. This virus, provisionally called COVID-19, was first identified in Wuhan, China, in persons exposed to a seafood or wet market.": "何十年もわたって、人畜共通コロナウィルスが人間に感染したのは今回で３回目です。このウィルスは暫定的に2019-nCovと呼ばれ、中国の武漢でシーフードやウェットマーケットにさらされた人に初めて発見されました。",
   "An online dashboard to visualize and track the reported cases on a daily timescale": "確認されたケースを追跡し、日単位で視覚化するオンラインダッシュボード",

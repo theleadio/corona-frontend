@@ -66,6 +66,8 @@ export default {
   "Here you can find a list of sources handpicked by the team.": "Here you can find a list of sources handpicked by the team.",
   "Title": "Title",
   "Description": "Description",
+  "Discovery of a novel coronavirus associated with the recent pneumonia outbreak in humans and its potential bat origin": "Discovery of a novel coronavirus associated with the recent pneumonia outbreak in humans and its potential bat origin",
+  "Another year, another coronavirus": "Another year, another coronavirus",
   "A report by Jasper Fuk-Woo Chan and colleagues, documented infections in health-care workers caring for patients with COVID-19 indicate human-to-human transmission and thus the risk of much wider spread of the disease.": "A report by Jasper Fuk-Woo Chan and colleagues, documented infections in health-care workers caring for patients with COVID-19 indicate human-to-human transmission and thus the risk of much wider spread of the disease.",
   "For the third time in as many decades, a zoonotic coronavirus has crossed species to infect human populations. This virus, provisionally called COVID-19, was first identified in Wuhan, China, in persons exposed to a seafood or wet market.": "For the third time in as many decades, a zoonotic coronavirus has crossed species to infect human populations. This virus, provisionally called COVID-19, was first identified in Wuhan, China, in persons exposed to a seafood or wet market.",
   "An online dashboard to visualize and track the reported cases on a daily timescale": "An online dashboard to visualize and track the reported cases on a daily timescale",

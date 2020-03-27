@@ -66,6 +66,8 @@ export default {
   "Here you can find a list of sources handpicked by the team.": "Aqui você pode encontrar uma lista de fontes escolhidas a dedo pelo time.",
   "Title": "Título",
   "Description": "Descrição",
+  "Discovery of a novel coronavirus associated with the recent pneumonia outbreak in humans and its potential bat origin": "Descoberta de um novo coronavírus associado com o surto recente de pneumonia em humanos e sua origem em potencial no morcego",
+  "Another year, another coronavirus": "Outro ano, outro coronavirus",
   "A report by Jasper Fuk-Woo Chan and colleagues, documented infections in health-care workers caring for patients with COVID-19 indicate human-to-human transmission and thus the risk of much wider spread of the disease.": "Um relatório por Jasper Fuk-Woo Chan e colegas, documentou infecções em trabalhadores de saúde cuidando de pacientes com COVID-19 indica transmissão entre humanos e assim um risco de uma propagação mais abrangente da doença.",
   "For the third time in as many decades, a zoonotic coronavirus has crossed species to infect human populations. This virus, provisionally called COVID-19, was first identified in Wuhan, China, in persons exposed to a seafood or wet market.": "Pela terceira vez em muitas décadas, um coronavirus zoonótico misturou espécies para infectar populações humanas. Esse vírus, por enquanto denominado COVID-19, foi identificado primeiramente em Wuhan, China, em pessoas expostas a frutos do mar e mercados molhados.",
   "An online dashboard to visualize and track the reported cases on a daily timescale": "Um dashboard online para visualizar e rastrear os casos reportados em uma escala diária",
