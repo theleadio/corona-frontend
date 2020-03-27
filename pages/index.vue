@@ -4,6 +4,11 @@
 
 			<div class="w-full md:w-2/3 px-2">
 				<LocationSelector v-model="country" />
+				<Survey class="my-4"
+					:desktop-image="surveyConfig.desktopImage"
+					:mobile-image="surveyConfig.mobileImage"
+					:link="surveyConfig.link"
+					:expires-on="surveyConfig.expiresOn"/>
 				<div class="w-full block md:hidden mt-4 mb-8">
 					<TopStats />
 					<div
@@ -69,6 +74,7 @@
 <script>
 	// import NotifyCard from "../components/NotifyCard";
 	//import RecentNews from "../components/RecentNews";
+	import Survey from '~/components/Survey'
 	import Search from '~/components/Search';
 	import TrendingNews from '~/components/TrendingNews';
 	import LocationSelector from '~/components/LocationSelector';
@@ -97,6 +103,7 @@
 		components: {
 			// NotifyCard,
 			// RecentNews,
+			Survey,
 			Search,
 			TrendingNews,
 			LocationSelector,
@@ -108,7 +115,13 @@
 		mounted() {},
 		data: function() {
 			return {
-				country: {}
+				country: {},
+				surveyConfig: {
+					desktopImage: "survey_desktop.png",
+					mobileImage: "survey_mobile.png",
+					link: "https://tinyurl.com/CoronaTrackerSurvey",
+					expiresOn: "2020-04-01"
+				}
 			};
 		}
 	};

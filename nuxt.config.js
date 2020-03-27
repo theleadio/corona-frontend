@@ -85,6 +85,19 @@ export default {
   generate: {
     routes,
   },
+
+  /*
+   ** Generate Sitemap
+   ** using same util function as
+   ** used to generate dynamic routes
+   */
+  sitemap: {
+    hostname: "https://coronatracker.com",
+    routes: routes,
+    path: "/sitemap.xml",
+    gzip: true
+  },
+
   /*
    ** Nuxt.js dev-modules
    */
@@ -102,6 +115,7 @@ export default {
         // }
       }
     ],
+    '@nuxtjs/sitemap'
   ],
   /*
    ** Nuxt.js modules
