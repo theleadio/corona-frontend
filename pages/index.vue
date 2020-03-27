@@ -4,7 +4,11 @@
 
 			<div class="w-full md:w-2/3 px-2">
 				<LocationSelector v-model="country" />
-				<Survey class="my-4" :image-name="surveyConfig.imageName" :link="surveyConfig.link" :expires-on="surveyConfig.expiresOn"/>
+				<Survey class="my-4"
+					:desktop-image="surveyConfig.desktopImage"
+					:mobile-image="surveyConfig.mobileImage"
+					:link="surveyConfig.link"
+					:expires-on="surveyConfig.expiresOn"/>
 				<div class="w-full block md:hidden mt-4 mb-8">
 					<TopStats />
 					<div
@@ -113,7 +117,8 @@
 			return {
 				country: {},
 				surveyConfig: {
-					imageName: "CTSurvey.png",
+					desktopImage: "survey_desktop.png",
+					mobileImage: "survey_mobile.png",
 					link: "https://tinyurl.com/CoronaTrackerSurvey",
 					expiresOn: "2020-04-01"
 				}

@@ -1,7 +1,8 @@
 <template>
-  <div class="w-full rounded border border-gray-400" v-if="shouldShowSurvey">
+  <div class="w-full" v-if="shouldShowSurvey">
     <a :href="link" target="_blank" rel="noopener">
-      <img :src="imageName" alt="Survey">
+      <img :src="mobileImage" class="block lg:hidden" alt="Survey">
+      <img :src="desktopImage" class="hidden lg:block" alt="Survey">
     </a>
   </div>
 </template>
@@ -10,7 +11,11 @@
 import moment from 'moment'
 export default {
   props: {
-    imageName: {
+    desktopImage: {
+      type: String,
+      required: true
+    },
+    mobileImage: {
       type: String,
       required: true
     },
