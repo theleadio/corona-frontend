@@ -1,7 +1,7 @@
 <template>
   <div>
     <Card v-if="showTitle" :title="$t('Countries Affected')"></Card>
-    <div class="my-2 font-bold text-xs text-gray-500 leading-tight">
+    <div  v-if="showSource" class="my-2 font-bold text-xs text-gray-500 leading-tight">
       {{ $t('Source') }}: WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, {{ $t('and various international media') }}
     </div>
     <table class="table-auto w-full">
@@ -33,7 +33,7 @@
       </tr>
       </tbody>
     </table>
-    <div class="my-2 font-bold text-xs text-gray-600 leading-tight">
+    <div v-if="showFooter" class="my-2 font-bold text-xs text-gray-600 leading-tight">
       * {{ $t('Cases identified on a cruise ship currently in Japanese territorial waters.') }}
       <a name="notes-on-others" class="anchor"></a>
     </div>
@@ -58,6 +58,14 @@
       showTitle: {
         type: Boolean,
         default: true,
+      },
+      showSource: {
+        type: Boolean,
+        default: true
+      },
+      showFooter: {
+        type: Boolean,
+        default: true
       }
     },
     data() {
