@@ -5,7 +5,7 @@
 			<div class="w-full md:w-2/3 px-2">
 				<stats-overview
 					v-model="country"
-					:is-loading="isLoadingStats"
+					:is-loading="isLoadingOverviewStats"
 					:stats="stats"
 				/>
 				<Survey class="my-4"
@@ -117,7 +117,7 @@
 		},
 		data: function() {
 			return {
-				isLoadingStats: false,
+				isLoadingOverviewStats: false,
 				stats: {},
 				isLoadingCountryStats: false,
 				countryStats: [],
@@ -131,8 +131,8 @@
 			};
 		},
 		methods: {
-			async loadStats() {
-				this.isLoadingStats = true;
+			async fetchOverviewStats() {
+				this.isLoadingOverviewStats = true;
 				const selectedCountryCode = !this.country || this.country.code === 'global' ? '' : this.country.code;
 
 				try {
@@ -175,7 +175,7 @@
 					console.log('[loadStats] Error:', ex);
 				}
 				finally {
-					this.isLoadingStats = false;
+					this.isLoadingOverviewStats = false;
 				}
 			},
 			async fetchCountryStats() {
@@ -194,14 +194,14 @@
 		},
 		watch: {
 			country(val) {
-				this.loadStats();
+				this.fetchOverviewStats();
 			},
 		},
 		mounted() {
 
 		},
 		created() {
-			this.loadStats();
+			this.fetchOverviewStats();
 			this.fetchCountryStats();
 		},
 	};
