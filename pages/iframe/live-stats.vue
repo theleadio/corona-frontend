@@ -97,7 +97,7 @@
         deaths: 0,
         confirmed: 0,
         recovered: 0,
-        numLastUpdated: null,
+        lastUpdated: null,
       };
     },
     methods: {
@@ -121,12 +121,18 @@
         const selectedCountryCode = !this.selectedCountry || this.selectedCountry.code === 'global' ? '' : this.selectedCountry.code;
 
         try {
-          this.$api.stats.getStats(selectedCountryCode)
+          this.$api.stats.getCountrySpecificStats(selectedCountryCode)
             .then(data => {
-              this.deaths = data.deaths;
-              this.confirmed = data.confirmed;
-              this.recovered = data.recovered;
-              this.numLastUpdated = data.agg_date;
+              const countryData = data && data[0];
+
+              if (!countryData) {
+                return;
+              }
+
+              this.deaths = countryData.totalDeaths;
+              this.confirmed = countryData.totalConfirmed;
+              this.recovered = countryData.totalRecovered;
+              this.lastUpdated = countryData.lastUpdated;
             });
         }
         catch (ex) {
