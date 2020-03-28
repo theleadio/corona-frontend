@@ -3,7 +3,11 @@
 		<div class="flex flex-wrap -mx-2">
 
 			<div class="w-full md:w-2/3 px-2">
-				<LocationSelector v-model="country" />
+				<LocationSelector
+					v-model="country"
+					:is-loading="isLoadingStats"
+					:stats="stats"
+				/>
 				<Survey class="my-4"
 					:desktop-image="surveyConfig.desktopImage"
 					:mobile-image="surveyConfig.mobileImage"
@@ -110,11 +114,11 @@
 			TopStats,
 			LearnPrevention,
 			BuyMeACoffee,
-
 		},
-		mounted() {},
 		data: function() {
 			return {
+				isLoadingStats: false,
+				stats: {},
 				country: {},
 				surveyConfig: {
 					desktopImage: "survey_desktop.png",
@@ -123,6 +127,66 @@
 					expiresOn: "2020-04-01"
 				}
 			};
-		}
+		},
+		methods: {
+			async loadStats() {
+				this.isLoadingStats = true;
+				const selectedCountryCode = !this.country || this.country.code === 'global' ? '' : this.country.code;
+
+				try {
+					if (!selectedCountryCode) {
+						const data = await this.$api.stats.getGlobalStats();
+						this.stats = {
+							deaths: data.totalDeaths,
+							confirmed: data.totalConfirmed,
+							recovered: data.totalRecovered,
+							lastUpdated: data.created,
+						};
+						return;
+					}
+
+					const data = await this.$api.stats.getCountrySpecificStats(selectedCountryCode);
+					const countryData = data[0];
+
+					if (!countryData) {
+						this.stats = {
+							deaths: '?',
+							confirmed: '?',
+							recovered: '?',
+							lastUpdated: '?',
+						} ;
+						return;
+					}
+
+					this.stats = {
+						deaths: countryData.totalDeaths,
+						confirmed: countryData.totalConfirmed,
+						recovered: countryData.totalRecovered,
+						lastUpdated: countryData.lastUpdated,
+					};
+				}
+				catch (ex) {
+					this.deaths = '?';
+					this.confirmed = '?';
+					this.recovered = '?';
+					this.lastUpdated = '?';
+					console.log('[loadStats] Error:', ex);
+				}
+				finally {
+					this.isLoadingStats = false;
+				}
+			},
+		},
+		watch: {
+			country(val) {
+				this.loadStats();
+			},
+		},
+		mounted() {
+
+		},
+		created() {
+			this.loadStats();
+		},
 	};
 </script>
