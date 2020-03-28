@@ -1,8 +1,19 @@
 export default axios => ({
   getTopNCountryStats: (limit) => {
-    const limitQuery = limit ? `?limit=${limit}` : ``
-    return axios.get('/v3/stats/worldometer/topCountry' + limitQuery)
-      .then(res => res.data);
+    const params = {
+      limit,
+    };
+
+    return axios.get(`/v3/stats/worldometer/topCountry`, { params })
+      .then(res => {
+        const countryStats = res.data;
+
+        return countryStats
+          // Remove invalid data.
+          .filter(stat => stat.countryCode && (stat.totalConfirmed || stat.totalDeaths || stat.totalRecovered))
+          // De-duplicate stats by country code
+          .filter((stat, index) => index === countryStats.findIndex(a => a.countryCode === stat.countryCode));
+      })
   },
 
   getCountrySpecificStats: (countryCode) => {

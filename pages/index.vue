@@ -14,7 +14,10 @@
 					:link="surveyConfig.link"
 					:expires-on="surveyConfig.expiresOn"/>
 				<div class="w-full block md:hidden mt-4 mb-8">
-					<TopStats />
+					<TopStats
+						:is-loading="isLoadingCountryStats"
+						:country-stats="countryStats"
+					/>
 					<div
 						class="mt-2 text-center underline text-blue-500 font-semibold"
 					>
@@ -28,7 +31,10 @@
 
 			<div class="w-full md:w-1/3 px-2">
 				<div class="hidden md:block">
-					<TopStats />
+					<TopStats
+						:is-loading="isLoadingCountryStats"
+						:country-stats="countryStats"
+					/>
 					<div
 						class="mt-2 text-center underline text-blue-500 font-semibold"
 					>
@@ -119,6 +125,8 @@
 			return {
 				isLoadingStats: false,
 				stats: {},
+				isLoadingCountryStats: false,
+				countryStats: [],
 				country: {},
 				surveyConfig: {
 					desktopImage: "survey_desktop.png",
@@ -176,6 +184,19 @@
 					this.isLoadingStats = false;
 				}
 			},
+			async fetchCountryStats() {
+				this.isLoadingCountryStats = true;
+				try {
+					const limit = 15;
+					this.countryStats = await this.$api.stats.getTopNCountryStats(limit);
+				}
+				catch (ex) {
+					console.log('[fetchCountryStats] Error:', ex);
+				}
+				finally {
+					this.isLoadingCountryStats = false;
+				}
+			}
 		},
 		watch: {
 			country(val) {
@@ -187,6 +208,7 @@
 		},
 		created() {
 			this.loadStats();
+			this.fetchCountryStats();
 		},
 	};
 </script>
