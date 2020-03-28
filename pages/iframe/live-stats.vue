@@ -40,6 +40,7 @@
 
       <stats
         class="flex justify-center w-full md:justify-end mt-2 md:mt-0"
+        :is-loading="isLoading"
         :confirmed="confirmed"
         :recovered="recovered"
         :deaths="deaths"
@@ -98,6 +99,7 @@
         confirmed: 0,
         recovered: 0,
         lastUpdated: null,
+        isLoading: false,
       };
     },
     methods: {
@@ -117,26 +119,45 @@
       toggleOptions() {
         this.optionsShowed = !this.optionsShowed;
       },
-      loadStats() {
+      async loadStats() {
+        this.isLoading = true;
         const selectedCountryCode = !this.selectedCountry || this.selectedCountry.code === 'global' ? '' : this.selectedCountry.code;
 
         try {
-          this.$api.stats.getCountrySpecificStats(selectedCountryCode)
-            .then(data => {
-              const countryData = data && data[0];
+          if (!selectedCountryCode) {
+            const data = await this.$api.stats.getGlobalStats();
+            this.deaths = data.totalDeaths;
+            this.confirmed = data.totalConfirmed;
+            this.recovered = data.totalRecovered;
+            this.lastUpdated = data.created;
+            return;
+          }
 
-              if (!countryData) {
-                return;
-              }
+          const data = await this.$api.stats.getCountrySpecificStats(selectedCountryCode);
+          const countryData = data && data[0];
 
-              this.deaths = countryData.totalDeaths;
-              this.confirmed = countryData.totalConfirmed;
-              this.recovered = countryData.totalRecovered;
-              this.lastUpdated = countryData.lastUpdated;
-            });
+          if (!countryData) {
+            this.deaths = '?';
+            this.confirmed = '?';
+            this.recovered = '?';
+            this.lastUpdated = '?';
+            return;
+          }
+
+          this.deaths = countryData.totalDeaths;
+          this.confirmed = countryData.totalConfirmed;
+          this.recovered = countryData.totalRecovered;
+          this.lastUpdated = countryData.lastUpdated;
         }
         catch (ex) {
+          this.deaths = '?';
+          this.confirmed = '?';
+          this.recovered = '?';
+          this.lastUpdated = '?';
           console.log('[IframeLiveStats] Error:', ex);
+        }
+        finally {
+          this.isLoading = false;
         }
       },
     },

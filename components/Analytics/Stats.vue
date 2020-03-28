@@ -9,7 +9,12 @@
           <template v-else>
             {{ confirmed }}
           </template>-->
-          {{ confirmed | formatNumber }}
+          <template v-if="isLoading">
+            <i class="fas fa-spinner fa-spin"></i>
+          </template>
+          <template v-else>
+            {{ confirmed | formatNumber }}
+          </template>
         </span>
       </div>
       <div class="py-1 w-full bg-red-200 text-sm lg:text-base font-semibold font-sans">
@@ -25,7 +30,12 @@
           <template v-else>
             {{ recovered }}
           </template>-->
-          {{ recovered | formatNumber }}
+          <template v-if="isLoading">
+            <i class="fas fa-spinner fa-spin"></i>
+          </template>
+          <template v-else>
+            {{ recovered | formatNumber }}
+          </template>
         </span>
       </div>
       <div class="py-1 w-full bg-green-200 text-sm lg:text-base font-semibold font-sans">
@@ -41,7 +51,12 @@
           <template v-else>
             {{ deaths }}
           </template>-->
-          {{ deaths | formatNumber }}
+          <template v-if="isLoading">
+            <i class="fas fa-spinner fa-spin"></i>
+          </template>
+          <template v-else>
+            {{ deaths | formatNumber }}
+          </template>
         </span>
       </div>
       <div class="py-1 w-full bg-gray-300 text-sm lg:text-base font-semibold font-sans">
@@ -52,16 +67,20 @@
 </template>
 
 <script>
-import AnimatedNumber from "animated-number-vue";
+// import AnimatedNumber from "animated-number-vue";
 
 export default {
   props: {
+    isLoading: {
+      type: Boolean,
+      default: false,
+    },
     confirmed: [Number, String],
     recovered: [Number, String],
     deaths: [Number, String],
   },
   components: {
-    AnimatedNumber
+    // AnimatedNumber
   },
   methods: {
     formatNumber(value) {
