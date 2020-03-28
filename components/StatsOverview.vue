@@ -69,7 +69,7 @@ import Stats from '~/components/Analytics/Stats';
 import { directive as onClickaway } from 'vue-clickaway';
 
 export default {
-  name: "LocationSelector",
+  name: "StatsOverview",
   directives: {
     onClickaway: onClickaway,
   },

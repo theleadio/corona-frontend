@@ -3,7 +3,7 @@
 		<div class="flex flex-wrap -mx-2">
 
 			<div class="w-full md:w-2/3 px-2">
-				<LocationSelector
+				<stats-overview
 					v-model="country"
 					:is-loading="isLoadingStats"
 					:stats="stats"
@@ -78,13 +78,13 @@
 <script>
 	// import NotifyCard from "../components/NotifyCard";
 	//import RecentNews from "../components/RecentNews";
-	import Survey from '~/components/Survey'
-	import Search from '~/components/Search';
-	import TrendingNews from '~/components/TrendingNews';
-	import LocationSelector from '~/components/LocationSelector';
-	import TopStats from '~/components/TopStats';
-	import LearnPrevention from '~/components/LearnPrevention';
 	import BuyMeACoffee from '~/components/BuyMeACoffee';
+	import LearnPrevention from '~/components/LearnPrevention';
+	import Search from '~/components/Search';
+	import StatsOverview from '~/components/StatsOverview';
+	import Survey from '~/components/Survey'
+	import TopStats from '~/components/TopStats';
+	import TrendingNews from '~/components/TrendingNews';
 
 	export default {
 		head() {
@@ -110,7 +110,7 @@
 			Survey,
 			Search,
 			TrendingNews,
-			LocationSelector,
+			StatsOverview,
 			TopStats,
 			LearnPrevention,
 			BuyMeACoffee,
