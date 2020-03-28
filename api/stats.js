@@ -1,17 +1,28 @@
 export default axios => ({
-  getStats: (countryCode) => {
-    return axios.get(`/v3/stats/bno?countryCode=${countryCode}`)
-      .then(res => res.data);
-  },
-  
   getTopNCountryStats: (limit) => {
-    const limitQuery = limit ? `?limit=${limit}` : ``
-    return axios.get('/v3/stats/worldometer/topCountry' + limitQuery)
-      .then(res => res.data);
+    const params = {
+      limit,
+    };
+
+    return axios.get(`/v3/stats/worldometer/topCountry`, { params })
+      .then(res => {
+        const countryStats = res.data
+          && res.data
+          // Remove invalid data.
+          .filter(stat => stat.countryCode && (stat.totalConfirmed || stat.totalDeaths || stat.totalRecovered)) || [];
+
+        return countryStats
+          // De-duplicate stats by country code
+          .filter((stat, index) => index === countryStats.findIndex(a => a.countryCode === stat.countryCode));
+      })
   },
 
   getCountrySpecificStats: (countryCode) => {
-    return axios.get(`/v3/stats/worldometer/country?countryCode=${countryCode}`)
+    const params = {
+      countryCode,
+    };
+
+    return axios.get(`/v3/stats/worldometer/country`, { params })
       .then(res => res.data);
   },
 
@@ -20,33 +31,14 @@ export default axios => ({
       .then(res => res.data);
   },
 
-  getLatestStats: () => {
-    return axios.get(`/stats/latest`)
-      .then(res => res.data);
-  },
-
-  getTopStats: (limit) => {
-    return axios.get(`/v2/stats/top?limit=${limit}`)
-      .then(res => res.data);
-  },
-
-  getTotalCasesByCountry: (countryCode) => {
-    return axios.get(`/v3/stats/bno/total_daily_cases/country?countryCode=${countryCode}`)
-      .then(res => res.data);
-  },
-
-  getDailyCasesByCountry: (countryCode) => {
-    return axios.get(`/v3/stats/bno/daily_cases/country?countryCode=${countryCode}`)
-    .then(res => res.data);
-  },
-
-  getTrendByCountry: (countryCode, startDate, endDate) => {
-    return axios.get(`/analytics/trend/country?country_code=${countryCode}&start_date=${startDate}&end_date=${endDate}`)
-    .then(res => res.data);
-  },
-
   getTrendByCountryDate: (countryCode, startDate, endDate) => {
-    return axios.get(`/v3/analytics/trend/country?countryCode=${countryCode}&startDate=${startDate}&endDate=${endDate}`)
+    const params = {
+      countryCode,
+      startDate,
+      endDate,
+    };
+
+    return axios.get(`/v3/analytics/trend/country`, { params })
     .then(res => res.data);
   }
 });

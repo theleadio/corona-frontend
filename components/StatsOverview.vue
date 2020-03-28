@@ -48,9 +48,10 @@
 
       <stats
         class="flex justify-center w-full md:justify-end mt-5 md:mt-0"
-        :confirmed="confirmed"
-        :recovered="recovered"
-        :deaths="deaths"
+        :confirmed="statsConfirmed"
+        :recovered="statsRecovered"
+        :deaths="statsDeaths"
+        :is-loading="isLoading"
       />
 
     </div>
@@ -65,16 +66,24 @@
 <script>
 import Flag from '~/components/Flag';
 import Stats from '~/components/Analytics/Stats';
-import AnimatedNumber from "animated-number-vue";
 import { directive as onClickaway } from 'vue-clickaway';
 
 export default {
-  name: "LocationSelector",
+  name: "StatsOverview",
   directives: {
     onClickaway: onClickaway,
   },
+  props: {
+    isLoading: {
+      type: Boolean,
+      default: false,
+    },
+    stats: {
+      type: Object,
+      default: () => {},
+    }
+  },
   components: {
-    AnimatedNumber,
     Flag,
     Stats
   },
@@ -88,19 +97,36 @@ export default {
       },
       selectedCountry: null,
       optionsShowed: false,
-      deaths: 0,
-      confirmed: 0,
-      recovered: 0,
-      numLastUpdated: null,
       search: ''
     };
   },
 
   computed: {
-    filteredCountries(){
+    filteredCountries() {
       const reg = new RegExp(this.search, "i")
       return this.countries.filter(m => reg.test(m.name))
-    }
+    },
+    statsConfirmed() {
+      if (!this.stats || typeof this.stats.confirmed === 'undefined') {
+        return '?';
+      }
+
+      return this.stats.confirmed;
+    },
+    statsRecovered() {
+      if (!this.stats || typeof this.stats.recovered === 'undefined') {
+        return '?';
+      }
+
+      return this.stats.recovered;
+    },
+    statsDeaths() {
+      if (!this.stats || typeof this.stats.deaths === 'undefined') {
+        return '?';
+      }
+
+      return this.stats.deaths;
+    },
   },
   methods: {
     selectCountry(country) {
@@ -108,7 +134,6 @@ export default {
       this.toggleOptions();
       this.$emit('input', country && country.code === 'global' ? {} : country);
       this.updateCountryCodeParam(country);
-      this.loadStats();
       this.search = ""
     },
     showOptions(){
@@ -138,29 +163,6 @@ export default {
       this.selectCountry(country || this.global);
       this.closeOptions();
     },
-    loadStats() {
-      const selectedCountryCode = !this.selectedCountry || this.selectedCountry.code === 'global' ? '' : this.selectedCountry.code;
-
-      if (selectedCountryCode === '') {
-        this.$api.stats.getGlobalStats()
-          .then(data => {
-            this.deaths = data.totalDeaths;
-            this.confirmed = data.totalConfirmed;
-            this.recovered = data.totalRecovered;
-            this.numLastUpdated = data.created;
-          });
-      } else {
-        this.$api.stats.getCountrySpecificStats(selectedCountryCode)
-          .then(data => {
-            this.deaths = data[0].totalDeaths;
-            this.confirmed = data[0].totalConfirmed;
-            this.recovered = data[0].totalRecovered;
-            this.numLastUpdated = data[0].lastUpdated;
-          });
-      }
-
-    },
-
     loadAffectedCountry () {
       this.$api.analytics.fetchAffectedCountry()
         .then(data => {
@@ -177,7 +179,6 @@ export default {
   },
   created() {
     this.checkForPresetCountryCode();
-    this.loadStats();
     this.loadAffectedCountry()
   },
 };

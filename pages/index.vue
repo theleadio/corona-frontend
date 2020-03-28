@@ -3,9 +3,21 @@
 		<div class="flex flex-wrap -mx-2">
 
 			<div class="w-full md:w-2/3 px-2">
-				<LocationSelector v-model="country" />
+				<stats-overview
+					v-model="country"
+					:is-loading="isLoadingOverviewStats"
+					:stats="stats"
+				/>
+				<Survey class="my-4"
+					:desktop-image="surveyConfig.desktopImage"
+					:mobile-image="surveyConfig.mobileImage"
+					:link="surveyConfig.link"
+					:expires-on="surveyConfig.expiresOn"/>
 				<div class="w-full block md:hidden mt-4 mb-8">
-					<TopStats />
+					<TopStats
+						:is-loading="isLoadingCountryStats"
+						:country-stats="countryStats"
+					/>
 					<div
 						class="mt-2 text-center underline text-blue-500 font-semibold"
 					>
@@ -19,7 +31,10 @@
 
 			<div class="w-full md:w-1/3 px-2">
 				<div class="hidden md:block">
-					<TopStats />
+					<TopStats
+						:is-loading="isLoadingCountryStats"
+						:country-stats="countryStats"
+					/>
 					<div
 						class="mt-2 text-center underline text-blue-500 font-semibold"
 					>
@@ -55,10 +70,6 @@
 					</div>-->
 				</div>
 
-				<div class="my-4">
-					<!-- <RecentNews :country="country" /> -->
-				</div>
-
 				<!-- hide for now
         <NotifyCard />
         -->
@@ -68,13 +79,13 @@
 </template>
 <script>
 	// import NotifyCard from "../components/NotifyCard";
-	//import RecentNews from "../components/RecentNews";
-	import Search from '~/components/Search';
-	import TrendingNews from '~/components/TrendingNews';
-	import LocationSelector from '~/components/LocationSelector';
-	import TopStats from '~/components/TopStats';
-	import LearnPrevention from '~/components/LearnPrevention';
 	import BuyMeACoffee from '~/components/BuyMeACoffee';
+	import LearnPrevention from '~/components/LearnPrevention';
+	import Search from '~/components/Search';
+	import StatsOverview from '~/components/StatsOverview';
+	import Survey from '~/components/Survey'
+	import TopStats from '~/components/TopStats';
+	import TrendingNews from '~/components/TrendingNews';
 
 	export default {
 		head() {
@@ -96,20 +107,104 @@
 		},
 		components: {
 			// NotifyCard,
-			// RecentNews,
+			Survey,
 			Search,
 			TrendingNews,
-			LocationSelector,
+			StatsOverview,
 			TopStats,
 			LearnPrevention,
 			BuyMeACoffee,
-
 		},
-		mounted() {},
 		data: function() {
 			return {
-				country: {}
+				isLoadingOverviewStats: false,
+				stats: {},
+				isLoadingCountryStats: false,
+				countryStats: [],
+				country: {},
+				surveyConfig: {
+					desktopImage: "survey_desktop.png",
+					mobileImage: "survey_mobile.png",
+					link: "https://tinyurl.com/CoronaTrackerSurvey",
+					expiresOn: "2020-04-01"
+				}
 			};
-		}
+		},
+		methods: {
+			async fetchOverviewStats() {
+				this.isLoadingOverviewStats = true;
+				const selectedCountryCode = !this.country || this.country.code === 'global' ? '' : this.country.code;
+
+				try {
+					if (!selectedCountryCode) {
+						const data = await this.$api.stats.getGlobalStats();
+						this.stats = {
+							deaths: data.totalDeaths,
+							confirmed: data.totalConfirmed,
+							recovered: data.totalRecovered,
+							lastUpdated: data.created,
+						};
+						return;
+					}
+
+					const data = await this.$api.stats.getCountrySpecificStats(selectedCountryCode);
+					const countryData = data[0];
+
+					if (!countryData) {
+						this.stats = {
+							deaths: '?',
+							confirmed: '?',
+							recovered: '?',
+							lastUpdated: '?',
+						} ;
+						return;
+					}
+
+					this.stats = {
+						deaths: countryData.totalDeaths,
+						confirmed: countryData.totalConfirmed,
+						recovered: countryData.totalRecovered,
+						lastUpdated: countryData.lastUpdated,
+					};
+				}
+				catch (ex) {
+					this.deaths = '?';
+					this.confirmed = '?';
+					this.recovered = '?';
+					this.lastUpdated = '?';
+					console.log('[loadStats] Error:', ex);
+				}
+				finally {
+					this.isLoadingOverviewStats = false;
+				}
+			},
+			async fetchCountryStats() {
+				this.isLoadingCountryStats = true;
+				try {
+					const limit = 15;
+					this.countryStats = await this.$api.stats.getTopNCountryStats(limit);
+				}
+				catch (ex) {
+					console.log('[fetchCountryStats] Error:', ex);
+				}
+				finally {
+					this.isLoadingCountryStats = false;
+				}
+			},
+		},
+		watch: {
+			country(newVal, oldVal) {
+				if (newVal && oldVal && newVal.code !== oldVal.code) {
+					this.fetchOverviewStats();
+				}
+			},
+		},
+		mounted() {
+
+		},
+		created() {
+			this.fetchOverviewStats();
+			this.fetchCountryStats();
+		},
 	};
 </script>
