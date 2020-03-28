@@ -17,7 +17,11 @@ export default axios => ({
   },
 
   getCountrySpecificStats: (countryCode) => {
-    return axios.get(`/v3/stats/worldometer/country?countryCode=${countryCode}`)
+    const params = {
+      countryCode,
+    };
+
+    return axios.get(`/v3/stats/worldometer/country`, { params })
       .then(res => res.data);
   },
 
@@ -27,7 +31,13 @@ export default axios => ({
   },
 
   getTrendByCountryDate: (countryCode, startDate, endDate) => {
-    return axios.get(`/v3/analytics/trend/country?countryCode=${countryCode}&startDate=${startDate}&endDate=${endDate}`)
+    const params = {
+      countryCode,
+      startDate,
+      endDate,
+    };
+
+    return axios.get(`/v3/analytics/trend/country`, { params })
     .then(res => res.data);
   }
 });

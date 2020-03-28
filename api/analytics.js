@@ -1,7 +1,10 @@
 export default axios => ({
   fetchTopTrendingCases: (limit) => {
-    const limitQuery = limit ? `?limit=${limit}` : ``
-    return axios.get(`/v3/stats/worldometer/totalTrendingCases` + limitQuery)
+    const params = {
+      limit,
+    };
+
+    return axios.get(`/v3/stats/worldometer/totalTrendingCases`, { params })
       .then(res => res.data)
   },
   
