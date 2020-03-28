@@ -120,6 +120,7 @@
         });
       },
       typedSearch: function() {
+        const throttleMilliSecond = 1000;
         this.state = 'idle';
 
         clearTimeout(this.timeoutID);
@@ -127,7 +128,7 @@
         this.timeoutID = setTimeout(() => {
           this.results = [];
           this.performSearch();
-        }, 250);
+        }, throttleMilliSecond);
       },
       search: function() {
         this.performSearch();
