@@ -70,10 +70,6 @@
 					</div>-->
 				</div>
 
-				<div class="my-4">
-					<!-- <RecentNews :country="country" /> -->
-				</div>
-
 				<!-- hide for now
         <NotifyCard />
         -->
@@ -83,7 +79,6 @@
 </template>
 <script>
 	// import NotifyCard from "../components/NotifyCard";
-	//import RecentNews from "../components/RecentNews";
 	import BuyMeACoffee from '~/components/BuyMeACoffee';
 	import LearnPrevention from '~/components/LearnPrevention';
 	import Search from '~/components/Search';
@@ -112,7 +107,6 @@
 		},
 		components: {
 			// NotifyCard,
-			// RecentNews,
 			Survey,
 			Search,
 			TrendingNews,
