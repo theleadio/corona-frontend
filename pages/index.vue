@@ -190,11 +190,13 @@
 				finally {
 					this.isLoadingCountryStats = false;
 				}
-			}
+			},
 		},
 		watch: {
-			country(val) {
-				this.fetchOverviewStats();
+			country(newVal, oldVal) {
+				if (newVal && oldVal && newVal.code !== oldVal.code) {
+					this.fetchOverviewStats();
+				}
 			},
 		},
 		mounted() {

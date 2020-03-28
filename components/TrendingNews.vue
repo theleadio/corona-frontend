@@ -109,8 +109,10 @@
       }
     },
     watch: {
-      country() {
-        this.loadData();
+      country(newVal, oldVal) {
+        if (newVal && oldVal && newVal.code !== oldVal.code) {
+          this.loadData();
+        }
       },
       selectedLanguages() {
         this.loadData();
