@@ -30,3 +30,10 @@
   status = 200
   force = true # COMMENT: ensure that we always redirect
   headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/blog2"
+  to = "http://blog.coronatracker.com"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+  headers = {X-From = "Netlify"}
