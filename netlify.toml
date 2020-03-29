@@ -23,3 +23,24 @@
 [context.branch-deploy.environment]
   API_BASE_URL = "https://api.staging.coronatracker.com"
   GA_ID = "UA-xxxxxxxxx-x"
+
+[[redirects]]
+  from = "/blog"
+  to = "https://blog.coronatracker.com/blog"
+  status = 200
+  force = false
+  headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/blog/*/"
+  to = "https://blog.coronatracker.com/blog/:splat"
+  status = 200
+  force = false
+  headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/blog/*"
+  to = "https://blog.coronatracker.com/blog/:splat/"
+  status = 200
+  force = false
+  headers = {X-From = "Netlify"}
