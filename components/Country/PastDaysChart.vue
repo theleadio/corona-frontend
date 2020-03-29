@@ -1,7 +1,7 @@
 <template>
   <div class="flex-1 relative overflow-hidden">
     <div class="border border-gray-400 p-4 rounded relative past-days-chart-wrapper">
-      <div class="relative">
+      <div v-if="showHeader" class="relative">
         <div class="text-gray-900 font-bold text-xl">{{ title }}</div>
         <div class="text-gray-900 font-bold text-xs mb-2">({{ startDate }} - {{ endDate }})</div>
       </div>
@@ -16,7 +16,7 @@
         </client-only>
       </div>
 
-      <PastDaysChartSelector :defaultChartType="selectedChartType" :chartOptions="chartOptions"/>
+      <PastDaysChartSelector v-if="showSelector" :defaultChartType="selectedChartType" :chartOptions="chartOptions"/>
     </div>
   </div>
 </template>
@@ -47,6 +47,14 @@ export default {
       type: String,
       default: ''
     },
+    showHeader: {
+      type: Boolean,
+      default: true,
+    },
+    showSelector: {
+      type: Boolean,
+      default: true,
+    }
   },
   data() {
     return {

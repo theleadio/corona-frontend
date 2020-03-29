@@ -37,9 +37,9 @@
       </div>
 
       <div class="flex-1">
-        <p class="text-xs font-extrabold">{{ $t('Cases Discharged') }}</p>
-        <p class="text-xl font-bold">???</p>
-        <p class="text-xs"><span class="text-red-600">???%</span> {{ $t('of total cases') }}</p>
+        <p class="text-xs font-extrabold">{{ $t('Daily Confirmed Cases') }}</p>
+        <p class="text-xl font-bold">{{ perMillionConfirmedCases.totalCount | formatNumber }}</p>
+        <p class="text-xs">{{ $t('Per Million Population') }}</p>
       </div>
     </div>
 

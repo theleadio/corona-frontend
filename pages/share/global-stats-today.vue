@@ -21,7 +21,7 @@
       </div>
     </div>
 
-    <TopStats :limit="10" :show-title="false" :show-source="false" :show-footer="false" class="pb-5" />
+    <TopStats :limit="10" :show-title="false" :show-source="false" :show-footer="false" :country-stats="countryStats" class="pb-5" />
 
     <logo class="lg:flex mb-4 float-right h-8" />
 
@@ -50,20 +50,31 @@
         outbreakTrendData: [],
         topCountryWithDailyNewStatsData: [],
         affectedCountryData: [],
+        countryStats: []
       }
     },
     methods: {
-      loadStats () {
-        this.$api.stats.getGlobalStats()
+      async loadStats () {
+        await this.$api.stats.getGlobalStats()
                 .then(data => {
                   this.confirmed = data.totalConfirmed;
                   this.deaths = data.totalDeaths;
                   this.recovered = data.totalRecovered;
                 });
+      },
+      async fetchCountryStats() {
+        try {
+          const limit = 10;
+          this.countryStats = await this.$api.stats.getTopNCountryStats(limit);
+        }
+        catch (ex) {
+          console.log('[fetchCountryStats] Error:', ex);
+        }
       }
     },
     created() {
       this.loadStats();
+      this.fetchCountryStats();
     },
   };
 </script>
