@@ -1,7 +1,7 @@
 <template>
   <div class="container clearfix">
 
-    <h1 class="text-2xl font-extrabold">Global COVID-19 Stats Today</h1>
+    <h1 class="text-2xl font-extrabold">{{ $t('Global COVID-19 Stats Today') }}</h1>
     <h3>{{ currentDate }}</h3>
 
     <div class="flex flex-row lg:flex-row pt-5 pb-6 text-center">
