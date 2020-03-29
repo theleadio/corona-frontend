@@ -43,7 +43,7 @@
     },
     data: function() {
       return {
-        currentDate: moment().format('Do MMM YYYY, h:mm a'),
+        currentDate: moment().format('Do MMM YYYY, h:mm a (ZZ)'),
         confirmed: 0,
         deaths: 0,
         recovered: 0,

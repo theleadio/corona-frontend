@@ -73,7 +73,7 @@
       };
 
       return {
-        currentDate: moment().format('Do MMM YYYY, h:mm a'),
+        currentDate: moment().format('Do MMM YYYY, h:mm a (ZZ)'),
         PAGE_STATES,
         pageState: PAGE_STATES.LOADING,
         overviewInfo: {
