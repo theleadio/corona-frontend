@@ -88,7 +88,7 @@ export default {
 
   watch: {
     data (val) {
-      const categories = val.map(i => moment(i.date_posted, 'YYYY-MM-DD').format('YYYY-MM-DD'))
+      const categories = val.map(i => moment(i.lastUpdated, 'YYYY-MM-DD').format('YYYY-MM-DD'))
       const series = [
         {
           name: this.$t('Total Confirmed'),
@@ -134,10 +134,10 @@ export default {
       })
 
       val.map(i => i).forEach((item) => {
-        const categoryIdx = categories.indexOf(moment(item.date_posted, 'YYYY-MM-DD').format('YYYY-MM-DD'))
-        series[0].data[categoryIdx] += item.confirmed
-        series[1].data[categoryIdx] += item.dead
-        series[2].data[categoryIdx] += item.recovered
+        const categoryIdx = categories.indexOf(moment(item.lastUpdated, 'YYYY-MM-DD').format('YYYY-MM-DD'))
+        series[0].data[categoryIdx] += item.totalConfirmed
+        series[1].data[categoryIdx] += item.totalDeaths
+        series[2].data[categoryIdx] += item.totalRecovered
       })
 
       this.$refs.chart.updateSeries(series)

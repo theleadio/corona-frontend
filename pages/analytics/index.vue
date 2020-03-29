@@ -146,7 +146,8 @@ export default {
     },
 
     loadOutbreakTrend () {
-      this.$api.analytics.fetchTrendByDate('2020-01-27', this.currentDate.toISOString().slice(0, 10))
+      const limit = 100
+      this.$api.analytics.fetchTopTrendingCases(limit)
         .then(data => {
           this.outbreakTrendData = data
         })

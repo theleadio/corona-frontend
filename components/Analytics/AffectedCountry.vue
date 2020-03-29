@@ -25,19 +25,19 @@
             color="red">
             <l-popup>
               <p class="text-xs">
-                <span class="font-bold">{{ $t('Country') }}:</span> {{ loc.countryName }}
+                <span class="font-bold">{{ $t('Country') }}:</span> {{ loc.country }}
               </p>
 
               <p class="text-xs">
-                <span class="font-bold">{{ $t('Total Confirmed') }}:</span> {{ loc.confirmed | formatNumber }}
+                <span class="font-bold">{{ $t('Total Confirmed') }}:</span> {{ loc.totalConfirmed | formatNumber }}
               </p>
 
               <p class="text-xs">
-                <span class="font-bold">{{ $t('Total Recovered') }}:</span> {{ loc.recovered | formatNumber }}
+                <span class="font-bold">{{ $t('Total Recovered') }}:</span> {{ loc.totalRecovered | formatNumber }}
               </p>
 
               <p class="text-xs">
-                <span class="font-bold">{{ $t('Total Deaths') }}:</span> {{ loc.deaths | formatNumber }}
+                <span class="font-bold">{{ $t('Total Deaths') }}:</span> {{ loc.totalDeaths | formatNumber }}
               </p>
             </l-popup>
           </l-circle-marker>
@@ -64,7 +64,7 @@
               <a href="#notes-on-others">*</a>
             </template>
             <template v-else-if="loc.countryCode">
-              <nuxt-link :to="`/country/${loc.countryCode.toLowerCase()}`" style="display: block;">
+              <nuxt-link :to="localePath(`/country/${loc.countryCode.toLowerCase()}`)" style="display: block;">
                 <Flag :country-code="loc.countryCode"></Flag>
                 {{loc.country}}
               </nuxt-link>

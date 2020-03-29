@@ -1,78 +1,80 @@
 <template>
-  <div class="flex flex-wrap" style="padding-bottom: 96px;">
-    <div class="px-5 text-center" v-if="pageState === PAGE_STATES.LOADING">
-      Loading...
-    </div>
-    <div class="px-5 text-center" v-else-if="pageState === PAGE_STATES.HAS_ERROR">
-      {{error}}
-    </div>
-    <div class="w-full px-5 pt-2" v-else-if="pageState === PAGE_STATES.HAS_FETCHED">
-      <div class="flex flex-wrap">
-        <div class="w-full lg:w-1/2 p-2">
-          <Overview :info="overviewInfo" :country="country"></Overview>
-        </div>
-        <div class="w-1/2 lg:w-1/4 p-2">
-          <FatalityRate :days="fatalityRate.days" :series="fatalityRate.data"/>
-        </div>
-        <div class="w-1/2 lg:w-1/4 p-2">
-          <PositiveRate :days="positiveRate.days" :series="positiveRate.data"/>
-        </div>
+  <main class="container">
+    <div class="flex flex-wrap -mx-2" style="padding-bottom: 96px;">
+      <div class="px-5 text-center" v-if="pageState === PAGE_STATES.LOADING">
+        Loading...
       </div>
-      <div class="flex flex-wrap">
-<!--        <div class="w-full md:w-1/2 lg:w-1/4 p-2">-->
-<!--          <growth-rate :confirmed="overviewInfo.confirmed"-->
-<!--                       :ytdConfirmed="overviewInfo.diffConfirmed"/>-->
-<!--        </div>-->
-        <div class="w-full md:w-1/2 lg:w-1/3 p-2">
-          <line-chart-number
-            :height="180"
-            :data="[0, 10, 20, 10, 40, 20, 50, 60]"
-            :title="$t('Critical Cases treated in ICU')"
-            :subtitleRed="`${criticalCases.inICUCount}%`"
-            :subtitle="$t('of total cases')"
-            :number="criticalCases.totalCount"
-          />
-        </div>
-        <div class="w-full md:w-1/2 lg:w-1/3 p-2">
-          <line-chart-number
-            :height="180"
-            :data="[0, 10, 20, 10, 40, 20, 50, 60]"
-            :title="$t('Daily Cases Receiving Treatment')"
-            :subtitleRed="`${activeCases.percentage}%`"
-            :subtitle="$t('of total cases')"
-            :number="activeCases.totalCount"
-          />
-        </div>
-        <div class="w-full md:w-1/2 lg:w-1/3 p-2">
-          <line-chart-number
-            :height="180"
-            :data="[0, 10, 20, 10, 40, 20, 50, 60]"
-            :title="$t('Daily Confirmed Cases')"
-            :number="perMillionConfirmedCases.totalCount"
-            :subtitle = "$t('Per Million Population')"
-          />
-        </div>
+      <div class="px-5 text-center" v-else-if="pageState === PAGE_STATES.HAS_ERROR">
+        {{error}}
       </div>
-      <div class="flex flex-wrap">
-        <div class="w-full md:w-3/4 p-2">
-            <PastDaysChart
-              :height="360"
-              :trendData="countryTrend.trendData"
-              :trendDates="countryTrend.trendDates"
-              :title="$t('Past 14 Days Chart')"
-              style="margin-bottom: 12px;"
+      <div class="w-full " v-else-if="pageState === PAGE_STATES.HAS_FETCHED">
+        <div class="flex flex-wrap -mt-2">
+          <div class="w-full lg:w-1/2 p-2">
+            <Overview :info="overviewInfo" :country="country"></Overview>
+          </div>
+          <div class="w-1/2 lg:w-1/4 p-2">
+            <FatalityRate :days="fatalityRate.days" :series="fatalityRate.data"/>
+          </div>
+          <div class="w-1/2 lg:w-1/4 p-2">
+            <PositiveRate :days="positiveRate.days" :series="positiveRate.data"/>
+          </div>
+        </div>
+        <div class="flex flex-wrap">
+  <!--        <div class="w-full md:w-1/2 lg:w-1/4 p-2">-->
+  <!--          <growth-rate :confirmed="overviewInfo.confirmed"-->
+  <!--                       :ytdConfirmed="overviewInfo.diffConfirmed"/>-->
+  <!--        </div>-->
+          <div class="w-full md:w-1/2 lg:w-1/3 p-2">
+            <line-chart-number
+              :height="180"
+              :data="[0, 10, 20, 10, 40, 20, 50, 60]"
+              :title="$t('Critical Cases treated in ICU')"
+              :subtitleRed="`${criticalCases.inICUCount}%`"
+              :subtitle="$t('of total cases')"
+              :number="criticalCases.totalCount"
             />
-            <TrendingNews :country="country" />
+          </div>
+          <div class="w-full md:w-1/2 lg:w-1/3 p-2">
+            <line-chart-number
+              :height="180"
+              :data="[0, 10, 20, 10, 40, 20, 50, 60]"
+              :title="$t('Daily Cases Receiving Treatment')"
+              :subtitleRed="`${activeCases.percentage}%`"
+              :subtitle="$t('of total cases')"
+              :number="activeCases.totalCount"
+            />
+          </div>
+          <div class="w-full md:w-1/2 lg:w-1/3 p-2">
+            <line-chart-number
+              :height="180"
+              :data="[0, 10, 20, 10, 40, 20, 50, 60]"
+              :title="$t('Daily Confirmed Cases')"
+              :number="perMillionConfirmedCases.totalCount"
+              :subtitle = "$t('Per Million Population')"
+            />
+          </div>
         </div>
+        <div class="flex flex-wrap">
+          <div class="w-full md:w-3/4 p-2">
+              <PastDaysChart
+                :height="360"
+                :trendData="countryTrend.trendData"
+                :trendDates="countryTrend.trendDates"
+                :title="$t('Past 14 Days Chart')"
+                style="margin-bottom: 12px;"
+              />
+              <TrendingNews :country="country" />
+          </div>
 
-        <div class="w-full md:w-1/4 p-2">
-          <client-only>
-            <TwitterFeed :twitter-handle="handle"/>
-          </client-only>
+          <div class="w-full md:w-1/4 p-2">
+            <client-only>
+              <TwitterFeed :twitter-handle="handle"/>
+            </client-only>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -248,8 +250,8 @@ export default {
       try {
         countryTrendRaw = await this.$api.stats.getTrendByCountryDate(
           countryCode,
-          new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10),
-          new Date().toISOString().slice(0, 10)
+          new Date(Date.now() - 13 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10),
+          new Date(Date.now() + 1 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10)
         );
       }
       catch (err) {
@@ -275,7 +277,7 @@ export default {
         countryTrendRecovered.push(recoveredLastMax)
         countryTrendDeath.push(deadLastMax)
 
-        this.countryTrend.trendDates.push(country["last_updated"])
+        this.countryTrend.trendDates.push(country["last_updated"].slice(0,10))
       });
       this.countryTrend.trendData = [{
         "name": "confirmed",

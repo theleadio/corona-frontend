@@ -4,7 +4,11 @@
       <logo class="lg:flex mb-4" style="pointer-events:none;" />
     </a>
 
-    <TopStats :limit="999" :show-title="false" />
+    <TopStats
+      :is-loading="isLoadingCountryStats"
+      :country-stats="countryStats"
+      :show-title="false"
+    />
   </div>
 </template>
 <script>
@@ -16,6 +20,29 @@
     components: {
       Logo,
       TopStats,
+    },
+    data() {
+      return {
+        isLoadingCountryStats: false,
+        countryStats: [],
+      }
+    },
+    methods: {
+      async fetchCountryStats() {
+        this.isLoadingCountryStats = true;
+        try {
+          this.countryStats = await this.$api.stats.getTopNCountryStats();
+        }
+        catch (ex) {
+          console.log('[fetchCountryStats] Error:', ex);
+        }
+        finally {
+          this.isLoadingCountryStats = false;
+        }
+      }
+    },
+    created() {
+      this.fetchCountryStats();
     },
   };
 </script>
