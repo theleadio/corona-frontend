@@ -26,13 +26,13 @@
     <div class="flex flex-row lg:flex-row pt-5 pb-8 pl-8">
       <div class="flex-1">
         <p class="text-xs font-extrabold">{{ $t('Critical Cases in ICU') }}</p>
-        <p class="text-xl font-bold">{{ criticalCases.totalCount }}</p>
+        <p class="text-xl font-bold">{{ criticalCases.totalCount | formatNumber }}</p>
         <p class="text-xs"><span class="text-red-600">{{ criticalCases.inICUCount }}%</span> {{ $t('of total cases') }}</p>
       </div>
 
       <div class="flex-1">
         <p class="text-xs font-extrabold">{{ $t('Cases Receiving Treatment') }}</p>
-        <p class="text-xl font-bold">{{ activeCases.totalCount }}</p>
+        <p class="text-xl font-bold">{{ activeCases.totalCount | formatNumber }}</p>
         <p class="text-xs"><span class="text-red-600">{{ activeCases.percentage }}%</span> {{ $t('of total cases') }}</p>
       </div>
 
