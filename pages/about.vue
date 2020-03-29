@@ -1,96 +1,97 @@
 <template>
 	<main class="w-screen">
-		<div class="w-full container">
-			<div class="mt-5 p-5 text-center">
-				<h1 class="text-2xl font-bold mb-4 text-black">
-					{{ $t('Heroes behind CoronaTracker') }}
-				</h1>
-				<template v-if="heroes && heroes.length">
-					<div class="flex flex-wrap -mb-4">
+		<div class="mt-5 p-5 text-center">
+			<h1 class="text-2xl font-bold mb-4 text-black">
+				{{ $t('Heroes behind CoronaTracker') }}
+			</h1>
+			<template v-if="heroes && heroes.length">
+				<div class="flex flex-wrap -mb-4">
+					<div
+						v-for="(hero, index) in heroes"
+						:key="index"
+						:class="{
+							'w-full': true,
+							'md:w-1/3': index > 0,
+							'mb-4': true,
+							hero: true,
+						}"
+					>
 						<div
-							v-for="(hero, index) in heroes"
-							:key="index"
-							:class="{
-								'w-full': true,
-								'md:w-1/3': index > 0,
-								'mb-4': true,
-								hero: true,
-							}"
+							:class="{'hero-info': true, 'p-2': index > 0}"
+							style="border:none"
 						>
-							<div
-								:class="{'hero-info': true, 'p-2': index > 0}"
-								style="border:none"
-							>
-								<img :src="hero.img.src" :alt="hero.img.alt" />
-								<h2 class="mt-4 font-bold text-blue-600">
-									{{ $t(hero.title) }}
-								</h2>
-								<div>{{ hero.name }}</div>
-								<div style="color:#273E4A">
-									(
-									<a
-										class="underline"
-										:href="hero.linkedin"
-										target="_blank"
-										rel="noopener"
-										>LinkedIn</a
-									>)
-								</div>
+							<img :src="hero.img.src" :alt="hero.img.alt" />
+							<h2 class="mt-4 font-bold text-blue-600">
+								{{ $t(hero.title) }}
+							</h2>
+							<div>{{ hero.name }}</div>
+							<div style="color:#273E4A">
+								(
+								<a
+									class="underline"
+									:href="hero.linkedin"
+									target="_blank"
+									rel="noopener"
+									>LinkedIn</a
+								>)
 							</div>
+						</div>
+					</div>
+				</div>
+			</template>
+		</div>
+		<div
+			class="w-full pb-20"
+			style="position: absolute;background:#F4F9FD; left:0"
+		>
+			<div class="flex flex-wrap mt-2">
+				<template v-if="teams && teams.length">
+					<div
+						v-for="(team, index) in teams"
+						:key="index"
+						class="w-full container mt-3"
+						style="background: white"
+					>
+						<div class="w-full">
+							<h2 class="text-xl font-bold text-left m-5">
+								{{ $t(team.name) }}
+							</h2>
+						</div>
+						<div class="team ml-4 mr-auto mb-4">
+							<template v-if="team.members && team.members.length">
+								<div
+									v-for="(member, index) in team.members"
+									:key="index"
+									class="member lg:w-1/5 md:w-1/4 sm:w-1/2 xl:w-1/6"
+								>
+									<div class="member-info mt-3">
+										<img
+											src="https://via.placeholder.com/60"
+											:alt="member.img.alt"
+										/>
+
+										<a
+											class="mx-2"
+											:href="member.linkedin"
+											target="_blank"
+											rel="noopener"
+											>{{ member.name }}</a
+										>
+									</div>
+								</div>
+							</template>
 						</div>
 					</div>
 				</template>
 			</div>
-			<div class="w-full" style="position: absolute;background:#F4F9FD; left:0">
-				<div class="flex flex-wrap mt-2">
-					<template v-if="teams && teams.length">
-						<div
-							v-for="(team, index) in teams"
-							:key="index"
-							class="w-full container mt-3"
-							style="background: white"
-						>
-							<div class="w-full">
-								<h2 class="text-xl font-bold text-left m-5">
-									{{ $t(team.name) }}
-								</h2>
-							</div>
-							<div class="team ml-4 mr-auto mb-4">
-								<template v-if="team.members && team.members.length">
-									<div
-										v-for="(member, index) in team.members"
-										:key="index"
-										class="member lg:w-1/5 md:w-1/4 sm:w-1/3 xl:w-1/6"
-									>
-										<div class="member-info mt-3">
-											<img
-												src="https://via.placeholder.com/60"
-												:alt="member.img.alt"
-											/>
-
-											<a
-												class="mx-2"
-												:href="member.linkedin"
-												target="_blank"
-												rel="noopener"
-												>{{ member.name }}</a
-											>
-										</div>
-									</div>
-								</template>
-							</div>
-						</div>
-					</template>
-				</div>
-				<div>
-					<a
-						class="my-6 mx-auto text-center block text-2xl underline"
-						href="https://docs.google.com/spreadsheets/d/1cG1UmEa-0IUetdKzYsMKXpypGFWoO88eTzadvN4NS5Y"
-						target="_blank"
-						rel="noopener"
-						>{{ $t('View more') }}</a
-					>
-				</div>
+			<div>
+				<a
+					class="my-6 mx-auto text-center block text-2xl underline"
+					href="https://docs.google.com/spreadsheets/d/1cG1UmEa-0IUetdKzYsMKXpypGFWoO88eTzadvN4NS5Y"
+					target="_blank"
+					rel="noopener"
+					>{{ $t('View more') }}</a
+				>
 			</div>
 		</div>
 	</main>
