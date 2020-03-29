@@ -14,6 +14,7 @@
 [context.deploy-preview]
 [context.deploy-preview.environment]
   API_BASE_URL = "https://api.staging.coronatracker.com"
+  GA_ID = "UA-xxxxxxxxx-x"
 
 # Environment variable overriden for branch deploys
 # Branch deployes are applicable for non-master branches
@@ -21,3 +22,4 @@
 [context.branch-deploy]
 [context.branch-deploy.environment]
   API_BASE_URL = "https://api.staging.coronatracker.com"
+  GA_ID = "UA-xxxxxxxxx-x"
