@@ -2,7 +2,10 @@
   <div class="flex flex-wrap">
     <SidebarNav></SidebarNav>
 
-    <div class="w-full lg:w-5/6 px-2 pt-2 bg-gray-200">
+    <div class="w-full lg:w-5/6 px-2 pt-2 bg-gray-200 relative">
+
+      <Share url="https://www.coronatracker.com/analytics" class="mr-3 mt-3"></Share>
+
       <div class="pl-2">
         <p class="text-2xl font-bold">COVID-19 {{ $t('Overview') }}</p>
 
@@ -95,6 +98,7 @@ import OutbreakTrendChart from '~/components/Analytics/OutbreakTrend'
 import TopCountryWithDailyNewStats from '~/components/Analytics/TopCountryWithDailyNewStats'
 import AffectedCountry from '~/components/Analytics/AffectedCountry'
 import Flag from '~/components/Flag';
+import Share from '~/components/Share';
 
 export default {
   head() {
@@ -110,11 +114,13 @@ export default {
         { hid: 'og-description', property: 'og:title', content: description },
         { hid: 'twitter-title', property: 'twitter:title', content: title },
         { hid: 'twitter-description', property: 'twitter:title', content: description },
+        { property: 'og:image', content: process.env.API_BASE_URL + '/share/globalStatsToday' },
+        { property: 'twitter-image', content: process.env.API_BASE_URL + '/share/globalStatsToday' }
       ],
     };
   },
 
-  components: { SidebarNav, OutbreakTrendChart, TopCountryWithDailyNewStats, AffectedCountry, Flag },
+  components: { SidebarNav, OutbreakTrendChart, TopCountryWithDailyNewStats, AffectedCountry, Flag, Share },
 
   mounted () {
     this.loadStats()

@@ -1,7 +1,7 @@
 <template>
   <div class="flex-1 relative overflow-hidden">
     <div class="border border-gray-400 p-4 rounded relative past-days-chart-wrapper">
-      <div class="relative">
+      <div v-if="showHeader" class="relative">
         <div class="text-gray-900 font-bold text-xl">{{ title }}</div>
         <div class="text-gray-900 font-bold text-xs mb-2">({{ startDate }} - {{ endDate }})</div>
       </div>
@@ -16,18 +16,25 @@
         </client-only>
       </div>
 
-      <PastDaysChartSelector :defaultChartType="selectedChartType" :chartOptions="chartOptions"/>
+      <PastDaysChartSelector v-if="showSelector" :defaultChartType="selectedChartType" :chartOptions="chartOptions"/>
+
+      <!-- will enable when dynamic meta routing updated -->
+      <!-- <Share v-if="showHeader"
+             :url="'https://www.coronatracker.com/country/' + country.code.toLowerCase() + '?referrer=recent'"
+             class="mr-20 mt-3"></Share> -->
     </div>
   </div>
 </template>
 
 <script>
 import PastDaysChartSelector from '~/components/Country/PastDaysChartSelector.vue';
+import Share from '~/components/Share';
 
 export default {
   name: 'PastDaysChart',
   components: {
-    PastDaysChartSelector
+    PastDaysChartSelector,
+    Share
   },
   props: {
     height: {
@@ -46,6 +53,18 @@ export default {
       type: String,
       default: ''
     },
+    showHeader: {
+      type: Boolean,
+      default: true,
+    },
+    showSelector: {
+      type: Boolean,
+      default: true,
+    },
+    country: {
+      type: Object,
+      default: () => ({ code: '' })
+    }
   },
   data() {
     return {
