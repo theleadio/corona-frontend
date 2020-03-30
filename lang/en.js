@@ -115,5 +115,5 @@ export default {
   "COVID-19 Stats Today": "COVID-19 Stats Today",
   "Critical Cases in ICU": "Critical Cases in ICU",
   "Cases Receiving Treatment": "Cases Receiving Treatment",
-  "COVID-19 Past 14 Days Cases": "COVID-19 Past 14 Days Cases"
+  "COVID-19 Past 14 Days Cases": "COVID-19 Past 14 Days Cases",
 };
