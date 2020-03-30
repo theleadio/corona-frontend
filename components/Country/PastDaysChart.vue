@@ -18,9 +18,10 @@
 
       <PastDaysChartSelector v-if="showSelector" :defaultChartType="selectedChartType" :chartOptions="chartOptions"/>
 
-      <Share v-if="showHeader"
-             :url="'https://www.coronatracker.com/country/' + country.code + '?referrer=recent'"
-             class="mr-20 mt-3"></Share>
+      <!-- will enable when dynamic meta routing updated -->
+      <!-- <Share v-if="showHeader"
+             :url="'https://www.coronatracker.com/country/' + country.code.toLowerCase() + '?referrer=recent'"
+             class="mr-20 mt-3"></Share> -->
     </div>
   </div>
 </template>

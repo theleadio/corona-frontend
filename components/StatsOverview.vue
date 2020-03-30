@@ -4,7 +4,7 @@
       <div class="w-full md:w-2/5 h-full mr-2 align-middle relative">
 
         <Share v-if="selectedCountry.code === 'global'" url="https://www.coronatracker.com"></Share>
-        <Share v-if="selectedCountry.code !== 'global'" :url="'https://www.coronatracker.com/country/' + selectedCountry.code"></Share>
+        <Share v-if="selectedCountry.code !== 'global'" :url="'https://www.coronatracker.com/country/' + selectedCountry.code.toLowerCase()"></Share>
 
         <p class="mt-2 mb-2 text-sm font-semibold">
           <span class="text-red-600 uppercase"><i class="far fa-dot-circle blink"></i> {{ $t('Live') }}</span>
