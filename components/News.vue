@@ -55,8 +55,8 @@
           return false;
         }
 
-        this.$ga.event('outbound', 'click', 'url', url, {
-          'transport': 'beacon',
+        this.$ga.query('send', 'event', 'outbound', 'click', url, {
+          transport: 'beacon',
         });
 
         return false;
