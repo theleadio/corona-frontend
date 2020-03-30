@@ -60,13 +60,13 @@
           {
             hid: 'og-image',
             property: 'og:image',
-            content: this.$route.params.referrer === 'recent' ? 'https://www.coronatracker.com/_nuxt/img/a219938.png' :
+            content: this.$route.query.referrer === 'recent' ? 'https://www.coronatracker.com/_nuxt/img/a219938.png' :
                     'https://www.coronatracker.com/_nuxt/img/262cfac.png'
           },
           {
             hid: 'twitter-image',
             property: 'twitter-image',
-            content: this.$route.params.referrer === 'recent' ? 'https://www.coronatracker.com/_nuxt/img/a219938.png' :
+            content: this.$route.query.referrer === 'recent' ? 'https://www.coronatracker.com/_nuxt/img/a219938.png' :
                     'https://www.coronatracker.com/_nuxt/img/262cfac.png'
           }
         ],
