@@ -1,0 +1,277 @@
+<template>
+  <div class="container">
+    <div class="flex items-center mb-4 flex-col sm:flex-row">
+        <a href="/" target="_blank">
+          <logo class="lg:flex mr-4" style="pointer-events:none;" />
+        </a>
+        <label class="block text-s font-bold mt-1">Live stats provided by CoronaTracker.com </label>
+    </div>
+    <div class="flex flex-wrap -mx-2">
+      <div class="px-5 text-center" v-if="pageState === PAGE_STATES.LOADING">
+        Loading...
+      </div>
+      <div class="px-5 text-center" v-else-if="pageState === PAGE_STATES.HAS_ERROR">
+        {{error}}
+      </div>
+      <div class="w-full " v-else-if="pageState === PAGE_STATES.HAS_FETCHED">
+        <div class="flex flex-wrap -mt-2">
+          <div class="w-full lg:w-1/2 p-2">
+            <Overview :info="overviewInfo" :country="country"></Overview>
+          </div>
+          <div class="w-1/2 lg:w-1/4 p-2">
+            <FatalityRate :days="fatalityRate.days" :series="fatalityRate.data"/>
+          </div>
+          <div class="w-1/2 lg:w-1/4 p-2">
+            <PositiveRate :days="positiveRate.days" :series="positiveRate.data"/>
+          </div>
+        </div>
+        <div class="flex flex-wrap">
+  <!--        <div class="w-full md:w-1/2 lg:w-1/4 p-2">-->
+  <!--          <growth-rate :confirmed="overviewInfo.confirmed"-->
+  <!--                       :ytdConfirmed="overviewInfo.diffConfirmed"/>-->
+  <!--        </div>-->
+          <div class="w-full md:w-1/2 lg:w-1/3 p-2">
+            <line-chart-number
+              :height="180"
+              :data="[0, 10, 20, 10, 40, 20, 50, 60]"
+              :title="$t('Critical Cases treated in ICU')"
+              :subtitleRed="`${criticalCases.inICUCount}%`"
+              :subtitle="$t('of total cases')"
+              :number="criticalCases.totalCount"
+            />
+          </div>
+          <div class="w-full md:w-1/2 lg:w-1/3 p-2">
+            <line-chart-number
+              :height="180"
+              :data="[0, 10, 20, 10, 40, 20, 50, 60]"
+              :title="$t('Daily Cases Receiving Treatment')"
+              :subtitleRed="`${activeCases.percentage}%`"
+              :subtitle="$t('of total cases')"
+              :number="activeCases.totalCount"
+            />
+          </div>
+          <div class="w-full md:w-1/2 lg:w-1/3 p-2">
+            <line-chart-number
+              :height="180"
+              :data="[0, 10, 20, 10, 40, 20, 50, 60]"
+              :title="$t('Daily Confirmed Cases')"
+              :number="perMillionConfirmedCases.totalCount"
+              :subtitle = "$t('Per Million Population')"
+            />
+          </div>
+        </div>
+        <div class="flex flex-wrap">
+          <div class="w-full p-2">
+              <PastDaysChart
+                :height="360"
+                :trendData="countryTrend.trendData"
+                :trendDates="countryTrend.trendDates"
+                :title="$t('Past 14 Days Chart')"
+                style="margin-bottom: 12px;"
+              />
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    
+
+    <!-- <div class="block text-center md:text-right mt-6 underline text-blue-500 font-semibold">
+      <a href="/" target="_blank">{{ $t('more details') }}</a>
+    </div> -->
+  </div>
+</template>
+<script>
+  import Flag from '~/components/Flag';
+  import Logo from '~/components/Logo';
+  import Stats from '~/components/Analytics/Stats';
+  import { directive as onClickaway } from 'vue-clickaway';
+
+  import FatalityRate from '~/components/Analytics/FatalityRate'
+  import LineChartNumber from '~/components/Country/LineChartNumber'
+  import PastDaysChart from '~/components/Country/PastDaysChart'
+  import Overview from '~/components/Country/Overview'
+  import PositiveRate from '~/components/Analytics/PositiveRate'
+  import GrowthRate from '~/components/Country/GrowthRate';
+  import {COUNTRIES} from "~/utils/constants";
+
+  export default {
+    name: "IframeMalaysiaStats",
+    layout: "blank",
+      components: {
+        GrowthRate,
+        FatalityRate,
+        LineChartNumber,
+        PastDaysChart,
+        Overview,
+        PositiveRate,
+        Logo
+      },
+
+      mounted () {
+        this.loadInformation(this.countryCode)
+        this.loadCountryTrendData(this.countryCode)
+        console.log('country', this.country)
+      },
+
+      data () {
+        const PAGE_STATES = {
+          LOADING: 'LOADING',
+          HAS_FETCHED: 'HAS_FETCHED',
+          HAS_ERROR: 'HAS_ERROR',
+        };
+
+        return {
+            countryCode: 'MY',
+          PAGE_STATES,
+          pageState: PAGE_STATES.LOADING,
+          overviewInfo: {
+            confirmed: 0,
+            diffConfirmed: 0,
+            recovered: 0,
+            diffRecovered: 0,
+            deaths: 0,
+            diffDeaths: 0
+          },
+          fatalityRate: {
+            days: 0,
+            data:[]
+          },
+          positiveRate: {
+            days: 0,
+            data:[]
+          },
+          criticalCases: {
+            totalCount: 0,
+            inICUCount: 0
+          },
+          activeCases: {
+            totalCount: 0,
+            percentage: 0
+          },
+          perMillionConfirmedCases: {
+            totalCount: 0
+          },
+          countryTrend: {
+            trendData: [],
+            trendDates: []
+          }
+        }
+      },
+
+      computed: {
+        country() {
+          const countryToFind = 'my'
+          const countryEntry = COUNTRIES.find(country => country.urlAliases.includes(countryToFind));
+          return countryEntry || {}
+        },
+        
+        // handle(){
+        //   const countryEntry = twitterHandles.find(country => this.countryCode == country.code)
+        //   return countryEntry?.account || "WHO"
+        // }
+      },
+
+      methods: {
+
+        async loadInformation(countryCode) {
+          let totalCases;
+
+          try {
+            totalCases = (await this.$api.stats.getCountrySpecificStats(countryCode))?.[0]
+          }
+          catch (err) {
+            this.pageState = this.PAGE_STATES.HAS_ERROR
+            this.error = err.data?.message ?? 'Something went wrong.'
+            return;
+          }
+
+          this.pageState = this.PAGE_STATES.HAS_FETCHED
+
+          // Total cases information
+          this.overviewInfo.confirmed = totalCases.totalConfirmed
+          this.overviewInfo.recovered = totalCases.totalRecovered
+          this.overviewInfo.deaths = totalCases.totalDeaths
+
+          // Daily change information
+          this.overviewInfo.diffConfirmed = totalCases.dailyConfirmed
+          this.overviewInfo.diffDeaths = totalCases.dailyDeaths
+
+          // Fatality Rate & Positive Rate
+          // Data prep for FR and PR components
+          const FRU =  Number(totalCases.FR).toFixed(1)
+          const PRU =  Number(totalCases.PR).toFixed(1)
+          const FRL = 100 - FRU
+          const PRL = 100 - PRU
+
+          // Fatality Rate
+          this.fatalityRate.days = 10
+          this.fatalityRate.data = [Number(FRL), Number(FRU)]
+
+          // Positive Rate
+          this.positiveRate.days = 10
+          this.positiveRate.data = [Number(PRL), Number(PRU)]
+
+          // Critical Cases
+          this.criticalCases.totalCount = totalCases.totalCritical
+          this.criticalCases.inICUCount = ((totalCases.totalCritical / totalCases.totalConfirmed) * 100)?.toFixed(1)
+
+          // Active Cases
+          this.activeCases.totalCount = totalCases.activeCases
+          this.activeCases.percentage = ((totalCases.activeCases / totalCases.totalConfirmed)*100)?.toFixed(1)
+
+          this.perMillionConfirmedCases.totalCount = totalCases.totalConfirmedPerMillionPopulation
+        },
+
+        async loadCountryTrendData(countryCode) {
+          let countryTrendRaw;
+
+          try {
+            countryTrendRaw = await this.$api.stats.getTrendByCountryDate(
+              countryCode,
+              new Date(Date.now() - 13 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10),
+              new Date(Date.now() + 1 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10)
+            );
+          }
+          catch (err) {
+            this.pageState = this.PAGE_STATES.HAS_ERROR
+            this.error = err.data?.message ?? 'Something went wrong.'
+            return;
+          }
+
+          // Country Trend
+          let countryTrendConfirmed = []
+          let countryTrendRecovered = []
+          let countryTrendDeath = []
+          let confirmedLastMax = 0
+          let recoveredLastMax = 0
+          let deadLastMax = 0
+
+          countryTrendRaw.forEach(country => {
+            confirmedLastMax = Math.max(country["total_confirmed"], confirmedLastMax)
+            recoveredLastMax = Math.max(country["total_recovered"], recoveredLastMax)
+            deadLastMax = Math.max(country["total_deaths"], deadLastMax)
+
+            countryTrendConfirmed.push(confirmedLastMax)
+            countryTrendRecovered.push(recoveredLastMax)
+            countryTrendDeath.push(deadLastMax)
+
+            this.countryTrend.trendDates.push(country["last_updated"].slice(0,10))
+          });
+          this.countryTrend.trendData = [{
+            "name": "confirmed",
+            "data": countryTrendConfirmed
+          },{
+            "name": "recovered",
+            "data": countryTrendRecovered
+          },{
+            "name": "death",
+            "data": countryTrendDeath
+          }]
+        },
+      }
+    }
+</script>
+<style scoped>
+</style>
