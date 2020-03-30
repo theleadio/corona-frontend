@@ -46,6 +46,11 @@
       const title = this.$t('COVID-19 Corona Tracker');
       const description = this.$t('COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.');
 
+      console.log('debug og:image');
+      console.log(this.$route);
+      console.log(this.$route.query.referrer);
+      console.log(this.$route.query.referrer === 'recent');
+
       return {
         title,
         titleTemplate: '%s',
