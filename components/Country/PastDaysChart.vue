@@ -36,7 +36,6 @@ export default {
     PastDaysChartSelector,
     Share
   },
-  mounted() {},
   props: {
     height: {
       type: Number,
@@ -71,8 +70,8 @@ export default {
     return {
       startDate: "",
       endDate: "",
-      selectedChartType: { 
-        name: 'Bar', 
+      selectedChartType: {
+        name: 'Bar',
         type: 'bar',
         stacked: true
       },
@@ -129,16 +128,10 @@ export default {
     };
   },
   methods: {},
-  watch: {
-    trendDates(data) {
-      this.trendDates = data
-      this.startDate = this.trendDates[0]
-      this.endDate = this.trendDates[this.trendDates.length-1]
-    },
-    trendData(data) {
-      this.trendData = data
-    }
-  }
+  mounted() {
+    this.startDate = this.trendDates[0]
+    this.endDate = this.trendDates[this.trendDates.length-1]
+  },
 };
 </script>
 
