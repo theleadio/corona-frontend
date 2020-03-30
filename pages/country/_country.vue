@@ -188,14 +188,10 @@ export default {
       return countryEntry || {}
     },
     countryCode() {
-      const countryToFind = this.$route.params.country
-      const countryEntry = COUNTRIES.find(country => country.urlAliases.includes(countryToFind));
-      console.log("countryEntry:", countryEntry);
-
-      return countryEntry?.code
+      return this.country?.code
     },
-    handle(){
-      const countryEntry = twitterHandles.find(country => this.countryCode == country.code)
+    handle() {
+      const countryEntry = twitterHandles.find(country => this.countryCode === country.code)
       return countryEntry?.account || "WHO"
     }
   },
