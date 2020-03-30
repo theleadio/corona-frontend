@@ -283,9 +283,11 @@
 /country/ml /country/mali 301
 /:lang/country/ml /:lang/country/mali 301
 /country/mm /country/myanmar-burma 301
-/country/burma /country/myanmar-burma 301
-/country/myanmar /country/myanmar-burma 301
 /:lang/country/mm /:lang/country/myanmar-burma 301
+/country/burma /country/myanmar-burma 301
+/:lang/country/burma /:lang/country/myanmar-burma 301
+/country/myanmar /country/myanmar-burma 301
+/:lang/country/myanmar /:lang/country/myanmar-burma 301
 /country/mn /country/mongolia 301
 /:lang/country/mn /:lang/country/mongolia 301
 /country/mo /country/macau 301
