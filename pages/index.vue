@@ -102,6 +102,8 @@
 					{ hid: 'og-description', property: 'og:title', content: description },
 					{ hid: 'twitter-title', property: 'twitter:title', content: title },
 					{ hid: 'twitter-description', property: 'twitter:title', content: description },
+					{ property: 'og:image', content: process.env.API_BASE_URL + '/share/globalStatsToday' },
+					{ property: 'twitter-image', content: process.env.API_BASE_URL + '/share/globalStatsToday' }
 				],
 			};
 		},

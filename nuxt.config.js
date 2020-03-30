@@ -81,6 +81,7 @@ export default {
     '~/plugins/vue-sticky-directive.client.js',
     '~/plugins/vuejs-paginate.client.js',
     '~/plugins/vue-apexcharts.client.js',
+    '~/plugins/vue-social-sharing.client.js'
   ],
   generate: {
     routes,

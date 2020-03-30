@@ -1,5 +1,8 @@
 <template>
-  <div class="max-w-full rounded border border-gray-400 bg-white p-3 h-full">
+  <div class="max-w-full rounded border border-gray-400 bg-white p-3 h-full relative">
+
+    <Share :url="'https://www.coronatracker.com/country/' + country.code + '?referrer=today'" class="mr-3 mt-3"></Share>
+
     <p class="text-xl font-bold pl-2">
       <Flag :country-code="country.code"></Flag>
       {{country.name}} {{ $t('Overview') }}
@@ -28,6 +31,8 @@
 
 <script>
 import Flag from "~/components/Flag"
+import Share from '~/components/Share';
+
 export default {
   props: {
     info: {
@@ -40,7 +45,8 @@ export default {
     }
   },
   components: {
-    Flag
+    Flag,
+    Share
   }
 }
 </script>

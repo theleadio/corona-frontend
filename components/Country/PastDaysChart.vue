@@ -17,17 +17,23 @@
       </div>
 
       <PastDaysChartSelector v-if="showSelector" :defaultChartType="selectedChartType" :chartOptions="chartOptions"/>
+
+      <Share v-if="showHeader"
+             :url="'https://www.coronatracker.com/country/' + country.code + '?referrer=recent'"
+             class="mr-20 mt-3"></Share>
     </div>
   </div>
 </template>
 
 <script>
 import PastDaysChartSelector from '~/components/Country/PastDaysChartSelector.vue';
+import Share from '~/components/Share';
 
 export default {
   name: 'PastDaysChart',
   components: {
-    PastDaysChartSelector
+    PastDaysChartSelector,
+    Share
   },
   mounted() {},
   props: {
@@ -54,6 +60,10 @@ export default {
     showSelector: {
       type: Boolean,
       default: true,
+    },
+    country: {
+      type: Object,
+      default: () => ({ code: '' })
     }
   },
   data() {

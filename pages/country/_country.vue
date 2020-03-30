@@ -61,6 +61,7 @@
                 :trendData="countryTrend.trendData"
                 :trendDates="countryTrend.trendDates"
                 :title="$t('Past 14 Days Chart')"
+                :country="country"
                 style="margin-bottom: 12px;"
               />
               <TrendingNews :country="country" />
@@ -106,6 +107,14 @@ export default {
         { hid: 'og-description', property: 'og:title', content: description },
         { hid: 'twitter-title', property: 'twitter:title', content: title },
         { hid: 'twitter-description', property: 'twitter:title', content: description },
+        {
+            property: 'og:image',
+            content: process.env.API_BASE_URL + '/share/' + (this.$route.params === 'recent' ?
+                    'countryStatsToday' : 'countryStatsRecent') + '?countryCode=' + this.$route.params.country },
+        {
+            property: 'twitter-image',
+            content: process.env.API_BASE_URL + '/share/' + (this.$route.params === 'recent' ?
+                    'countryStatsToday' : 'countryStatsRecent') + '?countryCode=' + this.$route.params.country },
       ],
     };
   },

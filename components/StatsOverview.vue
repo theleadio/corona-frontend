@@ -2,6 +2,10 @@
   <div class="bg-white rounded border border-gray-400 p-4">
     <div class="flex flex-wrap md:flex-no-wrap md:flex-row">
       <div class="w-full md:w-2/5 h-full mr-2 align-middle relative">
+
+        <Share v-if="selectedCountry.code === 'global'" url="https://www.coronatracker.com"></Share>
+        <Share v-if="selectedCountry.code !== 'global'" :url="'https://www.coronatracker.com/country/' + selectedCountry.code"></Share>
+
         <p class="mt-2 mb-2 text-sm font-semibold">
           <span class="text-red-600 uppercase"><i class="far fa-dot-circle blink"></i> {{ $t('Live') }}</span>
           <!-- <span v-if="numLastUpdated">[Last Update: {{new Date(numLastUpdated).toDateString()}}]</span> -->
@@ -66,6 +70,7 @@
 <script>
 import Flag from '~/components/Flag';
 import Stats from '~/components/Analytics/Stats';
+import Share from '~/components/Share';
 import { directive as onClickaway } from 'vue-clickaway';
 
 export default {
@@ -85,7 +90,8 @@ export default {
   },
   components: {
     Flag,
-    Stats
+    Stats,
+    Share
   },
   data: function() {
 
