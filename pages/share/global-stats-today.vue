@@ -41,6 +41,34 @@
       Logo,
       TopStats
     },
+    //TODO: just for testing
+    head() {
+      const title = this.$t('COVID-19 Corona Tracker');
+      const description = this.$t('COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.');
+
+      return {
+        title,
+        titleTemplate: '%s',
+        meta: [
+          { hid: 'title', name: 'title', content: title },
+          { hid: 'description', name: 'description', content: description },
+          { hid: 'og-title', property: 'og:title', content: title },
+          { hid: 'og-description', property: 'og:title', content: description },
+          { hid: 'twitter-title', property: 'twitter:title', content: title },
+          { hid: 'twitter-description', property: 'twitter:title', content: description },
+          {
+            property: 'og:image',
+            content: this.$route.params.referrer === 'recent' ? 'https://www.coronatracker.com/_nuxt/img/a219938.png' :
+                    'https://www.coronatracker.com/_nuxt/img/262cfac.png'
+          },
+          {
+            property: 'twitter-image',
+            content: this.$route.params.referrer === 'recent' ? 'https://www.coronatracker.com/_nuxt/img/a219938.png' :
+                    'https://www.coronatracker.com/_nuxt/img/262cfac.png'
+          }
+        ],
+      };
+    },
     data: function() {
       return {
         currentDate: moment().format('Do MMM YYYY, h:mm a (ZZ)'),

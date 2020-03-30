@@ -109,11 +109,11 @@ export default {
         { hid: 'twitter-description', property: 'twitter:title', content: description },
         {
             property: 'og:image',
-            content: process.env.API_BASE_URL + '/share/' + (this.$route.params === 'recent' ?
+            content: process.env.API_BASE_URL + '/share/' + (this.$route.params.referrer === 'recent' ?
                     'countryStatsToday' : 'countryStatsRecent') + '?countryCode=' + this.$route.params.country },
         {
             property: 'twitter-image',
-            content: process.env.API_BASE_URL + '/share/' + (this.$route.params === 'recent' ?
+            content: process.env.API_BASE_URL + '/share/' + (this.$route.params.referrer === 'recent' ?
                     'countryStatsToday' : 'countryStatsRecent') + '?countryCode=' + this.$route.params.country },
       ],
     };
