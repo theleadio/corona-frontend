@@ -34,14 +34,14 @@ export default {
       { property: 'og:url', content: 'https://www.coronatracker.com/' },
       { hid: 'og-title', property: 'og:title', content: 'Corona Tracker' },
       { hid: 'og-description', property: 'og:description', content: 'One stop platform for data and news related to COVID-19' },
-      { property: 'og:image', content: 'https://www.coronatracker.com/og-corona.png' },
+      { hid: 'omg-image', property: 'og:image', content: 'https://www.coronatracker.com/og-corona.png' },
 
       // Twitter
       { property: 'twitter:card', content: 'https://www.coronatracker.com/og-corona.png' },
       { property: 'twitter:url', content: 'https://www.coronatracker.com/' },
       { hid: 'twitter-title', property: 'twitter:title', content: 'Corona Tracker' },
       { hid: 'twitter-description', property: 'twitter:description', content: 'One stop platform for data and news related to COVID-19' },
-      { property: 'twitter:image', content: 'https://www.coronatracker.com/og-corona.png' },
+      { hid: 'twitter-image', property: 'twitter:image', content: 'https://www.coronatracker.com/og-corona.png' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
