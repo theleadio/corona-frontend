@@ -99,7 +99,7 @@
 					{ hid: 'title', name: 'title', content: title },
 					{ hid: 'description', name: 'description', content: description },
 					{ hid: 'og-title', property: 'og:title', content: title },
-					{ hid: 'og-description', property: 'og:title', content: description },
+					{ hid: 'og-description', property: 'og:description', content: description },
 					{ hid: 'twitter-title', property: 'twitter:title', content: title },
 					{ hid: 'twitter-description', property: 'twitter:title', content: description },
 					{ hid: 'og-image', property: 'og:image', content: process.env.API_BASE_URL + '/share/globalStatsToday' },
