@@ -34,7 +34,7 @@ export default {
       { hid: 'og-url', property: 'og:url', content: 'https://www.coronatracker.com/' },
       { hid: 'og-title', property: 'og:title', content: 'Corona Tracker' },
       { hid: 'og-description', property: 'og:description', content: 'One stop platform for data and news related to COVID-19' },
-      { hid: 'omg-image', property: 'og:image', content: 'https://www.coronatracker.com/og-corona.png' },
+      { hid: 'og-image', property: 'og:image', content: 'https://www.coronatracker.com/og-corona.png' },
 
       // Twitter
       { property: 'twitter:card', content: 'https://www.coronatracker.com/og-corona.png' },
