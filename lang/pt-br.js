@@ -109,4 +109,11 @@ export default {
   "{country} COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.": "Rastreador de Corona COVID-19 {country}: A única plataforma centralizada reconhecida pela Organização Mundial de Saúde (OMS) para dados verificados e notícias.",
   "COVID-19 related analytics, graphs, and charts": "Estatísticas e gráficos relacionados ao COVID-19",
   "Visual presentations of COVID-19 related data from verified sources such as WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, and various international media.": "Apresentações visuais de dados relacionados ao COVID-19 de fontes verificadas tais como a OMS, CDC, ECDC, NHC da PRC, JHU CSSE, DXY, QQ, e várias mídias internacionais.",
+
+  "Share": "Share",
+  "Global COVID-19 Stats Today": "Global COVID-19 Stats Today",
+  "COVID-19 Stats Today": "COVID-19 Stats Today",
+  "Critical Cases in ICU": "Critical Cases in ICU",
+  "Cases Receiving Treatment": "Cases Receiving Treatment",
+  "COVID-19 Past 14 Days Cases": "COVID-19 Past 14 Days Cases",
 };

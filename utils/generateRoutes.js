@@ -11,8 +11,7 @@ Object.defineProperty(Array.prototype, 'flat', {
 export const generateRoutes = (locales, countries) => {
   function generateLocaleRoutes(locs, ctys, route) {
     const countryAliases = ctys
-      .map(a => a.urlAliases)
-      .flat()
+      .map(a => a.urlAliases[0])
       .map(alias => route(alias));
 
     return locs
