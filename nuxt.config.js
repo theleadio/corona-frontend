@@ -3,6 +3,7 @@ require('dotenv').config();
 const { defaultLocale, locales, COUNTRIES } = require('./utils/constants.js');
 const { generateRoutes } = require('./utils/generateRoutes.js');
 const routes = generateRoutes(locales, COUNTRIES);
+const baseUrl = process.env.BASE_URL || 'https://www.coronatracker.com';
 
 export default {
   // mode: 'spa',
@@ -31,17 +32,17 @@ export default {
       // Open Graph / Faceboook
       { property: 'og:site_name', content: 'Corona Tracker' },
       { property: 'og:type', content: 'website' },
-      { hid: 'og-url', property: 'og:url', content: 'https://www.coronatracker.com/' },
+      { hid: 'og-url', property: 'og:url', content: baseUrl },
       { hid: 'og-title', property: 'og:title', content: 'Corona Tracker' },
       { hid: 'og-description', property: 'og:description', content: 'One stop platform for data and news related to COVID-19' },
-      { hid: 'og-image', property: 'og:image', content: 'https://www.coronatracker.com/og-corona.png' },
+      { hid: 'og-image', property: 'og:image', content: `${baseUrl}/og-corona.png` },
 
       // Twitter
-      { property: 'twitter:card', content: 'https://www.coronatracker.com/og-corona.png' },
-      { property: 'twitter:url', content: 'https://www.coronatracker.com/' },
+      { property: 'twitter:card', content: `${baseUrl}/og-corona.png` },
+      { property: 'twitter:url', content: baseUrl },
       { hid: 'twitter-title', property: 'twitter:title', content: 'Corona Tracker' },
       { hid: 'twitter-description', property: 'twitter:description', content: 'One stop platform for data and news related to COVID-19' },
-      { hid: 'twitter-image', property: 'twitter:image', content: 'https://www.coronatracker.com/og-corona.png' },
+      { hid: 'twitter-image', property: 'twitter:image', content: `${baseUrl}/og-corona.png` },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -93,7 +94,7 @@ export default {
    ** used to generate dynamic routes
    */
   sitemap: {
-    hostname: "https://coronatracker.com",
+    hostname: baseUrl,
     routes: routes,
     path: "/sitemap.xml",
     gzip: true
