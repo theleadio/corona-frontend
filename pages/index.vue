@@ -86,6 +86,8 @@
 	import Survey from '~/components/Survey'
 	import TopStats from '~/components/TopStats';
 	import TrendingNews from '~/components/TrendingNews';
+  import surveyImageDesktop from '~/assets/image/survey_desktop.png';
+  import surveyImageMobile from '~/assets/image/survey_mobile.png';
 
 	export default {
 		head() {
@@ -125,8 +127,8 @@
 				countryStats: [],
 				country: {},
 				surveyConfig: {
-					desktopImage: "survey_desktop.png",
-					mobileImage: "survey_mobile.png",
+					desktopImage: surveyImageDesktop,
+					mobileImage: surveyImageMobile,
 					link: "https://tinyurl.com/CoronaTrackerSurvey",
 					expiresOn: "2020-04-01"
 				}
