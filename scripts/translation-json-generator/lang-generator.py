@@ -59,13 +59,13 @@ data = pd.read_csv('input.csv', header=None)
 
 
 # Select your language.
-# 1: Bahasa, 2: 简体中文， ... 
+# 1: Bahasa, 2: 简体中文， ...
 target_column = int(column)
 
 translate_key = data.iloc[:,0]
 translate_value = data.iloc[:,target_column]
 
-translated_language = translate_value[0];
+translated_language = translate_value[0]
 print("Language :" + translated_language)
 print("Input File :" + "input.csv")
 print("Output File :" + filename)
@@ -75,12 +75,12 @@ rows = len(translate_key) # Number of rows
 
 # Please enter the row wrt. google spread sheet.
 # E.g. Row 10 for 'Home-https://www.coronatracker.com/'
-row_to_ignore = [2,10,39,43,46,49,61,96,110,]
-row_to_ignore = np.array(row_to_ignore) - 2 # Index offset adjustment
+row_to_ignore = [1,2,9,10,40,44,47,50,62,97,110]
+row_to_ignore = np.array(row_to_ignore) - 1 # Index offset adjustment
 
 # Menu translation index
 menu_final_index = 8
-menu_final_index -= 2 # Index offset adjustment
+menu_final_index -= 1 # Index offset adjustment
 
 f = open(filename, "w") # Output file
 
@@ -88,30 +88,30 @@ f = open(filename, "w") # Output file
 f.write('export default {\n')
 
 # Menu translation
-f.write('\t"menu": {\n')
+f.write('  "menu": {\n')
 
 for i in range(menu_final_index+1):
     if(not(pd.isnull(translate_key[i])) and not(i in row_to_ignore)):
-        f.write('\t\t"{}": '.format(translate_key[i].strip()))
+        f.write('    "{}": '.format(translate_key[i].strip()))
 
         if(not pd.isnull(translate_value[i])):
             f.write('"{}",\n'.format(translate_value[i].strip()))
         else:
             f.write('"{}",\n'.format(translate_key[i].strip()))
 
-f.write('\t},\n')
+f.write('  },\n')
 
 # Other translation
 for i in range(menu_final_index+1, rows):
     if(not(pd.isnull(translate_key[i])) and not(i in row_to_ignore)):
-        f.write('\t"{}": '.format(translate_key[i].strip()))
+        f.write('  "{}": '.format(translate_key[i].strip()))
 
         if(not pd.isnull(translate_value[i])):
             f.write('"{}",\n'.format(translate_value[i].strip()))
         else:
             f.write('"{}",\n'.format(translate_key[i].strip()))
 
-f.write('};')
+f.write('};\n')
 f.close()
 print("Translation of "+translated_language+" exported to "+filename+" file completed.")
 print("Please transfer it over to the \\lang folder of the project.")
