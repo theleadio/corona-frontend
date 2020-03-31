@@ -124,7 +124,7 @@ export default {
 
   computed: {
     shareUrl() {
-      return process.browser ? window.location.href : 'https://www.coronatracker.com';
+      return process.browser ? window.location.href : 'https://www.coronatracker.com/analytics';
     }
   },
 
