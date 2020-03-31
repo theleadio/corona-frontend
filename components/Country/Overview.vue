@@ -46,7 +46,7 @@ export default {
   },
   computed: {
     shareUrl() {
-      return window.location.href;
+      return window && window.location.href;
     }
   },
   components: {

@@ -134,6 +134,10 @@ export default {
       return this.stats.deaths;
     },
     shareUrl() {
+      if (!window) {
+        return '';
+      }
+
       let split = window.location.href.split('/');
       return split[0] + '//' + split[2];
     }
