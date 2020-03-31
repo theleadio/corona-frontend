@@ -1,6 +1,30 @@
 import numpy as np
 import pandas as pd
+import getopt, sys
 
+
+full_cmd_arguments = sys.argv
+argument_list = full_cmd_arguments[1:]
+#print(sys.argv)
+
+short_options = "ho:v"
+long_options = ["help", "output=", "version"]
+
+
+arguments, values = getopt.getopt(argument_list, short_options, long_options)
+for current_argument, current_value in arguments:
+    if current_argument in ("-v", "--version"):
+        print ("version 0.9")
+        sys.exit(2)
+    elif current_argument in ("-h", "--help"):
+        print ("Put input.csv which is exported from google sheets into same directory as this script and just run the script without any arguments")
+        sys.exit(2)
+    elif current_argument in ("-o", "--output"):
+        print (("Enabling special output mode (%s)") % (current_value))
+        sys.exit(2)
+
+print("Parsing input.csv to output output.js")
+#################################################
 # Export CoronaTracker-Translation into CSV and load it here.
 data = pd.read_csv('input.csv')
 
