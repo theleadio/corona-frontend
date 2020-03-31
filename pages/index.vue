@@ -104,8 +104,8 @@
 					{ hid: 'og-description', property: 'og:description', content: description },
 					{ hid: 'twitter-title', property: 'twitter:title', content: title },
 					{ hid: 'twitter-description', property: 'twitter:description', content: description },
-					{ hid: 'og-image', property: 'og:image', content: process.env.API_BASE_URL + '/share/globalStatsToday' },
-					{ hid: 'twitter-image', property: 'twitter-image', content: process.env.API_BASE_URL + '/share/globalStatsToday' }
+					{ hid: 'og-image', property: 'og:image', content: process.env.API_BASE_URL + '/sharing/globalStatsToday' },
+					{ hid: 'twitter-image', property: 'twitter-image', content: process.env.API_BASE_URL + '/sharing/globalStatsToday' }
 				],
 			};
 		},

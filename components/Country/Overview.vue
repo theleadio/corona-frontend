@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-full rounded border border-gray-400 bg-white p-3 h-full relative">
 
-    <Share :url="'https://www.coronatracker.com/country/' + country.code.toLowerCase() + '?referrer=today'" class="mr-3 mt-3"></Share>
+    <Share :url="shareUrl + '?referrer=today'" class="mr-3 mt-3"></Share>
 
     <p class="text-xl font-bold pl-2">
       <Flag :country-code="country.code"></Flag>
@@ -42,6 +42,11 @@ export default {
     country: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    shareUrl() {
+      return window.location.href;
     }
   },
   components: {

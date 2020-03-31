@@ -110,12 +110,12 @@ export default {
         {
             hid: 'og-image',
             property: 'og:image',
-            content: process.env.API_BASE_URL + '/share/' + (this.$route.query.referrer === 'recent' ?
+            content: process.env.API_BASE_URL + '/sharing/' + (this.$route.query.referrer === 'recent' ?
                     'countryStatsRecent' : 'countryStatsToday') + '?countryCode=' + this.$route.params.country },
         {
             hid: 'twitter-image',
             property: 'twitter-image',
-            content: process.env.API_BASE_URL + '/share/' + (this.$route.query.referrer === 'recent' ?
+            content: process.env.API_BASE_URL + '/sharing/' + (this.$route.query.referrer === 'recent' ?
                     'countryStatsRecent' : 'countryStatsToday') + '?countryCode=' + this.$route.params.country },
       ],
     };
