@@ -2,6 +2,8 @@
 /:lang/country/ad /:lang/country/andorra 301
 /country/ae /country/united-arab-emirates 301
 /:lang/country/ae /:lang/country/united-arab-emirates 301
+/country/uae /country/united-arab-emirates 301
+/:lang/country/uae /:lang/country/united-arab-emirates 301
 /country/af /country/afghanistan 301
 /:lang/country/af /:lang/country/afghanistan 301
 /country/ag /country/antigua-and-barbuda 301
@@ -72,12 +74,18 @@
 /:lang/country/ca /:lang/country/canada 301
 /country/cc /country/cocos-keeling-islands 301
 /:lang/country/cc /:lang/country/cocos-keeling-islands 301
-/country/cd /country/congo [drc] 301
-/:lang/country/cd /:lang/country/congo [drc] 301
+/country/cocos /country/cocos-keeling-islands 301
+/:lang/country/cocos /:lang/country/cocos-keeling-islands 301
+/country/cd /country/congo-drc 301
+/:lang/country/cd /:lang/country/congo-drc 301
+/country/kinshasa /country/congo-drc 301
+/:lang/country/kinshasa /:lang/country/congo-drc 301
 /country/cf /country/central-african-republic 301
 /:lang/country/cf /:lang/country/central-african-republic 301
 /country/cg /country/congo-republic 301
 /:lang/country/cg /:lang/country/congo-republic 301
+/country/brazzaville /country/congo-republic 301
+/:lang/country/brazzaville /:lang/country/congo-republic 301
 /country/ch /country/switzerland 301
 /:lang/country/ch /:lang/country/switzerland 301
 /country/ci /country/côte-d-ivoire 301
@@ -124,6 +132,8 @@
 /:lang/country/eg /:lang/country/egypt 301
 /country/eh /country/western-sahara 301
 /:lang/country/eh /:lang/country/western-sahara 301
+/country/sahara /country/western-sahara 301
+/:lang/country/sahara /:lang/country/western-sahara 301
 /country/er /country/eritrea 301
 /:lang/country/er /:lang/country/eritrea 301
 /country/es /country/spain 301
@@ -182,6 +192,8 @@
 /:lang/country/gy /:lang/country/guyana 301
 /country/gz /country/gaza-strip 301
 /:lang/country/gz /:lang/country/gaza-strip 301
+/country/gaza /country/gaza-strip 301
+/:lang/country/gaza /:lang/country/gaza-strip 301
 /country/hk /country/hong-kong 301
 /:lang/country/hk /:lang/country/hong-kong 301
 /country/hm /country/heard-island-and-mcdonald-islands 301
@@ -238,6 +250,8 @@
 /:lang/country/kp /:lang/country/north-korea 301
 /country/kr /country/south-korea 301
 /:lang/country/kr /:lang/country/south-korea 301
+/country/korea /country/south-korea 301
+/:lang/country/korea /:lang/country/south-korea 301
 /country/kw /country/kuwait 301
 /:lang/country/kw /:lang/country/kuwait 301
 /country/ky /country/cayman-islands 301
@@ -284,10 +298,10 @@
 /:lang/country/ml /:lang/country/mali 301
 /country/mm /country/myanmar-burma 301
 /:lang/country/mm /:lang/country/myanmar-burma 301
-/country/burma /country/myanmar-burma 301
-/:lang/country/burma /:lang/country/myanmar-burma 301
 /country/myanmar /country/myanmar-burma 301
 /:lang/country/myanmar /:lang/country/myanmar-burma 301
+/country/burma /country/myanmar-burma 301
+/:lang/country/burma /:lang/country/myanmar-burma 301
 /country/mn /country/mongolia 301
 /:lang/country/mn /:lang/country/mongolia 301
 /country/mo /country/macau 301
@@ -362,6 +376,8 @@
 /:lang/country/pr /:lang/country/puerto-rico 301
 /country/ps /country/palestinian-territories 301
 /:lang/country/ps /:lang/country/palestinian-territories 301
+/country/palestine /country/palestinian-territories 301
+/:lang/country/palestine /:lang/country/palestinian-territories 301
 /country/pt /country/portugal 301
 /:lang/country/pt /:lang/country/portugal 301
 /country/pw /country/palau 301
@@ -444,6 +460,8 @@
 /:lang/country/tr /:lang/country/turkey 301
 /country/tt /country/trinidad-and-tobago 301
 /:lang/country/tt /:lang/country/trinidad-and-tobago 301
+/country/trinidad /country/trinidad-and-tobago 301
+/:lang/country/trinidad /:lang/country/trinidad-and-tobago 301
 /country/tv /country/tuvalu 301
 /:lang/country/tv /:lang/country/tuvalu 301
 /country/tw /country/taiwan 301
@@ -464,8 +482,12 @@
 /:lang/country/uz /:lang/country/uzbekistan 301
 /country/va /country/vatican-city 301
 /:lang/country/va /:lang/country/vatican-city 301
+/country/vatican /country/vatican-city 301
+/:lang/country/vatican /:lang/country/vatican-city 301
 /country/vc /country/saint-vincent-and-the-grenadines 301
 /:lang/country/vc /:lang/country/saint-vincent-and-the-grenadines 301
+/country/saint-vincent /country/saint-vincent-and-the-grenadines 301
+/:lang/country/saint-vincent /:lang/country/saint-vincent-and-the-grenadines 301
 /country/ve /country/venezuela 301
 /:lang/country/ve /:lang/country/venezuela 301
 /country/vg /country/british-virgin-islands 301
