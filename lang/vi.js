@@ -35,25 +35,20 @@ export default {
   "Help us collate the locations for your country!": "Hãy giúp chúng tôi đối chiều với quốc gia của bạn!",
   "Join our Telegram group": "Tham gia group Telegram của chúng tôi",
   "GET IT ON": "GET IT ON",
-
   "Travel Alert Information": "Thông tin cảnh báo du lịch",
   "Select Country": "Chọn quốc gia",
-
   "What is COVID-19?": "COVID-19 là gì?",
-
-  "We will update this page with resources related to nCov prevention, here is a quick guide from": "Chúng tôi sẽ cập nhật với các bên liên quan đến phòng chống COVID-19, đây là hướng dẫn nhanh từ",
-  "WHO": "WHO",
-
+  "We will update this page with resources related to nCov prevention, here is a quick guide from WHO.": "Chúng tôi sẽ cập nhật với các bên liên quan đến phòng chống COVID-19, đây là hướng dẫn nhanh từ WHO.",
   "Overview": "Tổng quan",
   "Reports": "Báo cáo",
   "Total Confirmed": "Tổng số nhiễm bệnh",
   "Total Recovered": "Tổng số phục hồi",
   "Total Deaths": "Tổng số tử vong",
   "Outbreak trend over time": "Xu hướng bùng phát theo thời gian",
+  "Most affected regions": "Most affected regions",
   "Top countries with daily new cases": "Top countries with daily new cases",
   "Daily New Cases": "Daily New Cases",
   "Daily New Deaths": "Daily New Deaths",
-
   "About CoronaTracker": "Mô tả CoronaTracker",
   "CORONATRACKER.com is a community-based project powered by over 460 volunteers from across the globe, ranging from data scientists, medical professionals, UI/UX designers, fullstack developers, to the general public.": "CORONATRACKER.com là một dự án dựa trên cộng đồng được cung cấp bởi hơn 460 tình nguyện viên trên toàn cầu, từ các nhà khoa học dữ liệu, chuyên gia y tế, nhà thiết kế UI / UX, nhà phát triển fullstack, cho đến công chúng.",
   "It acts as a portal for the public to keep track of the latest news development about the COVID-19, alongside collecting data for further analysis. All the contents are handpicked, filtered, and curated by volunteers to our best extent to ensure that sources are reliable with minimal hoaxes and fake news, in the best benefit of the public. Natural Language Processing (NLP) is used to analyze trending content and identify meaningful topics over various news sources and social media platforms prior to being verified by our team.": "Nó hoạt động như một cổng thông tin để công chúng theo dõi sự phát triển tin tức mới nhất về COVID-19, bên cạnh việc thu thập dữ liệu để phân tích thêm. Tất cả các nội dung đều được các tình nguyện viên lựa chọn cẩn thận, được lọc và quản lý ở mức độ tốt nhất của chúng tôi để đảm bảo rằng các nguồn đáng tin cậy, vì lợi ích tốt nhất của công chúng. Xử lý ngôn ngữ tự nhiên (NLP) được sử dụng để phân tích xu hướng nội dung và xác định các chủ đề có ý nghĩa trên các nguồn tin tức và nền tảng truyền thông xã hội khác nhau trước khi được nhóm của chúng tôi xác minh.",
@@ -66,8 +61,6 @@ export default {
   "Here you can find a list of sources handpicked by the team.": "Tại đây bạn có thể tìm thấy một danh sách các nguồn được nhóm lựa chọn cẩn thận.",
   "Title": "Tiêu đề",
   "Description": "Sự miêu tả",
-  "Discovery of a novel coronavirus associated with the recent pneumonia outbreak in humans and its potential bat origin": "Phát hiện ra một loại coronavirus mới liên quan đến sự bùng phát bệnh viêm phổi gần đây ở người và nguồn gốc dơi tiềm năng của nó",
-  "Another year, another coronavirus": "Một năm nữa, một coronavirus khác",
   "A report by Jasper Fuk-Woo Chan and colleagues, documented infections in health-care workers caring for patients with COVID-19 indicate human-to-human transmission and thus the risk of much wider spread of the disease.": "Một báo cáo của Jasper Fuk-Woo Chan và các đồng nghiệp, ghi nhận các bệnh nhiễm trùng ở nhân viên y tế chăm sóc bệnh nhân mắc COVID-19 cho thấy sự lây truyền từ người sang người và do đó có nguy cơ lây lan bệnh rộng hơn nhiều.",
   "For the third time in as many decades, a zoonotic coronavirus has crossed species to infect human populations. This virus, provisionally called COVID-19, was first identified in Wuhan, China, in persons exposed to a seafood or wet market.": "Lần thứ ba sau bao nhiêu thập kỷ, một loại coronavirus đã lây nhiễm qua các loài để lây nhiễm cho người. Virus này, tạm gọi là COVID-19, lần đầu tiên được xác định ở Vũ Hán, Trung Quốc, ở những người tiếp xúc với thị trường hải sản hoặc ẩm ướt.",
   "An online dashboard to visualize and track the reported cases on a daily timescale": "Bảng điều khiển trực tuyến để trực quan hóa và theo dõi các trường hợp được báo cáo theo thời gian hàng ngày",
@@ -89,7 +82,6 @@ export default {
   "Team Design": "Nhóm thiết kế",
   "Team Public Relations": "Team Public Relations",
   "View more": "Xem thêm",
-
   "Fatality Rate": "Fatality Rate",
   "Positive Rate": "Positive Rate",
   "OF TOTAL CASES": "OF TOTAL CASES",
@@ -102,14 +94,12 @@ export default {
   "Daily Confirmed Cases": "Daily Confirmed Cases",
   "Per Million Population": "Per Million Population",
   "Past 14 Days Chart": "Past 14 Days Chart",
-
   "COVID-19 Corona Tracker": "COVID-19 Corona Tracker",
   "COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.": "COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.",
   "COVID-19 {country} Corona Tracker": "COVID-19 {country} Corona Tracker",
   "{country} COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.": "{country} COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.",
   "COVID-19 related analytics, graphs, and charts": "COVID-19 related analytics, graphs, and charts",
   "Visual presentations of COVID-19 related data from verified sources such as WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, and various international media.": "Visual presentations of COVID-19 related data from verified sources such as WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, and various international media.",
-
   "Share": "Share",
   "Global COVID-19 Stats Today": "Global COVID-19 Stats Today",
   "COVID-19 Stats Today": "COVID-19 Stats Today",
