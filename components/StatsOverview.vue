@@ -134,8 +134,12 @@ export default {
       return this.stats.deaths;
     },
     shareUrl() {
-      let split = window.location.href.split('/');
-      return split[0] + '//' + split[2];
+      if(process.browser) {
+        let split = window.location.href.split('/');
+        return split[0] + '//' + split[2];
+      } else {
+        return 'https://www.coronatracker.com';
+      }
     }
   },
   methods: {

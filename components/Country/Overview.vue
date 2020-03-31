@@ -46,7 +46,7 @@ export default {
   },
   computed: {
     shareUrl() {
-      return window.location.href;
+      return process.browser ? window.location.href : 'https://www.coronatracker.com';
     }
   },
   components: {
