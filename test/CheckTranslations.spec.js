@@ -6,9 +6,11 @@ import ja_translations from '@/lang/ja'
 import ms_translations from '@/lang/ms'
 import pt_br_translations from '@/lang/pt-br'
 import vi_translations from '@/lang/vi'
+import tl_translations from '@/lang/tl'
+import sv_translations from '@/lang/sv'
 
 describe('Translations', () => {
-    describe('in Arabic', () => {
+    describe('in Arabic (ar)', () => {
         test('should have the same number of translation entries', () => {
             expect(_.keys(en_translations).length).toBe(_.keys(ar_translations).length)
         })
@@ -36,7 +38,7 @@ describe('Translations', () => {
         })
     })
 
-    describe('in Id', () => {
+    describe('in Bahasa Indonesia (id)', () => {
         test('should have the same number of translation entries', () => {
             expect(_.keys(en_translations).length).toBe(_.keys(id_translations).length)
         })
@@ -64,7 +66,7 @@ describe('Translations', () => {
         })
     })
 
-    describe('in Japanese', () => {
+    describe('in Japanese (ja)', () => {
         test('should have the same number of translation entries', () => {
             expect(_.keys(en_translations).length).toBe(_.keys(ja_translations).length)
         })
@@ -92,7 +94,7 @@ describe('Translations', () => {
         })
     })
 
-    describe('in Ms', () => {
+    describe('in Bahasa Melayu (ms)', () => {
         test('should have the same number of translation entries', () => {
             expect(_.keys(en_translations).length).toBe(_.keys(ms_translations).length)
         })
@@ -120,7 +122,7 @@ describe('Translations', () => {
         })
     })
 
-    describe('in Portuguese', () => {
+    describe('in Portuguese (pt-br)', () => {
         test('should have the same number of translation entries', () => {
             expect(_.keys(en_translations).length).toBe(_.keys(pt_br_translations).length)
         })
@@ -148,7 +150,7 @@ describe('Translations', () => {
         })
     })
 
-    describe('in Vietnamese', () => {
+    describe('in Vietnamese (vi)', () => {
         test('should have the same number of translation entries', () => {
             expect(_.keys(en_translations).length).toBe(_.keys(vi_translations).length)
         })
@@ -174,5 +176,61 @@ describe('Translations', () => {
                 }
             })
         })
+    })
+
+    describe('in Tagalog (tl)', () => {
+      test('should have the same number of translation entries', () => {
+        expect(_.keys(en_translations).length).toBe(_.keys(tl_translations).length)
+      })
+
+      test('should have the same keys', () => {
+        _.each(en_translations, (value, key) => {
+          if (typeof(value) === "object") {
+            let objectKey = tl_translations[key]
+            _.each(value, (value2, nestedKey) => {
+              if (!_.has(objectKey, nestedKey)) {
+                console.log('[tl] Missing key:', nestedKey);
+              }
+
+              expect(_.has(objectKey, nestedKey)).toBe(true)
+            })
+          }
+          else {
+            if (!_.has(tl_translations, key)) {
+              console.log('[tl] Missing key:', key);
+            }
+
+            expect(_.has(tl_translations, key)).toBe(true);
+          }
+        })
+      })
+    })
+
+    describe('in Svenska (sv)', () => {
+      test('should have the same number of translation entries', () => {
+        expect(_.keys(en_translations).length).toBe(_.keys(sv_translations).length)
+      })
+
+      test('should have the same keys', () => {
+        _.each(en_translations, (value, key) => {
+          if (typeof(value) === "object") {
+            let objectKey = sv_translations[key]
+            _.each(value, (value2, nestedKey) => {
+              if (!_.has(objectKey, nestedKey)) {
+                console.log('[sv] Missing key:', nestedKey);
+              }
+
+              expect(_.has(objectKey, nestedKey)).toBe(true)
+            })
+          }
+          else {
+            if (!_.has(sv_translations, key)) {
+              console.log('[sv] Missing key:', key);
+            }
+
+            expect(_.has(sv_translations, key)).toBe(true);
+          }
+        })
+      })
     })
 })

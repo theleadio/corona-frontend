@@ -35,25 +35,20 @@ export default {
   "Help us collate the locations for your country!": "ساعدنا في تجميع المراكز في دولتك",
   "Join our Telegram group": "انضم إلى قناتنا على التليجرام",
   "GET IT ON": "GET IT ON",
-
   "Travel Alert Information": "معلومات عن تحذيرات السفر",
   "Select Country": "اختر الدولة",
-
   "What is COVID-19?": "ما هو فيروس كورونا المستجد (COVID-19)؟",
-
-  "We will update this page with resources related to nCov prevention, here is a quick guide from": "سنقوم بتحديث هذه الصفحة بمصادر تتعلق بسبل الوقاية من فيروس كورونا المستجد. في الوقت الراهن، يمكنك الإطلاع على هذا الدليل المختصر من منظمة الصحة العالمية.",
-  "WHO": "WHO",
-
+  "We will update this page with resources related to nCov prevention, here is a quick guide from WHO.": "سنقوم بتحديث هذه الصفحة بمصادر تتعلق بسبل الوقاية من فيروس كورونا المستجد. في الوقت الراهن، يمكنك الإطلاع على هذا الدليل المختصر من منظمة الصحة العالمية.",
   "Overview": "نظرة عامة",
   "Reports": "تقارير",
   "Total Confirmed": "الحالات المؤكدة",
   "Total Recovered": "الحالات المتعافية",
   "Total Deaths": "الحالات المتوفية",
   "Outbreak trend over time": "ميل تفشي الفيروس مع مرور الوقت",
+  "Most affected regions": "Most affected regions",
   "Top countries with daily new cases": "Top countries with daily new cases",
   "Daily New Cases": "Daily New Cases",
   "Daily New Deaths": "Daily New Deaths",
-
   "About CoronaTracker": "عن CoronaTracker",
   "CORONATRACKER.com is a community-based project powered by over 460 volunteers from across the globe, ranging from data scientists, medical professionals, UI/UX designers, fullstack developers, to the general public.": "يعتمد مشروع CORONATRACKER.com بالكامل على المشاركة المجتمعية بمساهمة أكثر من 460 متطوع من حول العالم، ما بين علماء بيانات، عاملين في المجال الطبي، مصممي واجهات مستخدم، مبرمجي ويب، و مساهمين من العامة.",
   "It acts as a portal for the public to keep track of the latest news development about the COVID-19, alongside collecting data for further analysis. All the contents are handpicked, filtered, and curated by volunteers to our best extent to ensure that sources are reliable with minimal hoaxes and fake news, in the best benefit of the public. Natural Language Processing (NLP) is used to analyze trending content and identify meaningful topics over various news sources and social media platforms prior to being verified by our team.": "يعمل المشروع بمثابة منصة متاحة للعامة للاطلاع على آخر الأخبار و التطورات المتعلقة بفيروس كورونا المستجد (COVID-19)، كما يعمل المشروع على تجميع بيانات و داتا بغرض تحليلها بشكل معمق. جميع المحتوى المعروض على الموقع يتم اختياره يدويا، تصفيته، و تنقيحه من قبل متطوعينا من أجل التأكد من أن كل المصادر موثوقة و يعتمد عليها، و خالية تماما من أي أخبار كاذبة أو غير موثوقة بغرض حصول العامة على أكبر قدر من الاستفادة. كما أننا نستخدم تقنية معالجة اللغة الطبيعية (Natural Language Processing NLP) لتحليل المحتوى الرائج المرتبط بفيروس كورونا على شبكات التواصل الاجتماعي و مصادر الأخبار المختلفة قبل أن يتم مراجعتها و التأكد منها من قبل فريقنا.",
@@ -66,8 +61,6 @@ export default {
   "Here you can find a list of sources handpicked by the team.": "هنا قائمة بالمصادر التي اختارها فريقنا بشكل يدوي و دقيق.",
   "Title": "العنوان",
   "Description": "الوصف",
-  "Discovery of a novel coronavirus associated with the recent pneumonia outbreak in humans and its potential bat origin": "Discovery of a novel coronavirus associated with the recent pneumonia outbreak in humans and its potential bat origin",
-  "Another year, another coronavirus": "Another year, another coronavirus",
   "A report by Jasper Fuk-Woo Chan and colleagues, documented infections in health-care workers caring for patients with COVID-19 indicate human-to-human transmission and thus the risk of much wider spread of the disease.": "تقرير بواسطة جاسبر فوك وو تشان و زملاء آخرين يوثق انتقال العدوى بين عاملي المجال الطبي القائمين على رعاية مرضى فيروس كورونا المستجد و يوضح أن الفيروس يمكنه أن ينتقل من شخص إلى أخر، و لذا فإن المرض يمكنه الانتشار بشكل موسع.",
   "For the third time in as many decades, a zoonotic coronavirus has crossed species to infect human populations. This virus, provisionally called COVID-19, was first identified in Wuhan, China, in persons exposed to a seafood or wet market.": "للمرة الثالثة خلال عقدين، ينتقل فيروس تاجي يصيب الحيوانات فقط إلى البشر. و كان أول ظهور لهذا الفيروس، و الذي تمت تسميته مؤقتا باسم  فيروس كورونا المستجد 2019-nCoV، في سوق للمأكولات البحرية في مدينة ووهان بالصين.",
   "An online dashboard to visualize and track the reported cases on a daily timescale": "لوحة عرض بيانية تفاعلية ترسم و تتبع الحالات المسجلة بشكل يومي.",
@@ -89,7 +82,6 @@ export default {
   "Team Design": "فريق التصميم",
   "Team Public Relations": "Team Public Relations",
   "View more": "عرض المزيد",
-
   "Fatality Rate": "Fatality Rate",
   "Positive Rate": "Positive Rate",
   "OF TOTAL CASES": "OF TOTAL CASES",
@@ -102,14 +94,12 @@ export default {
   "Daily Confirmed Cases": "Daily Confirmed Cases",
   "Per Million Population": "Per Million Population",
   "Past 14 Days Chart": "Past 14 Days Chart",
-
   "COVID-19 Corona Tracker": "COVID-19 Corona Tracker",
   "COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.": "COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.",
   "COVID-19 {country} Corona Tracker": "COVID-19 {country} Corona Tracker",
   "{country} COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.": "{country} COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.",
   "COVID-19 related analytics, graphs, and charts": "COVID-19 related analytics, graphs, and charts",
   "Visual presentations of COVID-19 related data from verified sources such as WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, and various international media.": "Visual presentations of COVID-19 related data from verified sources such as WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, and various international media.",
-
   "Share": "Share",
   "Global COVID-19 Stats Today": "Global COVID-19 Stats Today",
   "COVID-19 Stats Today": "COVID-19 Stats Today",
