@@ -8,7 +8,7 @@
       <div class="flex-1">
         <p class="text-2xl font-bold text-red-600">{{ overviewInfo.confirmed | formatNumber }}</p>
         <p class="text-sm font-bold text-red-600">{{ $t('Total Confirmed') }}</p>
-        <p class="text-xs font-bold text-red-600">{{ $t('+{number} since yesterday', { number: $options.filters.formatNumber(overviewInfo.diffConfirmed) }) }}</p>
+        <p class="text-xs font-bold text-red-600">{{ $t('+{number} new cases', { number: $options.filters.formatNumber(overviewInfo.diffConfirmed) }) }}</p>
       </div>
 
       <div class="flex-1">
@@ -19,19 +19,19 @@
       <div class="flex-1">
         <p class="text-2xl font-bold text-gray-600">{{ overviewInfo.deaths | formatNumber }}</p>
         <p class="text-sm font-bold text-gray-600">{{ $t('Total Deaths') }}</p>
-        <p class="text-xs font-bold text-gray-600">{{ $t('+{number} since yesterday', { number: $options.filters.formatNumber(overviewInfo.diffDeaths) }) }}</p>
+        <p class="text-xs font-bold text-gray-600">{{ $t('+{number} new deaths', { number: $options.filters.formatNumber(overviewInfo.diffDeaths) }) }}</p>
       </div>
     </div>
 
     <div class="flex flex-row lg:flex-row pt-5 pb-8 pl-8">
       <div class="flex-1">
-        <p class="text-xs font-extrabold">{{ $t('Critical Cases in ICU') }}</p>
+        <p class="text-xs font-extrabold">{{ $t('Critical Cases treated in ICU') }}</p>
         <p class="text-xl font-bold">{{ criticalCases.totalCount | formatNumber }}</p>
         <p class="text-xs"><span class="text-red-600">{{ criticalCases.inICUCount }}%</span> {{ $t('of total cases') }}</p>
       </div>
 
       <div class="flex-1">
-        <p class="text-xs font-extrabold">{{ $t('Cases Receiving Treatment') }}</p>
+        <p class="text-xs font-extrabold">{{ $t('Daily Cases Receiving Treatment') }}</p>
         <p class="text-xl font-bold">{{ activeCases.totalCount | formatNumber }}</p>
         <p class="text-xs"><span class="text-red-600">{{ activeCases.percentage }}%</span> {{ $t('of total cases') }}</p>
       </div>
