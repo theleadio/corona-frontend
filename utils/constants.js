@@ -353,6 +353,11 @@ export const locales = [
     name: 'Filipino (Tagalog)',
     file: 'tl.js',
   },
+  {
+    code: 'my',
+    name: 'Burmese',
+    file: 'my.js',
+  },
 ];
 
 export const twitterHandles = [
