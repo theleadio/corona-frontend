@@ -348,6 +348,11 @@ export const locales = [
     name: '日本語',
     file: 'ja.js',
   },
+  {
+    code: 'tl',
+    name: 'Filipino (Tagalog)',
+    file: 'tl.js',
+  },
 ];
 
 export const twitterHandles = [

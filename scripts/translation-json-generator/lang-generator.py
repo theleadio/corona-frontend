@@ -10,6 +10,13 @@ argument_list = full_cmd_arguments[1:]
 short_options = "lhvc:"
 long_options = ["list","help", "version", "column"]
 
+input_file = 'CoronaTracker - Translation - Sheet1.csv'
+
+try:
+    data = pd.read_csv(input_file, header=None)
+except FileNotFoundError: 
+    print(input_file + " not found")
+    sys.exit(2)
 
 arguments, values = getopt.getopt(argument_list, short_options, long_options)
 for current_argument, current_value in arguments:
@@ -22,12 +29,13 @@ for current_argument, current_value in arguments:
         print("3) --column : Start extraction of language to user specified .js file")
         sys.exit(2)
     elif current_argument in ("-h", "--help"):
-        print ("1) Put input.csv which is exported from google sheets into same directory as this script")
+        print ("1) Put " + input_file + " which is exported from google sheets into same directory as this script")
         print ("2) Run it with the -c flag and 2 arguments. 1) Column index and 2) output filename")
         print ("3) Column index must be greater than 0")
         print ("4) Output filename must have extension .js")
         print ("5) Example : python lang-generator.py -c 3 en.js")
-        print ("6) This commands means extract language strings from column 3 of input.csv and save it into en.js")
+        print ("6) This commands means extract language strings from column 3 of " + input_file + " and save it into en.js")
+        print ("7) We use ISO 639-1 standard for the filenames. For more info, refer to https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes")
         sys.exit(2)
     elif current_argument in ("-c", "--column"):
         #print (("Enabling special output mode (%s)") % (current_value))
@@ -38,7 +46,7 @@ for current_argument, current_value in arguments:
         if args == 3:
             column = sys.argv[2]
             filename = sys.argv[3]
-            print("Getting language text from column "+str(column)+" of exported input.csv")
+            print("Getting language text from column "+str(column)+" of exported "+input_file)
             # print("Starting to export language file to file "+filename)
         else:
             print ("You need put the column index of the language to extract and the file name to extract to. Example -c 4 output.js")
@@ -54,7 +62,6 @@ elif filename.find(".js") == -1:
 
 #################################################
 # Export CoronaTracker-Translation into CSV and load it here.
-data = pd.read_csv('input.csv', header=None)
 
 
 
@@ -67,9 +74,9 @@ translate_value = data.iloc[:,target_column]
 
 translated_language = translate_value[0];
 print("Language :" + translated_language)
-print("Input File :" + "input.csv")
+print("Input File :" + input_file)
 print("Output File :" + filename)
-#print("Extracting translation for " + translated_language +" from input.csv to output file "+filename)
+#print("Extracting translation for " + translated_language +" from "+input_file+" to output file "+filename)
 
 rows = len(translate_key) # Number of rows
 
