@@ -5,10 +5,10 @@
       <social-sharing :url="url" inline-template class="float-left">
         <div>
           <network network="facebook">
-            <i class="fab fa-fw fa-facebook-f"></i>
+            <i class="fab fa-fw fa-facebook-f" style="color: #3b5998;"></i>
           </network>
           <network network="twitter">
-            <i class="fab fa-fw fa-twitter"></i>
+            <i class="fab fa-fw fa-twitter" style="color: #55acee;"></i>
           </network>
         </div>
       </social-sharing>
