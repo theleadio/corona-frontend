@@ -109,8 +109,8 @@
             property: 'og:image',
             content: process.env.API_BASE_URL + '/sharing/globalStatsToday'
           },
-          { hid: 'og-image-width', property: 'og:image:width', content: '480' },
-          { hid: 'og-image-height', property: 'og:image:height', content: '750' },
+          { hid: 'og-image-width', property: 'og:image:width', content: '1337' },
+          { hid: 'og-image-height', property: 'og:image:height', content: '700' },
           {
             hid: 'twitter-image',
             property: 'twitter-image',

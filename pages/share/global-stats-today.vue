@@ -1,5 +1,5 @@
 <template>
-  <div class="container clearfix">
+  <div class="container clearfix" style="max-width: 900px;">
 
     <h1 class="text-2xl font-extrabold">{{ $t('Global COVID-19 Stats Today') }}</h1>
     <h3>{{ currentDate }}</h3>
@@ -21,7 +21,15 @@
       </div>
     </div>
 
-    <TopStats :limit="10" :show-title="false" :show-source="false" :show-footer="false" :country-stats="countryStats" class="pb-5" />
+    <TopStats
+      class="pb-5"
+      :limit="10"
+      :show-title="false"
+      :show-source="false"
+      :show-footer="false"
+      :used-in-share-page="true"
+      :country-stats="countryStats"
+    />
 
     <logo class="lg:flex mb-4 float-right h-8" />
 

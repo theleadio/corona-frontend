@@ -1,7 +1,7 @@
 <template>
   <div>
     <Card v-if="showTitle" :title="$t('Countries Affected')"></Card>
-    <div  v-if="showSource" class="my-2 font-bold text-xs text-gray-500 leading-tight">
+    <div v-if="showSource" class="my-2 font-bold text-xs text-gray-500 leading-tight">
       {{ $t('Source') }}: WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, {{ $t('and various international media') }}
     </div>
     <table class="table-auto w-full">
@@ -23,13 +23,16 @@
       </template>
       <template v-else>
         <tr v-for="item in countryStats" :key="item.countryCode">
-          <td class="bg-gray-200 text-xs border hover:bg-primary hover:text-white px-2 py-2">
+          <td class="bg-gray-200 text-xs border hover:bg-primary hover:text-white px-2 py-2 ">
             <template v-if="item.countryCode === 'OT'">
-              <span>{{item.country}}</span>
-              <a href="#notes-on-others">*</a>
+              <div :style="usedInSharePage ? 'margin-left: 35%;' : ''">{{item.country}}<a href="#notes-on-others">*</a></div>
             </template>
             <template v-else-if="item.countryCode">
-              <nuxt-link :to="localePath(`/country/${item.countryCode.toLowerCase()}`)" style="display: block;">
+              <nuxt-link
+                :to="localePath(`/country/${item.countryCode.toLowerCase()}`)"
+                style="display: block;"
+                :style="usedInSharePage ? 'margin-left: 35%' : ''"
+              >
                 <Flag :country-code="item.countryCode"></Flag>
                 {{item.country}}
               </nuxt-link>
@@ -79,7 +82,12 @@
       showFooter: {
         type: Boolean,
         default: true
-      }
+      },
+      // Apply custom styling specific for share page
+      usedInSharePage: {
+        type: Boolean,
+        default: false,
+      },
     },
     data() {
       return {
