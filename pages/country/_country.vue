@@ -108,6 +108,11 @@ export default {
         { hid: 'twitter-title', property: 'twitter:title', content: title },
         { hid: 'twitter-description', property: 'twitter:description', content: description },
         {
+          hid: 'og-url',
+          property: 'og:url',
+          content: process.browser ? window.location.href : 'https://www.coronatracker.com/country/' + this.$route.params.country
+        },
+        {
             hid: 'og-image',
             property: 'og:image',
             content: process.env.API_BASE_URL + '/sharing/' + (this.$route.query.referrer === 'recent' ?
