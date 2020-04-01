@@ -52,10 +52,10 @@ for current_argument, current_value in arguments:
             print ("You need put the column index of the language to extract and the file name to extract to. Example -c 4 output.js")
             sys.exit(2)
 
-if int(column) < 1:
-    print("Column value must be greater than 1")
-    sys.exit(2)
-elif filename.find(".js") == -1:
+# if int(column) < 1:
+#     print("Column value must be greater than 1")
+#     sys.exit(2)
+if filename.find(".js") == -1:
     print("Filename must have .js extension")
     sys.exit(2)
 
@@ -82,7 +82,7 @@ rows = len(translate_key) # Number of rows
 
 # Please enter the row wrt. google spread sheet.
 # E.g. Row 10 for 'Home-https://www.coronatracker.com/'
-row_to_ignore = [2,10,39,43,46,49,61,96,110,]
+row_to_ignore = [2,10,39,43,46,50,62,97,111,118]
 row_to_ignore = np.array(row_to_ignore) - 2 # Index offset adjustment
 
 # Menu translation index
