@@ -10,227 +10,41 @@ import tl_translations from '@/lang/tl'
 import sv_translations from '@/lang/sv'
 
 describe('Translations', () => {
-    describe('in Arabic (ar)', () => {
-        test('should have the same number of translation entries', () => {
-            expect(_.keys(en_translations).length).toBe(_.keys(ar_translations).length)
-        })
+  describe.each([
+    ['ar', 'Arabic', ar_translations],
+    ['id', 'Bahasa Indonesia', id_translations],
+    ['ja', 'Japanese', ja_translations],
+    ['ms', 'Bahasa Melayu', ms_translations],
+    ['pt-br', 'Portuguese', pt_br_translations],
+    ['vi', 'Vietnamese', vi_translations],
+    ['tl', 'Tagalog', tl_translations],
+    ['sv', 'Svenska', sv_translations],
+  ])('in (%s) %s', (languageCode, languageName, languageTranslations) => {
+    test('should have the same number of translation entries', () => {
+      expect(_.keys(en_translations).length).toBe(_.keys(languageTranslations).length)
+    });
 
-        test('should have the same keys', () => {
-            _.each(en_translations, (value, key) => {
-                if (typeof(value) === "object") {
-                    let objectKey = ar_translations[key]
-                    _.each(value, (value2, nestedKey) => {
-                        if (!_.has(objectKey, nestedKey)) {
-                            console.log('[ar] Missing key:', nestedKey);
-                        }
+    test('should have the same keys', () => {
+      _.each(en_translations, (value, key) => {
+        if (typeof(value) === 'object') {
+          const objectKey = languageTranslations[key];
 
-                        expect(_.has(objectKey, nestedKey)).toBe(true)
-                    })
-                }
-                else {
-                    if (!_.has(ar_translations, key)) {
-                        console.log('[ar] Missing key:', key);
-                    }
-
-                    expect(_.has(ar_translations, key)).toBe(true);
-                }
-            })
-        })
-    })
-
-    describe('in Bahasa Indonesia (id)', () => {
-        test('should have the same number of translation entries', () => {
-            expect(_.keys(en_translations).length).toBe(_.keys(id_translations).length)
-        })
-
-        test('should have the same keys', () => {
-            _.each(en_translations, (value, key) => {
-                if (typeof(value) === "object") {
-                    let objectKey = id_translations[key]
-                    _.each(value, (value2, nestedKey) => {
-                        if (!_.has(objectKey, nestedKey)) {
-                            console.log('[id] Missing key:', nestedKey);
-                        }
-
-                        expect(_.has(objectKey, nestedKey)).toBe(true)
-                    })
-                }
-                else {
-                    if (!_.has(id_translations, key)) {
-                        console.log('[id] Missing key:', key);
-                    }
-
-                    expect(_.has(id_translations, key)).toBe(true);
-                }
-            })
-        })
-    })
-
-    describe('in Japanese (ja)', () => {
-        test('should have the same number of translation entries', () => {
-            expect(_.keys(en_translations).length).toBe(_.keys(ja_translations).length)
-        })
-
-        test('should have the same keys', () => {
-            _.each(en_translations, (value, key) => {
-                if (typeof(value) === "object") {
-                    let objectKey = ja_translations[key]
-                    _.each(value, (value2, nestedKey) => {
-                        if (!_.has(objectKey, nestedKey)) {
-                            console.log('[ja] Missing key:', nestedKey);
-                        }
-
-                        expect(_.has(objectKey, nestedKey)).toBe(true)
-                    })
-                }
-                else {
-                    if (!_.has(ja_translations, key)) {
-                        console.log('[ja] Missing key:', key);
-                    }
-
-                    expect(_.has(ja_translations, key)).toBe(true);
-                }
-            })
-        })
-    })
-
-    describe('in Bahasa Melayu (ms)', () => {
-        test('should have the same number of translation entries', () => {
-            expect(_.keys(en_translations).length).toBe(_.keys(ms_translations).length)
-        })
-
-        test('should have the same keys', () => {
-            _.each(en_translations, (value, key) => {
-                if (typeof(value) === "object") {
-                    let objectKey = ms_translations[key]
-                    _.each(value, (value2, nestedKey) => {
-                        if (!_.has(objectKey, nestedKey)) {
-                            console.log('[ms] Missing key:', nestedKey);
-                        }
-
-                        expect(_.has(objectKey, nestedKey)).toBe(true)
-                    })
-                }
-                else {
-                    if (!_.has(ms_translations, key)) {
-                        console.log('[ms] Missing key:', key);
-                    }
-
-                    expect(_.has(ms_translations, key)).toBe(true);
-                }
-            })
-        })
-    })
-
-    describe('in Portuguese (pt-br)', () => {
-        test('should have the same number of translation entries', () => {
-            expect(_.keys(en_translations).length).toBe(_.keys(pt_br_translations).length)
-        })
-
-        test('should have the same keys', () => {
-            _.each(en_translations, (value, key) => {
-                if (typeof(value) === "object") {
-                    let objectKey = pt_br_translations[key]
-                    _.each(value, (value2, nestedKey) => {
-                        if (!_.has(objectKey, nestedKey)) {
-                            console.log('[pt-br] Missing key:', nestedKey);
-                        }
-
-                        expect(_.has(objectKey, nestedKey)).toBe(true)
-                    })
-                }
-                else {
-                    if (!_.has(pt_br_translations, key)) {
-                        console.log('[pt-br] Missing key:', key);
-                    }
-
-                    expect(_.has(pt_br_translations, key)).toBe(true);
-                }
-            })
-        })
-    })
-
-    describe('in Vietnamese (vi)', () => {
-        test('should have the same number of translation entries', () => {
-            expect(_.keys(en_translations).length).toBe(_.keys(vi_translations).length)
-        })
-
-        test('should have the same keys', () => {
-            _.each(en_translations, (value, key) => {
-                if (typeof(value) === "object") {
-                    let objectKey = vi_translations[key]
-                    _.each(value, (value2, nestedKey) => {
-                        if (!_.has(objectKey, nestedKey)) {
-                            console.log('[vi] Missing key:', nestedKey);
-                        }
-
-                        expect(_.has(objectKey, nestedKey)).toBe(true)
-                    })
-                }
-                else {
-                    if (!_.has(vi_translations, key)) {
-                        console.log('[vi] Missing key:', key);
-                    }
-
-                    expect(_.has(vi_translations, key)).toBe(true);
-                }
-            })
-        })
-    })
-
-    describe('in Tagalog (tl)', () => {
-      test('should have the same number of translation entries', () => {
-        expect(_.keys(en_translations).length).toBe(_.keys(tl_translations).length)
-      })
-
-      test('should have the same keys', () => {
-        _.each(en_translations, (value, key) => {
-          if (typeof(value) === "object") {
-            let objectKey = tl_translations[key]
-            _.each(value, (value2, nestedKey) => {
-              if (!_.has(objectKey, nestedKey)) {
-                console.log('[tl] Missing key:', nestedKey);
-              }
-
-              expect(_.has(objectKey, nestedKey)).toBe(true)
-            })
-          }
-          else {
-            if (!_.has(tl_translations, key)) {
-              console.log('[tl] Missing key:', key);
+          _.each(value, (value2, nestedKey) => {
+            if (!_.has(objectKey, nestedKey)) {
+              console.log(`[${languageCode}] Missing key:`, nestedKey);
             }
 
-            expect(_.has(tl_translations, key)).toBe(true);
+            expect(_.has(objectKey, nestedKey)).toBe(true);
+          })
+        }
+        else {
+          if (!_.has(languageTranslations, key)) {
+            console.log(`[${languageCode}] Missing key:`, key);
           }
-        })
+
+          expect(_.has(languageTranslations, key)).toBe(true);
+        }
       })
     })
-
-    describe('in Svenska (sv)', () => {
-      test('should have the same number of translation entries', () => {
-        expect(_.keys(en_translations).length).toBe(_.keys(sv_translations).length)
-      })
-
-      test('should have the same keys', () => {
-        _.each(en_translations, (value, key) => {
-          if (typeof(value) === "object") {
-            let objectKey = sv_translations[key]
-            _.each(value, (value2, nestedKey) => {
-              if (!_.has(objectKey, nestedKey)) {
-                console.log('[sv] Missing key:', nestedKey);
-              }
-
-              expect(_.has(objectKey, nestedKey)).toBe(true)
-            })
-          }
-          else {
-            if (!_.has(sv_translations, key)) {
-              console.log('[sv] Missing key:', key);
-            }
-
-            expect(_.has(sv_translations, key)).toBe(true);
-          }
-        })
-      })
-    })
+  });
 })
