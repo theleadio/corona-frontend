@@ -61,6 +61,14 @@ export default {
       type: Boolean,
       default: true,
     },
+    enableAnimation: {
+      type: Boolean,
+      default: true,
+    },
+    enableTooltip: {
+      type: Boolean,
+      default: true,
+    },
     country: {
       type: Object,
       default: () => ({ code: '' })
@@ -77,6 +85,9 @@ export default {
       },
       chartOptions: {
         chart: {
+          animations: {
+            enabled: this.enableAnimation,
+          },
           zoom: {
             enabled: false
           },
@@ -109,6 +120,7 @@ export default {
           offsetY: -5
         },
         tooltip: {
+          enabled: this.enableTooltip,
           shared: true,
           y: [{
             formatter: function (y) {

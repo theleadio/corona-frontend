@@ -12,6 +12,8 @@
             :title="$t('Past 14 Days Chart')"
             :showHeader="false"
             :showSelector="false"
+            :enableAnimation="false"
+            :enableTooltip="false"
             class="pb-5"
     />
 
