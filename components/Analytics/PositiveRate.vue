@@ -7,7 +7,7 @@
         </client-only>
       </div>
       <div class="w-full sm:w-1/2 flex flex-col py-2 pl-2 justify-center text-center sm:text-left">
-        <strong class="mb-2">{{ $t('Positive Rate') }}</strong>
+        <strong class="mb-2">{{ $t('Recovery Rate') }}</strong>
         <!-- <small class="mb-2">{{ $t('Time taken from confirmation to discharge') }}</small> -->
         <!-- <strong>{{ $t('{number} days', { number: days }) }}</strong> -->
       </div>
