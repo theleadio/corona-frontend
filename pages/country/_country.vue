@@ -118,16 +118,14 @@ export default {
           property: 'og:url',
           content: process.browser ? window.location.href : `${baseUrl}/country/${this.$route.params.country}/`,
         },
+        { hid: 'og-image', property: 'og:image', content: imageUrl },
+        { hid: 'og-image-width', property: 'og:image:width', content: '480' },
         {
-            hid: 'og-image',
-            property: 'og:image',
-            content: imageUrl
+          hid: 'og-image-height',
+          property: 'og:image:height',
+          content: countryStatsType === 'countryStatsRecent' ? '600' : '400'
         },
-        {
-            hid: 'twitter-image',
-            property: 'twitter-image',
-            content: imageUrl
-        },
+        { hid: 'twitter-image', property: 'twitter-image', content: imageUrl },
       ],
     };
   },
