@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-full rounded border border-gray-400 bg-white p-3 h-full relative">
 
-    <Share :url="'https://www.coronatracker.com/country/' + country.code.toLowerCase() + '?referrer=today'" class="mr-3 mt-3"></Share>
+    <Share :url="shareUrl + '?referrer=today'" class="mr-3 mt-3"></Share>
 
     <p class="text-xl font-bold pl-2">
       <Flag :country-code="country.code"></Flag>
@@ -11,7 +11,7 @@
       <div class="px-2 text-center">
         <p class="text-2xl font-bold text-red-600">{{ info.confirmed | formatNumber }}</p>
         <p class="text-l font-bold text-gray-600">{{ $t('Confirmed') }}</p>
-        <p class="text-xs font-bold text-red-600">{{ $t('+{number} since yesterday', { number: $options.filters.formatNumber(info.diffConfirmed) }) }}</p>
+        <p class="text-xs font-bold text-red-600">{{ $t('+{number} new cases', { number: $options.filters.formatNumber(info.diffConfirmed) }) }}</p>
       </div>
 
       <div class="px-2 text-center">
@@ -23,7 +23,7 @@
       <div class="px-2 text-center">
         <p class="text-2xl font-bold text-gray-600">{{ info.deaths | formatNumber }}</p>
         <p class="text-l font-bold text-gray-600">{{ $t('Deaths') }}</p>
-        <p class="text-xs font-bold text-gray-600">{{ $t('+{number} since yesterday', { number: $options.filters.formatNumber(info.diffDeaths) }) }}</p>
+        <p class="text-xs font-bold text-gray-600">{{ $t('+{number} new deaths', { number: $options.filters.formatNumber(info.diffDeaths) }) }}</p>
       </div>
     </div>
   </div>
@@ -42,6 +42,11 @@ export default {
     country: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    shareUrl() {
+      return process.browser ? window.location.href : 'https://www.coronatracker.com';
     }
   },
   components: {

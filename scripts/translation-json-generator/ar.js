@@ -104,7 +104,9 @@ export default {
   "COVID-19 Corona Tracker": "COVID-19 Corona Tracker",
   "COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.": "COVID-19 Corona Tracker.المنصه الوحيدة المستقله المعتمده من منظمة الصحة العالمية في البيانات و الأخبار",
   "COVID-19 {country} Corona Tracker": "COVID-19 {country} Corona Tracker",
-  "{country} COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.": "COVID-19 Corona Tracker.المنصهالوحيدة المستقله المعتمده من منظمة الصحة العالمية في البيانات و الأخبار",
+  "{country} COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.": "COVID-19 Corona Tracker.المنصه
+ الوحيدة المستقله المعتمده من منظمة الصحة 
+العالمية في البيانات و الأخبار",
   "COVID-19 related analytics, graphs, and charts": "COVID-19 تحليلات للبيانات و رسم بياني",
   "Visual presentations of COVID-19 related data from verified sources such as WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, and various international media.": "Visual presentations of COVID-19 related data from verified sources such as WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, and various international media.",
   "Share": "Share",

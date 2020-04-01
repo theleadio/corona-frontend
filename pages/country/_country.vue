@@ -92,10 +92,16 @@ import {COUNTRIES, twitterHandles} from "~/utils/constants";
 export default {
   head() {
     const country = this.country && this.country.name;
+    const countryCode = this.countryCode && this.countryCode.toLowerCase();
+
     const title = this.$t('COVID-19 {country} Corona Tracker', { country });
     const description = this.$t('{country} COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.', {
       country,
     });
+
+    const baseUrl = process.env.BASE_URL || 'https://www.coronatracker.com';
+    const countryStatsType = this.$route.query.referrer === 'recent' ? 'countryStatsRecent' : 'countryStatsToday';
+    const imageUrl = `${process.env.API_BASE_URL}/sharing/${countryStatsType}?countryCode=${countryCode}`;
 
     return {
       title,
@@ -108,15 +114,18 @@ export default {
         { hid: 'twitter-title', property: 'twitter:title', content: title },
         { hid: 'twitter-description', property: 'twitter:description', content: description },
         {
-            hid: 'og-image',
-            property: 'og:image',
-            content: process.env.API_BASE_URL + '/share/' + (this.$route.query.referrer === 'recent' ?
-                    'countryStatsRecent' : 'countryStatsToday') + '?countryCode=' + this.$route.params.country },
+          hid: 'og-url',
+          property: 'og:url',
+          content: process.browser ? window.location.href : `${baseUrl}/country/${this.$route.params.country}/`,
+        },
+        { hid: 'og-image', property: 'og:image', content: imageUrl },
+        { hid: 'og-image-width', property: 'og:image:width', content: '480' },
         {
-            hid: 'twitter-image',
-            property: 'twitter-image',
-            content: process.env.API_BASE_URL + '/share/' + (this.$route.query.referrer === 'recent' ?
-                    'countryStatsRecent' : 'countryStatsToday') + '?countryCode=' + this.$route.params.country },
+          hid: 'og-image-height',
+          property: 'og:image:height',
+          content: countryStatsType === 'countryStatsRecent' ? '600' : '400'
+        },
+        { hid: 'twitter-image', property: 'twitter-image', content: imageUrl },
       ],
     };
   },

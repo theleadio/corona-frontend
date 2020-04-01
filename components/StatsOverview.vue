@@ -3,8 +3,8 @@
     <div class="flex flex-wrap md:flex-no-wrap md:flex-row">
       <div class="w-full md:w-2/5 h-full mr-2 align-middle relative">
 
-        <Share v-if="selectedCountry.code === 'global'" url="https://www.coronatracker.com"></Share>
-        <Share v-if="selectedCountry.code !== 'global'" :url="'https://www.coronatracker.com/country/' + selectedCountry.code.toLowerCase()"></Share>
+        <Share v-if="selectedCountry.code === 'global'" :url="shareUrl"></Share>
+        <Share v-if="selectedCountry.code !== 'global'" :url="shareUrl + '/country/' + selectedCountry.code.toLowerCase()"></Share>
 
         <p class="mt-2 mb-2 text-sm font-semibold">
           <span class="text-red-600 uppercase"><i class="far fa-dot-circle blink"></i> {{ $t('Live') }}</span>
@@ -133,6 +133,14 @@ export default {
 
       return this.stats.deaths;
     },
+    shareUrl() {
+      if(process.browser) {
+        let split = window.location.href.split('/');
+        return split[0] + '//' + split[2];
+      } else {
+        return 'https://www.coronatracker.com';
+      }
+    }
   },
   methods: {
     selectCountry(country) {

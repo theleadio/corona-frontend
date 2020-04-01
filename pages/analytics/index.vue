@@ -4,7 +4,7 @@
 
     <div class="w-full lg:w-5/6 px-2 pt-2 bg-gray-200 relative">
 
-      <Share url="https://www.coronatracker.com/analytics" class="mr-3 mt-3"></Share>
+      <Share :url="shareUrl" class="mr-3 mt-3"></Share>
 
       <div class="pl-2">
         <p class="text-2xl font-bold">COVID-19 {{ $t('Overview') }}</p>
@@ -121,6 +121,12 @@ export default {
   },
 
   components: { SidebarNav, OutbreakTrendChart, TopCountryWithDailyNewStats, AffectedCountry, Flag, Share },
+
+  computed: {
+    shareUrl() {
+      return process.browser ? window.location.href : 'https://www.coronatracker.com/analytics';
+    }
+  },
 
   mounted () {
     this.loadStats()
