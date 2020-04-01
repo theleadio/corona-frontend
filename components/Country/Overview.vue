@@ -11,7 +11,7 @@
       <div class="px-2 text-center">
         <p class="text-2xl font-bold text-red-600">{{ info.confirmed | formatNumber }}</p>
         <p class="text-l font-bold text-gray-600">{{ $t('Confirmed') }}</p>
-        <p class="text-xs font-bold text-red-600">{{ $t('+{number} since yesterday', { number: $options.filters.formatNumber(info.diffConfirmed) }) }}</p>
+        <p class="text-xs font-bold text-red-600">{{ $t('+{number} new cases', { number: $options.filters.formatNumber(info.diffConfirmed) }) }}</p>
       </div>
 
       <div class="px-2 text-center">
@@ -23,7 +23,7 @@
       <div class="px-2 text-center">
         <p class="text-2xl font-bold text-gray-600">{{ info.deaths | formatNumber }}</p>
         <p class="text-l font-bold text-gray-600">{{ $t('Deaths') }}</p>
-        <p class="text-xs font-bold text-gray-600">{{ $t('+{number} since yesterday', { number: $options.filters.formatNumber(info.diffDeaths) }) }}</p>
+        <p class="text-xs font-bold text-gray-600">{{ $t('+{number} new deaths', { number: $options.filters.formatNumber(info.diffDeaths) }) }}</p>
       </div>
     </div>
   </div>
