@@ -101,7 +101,7 @@ export default {
 
     const baseUrl = process.env.BASE_URL || 'https://www.coronatracker.com';
     const countryStatsType = this.$route.query.referrer === 'recent' ? 'countryStatsRecent' : 'countryStatsToday';
-    const imageUrl = `${process.env.API_BASE_URL}/sharing/${countryStatsType}?countryCode=${countryCode}`;
+    const imageUrl = `${process.env.API_BASE_URL}/sharing/${countryStatsType}?countryCode=${countryCode}&t=${Date.now()}`;
 
     return {
       title,

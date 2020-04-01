@@ -93,6 +93,7 @@
     head() {
       const title = this.$t('COVID-19 Corona Tracker');
       const description = this.$t('COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.');
+      const imageUrl = `${process.env.API_BASE_URL}/sharing/globalStatsToday?t=${Date.now()}`;
 
       return {
         title,
@@ -104,18 +105,10 @@
           { hid: 'og-description', property: 'og:description', content: description },
           { hid: 'twitter-title', property: 'twitter:title', content: title },
           { hid: 'twitter-description', property: 'twitter:description', content: description },
-          {
-            hid: 'og-image',
-            property: 'og:image',
-            content: process.env.API_BASE_URL + '/sharing/globalStatsToday'
-          },
+          { hid: 'og-image', property: 'og:image', content: imageUrl },
           { hid: 'og-image-width', property: 'og:image:width', content: '1337' },
           { hid: 'og-image-height', property: 'og:image:height', content: '700' },
-          {
-            hid: 'twitter-image',
-            property: 'twitter-image',
-            content: process.env.API_BASE_URL + '/sharing/globalStatsToday'
-          }
+          { hid: 'twitter-image', property: 'twitter-image', content: imageUrl },
         ],
       };
     },
