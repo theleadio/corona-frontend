@@ -116,7 +116,7 @@ export default {
         {
           hid: 'og-url',
           property: 'og:url',
-          content: process.browser ? window.location.href : `${baseUrl}/country/${this.$route.params.country}`,
+          content: process.browser ? window.location.href : `${baseUrl}/country/${this.$route.params.country}/`,
         },
         {
             hid: 'og-image',
