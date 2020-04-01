@@ -13,7 +13,7 @@ long_options = ["list","help", "version", "column"]
 input_file = 'CoronaTracker - Translation - Sheet1.csv'
 
 try:
-    data = pd.read_csv(input_file, header=None)
+    data = pd.read_csv(input_file)
 except FileNotFoundError: 
     print(input_file + " not found")
     sys.exit(2)
@@ -72,8 +72,8 @@ target_column = int(column)
 translate_key = data.iloc[:,0]
 translate_value = data.iloc[:,target_column]
 
-translated_language = translate_value[0];
-print("Language :" + translated_language)
+# translated_language = str(translate_key[0]);
+# print("Language :" + translated_language)
 print("Input File :" + input_file)
 print("Output File :" + filename)
 #print("Extracting translation for " + translated_language +" from "+input_file+" to output file "+filename)
@@ -120,5 +120,6 @@ for i in range(menu_final_index+1, rows):
 
 f.write('};')
 f.close()
-print("Translation of "+translated_language+" exported to "+filename+" file completed.")
+# print("Translation of "+translated_language+" exported to "+filename+" file completed.")
+print("Translation exported to "+filename+" file completed.")
 print("Please transfer it over to the \\lang folder of the project.")
