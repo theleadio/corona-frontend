@@ -4,11 +4,11 @@
 
     <div class="w-full lg:w-5/6 px-2 pt-2 bg-gray-200 relative">
 
-      <Share :url="shareUrl" class="mr-3 mt-3"></Share>
-
       <div class="pl-2">
-        <p class="text-2xl font-bold">COVID-19 {{ $t('Overview') }}</p>
-
+        <div class="flex flex-wrap justify-between items-center">
+            <p class="text-2xl font-bold">COVID-19 {{ $t('Overview') }}</p>
+            <Share :url="shareUrl"></Share>
+        </div>
         <p class="text-xs font-bold leading-tight my-2 text-gray-600">
           {{ $t('Sources') }}: WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, {{ $t('and various international media') }}
         </p>
