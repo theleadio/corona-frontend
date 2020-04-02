@@ -90,7 +90,7 @@ export default {
   "View more": "その他",
   "https://www.coronatracker.com/country/us": "https://www.coronatracker.com/country/us",
   "Fatality Rate": "死亡比率",
-  "Positive Rate": "完治比率",
+  "Recovery Rate": "完治比率",
   "OF TOTAL CASES": "全感染者数から",
   "Time taken from confirmation to discharge": "感染から完治までの時間",
   "{number} days": "日",

@@ -90,7 +90,7 @@ export default {
   "View more": "နောက်ထပ်ကြည့်ရှုရန်",
   "https://www.coronatracker.com/country/us": "https://www.coronatracker.com/country/us",
   "Fatality Rate": "သေဆုံးမှုနှုန်း",
-  "Positive Rate": "ရောဂါပျောက်ဆုံးမှုနှုန်း",
+  "Recovery Rate": "ရောဂါပျောက်ဆုံးမှုနှုန်း",
   "OF TOTAL CASES": "စုစုပေါင်းဖြစ်နှုန်း",
   "Time taken from confirmation to discharge": "ပြန်ကျန်းမာရန်ကြာချိန်",
   "{number} days": "ရက်",
