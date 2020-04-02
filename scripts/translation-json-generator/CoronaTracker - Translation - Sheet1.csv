@@ -16,7 +16,7 @@ English,Bahasa Melayu,"简体中文
 (French)"
 Menu,,,,,,,Already Live,,,,,,,,Menu,मेन्यू ,فہرست,Menu,Menu,மெனு,
 Home,Laman Utama,主页,主頁,ホーム,الرئيسية,,,,Hem,Home,Inicio,Start,ပင်မစာမျက်နှာ,Strona główna,Home/Pagina principale,घर,مرکزی صفحہ/پیج/ہوم,Trang chủ,Home,முகப்பு,Accueil
-Travel Alert,Amaran Pelancongan,旅遊警报,旅遊警報,旅行警告、渡航勧告,تحذيرات السفر,,,,Reseinformation,Abiso para sa Paglalakbay,Alertas de Viaje,Reisewarnung,ခရီးသွား သတိပေးချက်,Ostrzeżenie dla podróżujących,Avvisi per i viaggiatori,यात्रा चेतावनी,سفری الرٹ/انتباہ,Cảnh báo du lịch,Alertas de viagem,"பயண எச்சரிக்கை",Conseils aux Voyageurs
+Travel Alert,Amaran Pelancongan,旅遊警报,旅遊警報,旅行警告、渡航勧告,تحذيرات السفر,,,,Reseinformation,Abiso para sa Paglalakbay,Alertas de Viaje,Reisewarnung,ခရီးသွား သတိပေးချက်,Ostrzeżenie dla podróżujących,Avvisi per i viaggiatori,यात्रा चेतावनी,سفری الرٹ/انتباہ,Cảnh báo du lịch,Alertas de viagem,"பயண எச்சரிக்கை",Conseils Voyageurs
 What is COVID-19,Apa itu COVID-19,什么是 COVID-19,什麼是 COVID-19,COVID-19とは,ما هو كوفيد-19,,,,Vad är COVID-19,Ano ang COVID-19?,¿Qué es COVID-19?,Was ist COVID-19,ကိုရိုနာဗိုင်းရပ်စ်ပိုး ဆိုတာ,Co to COVID-19,Che cos'è il COVID-19,क्या है COVID-19,"
 کورونا وائرس کیا ہے؟",COVID-19 là gì?,O que é COVID-19,COVID-19 என்றால் என்ன?,Qu'est-ce que le COVID-19
 Prevention,Pencegahan,预防手册,預防手冊,予防(法),الوقاية,,,,Förebyggande,Iwasan ang COVID-19,Prevención,Prävention,ကာကွယ်မှု,Prewencja,Prevenzione,निवारण,روک تھام/احتیاط,Cách phòng ngừa,Prevenção,முன்னெச்சரிக்கை,Prévention
@@ -126,10 +126,10 @@ Fatality Rate,Kadar Kematian,,,死亡比率,معدل الوفيات,,,,,Fatality
 Recovery Rate,Kadar Sembuh,,,完治比率,معدل التعافي,,,,,Positive Rate,Tasa de Positividad,Genesungsrate,ရောဂါပျောက်ဆုံးမှုနှုန်း,,,सकारात्मक दर,,Tỷ lệ khỏi bệnh,,குணமானவர்கள் விகிதம் ,Taux de Rétablissement
 OF TOTAL CASES,daripada keseluruhan kes,,,全感染者数から,من اجمالي الحالات,,,,,NG TOTAL NG MGA KASO,DE CASOS TOTALES,ALLER FÄLLE,စုစုပေါင်းဖြစ်နှုန်း,,,कुल मामलों में से ,,Trên tổng số ca,,"மொத்த வழக்குகள்",DU NOMBRE TOTAL DE CAS
 Time taken from confirmation to discharge,Masa dari ,,,感染から完治までの時間,الوقت المستغرق ما بين تأكيد الحاله و الانتهاء منها,,,,,Oras mula kumpirmasyon hanggang discharge,Tiempo desde confirmación de infección a dada de alta,Zeit von der Bestätigung bis zur Entlassung,ပြန်ကျန်းမာရန်ကြာချိန်,,,पुष्टीकरण से रिहाई का समय,,Thời gian từ khi xác nhận đến khi xuất viện,,"உறுதிப்படுத்தலில் இருந்து வெளியேற்ற நேரம்",Délai entre la confirmation et la sortie de l'hôpital
-{number} days,{number} hari,,,日,{number} الأيام,,,,,{number} araw,{number} días,{number} Tage,ရက်,,,{number} दिन,,{number} ngày,,"{எண்} நாட்கள்",{number} jours
-+{number} since yesterday,{number} sejak semalam,,,{番号}昨日より,{number} من الأمس,,,,,+{number} mula kahapon,+{number} desde ayer,+{number} zum Vortag,မနေ့မှ,,,{number} कल से,,+{number} từ ngày hôm qua,,+{எண்} நேற்று முதல்,+{number} depuis hier
-+{number} new cases,,,,,,,,,,,,,,,,,,,,,
-+{number} new deaths,,,,,,,,,,,,,,,,,,,,,
+{number} days,{number} hari,,,{number}日,{number} الأيام,,,,,{number} araw,{number} días,{number} Tage,ရက်,,,{number} दिन,,{number} ngày,,"{எண்} நாட்கள்",{number} jours
++{number} since yesterday,{number} sejak semalam,,,{number}昨日より,{number} من الأمس,,,,,+{number} mula kahapon,+{number} desde ayer,+{number} zum Vortag,မနေ့မှ,,,{number} कल से,,+{number} từ ngày hôm qua,,+{எண்} நேற்று முதல்,+{number} depuis hier
++{number} new cases,,,,,,,,,,,,,,,,,,,,,+{number} nouveaux cas
++{number} new deaths,,,,,,,,,,,,,,,,,,,,,+{number} nouveaux décès
 Critical Cases treated in ICU,kes kritikal di ICU,,,集中治療室の感染者数,الحالات الحرجة التي تم علاجها في وحدة العناية المركزة,,,,,Mga Kritikal na Kaso sa ICU,Casos Críticos en UCI,Fälle in intensivmedizinischer Behandlung,အရေးပေါ်ကုသမှု,,,गंभीर मामले जिनका इलाज ICU में हो रहा हे ,,Những ca nặng được điều trị trong phòng chăm sóc đặc biệt (ICU),,"ஐ.சி.யுவில் சிகிச்சையளிக்கப்பட்ட முக்கியமான வழக்குகள்",Cas Critiques en Unité de Soins Intensifs
 of total cases,daripada jumlah kes,,,全感染者数から,من اجمالي الحالات,,,,,ng total na mga kaso,de casos totales,aller Fälle,စုစုပေါင်းဖြစ်နှုန်း,,,कुल मामलों में से ,,Trên tổng số ca,,மொத்த வழக்குகள் ,du nombre total de cas
 Daily Cases Receiving Treatment,Kes rawatan harian,,,毎日治療を受けている患者者数,الحالات اليومية التي تتلقي العلاج,,,,,Kaso sa Araw-araw na Tumatanggap ng Pangangalagang Medikal,Casos Diarios Reciviendo Tratamiento,Fälle in Behandlung pro Tag,နေ့စဉ်ကုသနှုန်း,,,उपचार प्राप्त करने वाले दैनिक मामले,,Các ca được điều trị hàng ngày,,"சிகிச்சையைப் பெறும் தினசரி வழக்குகள்",Cas Quotidiens Recevant un Traitement

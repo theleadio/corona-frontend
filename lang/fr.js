@@ -1,7 +1,7 @@
 export default {
   "menu": {
     "Home": "Accueil",
-    "Travel Alert": "Conseils aux Voyageurs",
+    "Travel Alert": "Conseils Voyageurs",
     "What is COVID-19": "Qu'est-ce que le COVID-19",
     "Prevention": "Prévention",
     "Analytics": "Analyse",
@@ -95,8 +95,8 @@ export default {
   "Time taken from confirmation to discharge": "Délai entre la confirmation et la sortie de l'hôpital",
   "{number} days": "{number} jours",
   "+{number} since yesterday": "+{number} depuis hier",
-  "+{number} new cases": "+{number} new cases",
-  "+{number} new deaths": "+{number} new deaths",
+  "+{number} new cases": "+{number} nouveaux cas",
+  "+{number} new deaths": "+{number} nouveaux décès",
   "Critical Cases treated in ICU": "Cas Critiques en Unité de Soins Intensifs",
   "of total cases": "du nombre total de cas",
   "Daily Cases Receiving Treatment": "Cas Quotidiens Recevant un Traitement",
