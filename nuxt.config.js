@@ -1,15 +1,37 @@
 require('dotenv').config();
 
-const shouldGenerateRoutes = (process.env.GENERATE_ROUTES==undefined || process.env.GENERATE_ROUTES == "") ? true: process.env.GENERATE_ROUTES
-console.log("GENERATE_ROUTES: ", process.env.GENERATE_ROUTES)
-console.log("shouldGenerateRoutes: ", shouldGenerateRoutes)
-const { defaultLocale, locales, COUNTRIES } = require('./utils/constants.js');
-const { generateRoutes } = require('./utils/generateRoutes.js');
-const routes = shouldGenerateRoutes ? generateRoutes(locales, COUNTRIES) : [];
+let defaultLocale;
+let locales;
+let countries;
+let routes;
+
+const localeContext = require('./utils/constants.js');
+const utils = require('./utils/generateRoutes.js');
 const baseUrl = process.env.BASE_URL || 'https://www.coronatracker.com';
 
+const shouldGenerateRoutes = [undefined, "" , "true"].includes(process.env.GENERATE_ROUTES) ? true : false
+
+if(shouldGenerateRoutes) {
+  defaultLocale = localeContext.defaultLocale
+  locales = localeContext.locales
+  countries = localeContext.COUNTRIES
+  routes = utils.generateRoutes(locales, countries)
+}
+else {
+  defaultLocale = 'en'
+  locales = [{ code: 'en', name: 'English', file: 'en.js' }]
+  countries = [{ code: "US", name: "United States", urlAliases: ["united-states", "us"] }]
+  routes= []
+}
+
+console.log("GENERATE_ROUTES: ", process.env.GENERATE_ROUTES)
+console.log("shouldGenerateRoutes: ", shouldGenerateRoutes)
+console.log("defaultLocale: ", defaultLocale)
+console.log("locales: ", locales.length)
+console.log("countries: ", countries.length)
+console.log("routes: ", routes.length)
+
 export default {
-  // mode: 'spa',
   /*
    ** Headers of the page
    */
