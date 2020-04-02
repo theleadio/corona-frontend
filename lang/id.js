@@ -90,7 +90,7 @@ export default {
   "View more": "View more",
   "https://www.coronatracker.com/country/us": "https://www.coronatracker.com/country/us",
   "Fatality Rate": "Fatality Rate",
-  "Positive Rate": "Positive Rate",
+  "Recovery Rate": "Recovery Rate",
   "OF TOTAL CASES": "OF TOTAL CASES",
   "Time taken from confirmation to discharge": "Time taken from confirmation to discharge",
   "{number} days": "{number} days",

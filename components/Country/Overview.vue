@@ -1,12 +1,14 @@
 <template>
   <div class="max-w-full rounded border border-gray-400 bg-white p-3 h-full relative">
 
-    <Share :url="shareUrl + '?referrer=today'" class="mr-3 mt-3"></Share>
-
-    <p class="text-xl font-bold pl-2">
-      <Flag :country-code="country.code"></Flag>
-      {{country.name}} {{ $t('Overview') }}
+    <div class="flex flex-wrap justify-between items-center">
+      <p class="text-xl font-bold whitespace-no-wrap ">
+        <Flag :country-code="country.code"></Flag>
+        {{country.name}} {{ $t('Overview') }}
       </p>
+      <Share :url="shareUrl + '?referrer=today'"></Share>
+    </div>
+
     <div class="flex flex-row lg:flex-row pt-3 justify-around sm:justify-around md:justify-around lg:justify-around">
       <div class="px-2 text-center">
         <p class="text-2xl font-bold text-red-600">{{ info.confirmed | formatNumber }}</p>
