@@ -95,6 +95,8 @@ export default {
   "Time taken from confirmation to discharge": "உறுதிப்படுத்தலில் இருந்து வெளியேற்ற நேரம்",
   "{number} days": "{எண்} நாட்கள்",
   "+{number} since yesterday": "+{எண்} நேற்று முதல்",
+  "+{number} new cases": "+{number} new cases",
+  "+{number} new deaths": "+{number} new deaths",
   "Critical Cases treated in ICU": "ஐ.சி.யுவில் சிகிச்சையளிக்கப்பட்ட முக்கியமான வழக்குகள்",
   "of total cases": "மொத்த வழக்குகள்",
   "Daily Cases Receiving Treatment": "சிகிச்சையைப் பெறும் தினசரி வழக்குகள்",

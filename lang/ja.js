@@ -95,6 +95,8 @@ export default {
   "Time taken from confirmation to discharge": "感染から完治までの時間",
   "{number} days": "日",
   "+{number} since yesterday": "{番号}昨日より",
+  "+{number} new cases": "+{number} new cases",
+  "+{number} new deaths": "+{number} new deaths",
   "Critical Cases treated in ICU": "集中治療室の感染者数",
   "of total cases": "全感染者数から",
   "Daily Cases Receiving Treatment": "毎日治療を受けている患者者数",

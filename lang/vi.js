@@ -95,6 +95,8 @@ export default {
   "Time taken from confirmation to discharge": "Thời gian từ khi xác nhận đến khi xuất viện",
   "{number} days": "{number} ngày",
   "+{number} since yesterday": "+{number} từ ngày hôm qua",
+  "+{number} new cases": "+{number} new cases",
+  "+{number} new deaths": "+{number} new deaths",
   "Critical Cases treated in ICU": "Những ca nặng được điều trị trong phòng chăm sóc đặc biệt (ICU)",
   "of total cases": "Trên tổng số ca",
   "Daily Cases Receiving Treatment": "Các ca được điều trị hàng ngày",

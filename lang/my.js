@@ -95,6 +95,8 @@ export default {
   "Time taken from confirmation to discharge": "ပြန်ကျန်းမာရန်ကြာချိန်",
   "{number} days": "ရက်",
   "+{number} since yesterday": "မနေ့မှ",
+  "+{number} new cases": "+{number} new cases",
+  "+{number} new deaths": "+{number} new deaths",
   "Critical Cases treated in ICU": "အရေးပေါ်ကုသမှု",
   "of total cases": "စုစုပေါင်းဖြစ်နှုန်း",
   "Daily Cases Receiving Treatment": "နေ့စဉ်ကုသနှုန်း",

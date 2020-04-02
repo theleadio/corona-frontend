@@ -95,6 +95,8 @@ export default {
   "Time taken from confirmation to discharge": "Oras mula kumpirmasyon hanggang discharge",
   "{number} days": "{number} araw",
   "+{number} since yesterday": "+{number} mula kahapon",
+  "+{number} new cases": "+{number} new cases",
+  "+{number} new deaths": "+{number} new deaths",
   "Critical Cases treated in ICU": "Mga Kritikal na Kaso sa ICU",
   "of total cases": "ng total na mga kaso",
   "Daily Cases Receiving Treatment": "Kaso sa Araw-araw na Tumatanggap ng Pangangalagang Medikal",
