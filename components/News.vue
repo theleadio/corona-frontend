@@ -4,6 +4,7 @@
     target="_blank"
     rel="noopener"
     class="p-4 border-gray-400 border border-solid rounded flex w-full relative mb-4"
+    @click="captureOutboundLink(article.url)"
   >
     <div
       v-lazy:background-image="article.urlToImage"
@@ -47,6 +48,19 @@
         type: Object,
         required: true
       }
+    },
+    methods: {
+      captureOutboundLink(url) {
+        if (!url) {
+          return false;
+        }
+
+        this.$ga.query('send', 'event', 'outbound', 'click', url, {
+          transport: 'beacon',
+        });
+
+        return false;
+      },
     },
     computed: {
       publishTime() {
