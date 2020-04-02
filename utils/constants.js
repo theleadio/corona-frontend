@@ -323,11 +323,11 @@ export const locales = [
     name: 'Bahasa Melayu',
     file: 'ms.js',
   },
-  {
+  /*{
     code: 'id',
     name: 'Bahasa Indonesia',
     file: 'id.js',
-  },
+  },*/
   {
     code: 'ptbr',
     name: 'Português (Brasil)',
@@ -347,6 +347,16 @@ export const locales = [
     code: 'ja',
     name: '日本語',
     file: 'ja.js',
+  },
+  {
+    code: 'zh-hans',
+    name: '简体中文',
+    file: 'zh-hans.js',
+  },
+  {
+    code: 'zh-hant',
+    name: '繁體中文',
+    file: 'zh-hans.js',
   },
   {
     code: 'tl',
@@ -378,6 +388,36 @@ export const locales = [
     name: 'French',
     file: 'fr.js',
   },
+  /*{
+    code: 'nl',
+    name: 'Nederlands',
+    file: 'nl.js',
+  },*/
+  {
+    code: 'de',
+    name: 'Deutsch',
+    file: 'de.js',
+  },
+  {
+    code: 'pl',
+    name: 'Polski',
+    file: 'pl.js',
+  },
+  {
+    code: 'it',
+    name: 'Italiano',
+    file: 'it.js',
+  },
+  {
+    code: 'hi',
+    name: 'हिंदी',
+    file: 'hi.js',
+  },
+  {
+    code: 'ur',
+    name: 'اردو',
+    file: 'ur.js',
+  }
 ];
 
 export const twitterHandles = [

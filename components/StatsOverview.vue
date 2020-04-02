@@ -3,11 +3,9 @@
     <div class="flex flex-wrap md:flex-no-wrap md:flex-row">
       <div class="w-full md:w-2/5 h-full mr-2 align-middle relative">
 
-        <Share v-if="selectedCountry.code === 'global'" :url="shareUrl"></Share>
-        <Share v-if="selectedCountry.code !== 'global'" :url="shareUrl + '/country/' + selectedCountry.code.toLowerCase()"></Share>
-
-        <p class="mt-2 mb-2 text-sm font-semibold">
+        <p class="mt-2 mb-2 text-sm font-semibold flex justify-between items-center">
           <span class="text-red-600 uppercase"><i class="far fa-dot-circle blink"></i> {{ $t('live') }}</span>
+          <Share :url="shareUrl"/>
           <!-- <span v-if="numLastUpdated">[Last Update: {{new Date(numLastUpdated).toDateString()}}]</span> -->
         </p>
         <label class="block text-s font-bold mb-2">{{ $t('stats_overview') }}</label>
@@ -60,7 +58,7 @@
 
     </div>
 
-    <div class="block text-center md:text-right mt-6 underline text-blue-500 font-semibold">
+    <div class="block text-center md:text-right mt-6 text-blue-500 font-semibold">
       <nuxt-link v-if="selectedCountry && selectedCountry.code !== 'global'" :to="`/country/${selectedCountry.code.toLowerCase()}`">{{ $t('more_details') }}</nuxt-link>
       <nuxt-link v-else :to="localePath('analytics')">{{ $t('more_details') }}</nuxt-link>
     </div>
@@ -133,13 +131,18 @@ export default {
 
       return this.stats.deaths;
     },
-    shareUrl() {
+    baseShareUrl() {
       if(process.browser) {
         let split = window.location.href.split('/');
         return split[0] + '//' + split[2];
       } else {
         return 'https://www.coronatracker.com';
       }
+    },
+    shareUrl() {
+      return this.selectedCountry.code === 'global' ?
+      this.baseShareUrl :
+      this.baseShareUrl + '/country/' + this.selectedCountry.code.toLowerCase()
     }
   },
   methods: {

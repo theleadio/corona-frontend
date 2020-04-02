@@ -1,9 +1,9 @@
 <template>
-  <div class="absolute top-0 right-0 clearfix border border-gray-400 rounded px-3 py-1">
-    <span class="text-s float-left pr-1">{{ $t('share') }}:</span>
+  <div class="flex py-1">
+    <span class="text-s">{{ $t('share') }}:</span>
     <client-only>
-      <social-sharing :url="url" inline-template class="float-left">
-        <div>
+      <social-sharing :url="url" inline-template>
+        <div class="flex justify-between">
           <network network="facebook">
             <i class="fab fa-fw fa-facebook-f" style="color: #3b5998;"></i>
           </network>

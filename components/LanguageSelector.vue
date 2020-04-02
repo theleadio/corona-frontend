@@ -9,7 +9,7 @@
       </div>
     </div>
 
-    <ul v-if="optionsShowed" class="absolute text-gray-700 pt-1 z-50 right-0" style="margin-bottom: 96px;">
+    <ul v-if="optionsShowed" class="absolute text-gray-700 pt-1 z-50 right-0 overflow-y-auto text-sm" style="margin-bottom: 96px; max-height: 355px">
       <li
         v-for="locale in availableLocales"
         :key="locale.code"

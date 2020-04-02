@@ -44,7 +44,7 @@ for current_argument, current_value in arguments:
     elif current_argument in ("-h", "--help"):
         print ("1) Put " + input_file + " which is exported from google sheets into same directory as this script")
         print ("2) Run it with the -c flag and 2 arguments. 1) Column id and 2) output filename")
-        print ("3) Column index must be greater than 0")
+        print ("3) Column index must be the column id. Example : a, g, k, f")
         print ("4) Output filename must have extension .js")
         print ("5) Example : python lang-generator.py -c g en.js")
         print ("6) This commands means extract language strings from column 'g' of " + input_file + " and save it into en.js")
@@ -96,7 +96,7 @@ rows = len(translate_key) # Number of rows
 
 # Please enter the row wrt. google spread sheet.
 # E.g. Row 10 for 'Home-https://www.coronatracker.com/'
-row_to_ignore = [2,10,39,43,46,50,62,97,111,118]
+row_to_ignore = [2,10,39,43,46,50,62,97]
 row_to_ignore = np.array(row_to_ignore) - 2 # Index offset adjustment
 
 # Menu translation index
