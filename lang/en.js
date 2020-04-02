@@ -55,7 +55,6 @@ export default {
   "total_recovered": "Total Recovered",
   "total_deaths": "Total Deaths",
   "outbreak_trend": "Outbreak trend over time",
-  "Most affected regions": "Most affected regions",
   "top_countries_daily_new_cases": "Top countries with daily new cases",
   "daily_new_cases": "Daily New Cases",
   "daily_new_deaths": "Daily New Deaths",
