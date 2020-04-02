@@ -90,7 +90,7 @@ export default {
   "View more": "Ver más",
   "https://www.coronatracker.com/country/us": "https://www.coronatracker.com/country/us",
   "Fatality Rate": "Tasa de Fatalidad",
-  "Positive Rate": "Tasa de Positividad",
+  "Recovery Rate": "Tasa de Positividad",
   "OF TOTAL CASES": "DE CASOS TOTALES",
   "Time taken from confirmation to discharge": "Tiempo desde confirmación de infección a dada de alta",
   "{number} days": "{number} días",

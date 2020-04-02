@@ -90,7 +90,7 @@ export default {
   "View more": "Karagdagang view",
   "https://www.coronatracker.com/country/us": "https://www.coronatracker.com/country/us",
   "Fatality Rate": "Fatality Rate",
-  "Positive Rate": "Positive Rate",
+  "Recovery Rate": "Positive Rate",
   "OF TOTAL CASES": "NG TOTAL NG MGA KASO",
   "Time taken from confirmation to discharge": "Oras mula kumpirmasyon hanggang discharge",
   "{number} days": "{number} araw",

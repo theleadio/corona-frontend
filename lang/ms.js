@@ -90,7 +90,7 @@ export default {
   "View more": "Lain-lain",
   "https://www.coronatracker.com/country/us": "https://www.coronatracker.com/country/us",
   "Fatality Rate": "Kadar Kematian",
-  "Positive Rate": "Kadar Sembuh",
+  "Recovery Rate": "Kadar Sembuh",
   "OF TOTAL CASES": "daripada keseluruhan kes",
   "Time taken from confirmation to discharge": "Masa dari",
   "{number} days": "{number} hari",
