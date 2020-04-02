@@ -16,7 +16,7 @@
               <span class="ml-2">{{ selectedCountry.name }}</span>
             </template>
             <template v-else>
-              {{ $t('Select Country') }}
+              {{ $t('select_country') }}
             </template>
           </div>
 
@@ -48,7 +48,7 @@
     </div>
 
     <div class="block text-center md:text-right mt-6 underline text-blue-500 font-semibold">
-      <a href="/" target="_blank">{{ $t('more details') }}</a>
+      <a href="/" target="_blank">{{ $t('more_details') }}</a>
     </div>
   </div>
 </template>
@@ -91,7 +91,7 @@
         countries: [{ code: 'global', name: 'Global'}, ...countries],
         global: {
           code: 'global',
-          name: this.$t('Global'),
+          name: this.$t('global'),
         },
         selectedCountry,
         optionsShowed: false,

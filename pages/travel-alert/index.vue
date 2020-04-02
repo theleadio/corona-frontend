@@ -1,8 +1,8 @@
 <template>
   <main class="container mb-64">
-    <h1 class="text-lg font-bold">{{ $t('Travel Alert Information') }}</h1>
+    <h1 class="text-lg font-bold">{{ $t('travel_alert_information') }}</h1>
     <div class="mb-4 font-bold text-xs text-gray-500 leading-tight">
-      {{ $t('Source') }}: <a
+      {{ $t('source') }}: <a
       href="https://www.iatatravelcentre.com/international-travel-document-news/1580226297.htm"
       target="_blank"
       rel="noopener"

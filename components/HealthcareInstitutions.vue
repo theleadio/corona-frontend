@@ -1,12 +1,12 @@
 <template>
 	<div>
-		<Card :title="$t('Screening Centres')"></Card>
+		<Card :title="$t('screening_centres')"></Card>
 		<dropdown
 			v-model="region"
 			:options="filteredRegions"
 			displaykey="name"
 			valuekey="name"
-			:unselected="$t('Select Region')"
+			:unselected="$t('select_region')"
 			class="mt-3 mb-3"
 		/>
 
@@ -38,7 +38,7 @@
 			<p class="text-4xl text-center">
 				<i class="far fa-hand-point-up"></i>
 			</p>
-			<p class="font-bold text-center capitalize">{{ $t('Select a region') }}</p>
+			<p class="font-bold text-center capitalize">{{ $t('select_region') }}</p>
 		</div>
 		<div
 			v-else-if="!(country === '' || country === 'global')"
@@ -58,7 +58,7 @@
 			class="mt-4 p-3 block justify-center text-sm rounded border border-gray-400"
 		>
 			<p class="text-center mt-2">
-				{{ $t('Help us collate the locations for your country!') }}
+				{{ $t('help_us_locations') }}
 			</p>
 			<p class="font-bold text-center text-primary text-lg">
 				<a
@@ -66,7 +66,7 @@
 					rel="noopener"
 					href="https://t.me/joinchat/Jc3F5hR2yrcJ6OYlN9kXgw?fbclid=IwAR1oBafFFEo7HAnoUSX1T9nzdtFroXLtTUxn67yACnRRLrT2o-syWBZG_vI"
 				>
-					<i class="fab fa-telegram"></i> {{ $t('Join our Telegram group') }}
+					<i class="fab fa-telegram"></i> {{ $t('join_telegram') }}
 				</a>
 			</p>
 		</div>

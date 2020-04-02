@@ -21,7 +21,7 @@
       </div>
       <div class="w-full md:w-1/6 flex justify-end">
         <button class="text-gray-600 underline px-3 py-1 text-base font-semibold" @click="clearSelection()">
-          {{ $t('Clear All') }}
+          {{ $t('clear_all') }}
         </button>
       </div>
     </div>

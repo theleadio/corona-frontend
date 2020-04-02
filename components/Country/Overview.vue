@@ -5,25 +5,25 @@
 
     <p class="text-xl font-bold pl-2">
       <Flag :country-code="country.code"></Flag>
-      {{country.name}} {{ $t('Overview') }}
+      {{country.name}} {{ $t('overview') }}
       </p>
     <div class="flex flex-row lg:flex-row pt-3 justify-around sm:justify-around md:justify-around lg:justify-around">
       <div class="px-2 text-center">
         <p class="text-2xl font-bold text-red-600">{{ info.confirmed | formatNumber }}</p>
-        <p class="text-l font-bold text-gray-600">{{ $t('Confirmed') }}</p>
-        <p class="text-xs font-bold text-red-600">{{ $t('+{number} new cases', { number: $options.filters.formatNumber(info.diffConfirmed) }) }}</p>
+        <p class="text-l font-bold text-gray-600">{{ $t('confirmed') }}</p>
+        <p class="text-xs font-bold text-red-600">{{ $t('increase_new_cases', { number: $options.filters.formatNumber(info.diffConfirmed) }) }}</p>
       </div>
 
       <div class="px-2 text-center">
         <p class="text-2xl font-bold text-green-600">{{ info.recovered | formatNumber }}</p>
-        <p class="text-l font-bold text-gray-600">{{ $t('Recovered') }}</p>
-        <!-- <p class="text-xs font-bold text-green-600">{{ $t('+{number} since yesterday', { number: $options.filters.formatNumber(info.diffRecovered) }) }}</p> -->
+        <p class="text-l font-bold text-gray-600">{{ $t('recovered') }}</p>
+        <!-- <p class="text-xs font-bold text-green-600">{{ $t('increase_since_yesterday', { number: $options.filters.formatNumber(info.diffRecovered) }) }}</p> -->
       </div>
 
       <div class="px-2 text-center">
         <p class="text-2xl font-bold text-gray-600">{{ info.deaths | formatNumber }}</p>
-        <p class="text-l font-bold text-gray-600">{{ $t('Deaths') }}</p>
-        <p class="text-xs font-bold text-gray-600">{{ $t('+{number} new deaths', { number: $options.filters.formatNumber(info.diffDeaths) }) }}</p>
+        <p class="text-l font-bold text-gray-600">{{ $t('deaths') }}</p>
+        <p class="text-xs font-bold text-gray-600">{{ $t('increase_new_deaths', { number: $options.filters.formatNumber(info.diffDeaths) }) }}</p>
       </div>
     </div>
   </div>

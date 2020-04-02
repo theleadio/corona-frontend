@@ -1,23 +1,23 @@
 <template>
   <div class="container clearfix" style="max-width: 900px;">
 
-    <h1 class="text-2xl font-extrabold">{{ $t('Global COVID-19 Stats Today') }}</h1>
+    <h1 class="text-2xl font-extrabold">{{ $t('global_covid_stats_today') }}</h1>
     <h3>{{ currentDate }}</h3>
 
     <div class="flex flex-row lg:flex-row pt-5 pb-6 text-center">
       <div class="flex-1">
         <p class="text-2xl font-bold text-red-600">{{ confirmed | formatNumber }}</p>
-        <p class="text-sm font-bold text-red-600">{{ $t('Total Confirmed') }}</p>
+        <p class="text-sm font-bold text-red-600">{{ $t('total_confirmed') }}</p>
       </div>
 
       <div class="flex-1">
         <p class="text-2xl font-bold text-green-600">{{ recovered | formatNumber }}</p>
-        <p class="text-sm font-bold text-green-600">{{ $t('Total Recovered') }}</p>
+        <p class="text-sm font-bold text-green-600">{{ $t('total_recovered') }}</p>
       </div>
 
       <div class="flex-1">
         <p class="text-2xl font-bold text-gray-600">{{ deaths | formatNumber }}</p>
-        <p class="text-sm font-bold text-gray-600">{{ $t('Total Deaths') }}</p>
+        <p class="text-sm font-bold text-gray-600">{{ $t('total_deaths') }}</p>
       </div>
     </div>
 

@@ -1,45 +1,45 @@
 <template>
   <div class="container clearfix">
 
-    <h1 class="text-2xl font-extrabold">{{country.name}} {{ $t('COVID-19 Stats Today') }} <Flag :country-code="country.code"></Flag></h1>
+    <h1 class="text-2xl font-extrabold">{{country.name}} {{ $t('covid_stats_today') }} <Flag :country-code="country.code"></Flag></h1>
     <h3>{{ currentDate }}</h3>
 
     <div class="flex flex-row lg:flex-row pt-5 pb-6 text-center">
       <div class="flex-1">
         <p class="text-2xl font-bold text-red-600">{{ overviewInfo.confirmed | formatNumber }}</p>
-        <p class="text-sm font-bold text-red-600">{{ $t('Total Confirmed') }}</p>
+        <p class="text-sm font-bold text-red-600">{{ $t('total_confirmed') }}</p>
         <p class="text-xs font-bold text-red-600">{{ $t('+{number} new cases', { number: $options.filters.formatNumber(overviewInfo.diffConfirmed) }) }}</p>
       </div>
 
       <div class="flex-1">
         <p class="text-2xl font-bold text-green-600">{{ overviewInfo.recovered | formatNumber }}</p>
-        <p class="text-sm font-bold text-green-600">{{ $t('Total Recovered') }}</p>
+        <p class="text-sm font-bold text-green-600">{{ $t('total_recovered') }}</p>
       </div>
 
       <div class="flex-1">
         <p class="text-2xl font-bold text-gray-600">{{ overviewInfo.deaths | formatNumber }}</p>
-        <p class="text-sm font-bold text-gray-600">{{ $t('Total Deaths') }}</p>
+        <p class="text-sm font-bold text-gray-600">{{ $t('total_deaths') }}</p>
         <p class="text-xs font-bold text-gray-600">{{ $t('+{number} new deaths', { number: $options.filters.formatNumber(overviewInfo.diffDeaths) }) }}</p>
       </div>
     </div>
 
     <div class="flex flex-row lg:flex-row pt-5 pb-8 pl-8">
       <div class="flex-1">
-        <p class="text-xs font-extrabold">{{ $t('Critical Cases treated in ICU') }}</p>
+        <p class="text-xs font-extrabold">{{ $t('critical_cases_icu') }}</p>
         <p class="text-xl font-bold">{{ criticalCases.totalCount | formatNumber }}</p>
         <p class="text-xs"><span class="text-red-600">{{ criticalCases.inICUCount }}%</span> {{ $t('of total cases') }}</p>
       </div>
 
       <div class="flex-1">
-        <p class="text-xs font-extrabold">{{ $t('Daily Cases Receiving Treatment') }}</p>
+        <p class="text-xs font-extrabold">{{ $t('daily_cases_receiving_treatment') }}</p>
         <p class="text-xl font-bold">{{ activeCases.totalCount | formatNumber }}</p>
         <p class="text-xs"><span class="text-red-600">{{ activeCases.percentage }}%</span> {{ $t('of total cases') }}</p>
       </div>
 
       <div class="flex-1">
-        <p class="text-xs font-extrabold">{{ $t('Daily Confirmed Cases') }}</p>
+        <p class="text-xs font-extrabold">{{ $t('daily_confirmed_cases') }}</p>
         <p class="text-xl font-bold">{{ perMillionConfirmedCases.totalCount | formatNumber }}</p>
-        <p class="text-xs">{{ $t('Per Million Population') }}</p>
+        <p class="text-xs">{{ $t('per_million_population') }}</p>
       </div>
     </div>
 

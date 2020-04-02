@@ -1,16 +1,16 @@
 <template>
   <div>
-    <Card v-if="showTitle" :title="$t('Countries Affected')"></Card>
+    <Card v-if="showTitle" :title="$t('countries_affected')"></Card>
     <div v-if="showSource" class="my-2 font-bold text-xs text-gray-500 leading-tight">
-      {{ $t('Source') }}: WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, {{ $t('and various international media') }}
+      {{ $t('source') }}: WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, {{ $t('international_media') }}
     </div>
     <table class="table-auto w-full">
       <thead class="text-xs leading-tight border-b-2">
       <tr>
-        <th class="border px-2 py-2">{{ $t('Country') }}</th>
-        <th class="border px-1 py-2">{{ $t('Confirmed') }}</th>
-        <th class="border px-1 py-2">{{ $t('Recovered') }}</th>
-        <th class="border px-1 py-2">{{ $t('Deaths') }}</th>
+        <th class="border px-2 py-2">{{ $t('country') }}</th>
+        <th class="border px-1 py-2">{{ $t('confirmed') }}</th>
+        <th class="border px-1 py-2">{{ $t('recovered') }}</th>
+        <th class="border px-1 py-2">{{ $t('deaths') }}</th>
       </tr>
       </thead>
       <tbody class="font-bold">
@@ -46,7 +46,7 @@
       </tbody>
     </table>
     <div v-if="showFooter" class="my-2 font-bold text-xs text-gray-600 leading-tight">
-      * {{ $t('Cases identified on a cruise ship currently in Japanese territorial waters.') }}
+      * {{ $t('cruise_ship_notice') }}
       <a name="notes-on-others" class="anchor"></a>
     </div>
   </div>

@@ -21,7 +21,7 @@
           <div
             class="mt-2 text-center underline text-blue-500 font-semibold"
           >
-            <nuxt-link :to="localePath('analytics')">{{ $t('Full list here') }}</nuxt-link>
+            <nuxt-link :to="localePath('analytics')">{{ $t('full_list') }}</nuxt-link>
           </div>
         </div>
 
@@ -38,7 +38,7 @@
           <div
             class="mt-2 text-center underline text-blue-500 font-semibold"
           >
-            <nuxt-link :to="localePath('analytics')">{{ $t('Full list here') }}</nuxt-link>
+            <nuxt-link :to="localePath('analytics')">{{ $t('full_list') }}</nuxt-link>
           </div>
         </div>
 
@@ -63,7 +63,7 @@
                 rel="noopener"
                 href="https://play.google.com/store/apps/details?id=com.coronatracker.corona_flutter&hl=en"
               >
-                <div class="text-left">{{ $t('GET IT ON') }}</div>
+                <div class="text-left">{{ $t('get_it_on') }}</div>
                 <span class="font-bold text-xl">Google Play</span>
               </a>
             </div>
@@ -91,8 +91,8 @@
 
   export default {
     head() {
-      const title = this.$t('COVID-19 Corona Tracker');
-      const description = this.$t('COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.');
+      const title = this.$t('covid_corona_tracker');
+      const description = this.$t('covid_corona_tracker_description');
       const imageUrl = `${process.env.API_BASE_URL}/sharing/globalStatsToday?t=${Date.now()}`;
 
       return {

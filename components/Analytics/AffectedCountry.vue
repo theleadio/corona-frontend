@@ -25,19 +25,19 @@
             color="red">
             <l-popup>
               <p class="text-xs">
-                <span class="font-bold">{{ $t('Country') }}:</span> {{ loc.country }}
+                <span class="font-bold">{{ $t('country') }}:</span> {{ loc.country }}
               </p>
 
               <p class="text-xs">
-                <span class="font-bold">{{ $t('Total Confirmed') }}:</span> {{ loc.totalConfirmed | formatNumber }}
+                <span class="font-bold">{{ $t('total_confirmed') }}:</span> {{ loc.totalConfirmed | formatNumber }}
               </p>
 
               <p class="text-xs">
-                <span class="font-bold">{{ $t('Total Recovered') }}:</span> {{ loc.totalRecovered | formatNumber }}
+                <span class="font-bold">{{ $t('total_recovered') }}:</span> {{ loc.totalRecovered | formatNumber }}
               </p>
 
               <p class="text-xs">
-                <span class="font-bold">{{ $t('Total Deaths') }}:</span> {{ loc.totalDeaths | formatNumber }}
+                <span class="font-bold">{{ $t('total_deaths') }}:</span> {{ loc.totalDeaths | formatNumber }}
               </p>
             </l-popup>
           </l-circle-marker>
@@ -50,10 +50,10 @@
       <table class="table-auto w-full">
         <thead class="text-xs leading-tight border-b-2">
         <tr>
-          <th class="border px-2 py-2">{{ $t('Country') }}</th>
-          <th class="border px-1 py-2">{{ $t('Total Confirmed') }}</th>
-          <th class="border px-1 py-2">{{ $t('Total Recovered') }}</th>
-          <th class="border px-1 py-2">{{ $t('Total Deaths') }}</th>
+          <th class="border px-2 py-2">{{ $t('country') }}</th>
+          <th class="border px-1 py-2">{{ $t('total_confirmed') }}</th>
+          <th class="border px-1 py-2">{{ $t('total_recovered') }}</th>
+          <th class="border px-1 py-2">{{ $t('total_deaths') }}</th>
         </tr>
         </thead>
         <tbody class="font-bold">
@@ -77,7 +77,7 @@
         </tbody>
       </table>
       <div class="my-2 font-bold text-xs text-gray-600 leading-tight">
-        * {{ $t('Cases identified on a cruise ship currently in Japanese territorial waters.') }}
+        * {{ $t('cruise_ship_notice') }}
         <a name="notes-on-others" class="anchor"></a>
       </div>
     </div>

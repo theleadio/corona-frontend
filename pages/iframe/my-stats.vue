@@ -30,7 +30,7 @@
                     <line-chart-number
                       :height="180"
                       :data="[0, 10, 20, 10, 40, 20, 50, 60]"
-                      :title="$t('Critical Cases treated in ICU')"
+                      :title="$t('critical_cases_icu')"
                       :subtitleRed="`${criticalCases.inICUCount}%`"
                       :subtitle="$t('of total cases')"
                       :number="criticalCases.totalCount"
@@ -40,7 +40,7 @@
                     <line-chart-number
                       :height="180"
                       :data="[0, 10, 20, 10, 40, 20, 50, 60]"
-                      :title="$t('Daily Cases Receiving Treatment')"
+                      :title="$t('daily_cases_receiving_treatment')"
                       :subtitleRed="`${activeCases.percentage}%`"
                       :subtitle="$t('of total cases')"
                       :number="activeCases.totalCount"
@@ -50,9 +50,9 @@
                     <line-chart-number
                       :height="180"
                       :data="[0, 10, 20, 10, 40, 20, 50, 60]"
-                      :title="$t('Daily Confirmed Cases')"
+                      :title="$t('daily_confirmed_cases')"
                       :number="perMillionConfirmedCases.totalCount"
-                      :subtitle = "$t('Per Million Population')"
+                      :subtitle = "$t('per_million_population')"
                     />
                 </div>
             </div>
@@ -62,13 +62,13 @@
                         :height="360"
                         :trendData="countryTrend.trendData"
                         :trendDates="countryTrend.trendDates"
-                        :title="$t('Past 14 Days Chart')"
+                        :title="$t('past_2_weeks_chart')"
                         style="margin-bottom: 12px;"
                     />
                 </div>
             </div>
             <div class="block text-center md:text-right underline text-blue-500 font-semibold px-2 -mt-2">
-              <a href="/" target="_blank">{{ $t('more details') }}</a>
+              <a href="/" target="_blank">{{ $t('more_details') }}</a>
             </div>
       </div>
     </div>

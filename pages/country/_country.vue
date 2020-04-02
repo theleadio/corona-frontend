@@ -28,9 +28,9 @@
             <line-chart-number
               :height="180"
               :data="[0, 10, 20, 10, 40, 20, 50, 60]"
-              :title="$t('Critical Cases treated in ICU')"
+              :title="$t('critical_cases_icu')"
               :subtitleRed="`${criticalCases.inICUCount}%`"
-              :subtitle="$t('of total cases')"
+              :subtitle="$t('of_total_cases').toLowerCase()"
               :number="criticalCases.totalCount"
             />
           </div>
@@ -38,9 +38,9 @@
             <line-chart-number
               :height="180"
               :data="[0, 10, 20, 10, 40, 20, 50, 60]"
-              :title="$t('Daily Cases Receiving Treatment')"
+              :title="$t('daily_cases_receiving_treatment')"
               :subtitleRed="`${activeCases.percentage}%`"
-              :subtitle="$t('of total cases')"
+              :subtitle="$t('of_total_cases').toLowerCase()"
               :number="activeCases.totalCount"
             />
           </div>
@@ -48,9 +48,9 @@
             <line-chart-number
               :height="180"
               :data="[0, 10, 20, 10, 40, 20, 50, 60]"
-              :title="$t('Daily Confirmed Cases')"
+              :title="$t('daily_confirmed_cases')"
               :number="perMillionConfirmedCases.totalCount"
-              :subtitle = "$t('Per Million Population')"
+              :subtitle = "$t('per_million_population')"
             />
           </div>
         </div>
@@ -60,7 +60,7 @@
                 :height="360"
                 :trendData="countryTrend.trendData"
                 :trendDates="countryTrend.trendDates"
-                :title="$t('Past 14 Days Chart')"
+                :title="$t('past_2_weeks_chart')"
                 :country="country"
                 style="margin-bottom: 12px;"
               />
@@ -94,8 +94,8 @@ export default {
     const country = this.country && this.country.name;
     const countryCode = this.countryCode && this.countryCode.toLowerCase();
 
-    const title = this.$t('COVID-19 {country} Corona Tracker', { country });
-    const description = this.$t('{country} COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.', {
+    const title = this.$t('covid_corona_tracker_country', { country });
+    const description = this.$t('covid_corona_tracker_country_description', {
       country,
     });
 

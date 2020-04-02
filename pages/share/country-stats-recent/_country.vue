@@ -1,7 +1,7 @@
 <template>
   <div class="container clearfix">
 
-    <h1 class="text-2xl font-extrabold">{{country.name}} {{ $t('COVID-19 Past 14 Days Cases') }} <Flag :country-code="country.code"></Flag></h1>
+    <h1 class="text-2xl font-extrabold">{{country.name}} {{ $t('covid_cases_past_2_weeks') }} <Flag :country-code="country.code"></Flag></h1>
     <h3>{{ startDate }} - {{ endDate }}</h3>
 
     <PastDaysChart
@@ -9,7 +9,7 @@
             :height="360"
             :trendData="countryTrend.trendData"
             :trendDates="countryTrend.trendDates"
-            :title="$t('Past 14 Days Chart')"
+            :title="$t('past_2_weeks_chart')"
             :showHeader="false"
             :showSelector="false"
             :enableAnimation="false"

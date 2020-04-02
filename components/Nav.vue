@@ -61,12 +61,12 @@
     data: function() {
       return {
         links: [
-          { name: "index", display: 'menu.Home' },
-          { name: "travel-alert", display: "menu.Travel Alert" },
-          { name: "causes", display: "menu.What is COVID-19" },
-          { name: "prevention", display: "menu.Prevention" },
-          { name: "analytics", display: "menu.Analytics" },
-          { name: "about", display: 'menu.About' }
+          { name: "index", display: 'menu.home' },
+          { name: "travel-alert", display: "menu.travel_alert" },
+          { name: "causes", display: "menu.whats_covid" },
+          { name: "prevention", display: "menu.prevention" },
+          { name: "analytics", display: "menu.analytics" },
+          { name: "about", display: 'menu.about' }
         ],
         showMobileLinks: false,
       }

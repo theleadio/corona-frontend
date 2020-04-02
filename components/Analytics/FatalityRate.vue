@@ -7,9 +7,9 @@
         </client-only>
       </div>
       <div class="w-full sm:w-1/2 flex flex-col py-2 pl-2 justify-center text-center sm:text-left">
-        <strong class="mb-2">{{ $t('Fatality Rate') }}</strong>
-        <!-- <small class="mb-2">{{ $t('Time taken from confirmation to discharge') }}</small> -->
-        <!-- <strong>{{ $t('{number} days', { number: days }) }}</strong> -->
+        <strong class="mb-2">{{ $t('fatality_rate') }}</strong>
+        <!-- <small class="mb-2">{{ $t('time_from_confirmation_to_discharge') }}</small> -->
+        <!-- <strong>{{ $t('number_of_days', { number: days }) }}</strong> -->
       </div>
     </div>
   </div>
@@ -76,7 +76,7 @@ export default {
                   offsetY : 20,
                   color: "#828282",
                   formatter: (a, b, all) => {
-                    return this.$t('OF TOTAL CASES');
+                    return this.$t('of_total_cases');
                   },
                 },
                 value:{
@@ -89,7 +89,7 @@ export default {
                 },
                 total: {
                   show: true,
-                  label: this.$t('OF TOTAL CASES'),
+                  label: this.$t('of_total_cases'),
                   fontSize: '9px',
                   formatter: function (value) {
                     return value.config.series[1] + "%";

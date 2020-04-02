@@ -7,10 +7,10 @@
         <Share v-if="selectedCountry.code !== 'global'" :url="shareUrl + '/country/' + selectedCountry.code.toLowerCase()"></Share>
 
         <p class="mt-2 mb-2 text-sm font-semibold">
-          <span class="text-red-600 uppercase"><i class="far fa-dot-circle blink"></i> {{ $t('Live') }}</span>
+          <span class="text-red-600 uppercase"><i class="far fa-dot-circle blink"></i> {{ $t('live') }}</span>
           <!-- <span v-if="numLastUpdated">[Last Update: {{new Date(numLastUpdated).toDateString()}}]</span> -->
         </p>
-        <label class="block text-s font-bold mb-2">{{ $t('Stats Overview') }}</label>
+        <label class="block text-s font-bold mb-2">{{ $t('stats_overview') }}</label>
         <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded w-full flex focus:outline-none rounded-b-none"
                 @click="toggleOptions">
           <div class="flex">
@@ -19,7 +19,7 @@
               <span class="ml-2 leading-none">{{ selectedCountry.name }}</span>
             </template>
             <template v-else>
-              {{ $t('Select Country') }}
+              {{ $t('select_country') }}
             </template>
           </div>
 
@@ -61,8 +61,8 @@
     </div>
 
     <div class="block text-center md:text-right mt-6 underline text-blue-500 font-semibold">
-      <nuxt-link v-if="selectedCountry && selectedCountry.code !== 'global'" :to="`/country/${selectedCountry.code.toLowerCase()}`">{{ $t('more details') }}</nuxt-link>
-      <nuxt-link v-else :to="localePath('analytics')">{{ $t('more details') }}</nuxt-link>
+      <nuxt-link v-if="selectedCountry && selectedCountry.code !== 'global'" :to="`/country/${selectedCountry.code.toLowerCase()}`">{{ $t('more_details') }}</nuxt-link>
+      <nuxt-link v-else :to="localePath('analytics')">{{ $t('more_details') }}</nuxt-link>
     </div>
   </div>
 </template>
@@ -99,7 +99,7 @@ export default {
       countries: [],
       global: {
         code: 'global',
-        name: this.$t('Global'),
+        name: this.$t('global'),
       },
       selectedCountry: null,
       optionsShowed: false,
