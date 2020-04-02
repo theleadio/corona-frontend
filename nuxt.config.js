@@ -38,8 +38,8 @@ export default {
       { hid: 'og-image', property: 'og:image', content: `${baseUrl}/og-corona.png` },
 
       // Twitter
-      { property: 'twitter:card', content: `${baseUrl}/og-corona.png` },
-      { property: 'twitter:url', content: baseUrl },
+      { hid: 'twitter-card', property: 'twitter:card', content: 'summary' },
+      { hid: 'twitter-url', property: 'twitter:url', content: baseUrl },
       { hid: 'twitter-title', property: 'twitter:title', content: 'Corona Tracker' },
       { hid: 'twitter-description', property: 'twitter:description', content: 'One stop platform for data and news related to COVID-19' },
       { hid: 'twitter-image', property: 'twitter:image', content: `${baseUrl}/og-corona.png` },

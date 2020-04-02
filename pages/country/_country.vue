@@ -102,6 +102,7 @@ export default {
     const baseUrl = process.env.BASE_URL || 'https://www.coronatracker.com';
     const countryStatsType = this.$route.query.referrer === 'recent' ? 'countryStatsRecent' : 'countryStatsToday';
     const imageUrl = `${process.env.API_BASE_URL}/sharing/${countryStatsType}?countryCode=${countryCode}&t=${Date.now()}`;
+    const pageUrl = process.browser ? window.location.href : `${baseUrl}/country/${this.$route.params.country}/`;
 
     return {
       title,
@@ -111,11 +112,7 @@ export default {
         { hid: 'description', name: 'description', content: description },
         { hid: 'og-title', property: 'og:title', content: title },
         { hid: 'og-description', property: 'og:description', content: description },
-        {
-          hid: 'og-url',
-          property: 'og:url',
-          content: process.browser ? window.location.href : `${baseUrl}/country/${this.$route.params.country}/`,
-        },
+        { hid: 'og-url', property: 'og:url', content: pageUrl },
         { hid: 'og-image', property: 'og:image', content: imageUrl },
         {
           hid: 'og-image-width',
@@ -127,6 +124,8 @@ export default {
           property: 'og:image:height',
           content: countryStatsType === 'countryStatsRecent' ? '515' : '375'
         },
+        { hid: 'twitter-card', property: 'twitter:card', content: 'summary_large_card' },
+        { hid: 'twitter-url', property: 'twitter:url', content: pageUrl },
         { hid: 'twitter-title', property: 'twitter:title', content: title },
         { hid: 'twitter-description', property: 'twitter:description', content: description },
         { hid: 'twitter-image', property: 'twitter:image', content: imageUrl },

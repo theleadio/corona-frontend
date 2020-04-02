@@ -106,6 +106,7 @@
           { hid: 'og-image', property: 'og:image', content: imageUrl },
           { hid: 'og-image-width', property: 'og:image:width', content: '1337' },
           { hid: 'og-image-height', property: 'og:image:height', content: '700' },
+          { hid: 'twitter-card', property: 'twitter:card', content: 'summary_large_image' },
           { hid: 'twitter-title', property: 'twitter:title', content: title },
           { hid: 'twitter-description', property: 'twitter:description', content: description },
           { hid: 'twitter-image', property: 'twitter:image', content: imageUrl },

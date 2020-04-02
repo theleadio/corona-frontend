@@ -3,9 +3,6 @@
     <div class="flex flex-wrap md:flex-no-wrap md:flex-row">
       <div class="w-full md:w-2/5 h-full mr-2 align-middle relative">
 
-        <Share v-if="selectedCountry.code === 'global'" :url="shareUrl"></Share>
-        <Share v-if="selectedCountry.code !== 'global'" :url="shareUrl + '/country/' + selectedCountry.code.toLowerCase()"></Share>
-
         <p class="mt-2 mb-2 text-sm font-semibold">
           <span class="text-red-600 uppercase"><i class="far fa-dot-circle blink"></i> {{ $t('Live') }}</span>
           <!-- <span v-if="numLastUpdated">[Last Update: {{new Date(numLastUpdated).toDateString()}}]</span> -->
@@ -60,9 +57,10 @@
 
     </div>
 
-    <div class="block text-center md:text-right mt-6 underline text-blue-500 font-semibold">
-      <nuxt-link v-if="selectedCountry && selectedCountry.code !== 'global'" :to="`/country/${selectedCountry.code.toLowerCase()}`">{{ $t('more details') }}</nuxt-link>
-      <nuxt-link v-else :to="localePath('analytics')">{{ $t('more details') }}</nuxt-link>
+    <div class="block text-center md:text-right mt-6 text-blue-500 font-semibold flex justify-between items-center">
+      <nuxt-link class="order-1" v-if="selectedCountry && selectedCountry.code !== 'global'" :to="`/country/${selectedCountry.code.toLowerCase()}`">{{ $t('more details') }}</nuxt-link>
+      <nuxt-link class="order-2" v-else :to="localePath('analytics')">{{ $t('more details') }}</nuxt-link>
+      <Share class="order-0" :url="shareUrl"/>
     </div>
   </div>
 </template>
@@ -133,13 +131,18 @@ export default {
 
       return this.stats.deaths;
     },
-    shareUrl() {
+    baseShareUrl() {
       if(process.browser) {
         let split = window.location.href.split('/');
         return split[0] + '//' + split[2];
       } else {
         return 'https://www.coronatracker.com';
       }
+    },
+    shareUrl() {
+      return this.selectedCountry.code === 'global' ?
+      this.baseShareUrl :
+      this.baseShareUrl + '/country/' + this.selectedCountry.code.toLowerCase()
     }
   },
   methods: {
