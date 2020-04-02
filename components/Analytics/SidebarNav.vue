@@ -31,7 +31,7 @@ export default {
   data () {
     return {
       links: [
-        { name: 'analytics', display: 'Overview', icon: 'columns' },
+        { name: 'analytics', display: 'overview', icon: 'columns' },
         // { name: 'analytics-virus-comparison', display: 'Virus Comparison', icon: 'search' },
         // { name: 'analytics-advanced-analysis', display: 'Advanced Analysis', icon: 'chart-line' },
         // { name: 'analytics-predictive-analysis', display: 'Predictive', icon: 'expand-alt' },

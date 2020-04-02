@@ -12,7 +12,7 @@
     <div class="w-full h-full md:w-1/3 align-middle relative">
       <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded w-full flex"
               @click="toggleOptions" v-on-clickaway="closeOptions">
-        <div>{{ $t('Select Country') }}</div>
+        <div>{{ $t('select_country') }}</div>
 
         <div class="self-center ml-auto">
           <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">

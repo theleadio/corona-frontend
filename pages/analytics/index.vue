@@ -10,7 +10,7 @@
             <Share :url="shareUrl"></Share>
         </div>
         <p class="text-xs font-bold leading-tight my-2 text-gray-600">
-          {{ $t('sources') }}: WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, {{ $t('international_media') }}
+          {{ $t('sources') }}: {{ $t('WHO') }}, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, {{ $t('international_media') }}
         </p>
       </div>
 

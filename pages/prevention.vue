@@ -2,7 +2,7 @@
   <main class="container">
     <div class="w-full h-screen">
       <div class="mb-4">
-        {{ $t('update_resources') }} <a class="hover:underline" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public">{{ 'WHO' }}</a>.
+        {{ $t('update_resources') }} <a class="hover:underline" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public">{{ $t('WHO') }}</a>.
       </div>
 
       <iframe style="width:100%;height:100%" src="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public"></iframe>
