@@ -18,7 +18,7 @@
   API_BASE_URL = "https://api.staging.coronatracker.com"
   BASE_URL = "https://staging.coronatracker.com"
   GA_ID = "UA-xxxxxxxxx-x"
-  GENERATE_ROUTES = "false"
+  GENERATE_ROUTES = "true"
 
 # Environment variable overriden for dev branch
 [context.dev]
