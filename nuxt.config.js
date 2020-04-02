@@ -1,8 +1,11 @@
 require('dotenv').config();
 
+const shouldGenerateRoutes = (process.env.GENERATE_ROUTES==undefined || process.env.GENERATE_ROUTES == "") ? true: process.env.GENERATE_ROUTES
+console.log("GENERATE_ROUTES: ", process.env.GENERATE_ROUTES)
+console.log("shouldGenerateRoutes: ", shouldGenerateRoutes)
 const { defaultLocale, locales, COUNTRIES } = require('./utils/constants.js');
 const { generateRoutes } = require('./utils/generateRoutes.js');
-const routes = generateRoutes(locales, COUNTRIES);
+const routes = shouldGenerateRoutes ? generateRoutes(locales, COUNTRIES) : [];
 const baseUrl = process.env.BASE_URL || 'https://www.coronatracker.com';
 
 export default {
