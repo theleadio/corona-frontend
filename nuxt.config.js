@@ -82,7 +82,8 @@ export default {
     '~/plugins/vue-sticky-directive.client.js',
     '~/plugins/vuejs-paginate.client.js',
     '~/plugins/vue-apexcharts.client.js',
-    '~/plugins/vue-social-sharing.client.js'
+    '~/plugins/vue-social-sharing.client.js',
+    '~/plugins/vue-i18n.client.js'
   ],
   generate: {
     routes,
@@ -144,7 +145,10 @@ export default {
     locales,
     defaultLocale,
     lazy: true,
-    langDir: 'lang/'
+    langDir: 'lang/',
+    vueI18n: {
+      fallbackLocale: 'en'
+    }
   },
   /*
    ** Build configuration
