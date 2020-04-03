@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Trigger our build webhook on Netlify
-      run: echo ${TEST_KEY} && curl -s -X POST "https://api.netlify.com/build_hooks/${TOKEN}"
+      run: echo ${TEST_KEY} && curl -s -v -X POST "https://api.netlify.com/build_hooks/${TOKEN}"
       env:
         TOKEN: ${{ secrets.NETLIFY_CRON_BUILD_HOOK }}
         TEST_KEY: ${{ secrets.Corona }}
