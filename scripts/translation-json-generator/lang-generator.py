@@ -84,6 +84,7 @@ if filename.find(".js") == -1:
 target_column = int(column)
 
 translate_key = data.iloc[:,0]
+translate_default_text = data.iloc[:,2]
 translate_value = data.iloc[:,target_column]
 
 # translated_language = str(translate_key[0]);
@@ -94,9 +95,9 @@ print("Output File :" + filename)
 
 rows = len(translate_key) # Number of rows
 
-# Please enter the row wrt. google spread sheet.
-# E.g. Row 10 for 'Home-https://www.coronatracker.com/'
-row_to_ignore = [2,10,39,43,46,50,62,97]
+# If you want to skip processing some rows,
+# you can enter the row wrt. google spread sheet.
+row_to_ignore = []
 row_to_ignore = np.array(row_to_ignore) - 2 # Index offset adjustment
 
 # Menu translation index
@@ -118,7 +119,7 @@ for i in range(menu_final_index+1):
         if(not pd.isnull(translate_value[i])):
             f.write('"{}",\n'.format(translate_value[i].strip()))
         else:
-            f.write('"{}",\n'.format(translate_key[i].strip()))
+            f.write('"{}",\n'.format(translate_default_text[i].strip()))
 
 f.write('  },\n')
 
@@ -130,7 +131,7 @@ for i in range(menu_final_index+1, rows):
         if(not pd.isnull(translate_value[i])):
             f.write('"{}",\n'.format(translate_value[i].strip()))
         else:
-            f.write('"{}",\n'.format(translate_key[i].strip()))
+            f.write('"{}",\n'.format(translate_default_text[i].strip()))
 
 f.write('};\n')
 f.close()
