@@ -95,6 +95,8 @@ export default {
   "Time taken from confirmation to discharge": "Tiempo desde confirmación de infección a dada de alta",
   "{number} days": "{number} días",
   "+{number} since yesterday": "+{number} desde ayer",
+  "+{number} new cases": "+{number} new cases",
+  "+{number} new deaths": "+{number} new deaths",
   "Critical Cases treated in ICU": "Casos Críticos en UCI",
   "of total cases": "de casos totales",
   "Daily Cases Receiving Treatment": "Casos Diarios Reciviendo Tratamiento",

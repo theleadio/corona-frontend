@@ -101,7 +101,7 @@ rows = len(translate_key) # Number of rows
 
 # Please enter the row wrt. google spread sheet.
 # E.g. Row 10 for 'Home-https://www.coronatracker.com/'
-row_to_ignore = [2,10,39,43,46,50,62,97,111,118]
+row_to_ignore = [2,10,39,43,46,50,62,97]
 row_to_ignore = np.array(row_to_ignore) - 2 # Index offset adjustment
 
 # Menu translation index

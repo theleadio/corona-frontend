@@ -95,6 +95,8 @@ export default {
   "Time taken from confirmation to discharge": "Time taken from confirmation to discharge",
   "{number} days": "{number} days",
   "+{number} since yesterday": "+{number} since yesterday",
+  "+{number} new cases": "+{number} new cases",
+  "+{number} new deaths": "+{number} new deaths",
   "Critical Cases treated in ICU": "Critical Cases treated in ICU",
   "of total cases": "of total cases",
   "Daily Cases Receiving Treatment": "Daily Cases Receiving Treatment",

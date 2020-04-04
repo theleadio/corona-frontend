@@ -95,6 +95,8 @@ export default {
   "Time taken from confirmation to discharge": "पुष्टीकरण से रिहाई का समय",
   "{number} days": "{number} दिन",
   "+{number} since yesterday": "{number} कल से",
+  "+{number} new cases": "+{number} new cases",
+  "+{number} new deaths": "+{number} new deaths",
   "Critical Cases treated in ICU": "गंभीर मामले जिनका इलाज ICU में हो रहा हे",
   "of total cases": "कुल मामलों में से",
   "Daily Cases Receiving Treatment": "उपचार प्राप्त करने वाले दैनिक मामले",

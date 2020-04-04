@@ -95,6 +95,8 @@ export default {
   "Time taken from confirmation to discharge": "الوقت المستغرق ما بين تأكيد الحاله و الانتهاء منها",
   "{number} days": "{number} الأيام",
   "+{number} since yesterday": "{number} من الأمس",
+  "+{number} new cases": "+{number} new cases",
+  "+{number} new deaths": "+{number} new deaths",
   "Critical Cases treated in ICU": "الحالات الحرجة التي تم علاجها في وحدة العناية المركزة",
   "of total cases": "من اجمالي الحالات",
   "Daily Cases Receiving Treatment": "الحالات اليومية التي تتلقي العلاج",
