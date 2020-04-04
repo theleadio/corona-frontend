@@ -93,7 +93,7 @@
     head() {
       const title = this.$t('COVID-19 Corona Tracker');
       const description = this.$t('COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.');
-      const imageUrl = `${process.env.API_BASE_URL}/sharing/globalStatsToday?t=${Date.now()}`;
+      const imageUrl = `${process.env.BASE_URL}/.netlify/functions/take-screenshot?type=globalStatsToday&t=${Date.now()}`;
 
       return {
         title,
