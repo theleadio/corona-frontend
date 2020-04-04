@@ -38,6 +38,10 @@ exports.handler = async (event, context) => {
     url = url.replace("{countryCode}", countryCode);
   }
 
+  console.log("type:", type);
+  console.log("url:", url);
+  console.log("viewport:", viewport);
+
   const browser = await chromium.puppeteer.launch({
     args: chromium.args,
     defaultViewport: chromium.defaultViewport,
