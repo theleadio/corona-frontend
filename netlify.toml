@@ -3,6 +3,7 @@
 [build]
   command = "npm run test && npm run generate"
   publish = "dist"
+  functions = "functions/"
 
 # Environment variable used by production branch i.e master
 [context.production]
@@ -30,6 +31,8 @@
 
 # Environment variable overriden for "feature/netlify-function" branch
 [context."feature/netlify-function"]
+  command = "cd functions/take-screenshot && npm i && cd ../../ && npm run test && npm run generate"
+
 [context."feature/netlify-function".environment]
   API_BASE_URL = "https://api.staging.coronatracker.com"
   BASE_URL = "https://staging.coronatracker.com"
