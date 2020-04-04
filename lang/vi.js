@@ -5,6 +5,7 @@ export default {
     "What is COVID-19": "COVID-19 là gì?",
     "Prevention": "Cách phòng ngừa",
     "Analytics": "Phân tích",
+    "Blog": "Blog",
     "About": "Giới thiệu",
   },
   "Live": "Live",

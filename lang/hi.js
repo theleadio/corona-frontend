@@ -5,6 +5,7 @@ export default {
     "What is COVID-19": "क्या है COVID-19",
     "Prevention": "निवारण",
     "Analytics": "वैश्लेषिकी",
+    "Blog": "Blog",
     "About": "विषय में",
   },
   "Live": "लाइव",

@@ -5,6 +5,7 @@ export default {
     "What is COVID-19": "ما هو كوفيد-19",
     "Prevention": "الوقاية",
     "Analytics": "إحصائيات",
+    "Blog": "Blog",
     "About": "من نحن",
   },
   "Live": "يحدث الآن",

@@ -5,6 +5,7 @@ export default {
     "What is COVID-19": "کورونا وائرس کیا ہے؟",
     "Prevention": "روک تھام/احتیاط",
     "Analytics": "تجزیات",
+    "Blog": "Blog",
     "About": "بمتعلق",
   },
   "Live": "براہ راست",

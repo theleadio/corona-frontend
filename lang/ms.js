@@ -5,6 +5,7 @@ export default {
     "What is COVID-19": "Apa itu COVID-19",
     "Prevention": "Pencegahan",
     "Analytics": "Analisis",
+    "Blog": "Blog",
     "About": "Mengenai Kami",
   },
   "Live": "Secara Lansung",

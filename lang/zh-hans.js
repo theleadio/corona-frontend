@@ -5,6 +5,7 @@ export default {
     "What is COVID-19": "什么是 COVID-19",
     "Prevention": "预防手册",
     "Analytics": "数据分析",
+    "Blog": "Blog",
     "About": "关与我们",
   },
   "Live": "时事更新",

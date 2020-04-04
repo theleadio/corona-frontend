@@ -5,6 +5,7 @@ export default {
     "What is COVID-19": "Qu'est-ce que le COVID-19",
     "Prevention": "Prévention",
     "Analytics": "Analyse",
+    "Blog": "Blog",
     "About": "A propos",
   },
   "Live": "Live",
