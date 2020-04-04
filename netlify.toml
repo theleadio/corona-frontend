@@ -3,11 +3,11 @@
 [build]
   command = "npm run test && npm run generate"
   publish = "dist"
-  functions = "functions/"
 
 # Environment variable used by production branch i.e master
 [context.production]
   command = "cd functions/take-screenshot && npm i && cd ../../ && npm run test && npm run generate"
+  functions = "functions/"
 
 [context.production.environment]
   API_BASE_URL = "https://api.coronatracker.com"
@@ -17,6 +17,7 @@
 # Environment variable overriden for staging branch
 [context.staging]
   command = "cd functions/take-screenshot && npm i && cd ../../ && npm run test && npm run generate"
+  functions = "functions/"
 
 [context.staging.environment]
   API_BASE_URL = "https://api.staging.coronatracker.com"
@@ -27,6 +28,7 @@
 # Environment variable overriden for dev branch
 [context.dev]
   command = "cd functions/take-screenshot && npm i && cd ../../ && npm run test && npm run generate"
+  functions = "functions/"
 
 [context.dev.environment]
   API_BASE_URL = "https://api.staging.coronatracker.com"
@@ -37,6 +39,7 @@
 # Environment variable overriden for "feature/netlify-function" branch
 [context."feature/netlify-function"]
   command = "cd functions/take-screenshot && npm i && cd ../../ && npm run test && npm run generate"
+  functions = "functions/"
 
 [context."feature/netlify-function".environment]
   API_BASE_URL = "https://api.staging.coronatracker.com"
