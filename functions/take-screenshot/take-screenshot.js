@@ -2,16 +2,40 @@ const chromium = require('chrome-aws-lambda');
 const fs = require('fs');
 const path = require('path');
 
+const dataMap = {
+  globalStatsToday: {
+    url: `${process.env.BASE_URL}/share/global-stats-today`,
+    viewport: { width: 1337, height: 700 },
+  },
+  countryStatsToday: {
+    url: `${process.env.BASE_URL}/share/country-stats-today/{countryCode}`,
+    viewport: { width: 720, height: 375 },
+  },
+};
+
 exports.handler = async (event, context) => {
 
-  const parsedBody = JSON.parse(event.body);
-  const { url, viewport } = parsedBody;
+  const { type = "globalStatsToday", countryCode } = event.queryStringParameters;
 
-  if (!url) {
+  if (!["globalStatsToday", "countryStatsToday"].includes(type)) {
     return {
       statusCode: 400,
-      body: JSON.stringify({ message: 'Page URL not defined' })
-    }
+      body: JSON.stringify({ message: 'Invalid type: ' + type }),
+    };
+  }
+
+  const isCountryStats = type === "countryStatsToday";
+  if (isCountryStats && !countryCode) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: 'countryCode is required.' }),
+    };
+  }
+
+  let { viewport, url } = dataMap[type];
+
+  if (isCountryStats) {
+    url = url.replace("{countryCode}", countryCode);
   }
 
   const browser = await chromium.puppeteer.launch({
