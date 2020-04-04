@@ -28,6 +28,14 @@
   GA_ID = "UA-xxxxxxxxx-x"
   GENERATE_ROUTES = "true"
 
+# Environment variable overriden for "feature/netlify-function" branch
+[context."feature/netlify-function"]
+[context."feature/netlify-function".environment]
+  API_BASE_URL = "https://api.staging.coronatracker.com"
+  BASE_URL = "https://staging.coronatracker.com"
+  GA_ID = "UA-xxxxxxxxx-x"
+  GENERATE_ROUTES = "false"
+
 # Environment variable overriden for branch deploys
 # Branch deployes are applicable for non-master branches
 # Such as staging, dev branches
