@@ -3,7 +3,7 @@
     <div class="container py-2 px-2 items-center font-bold text-lg">
       <div class="w-full flex items-center justify-between -my-2">
         <logo class="lg:flex"/>
-        <div class="flex ml-auto mr-1">
+        <div class="flex ml-auto mr-1" style="font-size: 0.98rem;">
           <nuxt-link
             v-for="link in links"
             :key="link.name"
@@ -66,6 +66,7 @@
           { name: "causes", display: "menu.whats_covid" },
           { name: "prevention", display: "menu.prevention" },
           { name: "analytics", display: "menu.analytics" },
+          { name: "blog", display: "menu.blog" },
           { name: "about", display: 'menu.about' }
         ],
         showMobileLinks: false,

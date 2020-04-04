@@ -5,6 +5,7 @@ export default {
     "What is COVID-19": "COVID-19とは",
     "Prevention": "予防(法)",
     "Analytics": "データ分析",
+    "Blog": "Blog",
     "About": "組織概要",
   },
   "Live": "ライブ配信",

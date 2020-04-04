@@ -5,6 +5,7 @@ export default {
     "What is COVID-19": "COVID-19 என்றால் என்ன?",
     "Prevention": "முன்னெச்சரிக்கை",
     "Analytics": "பகுப்பாய்வு",
+    "Blog": "Blog",
     "About": "எங்களை பற்றி",
   },
   "Live": "நேரலை",

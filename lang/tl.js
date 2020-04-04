@@ -5,6 +5,7 @@ export default {
     "What is COVID-19": "Ano ang COVID-19?",
     "Prevention": "Iwasan ang COVID-19",
     "Analytics": "Pagsusuri",
+    "Blog": "Blog",
     "About": "Tungkol sa CoronaTracker",
   },
   "Live": "Live",

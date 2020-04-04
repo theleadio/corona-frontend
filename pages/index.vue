@@ -93,7 +93,7 @@
     head() {
       const title = this.$t('covid_corona_tracker');
       const description = this.$t('covid_corona_tracker_description');
-      const imageUrl = `${process.env.API_BASE_URL}/sharing/globalStatsToday?t=${Date.now()}`;
+      const imageUrl = `${process.env.BASE_URL}/.netlify/functions/take-screenshot?type=globalStatsToday&t=${Date.now()}`;
 
       return {
         title,

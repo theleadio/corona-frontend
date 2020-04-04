@@ -5,6 +5,7 @@ export default {
     "What is COVID-19": "ကိုရိုနာဗိုင်းရပ်စ်ပိုး ဆိုတာ",
     "Prevention": "ကာကွယ်မှု",
     "Analytics": "ခွဲခြမ်းစိတ်ဖြာခြင်း",
+    "Blog": "Blog",
     "About": "အကြောင်းအရာ",
   },
   "Live": "တိုက်ရိုက်သတင်း",

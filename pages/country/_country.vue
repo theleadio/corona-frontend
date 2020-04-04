@@ -101,7 +101,7 @@ export default {
 
     const baseUrl = process.env.BASE_URL || 'https://www.coronatracker.com';
     const countryStatsType = this.$route.query.referrer === 'recent' ? 'countryStatsRecent' : 'countryStatsToday';
-    const imageUrl = `${process.env.API_BASE_URL}/sharing/${countryStatsType}?countryCode=${countryCode}&t=${Date.now()}`;
+    const imageUrl = `${process.env.BASE_URL}/.netlify/functions/take-screenshot?type=${countryStatsType}&countryCode=${countryCode}&t=${Date.now()}`;
     const pageUrl = process.browser ? window.location.href : `${baseUrl}/country/${this.$route.params.country}/`;
 
     return {

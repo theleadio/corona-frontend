@@ -57,11 +57,16 @@ for current_argument, current_value in arguments:
         filename = "output.js"
         args = len(sys.argv) - 1
         if args == 3:
-            column_id = sys.argv[2].lower()
-            column = dicts[column_id]
-            filename = sys.argv[3]
-            print("Getting language text from column "+str(column_id)+" of exported "+input_file)
-            # print("Starting to export language file to file "+filename)
+            try:
+                column_id = sys.argv[2].lower()
+                column = dicts[column_id]
+                filename = sys.argv[3]
+                print("Getting language text from column "+str(column_id)+" of exported "+input_file)
+                # print("Starting to export language file to file "+filename)
+            except:
+                print ("Column id needs to be a character. Example : a, f, d, h")
+                sys.exit(2)
+                
         else:
             print ("You need put the column index of the language to extract and the file name to extract to. Example -c 4 output.js")
             sys.exit(2)

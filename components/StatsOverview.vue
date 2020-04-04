@@ -3,11 +3,11 @@
     <div class="flex flex-wrap md:flex-no-wrap md:flex-row">
       <div class="w-full md:w-2/5 h-full mr-2 align-middle relative">
 
-        <p class="mt-2 mb-2 text-sm font-semibold flex justify-between items-center">
+        <div class="mt-2 mb-2 text-sm font-semibold flex justify-between items-center">
           <span class="text-red-600 uppercase"><i class="far fa-dot-circle blink"></i> {{ $t('live') }}</span>
           <Share :url="shareUrl"/>
           <!-- <span v-if="numLastUpdated">[Last Update: {{new Date(numLastUpdated).toDateString()}}]</span> -->
-        </p>
+        </div>
         <label class="block text-s font-bold mb-2">{{ $t('stats_overview') }}</label>
         <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded w-full flex focus:outline-none rounded-b-none"
                 @click="toggleOptions">
