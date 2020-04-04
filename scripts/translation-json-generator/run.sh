@@ -1,5 +1,7 @@
 #! bash
-python3 lang-generator.py -c d ms.js \
+python3 lang-generator.py -c b en.js \
+&& mv en.js ../../lang \
+&& python3 lang-generator.py -c d ms.js \
 && mv ms.js ../../lang \
 && python3 lang-generator.py -c e zh-hans.js \
 && mv zh-hans.js ../../lang \
