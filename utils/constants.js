@@ -319,34 +319,104 @@ export const locales = [
     file: 'en.js',
   },
   {
-    code: 'ms',
-    name: 'Bahasa Melayu',
-    file: 'ms.js',
-  },
-  /*{
-    code: 'id',
-    name: 'Bahasa Indonesia',
-    file: 'id.js',
-  },*/
-  {
-    code: 'ptbr',
-    name: 'Português (Brasil)',
-    file: 'pt-br.js',
-  },
-  {
-    code: 'vi',
-    name: 'Tiếng Việt',
-    file: 'vi.js',
-  },
-  {
     code: 'ar',
     name: 'العربية',
     file: 'ar.js',
   },
   {
+    code: 'bik',
+    name: 'Bikolano',
+    file: 'bik.js',
+  },
+  {
+    code: 'de',
+    name: 'Deutsch',
+    file: 'de.js',
+  },
+  {
+    code: 'es-mx',
+    name: 'Mexican Spanish',
+    file: 'es-mx.js',
+  },
+  {
+    code: 'fr',
+    name: 'French',
+    file: 'fr.js',
+  },
+  {
+    code: 'hi',
+    name: 'हिंदी',
+    file: 'hi.js',
+  },
+  {
+    code: 'id',
+    name: 'Bahasa Indonesia',
+    file: 'id.js',
+  },
+  {
+    code: 'ilo',
+    name: 'Ilocano',
+    file: 'ilo.js',
+  },
+  {
+    code: 'it',
+    name: 'Italiano',
+    file: 'it.js',
+  },
+  {
     code: 'ja',
     name: '日本語',
     file: 'ja.js',
+  },
+  {
+    code: 'ms',
+    name: 'Bahasa Melayu',
+    file: 'ms.js',
+  },
+  {
+    code: 'my',
+    name: 'Burmese',
+    file: 'my.js',
+  },
+  /*{
+    code: 'nl',
+    name: 'Nederlands',
+    file: 'nl.js',
+  },*/
+  {
+    code: 'pl',
+    name: 'Polski',
+    file: 'pl.js',
+  },
+  {
+    code: 'pt-br',
+    name: 'Português',
+    file: 'pt-br.js',
+  },
+  {
+    code: 'sv',
+    name: 'Svenska',
+    file: 'sv.js',
+  },
+  {
+    code: 'ta',
+    name: 'தமிழ்',
+    file: 'ta.js',
+  },
+  {
+    code: 'tl',
+    name: 'Tagalog',
+    file: 'tl.js',
+  },
+  {
+    code: 'ur',
+    name: 'اردو',
+    file: 'ur.js',
+  },
+  {
+    code: 'vi',
+    name: 'Tiếng Việt',
+    file: 'vi.js',
   },
   {
     code: 'zh-hans',
@@ -358,66 +428,6 @@ export const locales = [
     name: '繁體中文',
     file: 'zh-hans.js',
   },
-  {
-    code: 'tl',
-    name: 'Filipino (Tagalog)',
-    file: 'tl.js',
-  },
-  {
-    code: 'my',
-    name: 'Burmese',
-    file: 'my.js',
-  },
-  {
-    code: 'es-mx',
-    name: 'Mexican Spanish',
-    file: 'es-mx.js',
-  },
-  {
-    code: 'sv',
-    name: 'Svenska',
-    file: 'sv.js',
-  },
-  {
-    code: 'ta',
-    name: 'Tamil/தமிழ்',
-    file: 'ta.js',
-  },
-  {
-    code: 'fr',
-    name: 'French',
-    file: 'fr.js',
-  },
-  /*{
-    code: 'nl',
-    name: 'Nederlands',
-    file: 'nl.js',
-  },*/
-  {
-    code: 'de',
-    name: 'Deutsch',
-    file: 'de.js',
-  },
-  {
-    code: 'pl',
-    name: 'Polski',
-    file: 'pl.js',
-  },
-  {
-    code: 'it',
-    name: 'Italiano',
-    file: 'it.js',
-  },
-  {
-    code: 'hi',
-    name: 'हिंदी',
-    file: 'hi.js',
-  },
-  {
-    code: 'ur',
-    name: 'اردو',
-    file: 'ur.js',
-  }
 ];
 
 export const twitterHandles = [
