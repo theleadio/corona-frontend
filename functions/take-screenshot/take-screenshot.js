@@ -2,13 +2,15 @@ const chromium = require('chrome-aws-lambda');
 const fs = require('fs');
 const path = require('path');
 
+const { BASE_URL } = process.env;
+
 const dataMap = {
   globalStatsToday: {
-    url: `${process.env.BASE_URL}/share/global-stats-today`,
+    url: `${BASE_URL}/share/global-stats-today`,
     viewport: { width: 1337, height: 700 },
   },
   countryStatsToday: {
-    url: `${process.env.BASE_URL}/share/country-stats-today/{countryCode}`,
+    url: `${BASE_URL}/share/country-stats-today/{countryCode}`,
     viewport: { width: 720, height: 375 },
   },
 };
