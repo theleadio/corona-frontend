@@ -13,8 +13,6 @@ python3 lang-generator.py -c b en.js \
 && mv ar.js ../../lang \
 && python3 lang-generator.py -c j id.js \
 && mv id.js ../../lang \
-&& python3 lang-generator.py -c k nl.js \
-&& mv nl.js ../../lang \
 && python3 lang-generator.py -c k sv.js \
 && mv sv.js ../../lang \
 && python3 lang-generator.py -c l tl.js \
