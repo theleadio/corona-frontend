@@ -57,7 +57,7 @@ exports.handler = async (event, context) => {
 
   let screenshot = null;
 
-  const response = await page.goto(url, { waitUntil: 'networkidle2' });
+  const response = await page.goto(url, { waitUntil: 'networkidle0' });
 
   if (response.status() < 400) {
     // const screenshot = await page.screenshot({ encoding: 'binary' });
