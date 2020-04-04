@@ -3,6 +3,7 @@
 [build]
   command = "npm run test && npm run generate"
   publish = "dist"
+  functions = "functions/"
 
 # Environment variable used by production branch i.e master
 [context.production]
