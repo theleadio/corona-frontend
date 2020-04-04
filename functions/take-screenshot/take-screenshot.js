@@ -1,6 +1,6 @@
-import chromium from 'chrome-aws-lambda';
-import * as fs from 'fs';
-import path from 'path';
+const chromium = require('chrome-aws-lambda');
+const fs = require('fs');
+const path = require('path');
 
 exports.handler = async (event, context) => {
 
