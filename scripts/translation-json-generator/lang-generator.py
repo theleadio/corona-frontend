@@ -66,7 +66,6 @@ for current_argument, current_value in arguments:
             except:
                 print ("Column id needs to be a character. Example : a, f, d, h")
                 sys.exit(2)
-                
         else:
             print ("You need put the column index of the language to extract and the file name to extract to. Example -c 4 output.js")
             sys.exit(2)
@@ -88,8 +87,8 @@ if filename.find(".js") == -1:
 # 1: Bahasa, 2: 简体中文， ...
 target_column = int(column)
 
-translate_key = data.iloc[:,0]
-translate_default_text = data.iloc[:,2]
+translate_key = data.iloc[:,2]
+translate_default_text = data.iloc[:,1]
 translate_value = data.iloc[:,target_column]
 
 # translated_language = str(translate_key[0]);
@@ -106,7 +105,7 @@ row_to_ignore = []
 row_to_ignore = np.array(row_to_ignore) - 2 # Index offset adjustment
 
 # Menu translation index
-menu_final_index = 8
+menu_final_index = 9
 menu_final_index -= 1 # Index offset adjustment
 
 f = open(filename, "w") # Output file
