@@ -57,9 +57,7 @@
                 target="_blank"
                 rel="noopener"
                 href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30185-9/fulltext"
-              >Discovery of a novel coronavirus associated with
-                the recent pneumonia outbreak in humans and its
-                potential bat origin</a
+              >{{ $t('report_1_title') }}</a
               >
             </td>
             <td class="border px-4 py-2">
@@ -74,7 +72,7 @@
                 target="_blank"
                 rel="noopener"
                 href="https://www.nejm.org/doi/full/10.1056/NEJMe2001126"
-              >Another year, another coronavirus</a
+              >{{ $t('report_2_title') }}</a
               >
             </td>
             <td class="border px-4 py-2">
@@ -91,8 +89,7 @@
                 target="_blank"
                 rel="noopener"
                 href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6"
-              >Wuhan Coronavirus (COVID-19) Global Cases (by JHU
-                CSSE)</a
+              >{{ $t('report_3_title') }}</a
               >
             </td>
             <td class="border px-4 py-2">
