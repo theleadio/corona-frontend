@@ -31,8 +31,9 @@
 
 # Environment variable overriden for "feature/netlify-function" branch
 [context."feature/netlify-function"]
-[context."feature/netlify-function".environment]
   command = "cd functions/take-screenshot && npm i && cd ../../ && npm run test && npm run generate"
+
+[context."feature/netlify-function".environment]
   API_BASE_URL = "https://api.staging.coronatracker.com"
   BASE_URL = "https://staging.coronatracker.com"
   GA_ID = "UA-xxxxxxxxx-x"
