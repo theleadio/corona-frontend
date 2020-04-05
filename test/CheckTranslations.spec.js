@@ -25,26 +25,26 @@ import zh_hant_translations from '@/lang/zh-hant'
 describe('Translations', () => {
   describe.each([
     ['ar', 'Arabic', ar_translations],
-    ['bik', 'Bik', bik_translations],
+    ['bik', 'Bikolano', bik_translations],
     ['de', 'German', de_translations],
     ['es-mx', 'Mexican Spanish', es_mx_translations],
     ['fr', 'French', fr_translations],
     ['hi', 'Hindi', hi_translations],
     ['id', 'Bahasa Indonesia', id_translations],
-    ['ilo', 'Ilo', ilo_translations],
+    ['ilo', 'Ilocano', ilo_translations],
     ['it', 'Italian', it_translations],
     ['ja', 'Japanese', ja_translations],
     ['ms', 'Bahasa Melayu', ms_translations],
     ['my', 'Burmese', my_translations],
-    ['pl', 'Burmese', pl_translations],
+    ['pl', 'Polish', pl_translations],
     ['pt-br', 'Portuguese', pt_br_translations],
     ['sv', 'Svenska', sv_translations],
     ['ta', 'Tamil', ta_translations],
     ['tl', 'Tagalog', tl_translations],
     ['ur', 'Urdu', ur_translations],
     ['vi', 'Vietnamese', vi_translations],
-    ['zh-hans', 'zh-hans', zh_hans_translations],
-    ['zh-hant', 'zh-hant', zh_hant_translations],
+    ['zh-hans', 'Simplified Chinese', zh_hans_translations],
+    ['zh-hant', 'Traditional Chinese', zh_hant_translations],
   ])('in (%s) %s', (languageCode, languageName, languageTranslations) => {
     test('should have the same number of translation entries', () => {
       expect(_.keys(en_translations).length).toBe(_.keys(languageTranslations).length)
