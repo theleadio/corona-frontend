@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="showHint" class="my-2 font-bold text-xs text-gray-600 leading-tight">
+    <div v-if="showHint" class="my-2 font-bold text-xs text-blue-600 leading-tight">
       <i class="fas fa-info-circle"></i> {{ $t('hint') }}: {{ $t('click_country_hint_info') }}
     </div>
   </div>
