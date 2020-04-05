@@ -299,13 +299,13 @@ export default {
         this.countryTrend.trendDates.push(country["last_updated"].slice(0,10))
       });
       this.countryTrend.trendData = [{
-        "name": "confirmed",
+        "name": this.$t("confirmed"),
         "data": countryTrendConfirmed
       },{
-        "name": "recovered",
+        "name": this.$t("recovered"),
         "data": countryTrendRecovered
       },{
-        "name": "death",
+        "name": this.$t("death"),
         "data": countryTrendDeath
       }]
     },
