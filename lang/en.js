@@ -115,4 +115,5 @@ export default {
   "Critical Cases in ICU": "Critical Cases in ICU",
   "Cases Receiving Treatment": "Cases Receiving Treatment",
   "covid_cases_past_2_weeks": "COVID-19 Past 14 Days Cases",
+  "more_details": "more details",
 };
