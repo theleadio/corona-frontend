@@ -1,19 +1,43 @@
 # Contributing
 
 When contributing to this repository, please first discuss the change you wish to make via issue,
-email, or any other method with the owners of this repository before making a change. 
+email, or any other method with the owners of this repository before making a change.
 
 Please note we have a code of conduct, please follow it in all your interactions with the project.
 
 ## Pull Request Process
 
-1. We follow a simplified git-flow for our workflow, using `dev`, `staging` and `master` branches 
-   for development, staging and production site respectively. `dev` branch is used to 
-   consolidate all the changes from different Pull Request and `staging` branch is for QA before all 
-   the new changes go live. 
-2. Please make your Pull Request to `dev` branch.   
-3. You may merge the Pull Request in once you have the sign-off of two other developers, or if you 
+1. We follow a simplified git-flow for our workflow, using `dev`, `staging` and `master` branches
+   for development, staging and production site respectively. `dev` branch is used to
+   consolidate all the changes from different Pull Request and `staging` branch is for QA before all
+   the new changes go live.
+2. Please make your Pull Request to `dev` branch.
+3. You may merge the Pull Request in once you have the sign-off of two other developers, or if you
    do not have permission to do that, you may request the second reviewer to merge it for you.
+
+## Translation Process
+
+1. We use a [spreadsheet in Google Sheets](https://docs.google.com/spreadsheets/d/12_yx09THl9qcBboJvvBwPTY63MfKIIB8WzEDstIOI6s/edit#gid=0) to capture the translation to all supported languages,
+   so you should start there. When translating, keep in mind these guidelines:
+    * Be mindful that what's entered in the spreadsheet will be displayed on the website as it,
+      so do not put any comment/remark in the cells. If you want to add a comment, you can use the
+      "insert note" or "comment" functions, which will appear when you right-click the cell.
+    * Text that are enclosed with `{}` are just placeholders and must not be translated. They will
+      be replaced by actual values (e.g. `{number} new cases` will become `5 new cases` if the number
+      of cases is 5). Therefore, do not remove the placeholder in the translation and make sure it's
+      part of the translated text.
+    * You can use the token in different order if it makes sense in the translated language
+      (e.g. for `+{number} new cases`, in some alien language, it reads as `sesac +5 wen`, then you
+      can write it as `sesac +{number} wen` )
+    * Currently, translated text doesn't support line breaks, so all the text needs to be in one line
+    * If you need to use quote `"`, please prepend it with a backslash `\` (e.g. `\"text\"` instead
+      of `"text"` )
+
+2. If you want to add a new language, please add a new column to the spreadsheet and update the
+   translation test with the new locale [here](test/CheckTranslations.spec.js). If you're unsure
+   how to do this, then send a message on the #translation Slack channel
+
+3. Our team will regularly run a job to incorporate the translations to the codebase
 
 ## Code of Conduct
 
