@@ -151,7 +151,7 @@ export default {
 .apex-chart-wrapper {
   position: absolute;
   bottom: 0;
-  padding: 10;
+  padding: 10px;
   width: 100%;
   opacity: 0.7;
   overflow: hidden;
