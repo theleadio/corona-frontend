@@ -1,1 +1,0 @@
-Type 'python lang-generator.py --list' to show the commands
