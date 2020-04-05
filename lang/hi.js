@@ -14,7 +14,7 @@ export default {
   "confirmed": "बीमार",
   "recovered": "स्वस्थ",
   "deaths": "लोगों की मृत्यु",
-  "more details": "अधिक जानकारी",
+  "more_details": "अधिक जानकारी",
   "search": "खोज",
   "verified_news": "सत्यापित समाचार",
   "clear_all": "साफ करें",

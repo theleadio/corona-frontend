@@ -14,7 +14,7 @@ export default {
   "confirmed": "Nhiễm bệnh",
   "recovered": "Khỏi bệnh",
   "deaths": "Tử vong",
-  "more details": "Chi tiết",
+  "more_details": "Chi tiết",
   "search": "Tìm kiếm",
   "verified_news": "Tin tức",
   "clear_all": "Xoá",

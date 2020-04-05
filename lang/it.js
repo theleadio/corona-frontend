@@ -14,7 +14,7 @@ export default {
   "confirmed": "Confermati",
   "recovered": "Guariti",
   "deaths": "Morti",
-  "more details": "Maggiori dettagli",
+  "more_details": "Maggiori dettagli",
   "search": "Cerca",
   "verified_news": "Notizie verificate",
   "clear_all": "Cancella tutto",

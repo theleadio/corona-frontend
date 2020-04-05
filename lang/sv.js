@@ -14,7 +14,7 @@ export default {
   "confirmed": "Bekräftade",
   "recovered": "Tillfrisknade",
   "deaths": "Antalet döda",
-  "more details": "mer detaljer",
+  "more_details": "mer detaljer",
   "search": "Sök",
   "verified_news": "Verifierade nyheter",
   "clear_all": "Återställ",

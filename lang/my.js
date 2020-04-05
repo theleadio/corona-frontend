@@ -14,7 +14,7 @@ export default {
   "confirmed": "အတည်ပြုပြီး",
   "recovered": "ကုသပြီး",
   "deaths": "သေဆုံး",
-  "more details": "အသေးစိတ်",
+  "more_details": "အသေးစိတ်",
   "search": "ရှာဖွေရန်",
   "verified_news": "အတည်ပြုပြီး သတင်းများ",
   "clear_all": "ရှင်းလင်းရန်",

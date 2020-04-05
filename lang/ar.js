@@ -14,7 +14,7 @@ export default {
   "confirmed": "مصاب",
   "recovered": "متعافى",
   "deaths": "متوفي",
-  "more details": "تفاصيل أكثر",
+  "more_details": "تفاصيل أكثر",
   "search": "بحث",
   "verified_news": "أخبار موثقة",
   "clear_all": "إلغاء",

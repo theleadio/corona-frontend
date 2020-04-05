@@ -14,7 +14,7 @@ export default {
   "confirmed": "تصدیق شدہ",
   "recovered": "صحتیاب",
   "deaths": "اموات",
-  "more details": "مزید تفصیلات",
+  "more_details": "مزید تفصیلات",
   "search": "تلاش",
   "verified_news": "تصدیق شدہ نيوز",
   "clear_all": "سب کچھ صاف کریں",

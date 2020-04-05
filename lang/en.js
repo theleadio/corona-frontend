@@ -14,7 +14,7 @@ export default {
   "confirmed": "Confirmed",
   "recovered": "Recovered",
   "deaths": "Deaths",
-  "more details": "more details",
+  "more_details": "more details",
   "search": "Search",
   "verified_news": "Verified News",
   "clear_all": "Clear All",

@@ -14,7 +14,7 @@ export default {
   "confirmed": "Kumpirmado",
   "recovered": "Nakalasat",
   "deaths": "Natay",
-  "more details": "Nayon nga impormasiyon",
+  "more_details": "Nayon nga impormasiyon",
   "search": "Biruken",
   "verified_news": "Pudno nga damag",
   "clear_all": "Ikkaten Amin",

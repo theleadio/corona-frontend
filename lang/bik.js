@@ -14,7 +14,7 @@ export default {
   "confirmed": "Kumpirmado",
   "recovered": "Nagrahay",
   "deaths": "Nagadan",
-  "more details": "Dagdag na Detalye",
+  "more_details": "Dagdag na Detalye",
   "search": "Hanapon",
   "verified_news": "Mga Bareta",
   "clear_all": "Buraon Gabos",

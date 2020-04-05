@@ -14,7 +14,7 @@ export default {
   "confirmed": "確診",
   "recovered": "治癒",
   "deaths": "死亡",
-  "more details": "查看更多",
+  "more_details": "查看更多",
   "search": "搜索",
   "verified_news": "已確認新聞",
   "clear_all": "清除",

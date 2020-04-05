@@ -14,7 +14,7 @@ export default {
   "confirmed": "感染者数",
   "recovered": "完治者数",
   "deaths": "死亡者数",
-  "more details": "詳細",
+  "more_details": "詳細",
   "search": "検索",
   "verified_news": "認定されたニュース",
   "clear_all": "削除",

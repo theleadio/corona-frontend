@@ -14,7 +14,7 @@ export default {
   "confirmed": "Terkonfirmasi",
   "recovered": "Sembuh",
   "deaths": "Meninggal",
-  "more details": "lebih detil",
+  "more_details": "lebih detil",
   "search": "Cari",
   "verified_news": "Berita yang disetujui",
   "clear_all": "Hapus Semua",

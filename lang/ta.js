@@ -14,7 +14,7 @@ export default {
   "confirmed": "உறுதியானது",
   "recovered": "குணமானவர்கள்",
   "deaths": "இறந்தவர்கள்",
-  "more details": "மேலும் படிக்க",
+  "more_details": "மேலும் படிக்க",
   "search": "தேடு",
   "verified_news": "சரிபார்க்கப்பட்ட செய்திகள்",
   "clear_all": "அனைத்தையும் அழி",
