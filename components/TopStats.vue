@@ -4,6 +4,7 @@
     <div v-if="showSource" class="my-2 font-bold text-xs text-gray-500 leading-tight">
       {{ $t('sources') }}: {{ $t('WHO') }}, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, {{ $t('international_media') }}
     </div>
+    <HintClickCountry/>
     <table class="table-auto w-full">
       <thead class="text-xs leading-tight border-b-2">
       <tr>
@@ -55,12 +56,14 @@
 <script>
   import Card from '~/components/Card';
   import Flag from '~/components/Flag';
+  import HintClickCountry from '~/components/HintClickCountry';
 
   export default {
     name: "TopStats",
     components: {
       Card,
       Flag,
+      HintClickCountry,
     },
     props: {
       isLoading: {

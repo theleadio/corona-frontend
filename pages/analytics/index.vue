@@ -36,6 +36,7 @@
           </div>
 
           <div class="w-full rounded shadow-md bg-white p-3 mb-5 block lg:hidden">
+            <HintClickCountry/>
             <div class="mt-3" style="max-height: 36.3rem; overflow: auto;">
               <table class="table-auto w-full">
                 <thead class="text-xs leading-tight border-b-2">
@@ -99,6 +100,7 @@ import TopCountryWithDailyNewStats from '~/components/Analytics/TopCountryWithDa
 import AffectedCountry from '~/components/Analytics/AffectedCountry'
 import Flag from '~/components/Flag';
 import Share from '~/components/Share';
+import HintClickCountry from '~/components/HintClickCountry';
 
 export default {
   head() {
@@ -120,7 +122,15 @@ export default {
     };
   },
 
-  components: { SidebarNav, OutbreakTrendChart, TopCountryWithDailyNewStats, AffectedCountry, Flag, Share },
+  components: {
+    SidebarNav,
+    OutbreakTrendChart,
+    TopCountryWithDailyNewStats,
+    AffectedCountry,
+    Flag,
+    Share,
+    HintClickCountry
+  },
 
   computed: {
     shareUrl() {
