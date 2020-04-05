@@ -27,7 +27,7 @@ describe('Translations', () => {
     ['ar', 'Arabic', ar_translations],
     ['bik', 'Bikolano', bik_translations],
     ['de', 'German', de_translations],
-    ['es-mx', 'Mexican Spanish', es_mx_translations],
+    ['es-mx', 'Español', es_mx_translations],
     ['fr', 'French', fr_translations],
     ['hi', 'Hindi', hi_translations],
     ['id', 'Bahasa Indonesia', id_translations],
