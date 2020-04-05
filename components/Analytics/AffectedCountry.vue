@@ -46,7 +46,7 @@
     </div>
 
     <div class="mt-3 hidden lg:block" style="max-height: 36.3rem; overflow: auto;">
-
+      <HintClickCountry/>
       <table class="table-auto w-full">
         <thead class="text-xs leading-tight border-b-2">
         <tr>
@@ -86,6 +86,7 @@
 
 <script>
 import Flag from '~/components/Flag';
+import HintClickCountry from '~/components/HintClickCountry';
 
 export default {
   props: {
@@ -97,6 +98,7 @@ export default {
 
   components: {
     Flag,
+    HintClickCountry,
   },
 
   data () {
