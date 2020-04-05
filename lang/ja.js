@@ -24,6 +24,8 @@ export default {
   "countries_affected": "被災国",
   "source": "情報源",
   "international_media": "と様々な国際媒体",
+  "click_country_hint_info": "Click on a country for more info",
+  "hint": "Hint",
   "country": "国",
   "cruise_ship_notice": "日本の領海にあるクルーズで確認されたケース",
   "full_list": "全目録はこちら",

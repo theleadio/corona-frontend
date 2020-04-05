@@ -24,6 +24,8 @@ export default {
   "countries_affected": "Pays Affectés",
   "source": "Source",
   "international_media": "et divers médias internationaux",
+  "click_country_hint_info": "Click on a country for more info",
+  "hint": "Hint",
   "country": "Pays",
   "cruise_ship_notice": "Cas identifiés sur un bateau de croisière dans les eaux territoriales japonaises.",
   "full_list": "Voir la liste complète",

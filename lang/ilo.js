@@ -24,6 +24,8 @@ export default {
   "countries_affected": "Apectado nga bansa",
   "source": "Pinagrugyanan",
   "international_media": "manipod dagiti interasyonal nga media",
+  "click_country_hint_info": "Click on a country for more info",
+  "hint": "Hint",
   "country": "Bansa",
   "cruise_ship_notice": "Dagito kaso nga na identify jiay cruise ship ket adda ijiay teritoryo ti Japan.",
   "full_list": "Kumpleto nga listaan ditoy",

@@ -24,6 +24,8 @@ export default {
   "countries_affected": "الدول المتأثرة",
   "source": "المصدر",
   "international_media": "و وكالات الأنباء العالمية",
+  "click_country_hint_info": "Click on a country for more info",
+  "hint": "Hint",
   "country": "الدولة",
   "cruise_ship_notice": "حالات تم اكتشافها كانت على متن باخرة بحرية في المياه الاقليمية اليابانية.",
   "full_list": "القائمة الكاملة",

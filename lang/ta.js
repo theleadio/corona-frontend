@@ -24,6 +24,8 @@ export default {
   "countries_affected": "பாதிக்கப்பட்ட நாடுகள்",
   "source": "ஆதாரம்",
   "international_media": "மற்றும் பல்வேறு சர்வதேச ஊடகங்கள்",
+  "click_country_hint_info": "Click on a country for more info",
+  "hint": "Hint",
   "country": "நாடு",
   "cruise_ship_notice": "தற்போது ஜப்பானிய பிராந்திய நீரில் ஒரு கப்பலில் அடையாளம் காணப்பட்ட பாதிக்கப்பட்டவர்கள் .",
   "full_list": "முழு பட்டியல் இங்கே",

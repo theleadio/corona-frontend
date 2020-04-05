@@ -24,6 +24,8 @@ export default {
   "countries_affected": "देश प्रभावित हुए",
   "source": "स्रोत",
   "international_media": "और विभिन्न अंतरराष्ट्रीय मीडिया",
+  "click_country_hint_info": "Click on a country for more info",
+  "hint": "Hint",
   "country": "देश",
   "cruise_ship_notice": "जापानी समुद्री जल में वर्तमान में एक क्रूज जहाज पर पहचाने गए मामले",
   "full_list": "पूरी सूची यहाँ",

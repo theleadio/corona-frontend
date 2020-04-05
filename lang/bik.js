@@ -24,6 +24,8 @@ export default {
   "countries_affected": "Mga Apektadong Nasyon",
   "source": "Sain Hale",
   "international_media": "International Media",
+  "click_country_hint_info": "Click on a country for more info",
+  "hint": "Hint",
   "country": "Nasyon",
   "cruise_ship_notice": "Mga kaso sa barko na nasa teritoryo kan mga Hapon",
   "full_list": "An Kumpletong Listahan",

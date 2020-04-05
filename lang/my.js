@@ -24,6 +24,8 @@ export default {
   "countries_affected": "ကူးစက်ပြီး နိုင်ငံ",
   "source": "သတင်းရင်းမြစ်",
   "international_media": "အမျိုးမျိုးသော နိုင်ငံတကာ မီဒီယာများ",
+  "click_country_hint_info": "Click on a country for more info",
+  "hint": "Hint",
   "country": "နိုင်ငံ",
   "cruise_ship_notice": "ဂျပန်ရေပိုင်နက်အတွင်း လတ်တလောရောက်ရှိနေသည့် အပျော်စီးသင်္ဘောမှ အမှုတွဲများ",
   "full_list": "စာရင်း အပြည့်အစုံ",

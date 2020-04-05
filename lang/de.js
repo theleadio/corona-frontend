@@ -24,6 +24,8 @@ export default {
   "countries_affected": "Betroffene Länder",
   "source": "Quelle",
   "international_media": "und verschiedene internationale Medien",
+  "click_country_hint_info": "Click on a country for more info",
+  "hint": "Hint",
   "country": "Land",
   "cruise_ship_notice": "Fälle, die auf einem Kreuzfahrtschiff identifiziert wurden, welches sich derzeit in japanischen Hoheitsgewässern befindet.",
   "full_list": "Komplette Liste",

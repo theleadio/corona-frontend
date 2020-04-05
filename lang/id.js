@@ -24,6 +24,8 @@ export default {
   "countries_affected": "Negara Terdampak",
   "source": "Sumber",
   "international_media": "dan berbagai media internasional",
+  "click_country_hint_info": "Click on a country for more info",
+  "hint": "Hint",
   "country": "Negara",
   "cruise_ship_notice": "Kasus yang diidentifikasi di kapal pesiar saat ini di perairan teritorial Jepang.",
   "full_list": "Lihat semua daftar",

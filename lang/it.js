@@ -24,6 +24,8 @@ export default {
   "countries_affected": "Stati colpiti",
   "source": "Fonte",
   "international_media": "e diversi media internazionali",
+  "click_country_hint_info": "Click on a country for more info",
+  "hint": "Hint",
   "country": "Stato",
   "cruise_ship_notice": "Casi identificati su una nave da crociera attualmente in acque territoriali giapponesi",
   "full_list": "Lista completa qui",

@@ -24,6 +24,8 @@ export default {
   "countries_affected": "受影响国家",
   "source": "资料来源",
   "international_media": "以及其他国际媒体",
+  "click_country_hint_info": "Click on a country for more info",
+  "hint": "Hint",
   "country": "国家",
   "cruise_ship_notice": "Cases identified on a cruise ship currently in Japanese territorial waters.",
   "full_list": "Full list here",

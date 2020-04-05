@@ -24,6 +24,8 @@ export default {
   "countries_affected": "Negara yang terkesan",
   "source": "Sumber",
   "international_media": "dan pelbagai media antarabangsa",
+  "click_country_hint_info": "Click on a country for more info",
+  "hint": "Hint",
   "country": "Negara",
   "cruise_ship_notice": "Cases identified on a cruise ship currently in Japanese territorial waters.",
   "full_list": "Senarai penuh disini",

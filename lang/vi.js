@@ -24,6 +24,8 @@ export default {
   "countries_affected": "Quốc gia và vùng lãnh thổ bị ảnh hưởng",
   "source": "Nguồn",
   "international_media": "phương tiện truyền thông quốc tế",
+  "click_country_hint_info": "Click on a country for more info",
+  "hint": "Hint",
   "country": "Quốc gia",
   "cruise_ship_notice": "Các trường hợp được xác nhận trên một tàu du lịch hiện đang ở trong lãnh hải của Nhật Bản",
   "full_list": "Danh sách đầy đủ",

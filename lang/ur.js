@@ -24,6 +24,8 @@ export default {
   "countries_affected": "متاثرہ ممالک",
   "source": "ذریعہ",
   "international_media": "اور مختلف بین الاقوامی میڈیا",
+  "click_country_hint_info": "Click on a country for more info",
+  "hint": "Hint",
   "country": "ملک",
   "cruise_ship_notice": "ایسے مریض جن کی شناخت کروز جہاز پر کی جاتی ہے جو جاپانی علاقائی پانی میں موجود ہے۔",
   "full_list": "مکمل فہرست یہاں موجود ہے",

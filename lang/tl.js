@@ -24,6 +24,8 @@ export default {
   "countries_affected": "Apektadong mga Bansa",
   "source": "Pinagmulan",
   "international_media": "at iba pang media mula sa iba't ibang bansa",
+  "click_country_hint_info": "Click on a country for more info",
+  "hint": "Hint",
   "country": "Bansa",
   "cruise_ship_notice": "Ang mga kaso na nasuri sa isang barko ng cruise na kasalukuyang nasa teritoryo ng Hapon.",
   "full_list": "Kumpletong Listahan Dito",

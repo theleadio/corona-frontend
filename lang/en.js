@@ -24,6 +24,8 @@ export default {
   "countries_affected": "Countries Affected",
   "source": "Source",
   "international_media": "and various international media",
+  "click_country_hint_info": "Click on a country for more info",
+  "hint": "Hint",
   "country": "Country",
   "cruise_ship_notice": "Cases identified on a cruise ship currently in Japanese territorial waters.",
   "full_list": "Full list here",
@@ -113,6 +115,4 @@ export default {
   "Critical Cases in ICU": "Critical Cases in ICU",
   "Cases Receiving Treatment": "Cases Receiving Treatment",
   "covid_cases_past_2_weeks": "COVID-19 Past 14 Days Cases",
-  "click_country_hint_info": "Click on a country for more info",
-  "hint": "Hint",
 };
