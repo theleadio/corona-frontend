@@ -335,7 +335,7 @@ export const locales = [
   },
   {
     code: 'es-mx',
-    name: 'Mexican Spanish',
+    name: 'Español',
     file: 'es-mx.js',
   },
   {
