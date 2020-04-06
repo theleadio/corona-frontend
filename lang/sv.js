@@ -67,8 +67,7 @@ export default {
   "description": "Beskrivning",
   "report_1_title": "Upptäckten av ett nytt coronavirus associerat med de senaste utbrotten av lunginflammation hos människor och dess potentiella härkomst från fladdermöss",
   "report_2_title": "Ett nytt år, ett nytt coronavirus",
-  "report_3_title": "Wuhan coronavirus (COVID-19)
-Globala sjukdomsfall (av JHU CSSE)",
+  "report_3_title": "Wuhan coronavirus (COVID-19) Globala sjukdomsfall (av JHU CSSE)",
   "report_1_description": "En rapport av Jasper-Fuk-Woo Chan och kollegor, dokumenterade infektioner gällande sjukvårdspersonal som tagit hand om patienter med COVID-19 indikerar människa till människa smitta och därmed en högre risk för en mer omfattande smittspridning av sjukdomen.",
   "report_2_description": "För tredje gången på lika många årtionde, har ett zoonoser coronavirus överförts och smittat mänskliga populationer. Det här viruset, provisoriskt kallat COVID-19, identifierades först i Wuhan, Kina, hos personer som exponerats för skaldjur eller marknader.",
   "report_3_description": "En online översikt för att visualisera och spåra de rapporterade fallen på en daglig tidsplan.",
