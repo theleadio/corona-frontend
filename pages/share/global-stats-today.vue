@@ -24,9 +24,10 @@
     <TopStats
       class="pb-5"
       :limit="10"
-      :show-title="false"
-      :show-source="false"
       :show-footer="false"
+      :show-hint="false"
+      :show-source="false"
+      :show-title="false"
       :used-in-share-page="true"
       :country-stats="countryStats"
     />
