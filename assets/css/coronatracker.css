@@ -11,3 +11,27 @@
 main.container {
   padding-top: 2rem;
 }
+
+.sorter-header {
+  cursor: pointer;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 2px;
+  margin-left: 4px;
+}
+
+.up-arrow {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down-arrow {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  margin-bottom: 2px;
+}
+
+.pointer {
+  cursor: pointer;
+}

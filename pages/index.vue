@@ -34,6 +34,9 @@
           <TopStats
             :is-loading="isLoadingCountryStats"
             :country-stats="countryStats"
+            :sort-field="sortField"
+            :sort-in-descending-order="sortInDescendingOrder"
+            :header-click="resortCountryStats"
           />
           <div
             class="mt-2 text-center underline text-blue-500 font-semibold"
@@ -135,7 +138,9 @@
           mobileImage: surveyImageMobile,
           link: "https://tinyurl.com/CoronaTrackerSurvey",
           expiresOn: "2020-04-01"
-        }
+        },
+        sortField: "confirmed",
+        sortInDescendingOrder: true
       };
     },
     methods: {
@@ -190,13 +195,25 @@
         this.isLoadingCountryStats = true;
         try {
           const limit = 15;
-          this.countryStats = await this.$api.stats.getTopNCountryStats(limit);
+          const sort = `${this.sortInDescendingOrder ? '-' : ''}${this.sortField}`;
+          this.countryStats = await this.$api.stats.getTopNCountryStats(limit, sort);
         } catch (ex) {
           console.log('[fetchCountryStats] Error:', ex);
         } finally {
           this.isLoadingCountryStats = false;
         }
       },
+      async resortCountryStats(sortField) {
+        if (this.sortField === sortField) {
+          this.sortInDescendingOrder = !this.sortInDescendingOrder;
+        }
+        else {
+          this.sortField = sortField;
+          this.sortInDescendingOrder = true;
+        }
+
+        this.fetchCountryStats();
+      }
     },
     watch: {
       country(newVal, oldVal) {
