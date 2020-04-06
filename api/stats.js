@@ -1,9 +1,8 @@
 export default axios => ({
-  getTopNCountryStats: (limit, orderBy, isDescending) => {
+  getTopNCountryStats: (limit, sort) => {
     const params = {
       limit,
-      orderBy,
-      isDescending
+      sort,
     };
 
     return axios.get(`/v3/stats/worldometer/topCountry`, { params })

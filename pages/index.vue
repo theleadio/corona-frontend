@@ -195,7 +195,8 @@
         this.isLoadingCountryStats = true;
         try {
           const limit = 15;
-          this.countryStats = await this.$api.stats.getTopNCountryStats(limit, this.sortField, this.sortInDescendingOrder);
+          const sort = `${this.sortInDescendingOrder ? '-' : ''}${this.sortField}`;
+          this.countryStats = await this.$api.stats.getTopNCountryStats(limit, sort);
         } catch (ex) {
           console.log('[fetchCountryStats] Error:', ex);
         } finally {
