@@ -9,9 +9,15 @@
       <thead class="text-xs leading-tight border-b-2">
       <tr>
         <th class="border px-2 py-2">{{ $t('country') }}</th>
-        <th class="border px-1 py-2">{{ $t('confirmed') }}</th>
-        <th class="border px-1 py-2">{{ $t('recovered') }}</th>
-        <th class="border px-1 py-2">{{ $t('deaths') }}</th>
+        <th class="border px-1 py-2 pointer" @click="headerClick('confirmed')">
+          {{ $t('confirmed') }}<span v-if="sortField === 'confirmed'" v-bind:class="{'up-arrow': !sortInDescendingOrder, 'down-arrow': sortInDescendingOrder }" class="sorter-header"></span>
+        </th>
+        <th class="border px-1 py-2 pointer" @click="headerClick('recovered')">
+          {{ $t('recovered') }}<span v-if="sortField === 'recovered'" v-bind:class="{'up-arrow': !sortInDescendingOrder, 'down-arrow': sortInDescendingOrder }" class="sorter-header"></span>
+        </th>
+        <th class="border px-1 py-2 pointer" @click="headerClick('deaths')">
+          {{ $t('deaths') }}<span v-if="sortField === 'deaths'" v-bind:class="{'up-arrow': !sortInDescendingOrder, 'down-arrow': sortInDescendingOrder }" class="sorter-header"></span>
+      </th>
       </tr>
       </thead>
       <tbody class="font-bold">
@@ -91,6 +97,17 @@
         type: Boolean,
         default: false,
       },
+      sortField: {
+        type: String,
+        default: "confirmed"
+      },
+      sortInDescendingOrder: {
+        type: Boolean,
+        default: true
+      },
+      headerClick: {
+        type: Function
+      }
     },
     data() {
       return {
