@@ -15,32 +15,32 @@
         </div>
         <div class="w-full " v-else-if="pageState === PAGE_STATES.HAS_FETCHED">
             <template v-if="!withExtraInfo || isGlobal">
-            <div class="flex flex-wrap -mt-2">
-                <div class="hidden md:flex md:w-1/4 p-2">
-                    <div class="bg-teal-100 w-full rounded"></div>
+                <div class="flex flex-wrap -mt-2">
+                    <div class="hidden md:flex md:w-1/4 p-2">
+                        <div class="bg-teal-100 w-full rounded"></div>
+                    </div>
+                    <div class="w-full p-2 md:w-2/4">
+                        <Overview :info="overviewInfo" :country="country"></Overview>
+                    </div>
+                    <div class="hidden md:flex md:w-1/4 p-2">
+                        <div class="bg-teal-100 w-full rounded"></div>
+                    </div>
+                    
                 </div>
-                <div class="w-full p-2 md:w-2/4">
-                    <Overview :info="overviewInfo" :country="country"></Overview>
-                </div>
-                <div class="hidden md:flex md:w-1/4 p-2">
-                    <div class="bg-teal-100 w-full rounded"></div>
-                </div>
-                
-            </div>
             </template>
 
             <template v-if="withExtraInfo && !isGlobal">
-            <div class="flex flex-wrap -mt-2">
-                <div class="w-full lg:w-1/2 p-2">
-                    <Overview :info="overviewInfo" :country="country"></Overview>
+                <div class="flex flex-wrap -mt-2">
+                    <div class="w-full lg:w-1/2 p-2">
+                        <Overview :info="overviewInfo" :country="country"></Overview>
+                    </div>
+                    <div class="w-1/2 lg:w-1/4 p-2">
+                        <FatalityRate :days="fatalityRate.days" :series="fatalityRate.data"/>
+                    </div>
+                    <div class="w-1/2 lg:w-1/4 p-2">
+                        <PositiveRate :days="positiveRate.days" :series="positiveRate.data"/>
+                    </div>
                 </div>
-                <div class="w-1/2 lg:w-1/4 p-2">
-                    <FatalityRate :days="fatalityRate.days" :series="fatalityRate.data"/>
-                </div>
-                <div class="w-1/2 lg:w-1/4 p-2">
-                    <PositiveRate :days="positiveRate.days" :series="positiveRate.data"/>
-                </div>
-            </div>
 
                 <div class="flex flex-wrap">
                     <div class="w-full md:w-1/2 lg:w-1/3 p-2">
