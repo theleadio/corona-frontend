@@ -28,9 +28,9 @@
             <line-chart-number
               :height="180"
               :data="[0, 10, 20, 10, 40, 20, 50, 60]"
-              :title="$t('Critical Cases treated in ICU')"
+              :title="$t('critical_cases_icu')"
               :subtitleRed="`${criticalCases.inICUCount}%`"
-              :subtitle="$t('of total cases')"
+              :subtitle="$t('of_total_cases').toLowerCase()"
               :number="criticalCases.totalCount"
             />
           </div>
@@ -38,9 +38,9 @@
             <line-chart-number
               :height="180"
               :data="[0, 10, 20, 10, 40, 20, 50, 60]"
-              :title="$t('Daily Cases Receiving Treatment')"
+              :title="$t('daily_cases_receiving_treatment')"
               :subtitleRed="`${activeCases.percentage}%`"
-              :subtitle="$t('of total cases')"
+              :subtitle="$t('of_total_cases').toLowerCase()"
               :number="activeCases.totalCount"
             />
           </div>
@@ -48,9 +48,9 @@
             <line-chart-number
               :height="180"
               :data="[0, 10, 20, 10, 40, 20, 50, 60]"
-              :title="$t('Daily Confirmed Cases')"
+              :title="$t('daily_confirmed_cases')"
               :number="perMillionConfirmedCases.totalCount"
-              :subtitle = "$t('Per Million Population')"
+              :subtitle = "$t('per_million_population')"
             />
           </div>
         </div>
@@ -60,7 +60,8 @@
                 :height="360"
                 :trendData="countryTrend.trendData"
                 :trendDates="countryTrend.trendDates"
-                :title="$t('Past 14 Days Chart')"
+                :title="$t('past_2_weeks_chart')"
+                :country="country"
                 style="margin-bottom: 12px;"
               />
               <TrendingNews :country="country" />
@@ -91,10 +92,17 @@ import {COUNTRIES, twitterHandles} from "~/utils/constants";
 export default {
   head() {
     const country = this.country && this.country.name;
-    const title = this.$t('COVID-19 {country} Corona Tracker', { country });
-    const description = this.$t('{country} COVID-19 Corona Tracker: The only independent World Health Organization (WHO) recognized one stop platform for verified data and news.', {
+    const countryCode = this.countryCode && this.countryCode.toLowerCase();
+
+    const title = this.$t('covid_corona_tracker_country', { country });
+    const description = this.$t('covid_corona_tracker_country_description', {
       country,
     });
+
+    const baseUrl = process.env.BASE_URL || 'https://www.coronatracker.com';
+    const countryStatsType = this.$route.query.referrer === 'recent' ? 'countryStatsRecent' : 'countryStatsToday';
+    const imageUrl = `${process.env.BASE_URL}/.netlify/functions/take-screenshot?type=${countryStatsType}&countryCode=${countryCode}&t=${Date.now()}`;
+    const pageUrl = process.browser ? window.location.href : `${baseUrl}/country/${this.$route.params.country}/`;
 
     return {
       title,
@@ -103,9 +111,24 @@ export default {
         { hid: 'title', name: 'title', content: title },
         { hid: 'description', name: 'description', content: description },
         { hid: 'og-title', property: 'og:title', content: title },
-        { hid: 'og-description', property: 'og:title', content: description },
+        { hid: 'og-description', property: 'og:description', content: description },
+        { hid: 'og-url', property: 'og:url', content: pageUrl },
+        { hid: 'og-image', property: 'og:image', content: imageUrl },
+        {
+          hid: 'og-image-width',
+          property: 'og:image:width',
+          content: countryStatsType === 'countryStatsRecent' ? '984' : '720'
+        },
+        {
+          hid: 'og-image-height',
+          property: 'og:image:height',
+          content: countryStatsType === 'countryStatsRecent' ? '515' : '375'
+        },
+        { hid: 'twitter-card', property: 'twitter:card', content: 'summary_large_card' },
+        { hid: 'twitter-url', property: 'twitter:url', content: pageUrl },
         { hid: 'twitter-title', property: 'twitter:title', content: title },
-        { hid: 'twitter-description', property: 'twitter:title', content: description },
+        { hid: 'twitter-description', property: 'twitter:description', content: description },
+        { hid: 'twitter-image', property: 'twitter:image', content: imageUrl },
       ],
     };
   },
@@ -177,14 +200,10 @@ export default {
       return countryEntry || {}
     },
     countryCode() {
-      const countryToFind = this.$route.params.country
-      const countryEntry = COUNTRIES.find(country => country.urlAliases.includes(countryToFind));
-      console.log("countryEntry:", countryEntry);
-
-      return countryEntry?.code
+      return this.country?.code
     },
-    handle(){
-      const countryEntry = twitterHandles.find(country => this.countryCode == country.code)
+    handle() {
+      const countryEntry = twitterHandles.find(country => this.countryCode === country.code)
       return countryEntry?.account || "WHO"
     }
   },
@@ -280,13 +299,13 @@ export default {
         this.countryTrend.trendDates.push(country["last_updated"].slice(0,10))
       });
       this.countryTrend.trendData = [{
-        "name": "confirmed",
+        "name": this.$t("confirmed"),
         "data": countryTrendConfirmed
       },{
-        "name": "recovered",
+        "name": this.$t("recovered"),
         "data": countryTrendRecovered
       },{
-        "name": "death",
+        "name": this.$t("death"),
         "data": countryTrendDeath
       }]
     },

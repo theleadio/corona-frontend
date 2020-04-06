@@ -21,7 +21,7 @@ export default {
     return {
       options: {
         title: {
-          text: this.$t('Top countries with daily new cases'),
+          text: this.$t('top_countries_daily_new_cases'),
           align: 'left',
         },
 
@@ -87,11 +87,11 @@ export default {
       const categories = val.map(i => i.country)
       const series = [
         {
-          name: this.$t('Daily New Cases'),
+          name: this.$t('daily_new_cases'),
           data: Array(categories.length).fill(0),
         },
         {
-          name: this.$t('Daily New Deaths'),
+          name: this.$t('daily_new_deaths'),
           data: Array(categories.length).fill(0),
         },
       ]

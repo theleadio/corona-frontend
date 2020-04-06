@@ -2,11 +2,13 @@
   <div class="bg-white rounded border border-gray-400 p-4">
     <div class="flex flex-wrap md:flex-no-wrap md:flex-row">
       <div class="w-full md:w-2/5 h-full mr-2 align-middle relative">
-        <p class="mt-2 mb-2 text-sm font-semibold">
-          <span class="text-red-600 uppercase"><i class="far fa-dot-circle blink"></i> {{ $t('Live') }}</span>
+
+        <div class="mt-2 mb-2 text-sm font-semibold flex justify-between items-center">
+          <span class="text-red-600 uppercase"><i class="far fa-dot-circle blink"></i> {{ $t('live') }}</span>
+          <Share :url="shareUrl"/>
           <!-- <span v-if="numLastUpdated">[Last Update: {{new Date(numLastUpdated).toDateString()}}]</span> -->
-        </p>
-        <label class="block text-s font-bold mb-2">{{ $t('Stats Overview') }}</label>
+        </div>
+        <label class="block text-s font-bold mb-2">{{ $t('stats_overview') }}</label>
         <button class="bg-gray-200 text-left font-bold py-2 px-4 rounded w-full flex focus:outline-none rounded-b-none"
                 @click="toggleOptions">
           <div class="flex">
@@ -15,7 +17,7 @@
               <span class="ml-2 leading-none">{{ selectedCountry.name }}</span>
             </template>
             <template v-else>
-              {{ $t('Select Country') }}
+              {{ $t('select_country') }}
             </template>
           </div>
 
@@ -56,9 +58,9 @@
 
     </div>
 
-    <div class="block text-center md:text-right mt-6 underline text-blue-500 font-semibold">
-      <nuxt-link v-if="selectedCountry && selectedCountry.code !== 'global'" :to="`/country/${selectedCountry.code.toLowerCase()}`">{{ $t('more details') }}</nuxt-link>
-      <nuxt-link v-else :to="localePath('analytics')">{{ $t('more details') }}</nuxt-link>
+    <div class="block text-center md:text-right mt-6 text-blue-500 font-semibold">
+      <nuxt-link v-if="selectedCountry && selectedCountry.code !== 'global'" :to="`/country/${selectedCountry.code.toLowerCase()}`">{{ $t('more_details') }}</nuxt-link>
+      <nuxt-link v-else :to="localePath('analytics')">{{ $t('more_details') }}</nuxt-link>
     </div>
   </div>
 </template>
@@ -66,6 +68,7 @@
 <script>
 import Flag from '~/components/Flag';
 import Stats from '~/components/Analytics/Stats';
+import Share from '~/components/Share';
 import { directive as onClickaway } from 'vue-clickaway';
 
 export default {
@@ -85,7 +88,8 @@ export default {
   },
   components: {
     Flag,
-    Stats
+    Stats,
+    Share
   },
   data: function() {
 
@@ -93,7 +97,7 @@ export default {
       countries: [],
       global: {
         code: 'global',
-        name: this.$t('Global'),
+        name: this.$t('global'),
       },
       selectedCountry: null,
       optionsShowed: false,
@@ -127,6 +131,19 @@ export default {
 
       return this.stats.deaths;
     },
+    baseShareUrl() {
+      if(process.browser) {
+        let split = window.location.href.split('/');
+        return split[0] + '//' + split[2];
+      } else {
+        return 'https://www.coronatracker.com';
+      }
+    },
+    shareUrl() {
+      return this.selectedCountry.code === 'global' ?
+      this.baseShareUrl :
+      this.baseShareUrl + '/country/' + this.selectedCountry.code.toLowerCase()
+    }
   },
   methods: {
     selectCountry(country) {

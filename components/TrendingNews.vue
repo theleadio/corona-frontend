@@ -1,7 +1,7 @@
 <template>
   <div ref="trending-news">
     <div class="flex flex-wrap">
-      <Card :title="$t('Verified News')" class="w-1/2"></Card>
+      <Card :title="$t('verified_news')" class="w-1/2"></Card>
       <div
         class="w-1/2 flex flex-wrap mt-2"
         style="justify-content:flex-end; align-items:center"
@@ -41,15 +41,15 @@
           :page-count="pageCount"
           :page-range="5"
           :click-handler="onClickPagination"
-          :prev-text="$t('Prev')"
-          :next-text="$t('Next')"
+          :prev-text="$t('prev')"
+          :next-text="$t('next')"
           container-class="pagination"
           page-class=""
         >
         </paginate>
       </template>
       <template v-else>
-        <div class="my-8 mx-auto text-center">{{ $t('No result') }}</div>
+        <div class="my-8 mx-auto text-center">{{ $t('no_result') }}</div>
       </template>
     </Loading>
   </div>

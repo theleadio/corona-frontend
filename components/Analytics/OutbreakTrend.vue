@@ -21,7 +21,7 @@ export default {
     return {
       options: {
         title: {
-          text: this.$t('Outbreak trend over time'),
+          text: this.$t('outbreak_trend'),
           align: 'left',
         },
 
@@ -84,22 +84,22 @@ export default {
 
       firstDate: null,
     }
-  },  
+  },
 
   watch: {
     data (val) {
       const categories = val.map(i => moment(i.lastUpdated, 'YYYY-MM-DD').format('YYYY-MM-DD'))
       const series = [
         {
-          name: this.$t('Total Confirmed'),
+          name: this.$t('total_confirmed'),
           data: Array(categories.length).fill(0),
         },
         {
-          name: this.$t('Total Deaths'),
+          name: this.$t('total_deaths'),
           data: Array(categories.length).fill(0),
         },
         {
-          name: this.$t('Total Recovered'),
+          name: this.$t('total_recovered'),
           data: Array(categories.length).fill(0),
         },
       ]
@@ -110,24 +110,24 @@ export default {
         xaxis: {
           categories,
         },
-        
+
         yaxis: [
           {
             seriesName: this.$t('Total Confirmed Cases'),
             title: {
-              text: this.$t('Confirmed'),
+              text: this.$t('confirmed'),
             },
           },
           {
-            seriesName: this.$t('Total Recovered'), // this is actually 'total mortality' mapped to 'total recovered' axis
+            seriesName: this.$t('total_recovered'), // this is actually 'total mortality' mapped to 'total recovered' axis
             opposite: true,
             show: false,
           },
           {
-            seriesName: this.$t('Total Recovered'),
+            seriesName: this.$t('total_recovered'),
             opposite: true,
             title: {
-              text: this.$t('Deaths') + ' / ' + this.$t('Recovered'),
+              text: this.$t('deaths') + ' / ' + this.$t('recovered'),
             },
           },
         ],

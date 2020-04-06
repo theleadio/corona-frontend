@@ -1,11 +1,37 @@
 require('dotenv').config();
 
-const { defaultLocale, locales, COUNTRIES } = require('./utils/constants.js');
-const { generateRoutes } = require('./utils/generateRoutes.js');
-const routes = generateRoutes(locales, COUNTRIES);
+let defaultLocale;
+let locales;
+let countries;
+let routes;
+
+const localeContext = require('./utils/constants.js');
+const utils = require('./utils/generateRoutes.js');
+const baseUrl = process.env.BASE_URL || 'https://www.coronatracker.com';
+
+const shouldGenerateRoutes = [undefined, "" , "true"].includes(process.env.GENERATE_ROUTES) ? true : false
+
+if(shouldGenerateRoutes) {
+  defaultLocale = localeContext.defaultLocale
+  locales = localeContext.locales
+  countries = localeContext.COUNTRIES
+  routes = utils.generateRoutes(locales, countries)
+}
+else {
+  defaultLocale = 'en'
+  locales = [{ code: 'en', name: 'English', file: 'en.js' }]
+  countries = [{ code: "US", name: "United States", urlAliases: ["united-states", "us"] }]
+  routes= []
+}
+
+console.log("GENERATE_ROUTES: ", process.env.GENERATE_ROUTES)
+console.log("shouldGenerateRoutes: ", shouldGenerateRoutes)
+console.log("defaultLocale: ", defaultLocale)
+console.log("locales: ", locales.length)
+console.log("countries: ", countries.length)
+console.log("routes: ", routes.length)
 
 export default {
-  // mode: 'spa',
   /*
    ** Headers of the page
    */
@@ -31,17 +57,17 @@ export default {
       // Open Graph / Faceboook
       { property: 'og:site_name', content: 'Corona Tracker' },
       { property: 'og:type', content: 'website' },
-      { property: 'og:url', content: 'https://www.coronatracker.com/' },
+      { hid: 'og-url', property: 'og:url', content: baseUrl },
       { hid: 'og-title', property: 'og:title', content: 'Corona Tracker' },
       { hid: 'og-description', property: 'og:description', content: 'One stop platform for data and news related to COVID-19' },
-      { property: 'og:image', content: 'https://www.coronatracker.com/og-corona.png' },
+      { hid: 'og-image', property: 'og:image', content: `${baseUrl}/og-corona.png` },
 
       // Twitter
-      { property: 'twitter:card', content: 'https://www.coronatracker.com/og-corona.png' },
-      { property: 'twitter:url', content: 'https://www.coronatracker.com/' },
+      { hid: 'twitter-card', property: 'twitter:card', content: 'summary' },
+      { hid: 'twitter-url', property: 'twitter:url', content: baseUrl },
       { hid: 'twitter-title', property: 'twitter:title', content: 'Corona Tracker' },
       { hid: 'twitter-description', property: 'twitter:description', content: 'One stop platform for data and news related to COVID-19' },
-      { property: 'twitter:image', content: 'https://www.coronatracker.com/og-corona.png' },
+      { hid: 'twitter-image', property: 'twitter:image', content: `${baseUrl}/og-corona.png` },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -81,6 +107,8 @@ export default {
     '~/plugins/vue-sticky-directive.client.js',
     '~/plugins/vuejs-paginate.client.js',
     '~/plugins/vue-apexcharts.client.js',
+    '~/plugins/vue-social-sharing.client.js',
+    '~/plugins/vue-i18n.client.js'
   ],
   generate: {
     routes,
@@ -92,7 +120,7 @@ export default {
    ** used to generate dynamic routes
    */
   sitemap: {
-    hostname: "https://coronatracker.com",
+    hostname: baseUrl,
     routes: routes,
     path: "/sitemap.xml",
     gzip: true
@@ -142,7 +170,10 @@ export default {
     locales,
     defaultLocale,
     lazy: true,
-    langDir: 'lang/'
+    langDir: 'lang/',
+    vueI18n: {
+      fallbackLocale: 'en'
+    }
   },
   /*
    ** Build configuration
@@ -164,6 +195,19 @@ export default {
         })
       }
     },
-    transpile: ['vue-clamp', 'resize-detector']
+    transpile: ['vue-clamp', 'resize-detector'],
+    html: {
+      minify: {
+        collapseBooleanAttributes: true,
+        decodeEntities: true,
+        minifyCSS: false,
+        minifyJS: false,
+        processConditionalComments: true,
+        removeEmptyAttributes: true,
+        removeRedundantAttributes: true,
+        trimCustomFragments: true,
+        useShortDoctype: true
+      }
+    }
   },
 }

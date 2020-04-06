@@ -2,12 +2,15 @@
   <div class="flex flex-wrap">
     <SidebarNav></SidebarNav>
 
-    <div class="w-full lg:w-5/6 px-2 pt-2 bg-gray-200">
-      <div class="pl-2">
-        <p class="text-2xl font-bold">COVID-19 {{ $t('Overview') }}</p>
+    <div class="w-full lg:w-5/6 px-2 pt-2 bg-gray-200 relative">
 
+      <div class="pl-2">
+        <div class="flex flex-wrap justify-between items-center">
+            <p class="text-2xl font-bold">COVID-19 {{ $t('overview') }}</p>
+            <Share :url="shareUrl"></Share>
+        </div>
         <p class="text-xs font-bold leading-tight my-2 text-gray-600">
-          {{ $t('Sources') }}: WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, {{ $t('and various international media') }}
+          {{ $t('sources') }}: {{ $t('WHO') }}, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, {{ $t('international_media') }}
         </p>
       </div>
 
@@ -16,31 +19,32 @@
           <div class="max-w-full rounded shadow-md bg-white p-3 mb-5">
             <div class="flex flex-row lg:flex-row">
               <div class="px-2">
-                <p class="text-sm font-bold text-red-600">{{ $t('Total Confirmed') }}</p>
+                <p class="text-sm font-bold text-red-600">{{ $t('total_confirmed') }}</p>
                 <p class="text-xl font-bold text-red-600">{{ confirmed | formatNumber }}</p>
               </div>
 
               <div class="px-2">
-                <p class="text-sm font-bold text-green-600">{{ $t('Total Recovered') }}</p>
+                <p class="text-sm font-bold text-green-600">{{ $t('total_recovered') }}</p>
                 <p class="text-xl font-bold text-green-600">{{ recovered | formatNumber }}</p>
               </div>
 
               <div class="px-2">
-                <p class="text-sm font-bold text-gray-600">{{ $t('Total Deaths') }}</p>
+                <p class="text-sm font-bold text-gray-600">{{ $t('total_deaths') }}</p>
                 <p class="text-xl font-bold text-gray-600">{{ deaths | formatNumber }}</p>
               </div>
             </div>
           </div>
 
           <div class="w-full rounded shadow-md bg-white p-3 mb-5 block lg:hidden">
+            <HintClickCountry/>
             <div class="mt-3" style="max-height: 36.3rem; overflow: auto;">
               <table class="table-auto w-full">
                 <thead class="text-xs leading-tight border-b-2">
                 <tr>
-                  <th class="border px-2 py-2">{{ $t('Country') }}</th>
-                  <th class="border px-1 py-2">{{ $t('Total Confirmed') }}</th>
-                  <th class="border px-1 py-2">{{ $t('Total Recovered') }}</th>
-                  <th class="border px-1 py-2">{{ $t('Total Deaths') }}</th>
+                  <th class="border px-2 py-2">{{ $t('country') }}</th>
+                  <th class="border px-1 py-2">{{ $t('total_confirmed') }}</th>
+                  <th class="border px-1 py-2">{{ $t('total_recovered') }}</th>
+                  <th class="border px-1 py-2">{{ $t('total_deaths') }}</th>
                 </tr>
                 </thead>
                 <tbody class="font-bold">
@@ -64,7 +68,7 @@
                 </tbody>
               </table>
               <div class="my-2 font-bold text-xs text-gray-600 leading-tight">
-                * {{ $t('Cases identified on a cruise ship currently in Japanese territorial waters.') }}
+                * {{ $t('cruise_ship_notice') }}
                 <a name="notes-on-others" class="anchor"></a>
               </div>
             </div>
@@ -95,11 +99,13 @@ import OutbreakTrendChart from '~/components/Analytics/OutbreakTrend'
 import TopCountryWithDailyNewStats from '~/components/Analytics/TopCountryWithDailyNewStats'
 import AffectedCountry from '~/components/Analytics/AffectedCountry'
 import Flag from '~/components/Flag';
+import Share from '~/components/Share';
+import HintClickCountry from '~/components/HintClickCountry';
 
 export default {
   head() {
-    const title = this.$t('COVID-19 related analytics, graphs, and charts');
-    const description = this.$t('Visual presentations of COVID-19 related data from verified sources such as WHO, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, and various international media.');
+    const title = this.$t('covid_related_material');
+    const description = this.$t('covid_related_material_description');
 
     return {
       title,
@@ -110,11 +116,27 @@ export default {
         { hid: 'og-description', property: 'og:title', content: description },
         { hid: 'twitter-title', property: 'twitter:title', content: title },
         { hid: 'twitter-description', property: 'twitter:title', content: description },
+        { hid: 'og-image', property: 'og:image', content: process.env.API_BASE_URL + '/share/globalStatsToday' },
+        { hid: 'twitter-image', property: 'twitter-image', content: process.env.API_BASE_URL + '/share/globalStatsToday' }
       ],
     };
   },
 
-  components: { SidebarNav, OutbreakTrendChart, TopCountryWithDailyNewStats, AffectedCountry, Flag },
+  components: {
+    SidebarNav,
+    OutbreakTrendChart,
+    TopCountryWithDailyNewStats,
+    AffectedCountry,
+    Flag,
+    Share,
+    HintClickCountry
+  },
+
+  computed: {
+    shareUrl() {
+      return process.browser ? window.location.href : 'https://www.coronatracker.com/analytics';
+    }
+  },
 
   mounted () {
     this.loadStats()

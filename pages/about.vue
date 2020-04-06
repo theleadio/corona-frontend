@@ -1,7 +1,9 @@
 <template>
   <main class="w-screen">
     <div class="mt-5 p-5 text-center">
-      <h1 class="text-2xl font-bold mb-4 text-black">{{ $t("Heroes behind CoronaTracker") }}</h1>
+      <h1 class="text-2xl font-bold mb-4 text-black">
+        {{ $t("Heroes behind CoronaTracker") }}
+      </h1>
       <template v-if="heroes && heroes.length">
         <div class="flex flex-wrap -mb-4">
           <div
@@ -14,13 +16,22 @@
               hero: true
             }"
           >
-            <div :class="{ 'hero-info': true, 'p-2': index > 0 }" style="border:none">
+            <div
+              :class="{ 'hero-info': true, 'p-2': index > 0 }"
+              style="border:none"
+            >
               <img :src="hero.img.src" :alt="hero.img.alt" />
               <h2 class="mt-4 font-bold text-blue-600">{{ $t(hero.title) }}</h2>
               <div>{{ hero.name }}</div>
               <div style="color:#273E4A">
                 (
-                <a class="underline" :href="hero.linkedin" target="_blank" rel="noopener">LinkedIn</a>)
+                <a
+                  class="underline"
+                  :href="hero.linkedin"
+                  target="_blank"
+                  rel="noopener"
+                  >LinkedIn</a
+                >)
               </div>
             </div>
           </div>
@@ -34,18 +45,19 @@
             <a
               @click="click(index)"
               :class="{
-                'active': index === activeTab,
+                active: index === activeTab,
                 'nav-link': true,
                 'bg-white': true,
                 'inline-block': true,
                 'py-2': true,
                 'px-4': true,
                 'lg:text-2xl': true,
-                'lg:text-lg':true,
+                'lg:text-lg': true,
                 'sm:text-md': true,
                 'xs:text-xs': true
               }"
-            >{{ $t(team.name) }}</a>
+              >{{ $t(team.name) }}</a
+            >
           </li>
         </template>
       </ul>
@@ -63,14 +75,18 @@
               class="member lg:w-1/5 md:w-1/4 sm:w-1/2 xl:w-1/6"
             >
               <div class="member-info mt-3">
-                <img src="https://via.placeholder.com/60" :alt="member.img.alt" />
+                <img
+                  src="https://via.placeholder.com/60"
+                  :alt="member.img.alt"
+                />
 
                 <a
                   class="mx-2"
                   :href="member.linkedin"
                   target="_blank"
                   rel="noopener"
-                >{{ member.name }}</a>
+                  >{{ member.name }}</a
+                >
               </div>
             </div>
           </div>
@@ -82,7 +98,8 @@
           href="https://docs.google.com/spreadsheets/d/1cG1UmEa-0IUetdKzYsMKXpypGFWoO88eTzadvN4NS5Y"
           target="_blank"
           rel="noopener"
-        >{{ $t("View more") }}</a>
+          >{{ $t("View more") }}</a
+        >
       </div>
     </div>
   </main>

@@ -9,16 +9,21 @@ Object.defineProperty(Array.prototype, 'flat', {
 });
 
 export const generateRoutes = (locales, countries) => {
-  const countryAliases = countries
-    .map(a => a.urlAliases)
-    .flat()
-    .map(alias => `country/${alias}`);
+  function generateLocaleRoutes(locs, ctys, route) {
+    const countryAliases = ctys
+      .map(a => a.urlAliases[0])
+      .map(alias => route(alias));
 
-  const localeRoutes = locales
-    .map(a => a.code)
-    .map(a => a === defaultLocale ? '' : `/${a}`)
-    .map(locale => countryAliases.map(countryAlias => `${locale}/${countryAlias}`))
-    .flat();
+    return locs
+      .map(a => a.code)
+      .map(a => a === defaultLocale ? '' : `/${a}`)
+      .map(locale => countryAliases.map(countryAlias => `${locale}/${countryAlias}`))
+      .flat();
+  }
 
-  return localeRoutes;
-}
+  const localeRoutes = generateLocaleRoutes(locales, countries, (alias) => `country/${alias}`);
+  const shareTodayRoutes = generateLocaleRoutes(locales, countries, (alias) => `share/country-stats-today/${alias}`);
+  const shareRecentRoutes = generateLocaleRoutes(locales, countries, (alias) => `share/country-stats-recent/${alias}`);
+
+  return localeRoutes.concat(shareTodayRoutes, shareRecentRoutes);
+};
