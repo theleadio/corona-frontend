@@ -173,7 +173,7 @@
 
     computed: {
       country() {
-        const countryToFind = this.$route.params.country
+        const countryToFind = this.$route.query.country
         const countryEntry = COUNTRIES.find(country => country.urlAliases.includes(countryToFind));
         return countryEntry || {}
       },
@@ -184,7 +184,7 @@
         return this.$route.query.charts === 'true' || this.$route.query.charts === true
       },
       isGlobal() {
-        return this.$route.params.country === 'global' || this.$route.params.country === 'GLOBAL'
+        return this.$route.query.country === 'global' || this.$route.query.country === 'GLOBAL'
       }
     },
 
