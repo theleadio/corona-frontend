@@ -3,7 +3,7 @@
     <a href="/" target="_blank">
         <div class="flex items-center mb-2 flex-col sm:flex-row">
             <logo class="lg:flex mr-4" style="pointer-events:none;" />
-            <label class="block text-s font-bold mt-1">Live stats provided by CoronaTracker.com</label>
+            <label class="block text-s font-bold mt-1">Live stats provided by CoronaTracker.com </label>
         </div>
     </a>
     <div class="flex flex-wrap -mx-2">
@@ -14,7 +14,7 @@
             {{error}}
         </div>
         <div class="w-full " v-else-if="pageState === PAGE_STATES.HAS_FETCHED">
-            <template v-if="!withExtraInfo">
+            <template v-if="!withExtraInfo || isGlobal">
             <div class="flex flex-wrap -mt-2">
                 <div class="hidden md:flex md:w-1/4 p-2">
                     <div class="bg-teal-100 w-full rounded"></div>
@@ -29,7 +29,7 @@
             </div>
             </template>
 
-            <template v-if="withExtraInfo">
+            <template v-if="withExtraInfo && !isGlobal">
             <div class="flex flex-wrap -mt-2">
                 <div class="w-full lg:w-1/2 p-2">
                     <Overview :info="overviewInfo" :country="country"></Overview>
@@ -122,7 +122,7 @@
 
       mounted () {
         this.loadInformation(this.countryCode)
-        !this.showingGlobal ? this.loadCountryTrendData(this.countryCode) : null
+        !this.isGlobal ? this.loadCountryTrendData(this.countryCode) : null
         
       },
 
@@ -180,14 +180,10 @@
           return this.country?.code
         },
         withExtraInfo() {
-            if(this.$route.params.country === 'global' || this.$route.params.country === 'GLOBAL'){
-                return false
-            }
-
-            return this.$route.query.charts || false
+            return this.$route.query.charts === 'true' || this.$route.query.charts === true
         },
-        showingGlobal() {
-            this.$route.params.country === 'global' || this.$route.params.country === 'GLOBAL'   
+        isGlobal() {
+            return this.$route.params.country === 'global' || this.$route.params.country === 'GLOBAL'   
         }
       },
 
