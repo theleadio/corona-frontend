@@ -108,7 +108,7 @@
   import {COUNTRIES} from "~/utils/constants";
 
   export default {
-    name: "IframeMalaysiaStats",
+    name: "IframeAllCountryStats",
     layout: "blank",
       components: {
         GrowthRate,
@@ -171,11 +171,6 @@
       },
 
       computed: {
-        // country() {
-        //   const countryToFind = 'my'
-        //   const countryEntry = COUNTRIES.find(country => country.urlAliases.includes(countryToFind));
-        //   return countryEntry || {}
-        // },
         country() {
           const countryToFind = this.$route.params.country
           const countryEntry = COUNTRIES.find(country => country.urlAliases.includes(countryToFind));
@@ -296,5 +291,3 @@
       }
     }
 </script>
-<style scoped>
-</style>
