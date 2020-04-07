@@ -52,7 +52,7 @@
     },
     data: function() {
       return {
-        currentDate: moment().format('Do MMM YYYY, h:mm a (ZZ)'),
+        currentDate: null,
         confirmed: 0,
         deaths: 0,
         recovered: 0,
@@ -81,7 +81,8 @@
         }
       }
     },
-    created() {
+    mounted() {
+      this.currentDate = moment().format('Do MMM YYYY, h:mm a (ZZ)');
       this.loadStats();
       this.fetchCountryStats();
     },
