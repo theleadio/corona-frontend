@@ -6,22 +6,20 @@
 
 # Environment variable used by production branch i.e master
 [context.production]
-  command = "cd functions/take-screenshot && npm i && cd ../../ && npm run generate"
+  command = "cd functions/take-screenshot && npm i && cd ../../ && NODE_ENV=production npm run generate"
   functions = "functions/"
 
 [context.production.environment]
-  NODE_ENV = "production"
   API_BASE_URL = "https://api.coronatracker.com"
   BASE_URL = "https://www.coronatracker.com"
   GENERATE_ROUTES = "true"
 
 # Environment variable overriden for staging branch
 [context.staging]
-  command = "cd functions/take-screenshot && npm i && cd ../../ && npm run generate"
+  command = "cd functions/take-screenshot && npm i && cd ../../ && NODE_ENV=production npm run generate"
   functions = "functions/"
 
 [context.staging.environment]
-  NODE_ENV = "production"
   API_BASE_URL = "https://api.staging.coronatracker.com"
   BASE_URL = "https://staging.coronatracker.com"
   GA_ID = "UA-xxxxxxxxx-x"
