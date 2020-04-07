@@ -22,8 +22,9 @@ export const generateRoutes = (locales, countries) => {
   }
 
   const localeRoutes = generateLocaleRoutes(locales, countries, (alias) => `country/${alias}`);
-  const shareTodayRoutes = generateLocaleRoutes(locales, countries, (alias) => `share/country-stats-today/${alias}`);
-  const shareRecentRoutes = generateLocaleRoutes(locales, countries, (alias) => `share/country-stats-recent/${alias}`);
 
-  return localeRoutes.concat(shareTodayRoutes, shareRecentRoutes);
+  // Not used currently
+  // const shareRecentRoutes = generateLocaleRoutes(locales, countries, (alias) => `share/country-stats-recent/${alias}`);
+
+  return localeRoutes;
 };
