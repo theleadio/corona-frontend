@@ -70,19 +70,19 @@
   from = "/blog"
   to = "https://blog.coronatracker.com/blog/"
   status = 200
-  force = false
+  force = true
   headers = {X-From = "Netlify"}
 
 [[redirects]]
   from = "/blog/*/"
   to = "https://blog.coronatracker.com/blog/:splat"
   status = 200
-  force = false
+  force = true
   headers = {X-From = "Netlify"}
 
 [[redirects]]
   from = "/blog/*"
   to = "https://blog.coronatracker.com/blog/:splat/"
   status = 200
-  force = false
+  force = true
   headers = {X-From = "Netlify"}
