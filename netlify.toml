@@ -10,6 +10,7 @@
   functions = "functions/"
 
 [context.production.environment]
+  NODE_ENV = "production"
   API_BASE_URL = "https://api.coronatracker.com"
   BASE_URL = "https://www.coronatracker.com"
   GENERATE_ROUTES = "true"
@@ -20,6 +21,7 @@
   functions = "functions/"
 
 [context.staging.environment]
+  NODE_ENV = "production"
   API_BASE_URL = "https://api.staging.coronatracker.com"
   BASE_URL = "https://staging.coronatracker.com"
   GA_ID = "UA-xxxxxxxxx-x"
