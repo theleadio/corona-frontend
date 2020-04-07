@@ -4,14 +4,25 @@
       <div class="w-full flex items-center justify-between -my-2">
         <logo class="lg:flex"/>
         <div class="flex ml-auto mr-1" style="font-size: 0.98rem;">
-          <nuxt-link
-            v-for="link in links"
-            :key="link.name"
-            class="mx-1 px-3 py-4 hidden lg:block nav-link"
-            :to="localePath(link.name)"
-          >
-            {{ $t(link.display) }}
-          </nuxt-link>
+          <template v-for="link in links">
+            <a
+              v-if="link.url"
+              :key="link.name"
+              class="mx-1 px-3 py-4 hidden lg:block nav-link"
+              :href="link.url"
+            >
+              {{ $t(link.display) }}
+            </a>
+            <nuxt-link
+              v-else
+              :key="link.name"
+              class="mx-1 px-3 py-4 hidden lg:block nav-link"
+              :to="localePath(link.name)"
+            >
+              {{ $t(link.display) }}
+            </nuxt-link>
+          </template>
+
           <LanguageSelector />
         </div>
         <!--div class="capitalize">{{ currentPageName }}</div-->
@@ -66,7 +77,7 @@
           { name: "causes", display: "menu.whats_covid" },
           { name: "prevention", display: "menu.prevention" },
           { name: "analytics", display: "menu.analytics" },
-          { name: "blog", display: "menu.blog" },
+          { name: "blog", display: "menu.blog", url: "https://www.coronatracker.com/blog/" },
           { name: "about", display: 'menu.about' }
         ],
         showMobileLinks: false,
