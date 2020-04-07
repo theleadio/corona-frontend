@@ -107,12 +107,12 @@
     },
     computed: {
       country() {
-        const countryToFind = this.$route.params.country;
+        const countryToFind = this.$route.query.country;
         const countryEntry = COUNTRIES.find(country => country.urlAliases.includes(countryToFind));
         return countryEntry || {}
       },
       countryCode() {
-        const countryToFind = this.$route.params.country;
+        const countryToFind = this.$route.query.country;
         const countryEntry = COUNTRIES.find(country => country.urlAliases.includes(countryToFind));
         return countryEntry?.code
       }
