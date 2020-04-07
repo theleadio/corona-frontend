@@ -67,6 +67,7 @@
       Stats
     },
     mounted() {
+      this.currentDate = moment().format('Do MMM YYYY, h:mm a (ZZ)');
       this.loadInformation(this.countryCode);
     },
     data() {
@@ -77,7 +78,7 @@
       };
 
       return {
-        currentDate: moment().format('Do MMM YYYY, h:mm a (ZZ)'),
+        currentDate: null,
         PAGE_STATES,
         pageState: PAGE_STATES.LOADING,
         overviewInfo: {
