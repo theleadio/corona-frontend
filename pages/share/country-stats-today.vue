@@ -10,7 +10,7 @@
       <div class="flex-1">
         <p class="text-2xl font-bold text-red-600">{{ overviewInfo.confirmed | formatNumber }}</p>
         <p class="text-sm font-bold text-red-600">{{ $t('total_confirmed') }}</p>
-        <p class="text-xs font-bold text-red-600">{{ $t('+{number} new cases', { number:
+        <p class="text-xs font-bold text-red-600">{{ $t('increase_new_cases', { number:
           $options.filters.formatNumber(overviewInfo.diffConfirmed) }) }}</p>
       </div>
 
@@ -22,7 +22,7 @@
       <div class="flex-1">
         <p class="text-2xl font-bold text-gray-600">{{ overviewInfo.deaths | formatNumber }}</p>
         <p class="text-sm font-bold text-gray-600">{{ $t('total_deaths') }}</p>
-        <p class="text-xs font-bold text-gray-600">{{ $t('+{number} new deaths', { number:
+        <p class="text-xs font-bold text-gray-600">{{ $t('increase_new_deaths', { number:
           $options.filters.formatNumber(overviewInfo.diffDeaths) }) }}</p>
       </div>
     </div>
@@ -32,13 +32,13 @@
         <p class="text-xs font-extrabold">{{ $t('critical_cases_icu') }}</p>
         <p class="text-xl font-bold">{{ criticalCases.totalCount | formatNumber }}</p>
         <p class="text-xs"><span class="text-red-600">{{ criticalCases.inICUCount }}%</span> {{
-          $t('of total cases') }}</p>
+          $t('of_total_cases') }}</p>
       </div>
 
       <div class="flex-1">
         <p class="text-xs font-extrabold">{{ $t('daily_cases_receiving_treatment') }}</p>
         <p class="text-xl font-bold">{{ activeCases.totalCount | formatNumber }}</p>
-        <p class="text-xs"><span class="text-red-600">{{ activeCases.percentage }}%</span> {{ $t('of total cases') }}</p>
+        <p class="text-xs"><span class="text-red-600">{{ activeCases.percentage }}%</span> {{ $t('of_total_cases') }}</p>
       </div>
 
       <div class="flex-1">

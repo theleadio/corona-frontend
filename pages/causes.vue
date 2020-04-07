@@ -1,7 +1,7 @@
 <template>
   <main class="container">
     <div class="w-full h-screen">
-      <h1 class="text-2xl font-bold mb-4">{{ $t('menu.whats_covid') }}</h1>
+      <h1 class="text-2xl font-bold mb-4">{{ $t('whats_covid') }}</h1>
 
       <iframe style="width:100%;height:500px;" src="https://www.youtube.com/embed/OZcRD9fV7jo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <iframe style="width:100%;height:100%" src="https://www.cdc.gov/coronavirus/2019-ncov/about/index.html"></iframe>
@@ -12,8 +12,8 @@
 <script>
 export default {
   head() {
-    const title = this.$t('What is COVID-19 and its causes?');
-    const description = this.$t('Causes released by WHO (World Health Organization) related to COVID-19.');
+    const title = this.$t('whats_covid_meta_title');
+    const description = this.$t('whats_covid_meta_description');
 
     return {
       title,

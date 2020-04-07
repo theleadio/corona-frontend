@@ -437,7 +437,7 @@
   export default {
     head() {
       const title = this.$t('about_coronatracker');
-      const description = this.$t('About the team members related to COVID-19.');
+      const description = this.$t('about_coronatracker_meta_description');
 
       return {
         title,

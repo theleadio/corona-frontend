@@ -119,8 +119,8 @@
   export default {
     name: 'TravelBan',
     head() {
-      const title = this.$t('COVID-19 related travel alert and bans by IATA');
-      const description = this.$t('Travel alerts and bans from IATA related to COVID-19.');
+      const title = this.$t('travel_alert_meta_title');
+      const description = this.$t('travel_alert_meta_description');
 
       return {
         title,

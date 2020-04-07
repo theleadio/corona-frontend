@@ -113,7 +113,7 @@ export default {
 
         yaxis: [
           {
-            seriesName: this.$t('Total Confirmed Cases'),
+            seriesName: this.$t('total_confirmed'),
             title: {
               text: this.$t('confirmed'),
             },
