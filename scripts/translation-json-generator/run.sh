@@ -1,8 +1,9 @@
 #! bash
 GOOGLE_SHEET_ID="12_yx09THl9qcBboJvvBwPTY63MfKIIB8WzEDstIOI6s"
+GID="0"
 
 # Download google sheet and save
-curl -o "CoronaTracker - Translation - Sheet1.csv" "https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/export?exportFormat=csv"
+curl -o "CoronaTracker - Translation - Sheet1.csv" "https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/export?gid=${GID}&format=csv"
 
 python3 lang-generator.py -c b en.js \
 && mv en.js ../../lang \
@@ -48,3 +49,5 @@ python3 lang-generator.py -c b en.js \
 && mv ilo.js ../../lang \
 && python3 lang-generator.py -c y bik.js \
 && mv bik.js ../../lang \
+&& python3 lang-generator.py -c z ro.js \
+&& mv ro.js ../../lang \
