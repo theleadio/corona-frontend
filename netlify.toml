@@ -6,7 +6,7 @@
 
 # Environment variable used by production branch i.e master
 [context.production]
-  command = "cd functions/take-screenshot && npm i && cd ../../ && npm run test && npm run generate"
+  command = "cd functions/take-screenshot && npm i && cd ../../ && npm run generate"
   functions = "functions/"
 
 [context.production.environment]
@@ -17,7 +17,7 @@
 
 # Environment variable overriden for staging branch
 [context.staging]
-  command = "cd functions/take-screenshot && npm i && cd ../../ && npm run test && npm run generate"
+  command = "cd functions/take-screenshot && npm i && cd ../../ && npm run generate"
   functions = "functions/"
 
 [context.staging.environment]
