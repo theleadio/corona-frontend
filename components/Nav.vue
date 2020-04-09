@@ -38,17 +38,25 @@
           </svg>
         </button>
       </div>
-
-      <nuxt-link
-        v-if="showMobileLinks"
-        v-for="link in links"
-        :key="`mob-${link.name}`"
-        class="py-2 block hover:text-red-600 text-center lg:hidden"
-        :to="localePath(link.name)"
-        @click.native="showMobileLinks = false"
-      >
-        {{ $t(link.display) }}
-      </nuxt-link>
+      <template v-for="link in links" v-if="showMobileLinks">
+        <a
+            v-if="link.url"
+            :key="link.name"
+            class="py-2 block hover:text-red-600 text-center lg:hidden"
+            :href="link.url"
+          >
+            {{ $t(link.display) }}
+        </a>
+        <nuxt-link
+            v-else
+            :key="`mob-${link.name}`"
+            class="py-2 block hover:text-red-600 text-center lg:hidden"
+            :to="localePath(link.name)"
+          >
+            {{ $t(link.display) }}
+        </nuxt-link>
+      </template>
+      <!---->
     </div>
   </nav>
 </template>

@@ -104,3 +104,5 @@ sw.*
 
 # Vim swap files
 *.swp
+
+report*
