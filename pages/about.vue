@@ -39,7 +39,7 @@
       </template>
     </div>
     <div class>
-      <ul class="flex justify-center">
+      <ul class="flex overflow-x-auto sm:mx-20">
         <template v-if="teams && teams.length">
           <li v-for="(team, index) in teams" :key="index">
             <a
@@ -50,11 +50,7 @@
                 'bg-white': true,
                 'inline-block': true,
                 'py-2': true,
-                'px-4': true,
-                'lg:text-2xl': true,
-                'lg:text-lg': true,
-                'sm:text-md': true,
-                'xs:text-xs': true
+                'px-4': true
               }"
               >{{ $t(team.name) }}</a
             >
@@ -64,15 +60,15 @@
     </div>
     <div class="w-full pb-20" style="background:#F4F9FD; left:0">
       <div
-        class="lg:mx-20 py-5 sm:mx-3 xs:mx-0 md:mx-10 rounded-b-sm shadow"
+        class="py-5 xs:mx-0 sm:mx-20 rounded-b-sm shadow"
         style="background: white"
       >
         <template v-if="teams[activeTab].members.length">
-          <div class="team ml-4 mr-auto mb-4">
+          <div class="flex flex-wrap justify-center ml-4 mr-auto mb-4">
             <div
               v-for="(member, index) in teams[activeTab].members"
               :key="index"
-              class="member lg:w-1/5 md:w-1/4 sm:w-1/2 xl:w-1/6"
+              class="lg:w-1/5 md:w-1/4 sm:w-1/2 xl:w-1/6"
             >
               <div class="member-info mt-3">
                 <img
@@ -499,11 +495,6 @@ li a:hover {
   display: flex;
   align-items: center;
   justify-content: left;
-}
-
-.team {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .member-info img {
