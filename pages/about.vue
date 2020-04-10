@@ -117,8 +117,8 @@ import FAIROZA from "~/assets/image/fairoza.png";
 
 export default {
   head() {
-    const title = this.$t("About CoronaTracker");
-    const description = this.$t("About the team members related to COVID-19.");
+    const title = this.$t("about_coronatracker");
+    const description = this.$t("about_coronatracker_meta_description");
 
     return {
       title,

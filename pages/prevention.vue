@@ -12,8 +12,8 @@
 <script>
 export default {
   head() {
-    const title = this.$t('Prevention tips and care towards COVID-19');
-    const description = this.$t('Prevention care and tips from WHO (World Health Organization) related to COVID-19.');
+    const title = this.$t('prevention_meta_title');
+    const description = this.$t('prevention_meta_description');
 
     return {
       title,

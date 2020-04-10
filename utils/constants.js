@@ -394,6 +394,11 @@ export const locales = [
     file: 'pt-br.js',
   },
   {
+    code: 'ro',
+    name: 'Română',
+    file: 'ro.js',
+  },
+  {
     code: 'sv',
     name: 'Svenska',
     file: 'sv.js',

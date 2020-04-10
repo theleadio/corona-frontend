@@ -4,7 +4,7 @@
     <div v-if="showSource" class="my-2 font-bold text-xs text-gray-500 leading-tight">
       {{ $t('sources') }}: {{ $t('WHO') }}, CDC, ECDC, NHC of the PRC, JHU CSSE, DXY, QQ, {{ $t('international_media') }}
     </div>
-    <HintClickCountry/>
+    <HintClickCountry v-if="showHint" />
     <table class="table-auto w-full">
       <thead class="text-xs leading-tight border-b-2">
       <tr>
@@ -83,6 +83,10 @@
       showTitle: {
         type: Boolean,
         default: true,
+      },
+      showHint: {
+        type: Boolean,
+        default: true
       },
       showSource: {
         type: Boolean,

@@ -6,7 +6,7 @@
 
 # Environment variable used by production branch i.e master
 [context.production]
-  command = "cd functions/take-screenshot && npm i && cd ../../ && npm run test && npm run generate"
+  command = "cd functions/take-screenshot && npm i && cd ../../ && NODE_ENV=production npm run generate"
   functions = "functions/"
 
 [context.production.environment]
@@ -16,7 +16,7 @@
 
 # Environment variable overriden for staging branch
 [context.staging]
-  command = "cd functions/take-screenshot && npm i && cd ../../ && npm run test && npm run generate"
+  command = "cd functions/take-screenshot && npm i && cd ../../ && NODE_ENV=production npm run generate"
   functions = "functions/"
 
 [context.staging.environment]
@@ -70,19 +70,19 @@
   from = "/blog"
   to = "https://blog.coronatracker.com/blog/"
   status = 200
-  force = false
+  force = true
   headers = {X-From = "Netlify"}
 
 [[redirects]]
   from = "/blog/*/"
   to = "https://blog.coronatracker.com/blog/:splat"
   status = 200
-  force = false
+  force = true
   headers = {X-From = "Netlify"}
 
 [[redirects]]
   from = "/blog/*"
   to = "https://blog.coronatracker.com/blog/:splat/"
   status = 200
-  force = false
+  force = true
   headers = {X-From = "Netlify"}

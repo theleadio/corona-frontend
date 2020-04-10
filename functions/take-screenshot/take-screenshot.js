@@ -10,7 +10,7 @@ const dataMap = {
     viewport: { width: 1337, height: 700 },
   },
   countryStatsToday: {
-    url: `${BASE_URL}/share/country-stats-today/{countryCode}`,
+    url: `${BASE_URL}/share/country-stats-today?country={countryCode}`,
     viewport: { width: 720, height: 375 },
   },
 };

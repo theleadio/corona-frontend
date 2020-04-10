@@ -7,6 +7,7 @@
     <TopStats
       :is-loading="isLoadingCountryStats"
       :country-stats="countryStats"
+      :show-hint="false"
       :show-title="false"
     />
   </div>

@@ -24,9 +24,10 @@
     <TopStats
       class="pb-5"
       :limit="10"
-      :show-title="false"
-      :show-source="false"
       :show-footer="false"
+      :show-hint="false"
+      :show-source="false"
+      :show-title="false"
       :used-in-share-page="true"
       :country-stats="countryStats"
     />
@@ -51,7 +52,7 @@
     },
     data: function() {
       return {
-        currentDate: moment().format('Do MMM YYYY, h:mm a (ZZ)'),
+        currentDate: null,
         confirmed: 0,
         deaths: 0,
         recovered: 0,
@@ -80,7 +81,8 @@
         }
       }
     },
-    created() {
+    mounted() {
+      this.currentDate = moment().format('Do MMM YYYY, h:mm a (ZZ)');
       this.loadStats();
       this.fetchCountryStats();
     },

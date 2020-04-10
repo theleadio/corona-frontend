@@ -4,7 +4,7 @@ import getopt, sys
 
 
 column = []
-for x in [chr(i) for i in range(ord('a'),ord('z'))]:
+for x in [chr(i) for i in range(ord('a'),ord('z')+1)]:
     column.append(x)
 
 dicts = {}
