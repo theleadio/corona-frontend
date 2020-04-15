@@ -389,6 +389,11 @@ export const locales = [
     file: 'pl.js',
   },
   {
+    code: 'pr',
+    name: 'فارسی',
+    file: 'pr.js',
+  },
+  {
     code: 'pt-br',
     name: 'Português',
     file: 'pt-br.js',
