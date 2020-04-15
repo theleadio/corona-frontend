@@ -13,8 +13,17 @@ keys = range(0, len(column))
 for i in keys:
     dicts[column[i]] = i
 
-# print(dicts['c'])
-# sys.exit(2)
+
+extend_columns = list(map(chr, range(97, 123)))#create array of characters a to z
+extend_dicts = {}
+
+#Create an array of dicts for aa to az
+extended_idx = 0
+for char in extend_columns:
+    extend_dicts['a' + char] = len(dicts) + extended_idx
+    extended_idx += 1
+
+dicts.update(extend_dicts)
 
 full_cmd_arguments = sys.argv
 argument_list = full_cmd_arguments[1:]
