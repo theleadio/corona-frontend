@@ -55,11 +55,6 @@ export default {
     Flag,
     Share
   },
-  // watch: {
-  //   country: function(val){
-  //     console.log('change country ', val);
-  //   }
-  // }
 }
 </script>
 

@@ -5,15 +5,15 @@
         <a href="/" target="_blank">
           <logo class="lg:flex mr-4" style="pointer-events:none;" />
         </a>
-        <label class="block text-s font-bold mt-1">{{ isGlobal ? 'Global' : country.name }} Live stats provided by CoronaTracker.com </label>
-        <div class="flex-1 block text-center text-sm md:text-right text-blue-500 font-semibold mt-1 ">
-          <!-- <span class="cursor-pointer">View Global Stats</span> -->
-          <!-- <a href="/" target="_blank">{{ $t('global_covid_stats_today') }}</a> -->
+        <label class="block text-s font-bold mt-1">{{ isGlobal ? 'Global' : country.name }} live stats provided by CoronaTracker.com </label>
+        <div class="flex-1 block text-center text-sm md:text-right text-blue-500 font-semibold mt-1 " v-if="showToggleOption">
           <span><i class="fas fa-angle-right"></i></span>
           <span class="cursor-pointer" @click="toggleGlobal(false)"  v-if="isGlobal"> 
-            <!-- <Flag :country-code="country.code"></Flag> --> {{ country.name }} {{ $t('overview') }}</span>
+            {{ country.name }} {{ $t('overview') }}
+          </span>
           <span class="cursor-pointer" @click="toggleGlobal(true)" v-else> 
-            <!-- <i class="fas fa-globe"></i> --> {{ $t('global') }} {{ $t('overview') }}</span>
+            {{ $t('global') }} {{ $t('overview') }}
+          </span>
         </div>
       </div>
     
@@ -31,7 +31,7 @@
               <div class="bg-teal-100 w-full rounded"></div>
             </div>
             <div class="w-full p-2 md:w-2/4">
-              <Overview :info="overviewInfo" :country="isGlobal ? global : country"></Overview>
+              <Overview :info="overviewInfo" :country="isGlobal ? globalDetails : country"></Overview>
             </div>
             <div class="hidden md:flex md:w-1/4 p-2">
               <div class="bg-teal-100 w-full rounded"></div>
@@ -135,16 +135,12 @@
     },
 
     mounted() {
-      // this.loadInformation(this.countryCode)
-      // !this.isGlobal ? this.loadCountryTrendData(this.countryCode) : null
       if(this.isGlobal){
         this.loadGlobalInformation();  
       } else {
         this.loadInformation(this.countryCode)
         this.loadCountryTrendData(this.countryCode)
       }
-      
-
     },
 
     data() {
@@ -157,9 +153,6 @@
       const DEFAULT_SELECTED_COUNTRY_CODE = this.$route.query.country;
 
       return {
-        global : { code: 'global', name: 'Global' },
-        selectedCountryCode : this.$route.query.country,
-        DEFAULT_SELECTED_COUNTRY_CODE,
         PAGE_STATES,
         pageState: PAGE_STATES.LOADING,
         overviewInfo: {
@@ -192,61 +185,53 @@
         countryTrend: {
           trendData: [],
           trendDates: []
-        }
+        },
+        showingGlobal : false,
+        globalDetails : { 
+          code: 'global', 
+          name: 'Global' 
+        },
+        selectedCountryCode : this.$route.query.country,
       }
     },
 
     computed: {
       country() {
-        const countryToFind = this.DEFAULT_SELECTED_COUNTRY_CODE
+        const countryToFind = this.$route.query.country;
         const countryEntry = COUNTRIES.find(country => country.urlAliases.includes(countryToFind));
         return countryEntry || {}
       },
       countryCode() {
-        // if(this.selectedCountryCode === 'global' || this.selectedCountryCode === 'GLOBAL'){
-        //   return 'global';
-        // }
         return this.country?.code
       },
       withExtraInfo() {
         return this.$route.query.charts === 'true' || this.$route.query.charts === true
       },
       isGlobal() {
-        return this.selectedCountryCode === 'global' || this.selectedCountryCode === 'GLOBAL'
+        if(this.showingGlobal) return true;
+
+        if(this.selectedCountryCode){
+          return this.selectedCountryCode === 'global' || this.selectedCountryCode === 'GLOBAL'
+        }
+
+        return true;
       },
-      // defaultCountry(){
-      
-      //   const countryToFind = this.DEFAULT_SELECTED_COUNTRY_CODE;
-      //   const countryEntry = COUNTRIES.find(country => country.urlAliases.includes(countryToFind));
-      //   return countryEntry || {}
-      
-      // }
+      showToggleOption() {
+        if(this.$route.query.country){
+          if(this.$route.query.country.toUpperCase() !== 'GLOBAL') return true
+        }
+        return false;
+      }
     },
 
     methods: {
       toggleGlobal(selectGlobal) {
-        // this.selectedCountry = country;
-        
-        // this.loadStats();
+        this.showingGlobal = selectGlobal;
 
-        // if(selectGlobal){
-        //   this.selectedCountryCode = 'GLOBAL' ; 
-        // }else{
-        //   this.selectedCountryCode = this.DEFAULT_SELECTED_COUNTRY_CODE;
-        // }
-
-        // this.selectedCountryCode = selectGlobal ? 'global' : this.DEFAULT_SELECTED_COUNTRY_CODE; 
-
-        // this.loadInformation(selectGlobal ? null : this.DEFAULT_SELECTED_COUNTRY_CODE);
-        // this.loadInformation('global');
-        // this.loadCountryTrendData(this.selectedCountryCode);
         if(selectGlobal){
-          this.selectedCountryCode = 'global';
-
           this.loadGlobalInformation() ;
         } else { 
-          this.selectedCountryCode = this.DEFAULT_SELECTED_COUNTRY_CODE;
-          this.loadInformation(this.selectedCountryCode); 
+          this.loadInformation(this.countryCode); 
         };
       },
 
@@ -263,7 +248,7 @@
         }
 
         this.pageState = this.PAGE_STATES.HAS_FETCHED
-        console.log('totalCases Global',totalCases);
+        
         // // Total cases information
         this.overviewInfo.confirmed = totalCases.totalConfirmed
         this.overviewInfo.recovered = totalCases.totalRecovered
@@ -275,8 +260,6 @@
       },
 
       async loadInformation(countryCode) {
-        // countryCode = countryCode ? countryCode : 'global';
-        console.log('loadInformation ', countryCode);
         this.pageState = this.PAGE_STATES.LOADING;
         let totalCases;
 
@@ -289,7 +272,7 @@
         }
 
         this.pageState = this.PAGE_STATES.HAS_FETCHED
-        console.log('totalCases',totalCases);
+        
         // // Total cases information
         this.overviewInfo.confirmed = totalCases.totalConfirmed
         this.overviewInfo.recovered = totalCases.totalRecovered
@@ -328,7 +311,6 @@
       },
 
       async loadCountryTrendData(countryCode) {
-        console.log('loadCountryTrendData ', countryCode);
         let countryTrendRaw;
 
         try {
