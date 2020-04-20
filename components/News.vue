@@ -9,7 +9,7 @@
     <div
       v-lazy:background-image="article.urlToImage"
       class="image bg-cover bg-center bg-no-repeat"
-    ></div>
+    />
     <div class="content w-full text-black">
       <v-clamp
         autoresize
@@ -35,63 +35,63 @@
 </template>
 
 <script>
-  import VClamp from 'vue-clamp';
-  import moment from 'moment';
+import VClamp from "vue-clamp"
+import moment from "moment"
 
-  export default {
-    name: 'News',
-    components: {
-      VClamp
-    },
-    props: {
-      article: {
-        type: Object,
-        required: true
-      }
-    },
-    methods: {
-      captureOutboundLink(url) {
-        if (!url) {
-          return false;
-        }
-
-        this.$ga.query('send', 'event', 'outbound', 'click', url, {
-          transport: 'beacon',
-        });
-
-        return false;
-      },
-    },
-    computed: {
-      publishTime() {
-        return moment(this.article.publishedAt).fromNow();
-      }
+export default {
+  name: "News",
+  components: {
+    VClamp
+  },
+  props: {
+    article: {
+      type: Object,
+      required: true
     }
-  };
+  },
+  computed: {
+    publishTime() {
+      return moment(this.article.publishedAt).fromNow()
+    }
+  },
+  methods: {
+    captureOutboundLink(url) {
+      if (!url) {
+        return false
+      }
+
+      this.$ga.query("send", "event", "outbound", "click", url, {
+        transport: "beacon"
+      })
+
+      return false
+    }
+  }
+}
 </script>
 
 <style scoped>
+.image {
+  margin-right: 20px;
+  width: 72px;
+  height: 72px;
+  flex: 0 0 72px;
+  border-radius: 6px;
+}
+
+@screen lg {
   .image {
-    margin-right: 20px;
-    width: 72px;
-    height: 72px;
-    flex: 0 0 72px;
-    border-radius: 6px;
+    width: 96px;
+    height: 96px;
+    flex: 0 0 96px;
   }
+}
 
-  @screen lg {
-    .image {
-      width: 96px;
-      height: 96px;
-      flex: 0 0 96px;
-    }
-  }
-
-  .source-date {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 15px;
-    text-align: right;
-    color: #108885;
-  }
+.source-date {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: right;
+  color: #108885;
+}
 </style>

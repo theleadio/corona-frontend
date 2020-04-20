@@ -1,115 +1,124 @@
 <template>
   <div>
     <client-only placeholder="Loading...">
-      <apexcharts ref="chart" type="bar" width="100%" height="400px" :options="options" :series="series"></apexcharts>
+      <apexcharts
+        ref="chart"
+        type="bar"
+        width="100%"
+        height="400px"
+        :options="options"
+        :series="series"
+      />
     </client-only>
   </div>
 </template>
 
 <script>
-import moment from 'moment'
-
 export default {
   props: {
     data: {
       type: Array,
-      default: null,
+      default: null
     }
   },
 
-  data () {
+  data() {
     return {
       options: {
         title: {
-          text: this.$t('top_countries_daily_new_cases'),
-          align: 'left',
+          text: this.$t("top_countries_daily_new_cases"),
+          align: "left"
         },
 
         chart: {
-          id: 'affected-regions',
+          id: "affected-regions",
           stacked: true,
           toolbar: {
-            show: false,
+            show: false
           },
           zoom: {
-            enabled: false,
-          },
+            enabled: false
+          }
         },
 
         plotOptions: {
           bar: {
-            horizontal: true,
-          },
+            horizontal: true
+          }
         },
 
         legend: {
-          position: 'top',
+          position: "top"
         },
 
         tooltip: {
-          theme: 'light',
+          theme: "light"
         },
 
         dataLabels: {
-          enabled: false,
+          enabled: false
         },
 
         stroke: {
           width: 1,
-          colors: ['#fff'],
+          colors: ["#fff"]
         },
 
         grid: {
           row: {
-            colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on
-            opacity: 0.5,
-          },
+            colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on
+            opacity: 0.5
+          }
         },
 
-        colors: ['#e53e3e', '#718096', '#38a169'], // red, gray, green
+        colors: ["#e53e3e", "#718096", "#38a169"], // red, gray, green
 
         xaxis: {
           categories: [],
           labels: {
-            formatter: function (val) {
-              return Math.abs(val) > 999 ? Math.sign(val)*((Math.abs(val)/1000).toFixed(1)) + 'k' : Math.sign(val)*Math.abs(val)
-            },
-          },
-        },
+            formatter: function(val) {
+              return Math.abs(val) > 999
+                ? Math.sign(val) * (Math.abs(val) / 1000).toFixed(1) + "k"
+                : Math.sign(val) * Math.abs(val)
+            }
+          }
+        }
       },
 
-      series: [],
+      series: []
     }
   },
 
   watch: {
-    data (val) {
+    data(val) {
       const categories = val.map(i => i.country)
       const series = [
         {
-          name: this.$t('daily_new_cases'),
-          data: Array(categories.length).fill(0),
+          name: this.$t("daily_new_cases"),
+          data: Array(categories.length).fill(0)
         },
         {
-          name: this.$t('daily_new_deaths'),
-          data: Array(categories.length).fill(0),
-        },
+          name: this.$t("daily_new_deaths"),
+          data: Array(categories.length).fill(0)
+        }
       ]
 
       this.$refs.chart.updateOptions({
         xaxis: {
-          categories,
+          categories
         }
       })
 
-      val.map(i => i).forEach((item) => {
-        const categoryIdx = categories.indexOf(item.country)
-        series[0].data[categoryIdx] += item.daily_cases
-        series[1].data[categoryIdx] += item.daily_deaths
-      })
+      val
+        .map(i => i)
+        .forEach(item => {
+          const categoryIdx = categories.indexOf(item.country)
+          series[0].data[categoryIdx] += item.daily_cases
+          series[1].data[categoryIdx] += item.daily_deaths
+        })
 
       this.$refs.chart.updateSeries(series)
     }
-  },
+  }
 }
 </script>

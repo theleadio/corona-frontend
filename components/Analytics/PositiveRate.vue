@@ -1,13 +1,24 @@
 <template>
-  <div class="bg-white rounded border border-gray-400 p-1 w-full sm: w-1/2 h-full" >
+  <div
+    class="bg-white rounded border border-gray-400 p-1 w-full sm: w-1/2 h-full"
+  >
     <div class="flex flex-wrap">
       <div class="w-full sm:w-1/2">
         <client-only placeholder="Loading...">
-          <apexcharts ref="chart" type="donut" width="100%" height="150px" :options="options" :series="series" ></apexcharts>
+          <apexcharts
+            ref="chart"
+            type="donut"
+            width="100%"
+            height="150px"
+            :options="options"
+            :series="series"
+          />
         </client-only>
       </div>
-      <div class="w-full sm:w-1/2 flex flex-col py-2 pl-2 justify-center text-center sm:text-left">
-        <strong class="mb-2">{{ $t('recovery_rate') }}</strong>
+      <div
+        class="w-full sm:w-1/2 flex flex-col py-2 pl-2 justify-center text-center sm:text-left"
+      >
+        <strong class="mb-2">{{ $t("recovery_rate") }}</strong>
         <!-- <small class="mb-2">{{ $t('time_from_confirmation_to_discharge') }}</small> -->
         <!-- <strong>{{ $t('number_of_days', { number: days }) }}</strong> -->
       </div>
@@ -15,21 +26,19 @@
   </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
 
 <script>
-
 export default {
   name: "PositiveRate",
-  props:{
+  props: {
     days: {
       type: Number,
-      default: 0,
+      default: 0
     },
     series: {
       type: Array,
-      required: true,
+      required: true
     }
   },
   data: function() {
@@ -37,72 +46,70 @@ export default {
       totalDays: 11,
       options: {
         chart: {
-          type: 'donut',
-
+          type: "donut"
         },
-        legend:{
-          show: false,
+        legend: {
+          show: false
         },
-        fill:{
-          colors: [ '#CCCCCC', '#4DAFF7']
+        fill: {
+          colors: ["#CCCCCC", "#4DAFF7"]
         },
         tooltip: {
-          enabled: false,
+          enabled: false
         },
-        dataLabels:{
-          enabled: false,
+        dataLabels: {
+          enabled: false
         },
         states: {
           hover: {
-              filter: {
-                  type: 'none',
-              }
+            filter: {
+              type: "none"
+            }
           },
           active: {
             allowMultipleDataPointsSelection: false,
             filter: {
-                type: 'none',
+              type: "none"
             }
-          },
+          }
         },
         plotOptions: {
           pie: {
             customScale: 0.9,
             expandOnClick: false,
             donut: {
-              size: '85%',
+              size: "85%",
               labels: {
                 show: true,
                 name: {
-                  offsetY : 20,
+                  offsetY: 20,
                   color: "#828282",
-                  formatter: (a, b, all) => {
-                    return this.$t('of_total_cases');
-                  },
+                  formatter: () => {
+                    return this.$t("of_total_cases")
+                  }
                 },
-                value:{
+                value: {
                   offsetY: -15,
-                  fontSize: '25px',
+                  fontSize: "25px",
                   color: "#000000",
-                  formatter: function (a,all) {
-                    return all.config.series[1] + "%";
+                  formatter: function(a, all) {
+                    return all.config.series[1] + "%"
                   }
                 },
                 total: {
                   show: true,
-                  label: this.$t('of_total_cases'),
-                  fontSize: '9px',
-                  formatter: function (value) {
-                    return value.config.series[1] + "%";
+                  label: this.$t("of_total_cases"),
+                  fontSize: "9px",
+                  formatter: function(value) {
+                    return value.config.series[1] + "%"
                   }
-                },
-              },
-            },
-
+                }
+              }
+            }
           }
-        },
-      },
-    };
-  },
-};
+        }
+      }
+    }
+  }
+}
 </script>
