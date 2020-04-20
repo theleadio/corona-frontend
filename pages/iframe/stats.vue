@@ -13,39 +13,36 @@
   </div>
 </template>
 <script>
-  import Logo from '~/components/Logo';
-  import TopStats from '~/components/TopStats';
+import Logo from "~/components/Logo"
+import TopStats from "~/components/TopStats"
 
-  export default {
-    layout: "blank",
-    components: {
-      Logo,
-      TopStats,
-    },
-    data() {
-      return {
-        isLoadingCountryStats: false,
-        countryStats: [],
+export default {
+  layout: "blank",
+  components: {
+    Logo,
+    TopStats
+  },
+  data() {
+    return {
+      isLoadingCountryStats: false,
+      countryStats: []
+    }
+  },
+  created() {
+    this.fetchCountryStats()
+  },
+  methods: {
+    async fetchCountryStats() {
+      this.isLoadingCountryStats = true
+      try {
+        this.countryStats = await this.$api.stats.getTopNCountryStats()
+      } catch (ex) {
+        console.log("[fetchCountryStats] Error:", ex)
+      } finally {
+        this.isLoadingCountryStats = false
       }
-    },
-    methods: {
-      async fetchCountryStats() {
-        this.isLoadingCountryStats = true;
-        try {
-          this.countryStats = await this.$api.stats.getTopNCountryStats();
-        }
-        catch (ex) {
-          console.log('[fetchCountryStats] Error:', ex);
-        }
-        finally {
-          this.isLoadingCountryStats = false;
-        }
-      }
-    },
-    created() {
-      this.fetchCountryStats();
-    },
-  };
+    }
+  }
+}
 </script>
-<style scoped>
-</style>
+<style scoped></style>

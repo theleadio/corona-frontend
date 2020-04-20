@@ -1,46 +1,18 @@
 <template>
   <div class="app">
-    <div class="container py-1"></div>
+    <div class="container py-1" />
     <Nav />
     <nuxt />
   </div>
 </template>
 <script>
-import Nav from "~/components/Nav";
-import { addBackToTop } from "vanilla-back-to-top";
+import Nav from "~/components/Nav"
+import { addBackToTop } from "vanilla-back-to-top"
 
 export default {
-  name: "app",
-  head() {
-    return {
-      titleTemplate: "%s | Corona Tracker",
-      htmlAttrs: {
-        lang: this.$i18n.locale,
-      },
-      link: [
-        // This is needed for buymeacoffee widget
-        {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css?family=Cookie",
-        },
-      ],
-      script: [
-        {
-          src: "https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js",
-          "data-name": "BMC-Widget",
-          "data-id": "coronatracker",
-          // 'data-description': 'Support me on Buy me a coffee!',
-          // 'data-message': 'Thank you for visiting. You can now buy me a coffee!',
-          "data-color": "#FF813F",
-          "data-position": "left",
-          "data-x_margin": "18",
-          "data-y_margin": "18",
-        },
-      ],
-    };
-  },
+  name: "App",
   components: {
-    Nav,
+    Nav
   },
   mounted() {
     addBackToTop({
@@ -57,21 +29,49 @@ export default {
       showWhenScrollTopIs: 1, // px
       // size: diameter, // alias for diameter
       textColor: "#fff",
-      zIndex: 1,
-    });
+      zIndex: 1
+    })
 
     if (window.self !== window.top) {
-      window.top.location.href = window.location.href;
+      window.top.location.href = window.location.href
     }
 
     if (
       document.referrer &&
       document.referrer.indexOf("trackcorona.net") !== -1
     ) {
-      window.location = "https://www.youtube.com/watch?v=ZwyPhcqdmPU";
+      window.location = "https://www.youtube.com/watch?v=ZwyPhcqdmPU"
     }
   },
-};
+  head() {
+    return {
+      titleTemplate: "%s | Corona Tracker",
+      htmlAttrs: {
+        lang: this.$i18n.locale
+      },
+      link: [
+        // This is needed for buymeacoffee widget
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css?family=Cookie"
+        }
+      ],
+      script: [
+        {
+          src: "https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js",
+          "data-name": "BMC-Widget",
+          "data-id": "coronatracker",
+          // 'data-description': 'Support me on Buy me a coffee!',
+          // 'data-message': 'Thank you for visiting. You can now buy me a coffee!',
+          "data-color": "#FF813F",
+          "data-position": "left",
+          "data-x_margin": "18",
+          "data-y_margin": "18"
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <style>

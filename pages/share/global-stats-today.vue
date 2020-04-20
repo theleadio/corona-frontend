@@ -1,23 +1,36 @@
 <template>
   <div class="container clearfix" style="max-width: 900px;">
-
-    <h1 class="text-2xl font-extrabold">{{ $t('global_covid_stats_today') }}</h1>
+    <h1 class="text-2xl font-extrabold">
+      {{ $t("global_covid_stats_today") }}
+    </h1>
     <h3>{{ currentDate }}</h3>
 
     <div class="flex flex-row lg:flex-row pt-5 pb-6 text-center">
       <div class="flex-1">
-        <p class="text-2xl font-bold text-red-600">{{ confirmed | formatNumber }}</p>
-        <p class="text-sm font-bold text-red-600">{{ $t('total_confirmed') }}</p>
+        <p class="text-2xl font-bold text-red-600">
+          {{ confirmed | formatNumber }}
+        </p>
+        <p class="text-sm font-bold text-red-600">
+          {{ $t("total_confirmed") }}
+        </p>
       </div>
 
       <div class="flex-1">
-        <p class="text-2xl font-bold text-green-600">{{ recovered | formatNumber }}</p>
-        <p class="text-sm font-bold text-green-600">{{ $t('total_recovered') }}</p>
+        <p class="text-2xl font-bold text-green-600">
+          {{ recovered | formatNumber }}
+        </p>
+        <p class="text-sm font-bold text-green-600">
+          {{ $t("total_recovered") }}
+        </p>
       </div>
 
       <div class="flex-1">
-        <p class="text-2xl font-bold text-gray-600">{{ deaths | formatNumber }}</p>
-        <p class="text-sm font-bold text-gray-600">{{ $t('total_deaths') }}</p>
+        <p class="text-2xl font-bold text-gray-600">
+          {{ deaths | formatNumber }}
+        </p>
+        <p class="text-sm font-bold text-gray-600">
+          {{ $t("total_deaths") }}
+        </p>
       </div>
     </div>
 
@@ -33,60 +46,54 @@
     />
 
     <logo class="lg:flex mb-4 float-right h-8" />
-
   </div>
 </template>
 <script>
-  import Flag from '~/components/Flag';
-  import Logo from '~/components/Logo';
-  import TopStats from '~/components/TopStats';
-  import moment from "moment";
+import Logo from "~/components/Logo"
+import TopStats from "~/components/TopStats"
+import moment from "moment"
 
-  export default {
-    name: "ShareGlobalStatsToday",
-    layout: "blank",
-    components: {
-      Flag,
-      Logo,
-      TopStats
+export default {
+  name: "ShareGlobalStatsToday",
+  layout: "blank",
+  components: {
+    Logo,
+    TopStats
+  },
+  data: function() {
+    return {
+      currentDate: null,
+      confirmed: 0,
+      deaths: 0,
+      recovered: 0,
+      outbreakTrendData: [],
+      topCountryWithDailyNewStatsData: [],
+      affectedCountryData: [],
+      countryStats: []
+    }
+  },
+  mounted() {
+    this.currentDate = moment().format("Do MMM YYYY, h:mm a (ZZ)")
+    this.loadStats()
+    this.fetchCountryStats()
+  },
+  methods: {
+    async loadStats() {
+      await this.$api.stats.getGlobalStats().then(data => {
+        this.confirmed = data.totalConfirmed
+        this.deaths = data.totalDeaths
+        this.recovered = data.totalRecovered
+      })
     },
-    data: function() {
-      return {
-        currentDate: null,
-        confirmed: 0,
-        deaths: 0,
-        recovered: 0,
-        outbreakTrendData: [],
-        topCountryWithDailyNewStatsData: [],
-        affectedCountryData: [],
-        countryStats: []
+    async fetchCountryStats() {
+      try {
+        const limit = 10
+        this.countryStats = await this.$api.stats.getTopNCountryStats(limit)
+      } catch (ex) {
+        console.log("[fetchCountryStats] Error:", ex)
       }
-    },
-    methods: {
-      async loadStats () {
-        await this.$api.stats.getGlobalStats()
-                .then(data => {
-                  this.confirmed = data.totalConfirmed;
-                  this.deaths = data.totalDeaths;
-                  this.recovered = data.totalRecovered;
-                });
-      },
-      async fetchCountryStats() {
-        try {
-          const limit = 10;
-          this.countryStats = await this.$api.stats.getTopNCountryStats(limit);
-        }
-        catch (ex) {
-          console.log('[fetchCountryStats] Error:', ex);
-        }
-      }
-    },
-    mounted() {
-      this.currentDate = moment().format('Do MMM YYYY, h:mm a (ZZ)');
-      this.loadStats();
-      this.fetchCountryStats();
-    },
-  };
+    }
+  }
+}
 </script>
-<style scoped>
-</style>
+<style scoped></style>

@@ -1,9 +1,15 @@
 <template>
   <div class="flex-1 relative overflow-hidden">
-    <div class="border border-gray-400 p-4 rounded relative past-days-chart-wrapper">
+    <div
+      class="border border-gray-400 p-4 rounded relative past-days-chart-wrapper"
+    >
       <div v-if="showHeader" class="relative">
-        <div class="text-gray-900 font-bold text-xl">{{ title }}</div>
-        <div class="text-gray-900 font-bold text-xs mb-2">({{ startDate }} - {{ endDate }})</div>
+        <div class="text-gray-900 font-bold text-xl">
+          {{ title }}
+        </div>
+        <div class="text-gray-900 font-bold text-xs mb-2">
+          ({{ startDate }} - {{ endDate }})
+        </div>
       </div>
       <div class="z-0 apex-chart-wrapper">
         <client-only placeholder="Loading...">
@@ -12,11 +18,15 @@
             :options="chartOptions"
             :series="trendData"
             :height="height"
-          ></apexcharts>
+          />
         </client-only>
       </div>
 
-      <PastDaysChartSelector v-if="showSelector" :defaultChartType="selectedChartType" :chartOptions="chartOptions"/>
+      <PastDaysChartSelector
+        v-if="showSelector"
+        :default-chart-type="selectedChartType"
+        :chart-options="chartOptions"
+      />
 
       <!-- will enable when dynamic meta routing updated -->
       <!-- <Share v-if="showHeader"
@@ -27,14 +37,12 @@
 </template>
 
 <script>
-import PastDaysChartSelector from '~/components/Country/PastDaysChartSelector.vue';
-import Share from '~/components/Share';
+import PastDaysChartSelector from "~/components/Country/PastDaysChartSelector.vue"
 
 export default {
-  name: 'PastDaysChart',
+  name: "PastDaysChart",
   components: {
-    PastDaysChartSelector,
-    Share
+    PastDaysChartSelector
   },
   props: {
     height: {
@@ -43,35 +51,37 @@ export default {
     },
     trendData: {
       type: Array,
+      // eslint-disable-next-line vue/require-valid-default-prop
       default: []
     },
     trendDates: {
       type: Array,
+      // eslint-disable-next-line vue/require-valid-default-prop
       default: []
     },
     title: {
       type: String,
-      default: ''
+      default: ""
     },
     showHeader: {
       type: Boolean,
-      default: true,
+      default: true
     },
     showSelector: {
       type: Boolean,
-      default: true,
+      default: true
     },
     enableAnimation: {
       type: Boolean,
-      default: true,
+      default: true
     },
     enableTooltip: {
       type: Boolean,
-      default: true,
+      default: true
     },
     country: {
       type: Object,
-      default: () => ({ code: '' })
+      default: () => ({ code: "" })
     }
   },
   data() {
@@ -79,14 +89,14 @@ export default {
       startDate: "",
       endDate: "",
       selectedChartType: {
-        name: 'Bar',
-        type: 'bar',
+        name: "Bar",
+        type: "bar",
         stacked: true
       },
       chartOptions: {
         chart: {
           animations: {
-            enabled: this.enableAnimation,
+            enabled: this.enableAnimation
           },
           zoom: {
             enabled: false
@@ -94,7 +104,7 @@ export default {
           toolbar: {
             show: false
           },
-          stacked: true,
+          stacked: true
         },
         grid: {
           show: false
@@ -107,44 +117,48 @@ export default {
           opposite: true
         },
         xaxis: {
-          type: 'datetime',
+          type: "datetime",
           categories: this.trendDates,
           show: true,
           labels: {
-            format: 'dd MMM'
+            format: "dd MMM"
           }
         },
         legend: {
-          position: 'bottom',
+          position: "bottom",
           offsetX: 0,
           offsetY: -5
         },
         tooltip: {
           enabled: this.enableTooltip,
           shared: true,
-          y: [{
-            formatter: function (y) {
-              return y;
+          y: [
+            {
+              formatter: function(y) {
+                return y
+              }
+            },
+            {
+              formatter: function(y) {
+                return y
+              }
+            },
+            {
+              formatter: function(y) {
+                return y
+              }
             }
-          }, {
-            formatter: function (y) {
-              return y;
-            }
-          }, {
-            formatter: function (y) {
-              return y;
-            }
-          }]
-        },
-      },
-    };
+          ]
+        }
+      }
+    }
   },
-  methods: {},
   mounted() {
     this.startDate = this.trendDates[0]
-    this.endDate = this.trendDates[this.trendDates.length-1]
+    this.endDate = this.trendDates[this.trendDates.length - 1]
   },
-};
+  methods: {}
+}
 </script>
 
 <style scoped>

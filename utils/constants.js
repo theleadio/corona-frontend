@@ -1,12 +1,24 @@
 export const COUNTRIES = [
   { code: "AD", name: "Andorra", urlAliases: ["andorra", "ad"] },
-  { code: "AE", name: "United Arab Emirates", urlAliases: ["united-arab-emirates", "ae", "uae"] },
+  {
+    code: "AE",
+    name: "United Arab Emirates",
+    urlAliases: ["united-arab-emirates", "ae", "uae"]
+  },
   { code: "AF", name: "Afghanistan", urlAliases: ["afghanistan", "af"] },
-  { code: "AG", name: "Antigua and Barbuda", urlAliases: ["antigua-and-barbuda", "ag"] },
+  {
+    code: "AG",
+    name: "Antigua and Barbuda",
+    urlAliases: ["antigua-and-barbuda", "ag"]
+  },
   { code: "AI", name: "Anguilla", urlAliases: ["anguilla", "ai"] },
   { code: "AL", name: "Albania", urlAliases: ["albania", "al"] },
   { code: "AM", name: "Armenia", urlAliases: ["armenia", "am"] },
-  { code: "AN", name: "Netherlands Antilles", urlAliases: ["netherlands-antilles", "an"] },
+  {
+    code: "AN",
+    name: "Netherlands Antilles",
+    urlAliases: ["netherlands-antilles", "an"]
+  },
   { code: "AO", name: "Angola", urlAliases: ["angola", "ao"] },
   { code: "AQ", name: "Antarctica", urlAliases: ["antarctica", "aq"] },
   { code: "AR", name: "Argentina", urlAliases: ["argentina", "ar"] },
@@ -44,13 +56,21 @@ export const COUNTRIES = [
     name: "Cocos [Keeling] Islands",
     urlAliases: ["cocos-keeling-islands", "cc", "cocos"]
   },
-  { code: "CD", name: "Congo [DRC]", urlAliases: ["congo-drc", "cd", "kinshasa"] },
+  {
+    code: "CD",
+    name: "Congo [DRC]",
+    urlAliases: ["congo-drc", "cd", "kinshasa"]
+  },
   {
     code: "CF",
     name: "Central African Republic",
     urlAliases: ["central-african-republic", "cf"]
   },
-  { code: "CG", name: "Congo [Republic]", urlAliases: ["congo-republic", "cg", "brazzaville"] },
+  {
+    code: "CG",
+    name: "Congo [Republic]",
+    urlAliases: ["congo-republic", "cg", "brazzaville"]
+  },
   { code: "CH", name: "Switzerland", urlAliases: ["switzerland", "ch"] },
   { code: "CI", name: "Côte d''Ivoire", urlAliases: ["côte-d-ivoire", "ci"] },
   { code: "CK", name: "Cook Islands", urlAliases: ["cook-islands", "ck"] },
@@ -61,19 +81,31 @@ export const COUNTRIES = [
   { code: "CR", name: "Costa Rica", urlAliases: ["costa-rica", "cr"] },
   { code: "CU", name: "Cuba", urlAliases: ["cuba", "cu"] },
   { code: "CV", name: "Cape Verde", urlAliases: ["cape-verde", "cv"] },
-  { code: "CX", name: "Christmas Island", urlAliases: ["christmas-island", "cx"] },
+  {
+    code: "CX",
+    name: "Christmas Island",
+    urlAliases: ["christmas-island", "cx"]
+  },
   { code: "CY", name: "Cyprus", urlAliases: ["cyprus", "cy"] },
   { code: "CZ", name: "Czech Republic", urlAliases: ["czech-republic", "cz"] },
   { code: "DE", name: "Germany", urlAliases: ["germany", "de"] },
   { code: "DJ", name: "Djibouti", urlAliases: ["djibouti", "dj"] },
   { code: "DK", name: "Denmark", urlAliases: ["denmark", "dk"] },
   { code: "DM", name: "Dominica", urlAliases: ["dominica", "dm"] },
-  { code: "DO", name: "Dominican Republic", urlAliases: ["dominican-republic", "do"] },
+  {
+    code: "DO",
+    name: "Dominican Republic",
+    urlAliases: ["dominican-republic", "do"]
+  },
   { code: "DZ", name: "Algeria", urlAliases: ["algeria", "dz"] },
   { code: "EC", name: "Ecuador", urlAliases: ["ecuador", "ec"] },
   { code: "EE", name: "Estonia", urlAliases: ["estonia", "ee"] },
   { code: "EG", name: "Egypt", urlAliases: ["egypt", "eg"] },
-  { code: "EH", name: "Western Sahara", urlAliases: ["western-sahara", "eh", "sahara"] },
+  {
+    code: "EH",
+    name: "Western Sahara",
+    urlAliases: ["western-sahara", "eh", "sahara"]
+  },
   { code: "ER", name: "Eritrea", urlAliases: ["eritrea", "er"] },
   { code: "ES", name: "Spain", urlAliases: ["spain", "es"] },
   { code: "ET", name: "Ethiopia", urlAliases: ["ethiopia", "et"] },
@@ -99,7 +131,11 @@ export const COUNTRIES = [
   { code: "GM", name: "Gambia", urlAliases: ["gambia", "gm"] },
   { code: "GN", name: "Guinea", urlAliases: ["guinea", "gn"] },
   { code: "GP", name: "Guadeloupe", urlAliases: ["guadeloupe", "gp"] },
-  { code: "GQ", name: "Equatorial Guinea", urlAliases: ["equatorial-guinea", "gq"] },
+  {
+    code: "GQ",
+    name: "Equatorial Guinea",
+    urlAliases: ["equatorial-guinea", "gq"]
+  },
   { code: "GR", name: "Greece", urlAliases: ["greece", "gr"] },
   {
     code: "GS",
@@ -144,9 +180,17 @@ export const COUNTRIES = [
   { code: "KH", name: "Cambodia", urlAliases: ["cambodia", "kh"] },
   { code: "KI", name: "Kiribati", urlAliases: ["kiribati", "ki"] },
   { code: "KM", name: "Comoros", urlAliases: ["comoros", "km"] },
-  { code: "KN", name: "Saint Kitts and Nevis", urlAliases: ["saint-kitts-and-nevis", "kn"] },
+  {
+    code: "KN",
+    name: "Saint Kitts and Nevis",
+    urlAliases: ["saint-kitts-and-nevis", "kn"]
+  },
   { code: "KP", name: "North Korea", urlAliases: ["north-korea", "kp"] },
-  { code: "KR", name: "South Korea", urlAliases: ["south-korea", "kr", "korea"] },
+  {
+    code: "KR",
+    name: "South Korea",
+    urlAliases: ["south-korea", "kr", "korea"]
+  },
   { code: "KW", name: "Kuwait", urlAliases: ["kuwait", "kw"] },
   { code: "KY", name: "Cayman Islands", urlAliases: ["cayman-islands", "ky"] },
   { code: "KZ", name: "Kazakhstan", urlAliases: ["kazakhstan", "kz"] },
@@ -166,10 +210,22 @@ export const COUNTRIES = [
   { code: "MD", name: "Moldova", urlAliases: ["moldova", "md"] },
   { code: "ME", name: "Montenegro", urlAliases: ["montenegro", "me"] },
   { code: "MG", name: "Madagascar", urlAliases: ["madagascar", "mg"] },
-  { code: "MH", name: "Marshall Islands", urlAliases: ["marshall-islands", "mh"] },
-  { code: "MK", name: "Macedonia [FYROM]", urlAliases: ["macedonia-fyrom", "mk"] },
+  {
+    code: "MH",
+    name: "Marshall Islands",
+    urlAliases: ["marshall-islands", "mh"]
+  },
+  {
+    code: "MK",
+    name: "Macedonia [FYROM]",
+    urlAliases: ["macedonia-fyrom", "mk"]
+  },
   { code: "ML", name: "Mali", urlAliases: ["mali", "ml"] },
-  { code: "MM", name: "Myanmar [Burma]", urlAliases: ["myanmar-burma", "mm", "myanmar", "burma"] },
+  {
+    code: "MM",
+    name: "Myanmar [Burma]",
+    urlAliases: ["myanmar-burma", "mm", "myanmar", "burma"]
+  },
   { code: "MN", name: "Mongolia", urlAliases: ["mongolia", "mn"] },
   { code: "MO", name: "Macau", urlAliases: ["macau", "mo"] },
   {
@@ -202,8 +258,16 @@ export const COUNTRIES = [
   { code: "OM", name: "Oman", urlAliases: ["oman", "om"] },
   { code: "PA", name: "Panama", urlAliases: ["panama", "pa"] },
   { code: "PE", name: "Peru", urlAliases: ["peru", "pe"] },
-  { code: "PF", name: "French Polynesia", urlAliases: ["french-polynesia", "pf"] },
-  { code: "PG", name: "Papua New Guinea", urlAliases: ["papua-new-guinea", "pg"] },
+  {
+    code: "PF",
+    name: "French Polynesia",
+    urlAliases: ["french-polynesia", "pf"]
+  },
+  {
+    code: "PG",
+    name: "Papua New Guinea",
+    urlAliases: ["papua-new-guinea", "pg"]
+  },
   { code: "PH", name: "Philippines", urlAliases: ["philippines", "ph"] },
   { code: "PK", name: "Pakistan", urlAliases: ["pakistan", "pk"] },
   { code: "PL", name: "Poland", urlAliases: ["poland", "pl"] },
@@ -212,7 +276,11 @@ export const COUNTRIES = [
     name: "Saint Pierre and Miquelon",
     urlAliases: ["saint-pierre-and-miquelon", "pm"]
   },
-  { code: "PN", name: "Pitcairn Islands", urlAliases: ["pitcairn-islands", "pn"] },
+  {
+    code: "PN",
+    name: "Pitcairn Islands",
+    urlAliases: ["pitcairn-islands", "pn"]
+  },
   { code: "PR", name: "Puerto Rico", urlAliases: ["puerto-rico", "pr"] },
   {
     code: "PS",
@@ -229,7 +297,11 @@ export const COUNTRIES = [
   { code: "RU", name: "Russia", urlAliases: ["russia", "ru"] },
   { code: "RW", name: "Rwanda", urlAliases: ["rwanda", "rw"] },
   { code: "SA", name: "Saudi Arabia", urlAliases: ["saudi-arabia", "sa"] },
-  { code: "SB", name: "Solomon Islands", urlAliases: ["solomon-islands", "sb"] },
+  {
+    code: "SB",
+    name: "Solomon Islands",
+    urlAliases: ["solomon-islands", "sb"]
+  },
   { code: "SC", name: "Seychelles", urlAliases: ["seychelles", "sc"] },
   { code: "SD", name: "Sudan", urlAliases: ["sudan", "sd"] },
   { code: "SE", name: "Sweden", urlAliases: ["sweden", "se"] },
@@ -247,7 +319,11 @@ export const COUNTRIES = [
   { code: "SN", name: "Senegal", urlAliases: ["senegal", "sn"] },
   { code: "SO", name: "Somalia", urlAliases: ["somalia", "so"] },
   { code: "SR", name: "Suriname", urlAliases: ["suriname", "sr"] },
-  { code: "ST", name: "São Tomé and Príncipe", urlAliases: ["são-tomé-and-príncipe", "st"] },
+  {
+    code: "ST",
+    name: "São Tomé and Príncipe",
+    urlAliases: ["são-tomé-and-príncipe", "st"]
+  },
   { code: "SV", name: "El Salvador", urlAliases: ["el-salvador", "sv"] },
   { code: "SY", name: "Syria", urlAliases: ["syria", "sy"] },
   { code: "SZ", name: "Swaziland", urlAliases: ["swaziland", "sz"] },
@@ -271,7 +347,11 @@ export const COUNTRIES = [
   { code: "TN", name: "Tunisia", urlAliases: ["tunisia", "tn"] },
   { code: "TO", name: "Tonga", urlAliases: ["tonga", "to"] },
   { code: "TR", name: "Turkey", urlAliases: ["turkey", "tr"] },
-  { code: "TT", name: "Trinidad and Tobago", urlAliases: ["trinidad-and-tobago", "tt", "trinidad"] },
+  {
+    code: "TT",
+    name: "Trinidad and Tobago",
+    urlAliases: ["trinidad-and-tobago", "tt", "trinidad"]
+  },
   { code: "TV", name: "Tuvalu", urlAliases: ["tuvalu", "tv"] },
   { code: "TW", name: "Taiwan", urlAliases: ["taiwan", "tw"] },
   { code: "TZ", name: "Tanzania", urlAliases: ["tanzania", "tz"] },
@@ -285,7 +365,11 @@ export const COUNTRIES = [
   { code: "US", name: "United States", urlAliases: ["united-states", "us"] },
   { code: "UY", name: "Uruguay", urlAliases: ["uruguay", "uy"] },
   { code: "UZ", name: "Uzbekistan", urlAliases: ["uzbekistan", "uz"] },
-  { code: "VA", name: "Vatican City", urlAliases: ["vatican-city", "va", "vatican"] },
+  {
+    code: "VA",
+    name: "Vatican City",
+    urlAliases: ["vatican-city", "va", "vatican"]
+  },
   {
     code: "VC",
     name: "Saint Vincent and the Grenadines",
@@ -297,10 +381,18 @@ export const COUNTRIES = [
     name: "British Virgin Islands",
     urlAliases: ["british-virgin-islands", "vg"]
   },
-  { code: "VI", name: "U.S. Virgin Islands", urlAliases: ["us-virgin-islands", "vi"] },
+  {
+    code: "VI",
+    name: "U.S. Virgin Islands",
+    urlAliases: ["us-virgin-islands", "vi"]
+  },
   { code: "VN", name: "Vietnam", urlAliases: ["vietnam", "vn"] },
   { code: "VU", name: "Vanuatu", urlAliases: ["vanuatu", "vu"] },
-  { code: "WF", name: "Wallis and Futuna", urlAliases: ["wallis-and-futuna", "wf"] },
+  {
+    code: "WF",
+    name: "Wallis and Futuna",
+    urlAliases: ["wallis-and-futuna", "wf"]
+  },
   { code: "WS", name: "Samoa", urlAliases: ["samoa", "ws"] },
   { code: "XK", name: "Kosovo", urlAliases: ["kosovo", "xk"] },
   { code: "YE", name: "Yemen", urlAliases: ["yemen", "ye"] },
@@ -308,75 +400,75 @@ export const COUNTRIES = [
   { code: "ZA", name: "South Africa", urlAliases: ["south-africa", "za"] },
   { code: "ZM", name: "Zambia", urlAliases: ["zambia", "zm"] },
   { code: "ZW", name: "Zimbabwe", urlAliases: ["zimbabwe", "zw"] },
-  { code: "CI", name: "Ivory Coast", urlAliases: ["ivory-coast", "ci"] },
-];
+  { code: "CI", name: "Ivory Coast", urlAliases: ["ivory-coast", "ci"] }
+]
 
-export const defaultLocale = 'en';
+export const defaultLocale = "en"
 export const locales = [
   {
-    code: 'en',
-    name: 'English',
-    file: 'en.js',
+    code: "en",
+    name: "English",
+    file: "en.js"
   },
   {
-    code: 'ar',
-    name: 'العربية',
-    file: 'ar.js',
+    code: "ar",
+    name: "العربية",
+    file: "ar.js"
   },
   {
-    code: 'bik',
-    name: 'Bikolano',
-    file: 'bik.js',
+    code: "bik",
+    name: "Bikolano",
+    file: "bik.js"
   },
   {
-    code: 'de',
-    name: 'Deutsch',
-    file: 'de.js',
+    code: "de",
+    name: "Deutsch",
+    file: "de.js"
   },
   {
-    code: 'es-mx',
-    name: 'Español',
-    file: 'es-mx.js',
+    code: "es-mx",
+    name: "Español",
+    file: "es-mx.js"
   },
   {
-    code: 'fr',
-    name: 'French',
-    file: 'fr.js',
+    code: "fr",
+    name: "French",
+    file: "fr.js"
   },
   {
-    code: 'hi',
-    name: 'हिंदी',
-    file: 'hi.js',
+    code: "hi",
+    name: "हिंदी",
+    file: "hi.js"
   },
   {
-    code: 'id',
-    name: 'Bahasa Indonesia',
-    file: 'id.js',
+    code: "id",
+    name: "Bahasa Indonesia",
+    file: "id.js"
   },
   {
-    code: 'ilo',
-    name: 'Ilocano',
-    file: 'ilo.js',
+    code: "ilo",
+    name: "Ilocano",
+    file: "ilo.js"
   },
   {
-    code: 'it',
-    name: 'Italiano',
-    file: 'it.js',
+    code: "it",
+    name: "Italiano",
+    file: "it.js"
   },
   {
-    code: 'ja',
-    name: '日本語',
-    file: 'ja.js',
+    code: "ja",
+    name: "日本語",
+    file: "ja.js"
   },
   {
-    code: 'ms',
-    name: 'Bahasa Melayu',
-    file: 'ms.js',
+    code: "ms",
+    name: "Bahasa Melayu",
+    file: "ms.js"
   },
   {
-    code: 'my',
-    name: 'Burmese',
-    file: 'my.js',
+    code: "my",
+    name: "Burmese",
+    file: "my.js"
   },
   /*{
     code: 'nl',
@@ -384,61 +476,61 @@ export const locales = [
     file: 'nl.js',
   },*/
   {
-    code: 'pl',
-    name: 'Polski',
-    file: 'pl.js',
+    code: "pl",
+    name: "Polski",
+    file: "pl.js"
   },
   {
-    code: 'pr',
-    name: 'فارسی',
-    file: 'pr.js',
+    code: "pr",
+    name: "فارسی",
+    file: "pr.js"
   },
   {
-    code: 'pt-br',
-    name: 'Português',
-    file: 'pt-br.js',
+    code: "pt-br",
+    name: "Português",
+    file: "pt-br.js"
   },
   {
-    code: 'ro',
-    name: 'Română',
-    file: 'ro.js',
+    code: "ro",
+    name: "Română",
+    file: "ro.js"
   },
   {
-    code: 'sv',
-    name: 'Svenska',
-    file: 'sv.js',
+    code: "sv",
+    name: "Svenska",
+    file: "sv.js"
   },
   {
-    code: 'ta',
-    name: 'தமிழ்',
-    file: 'ta.js',
+    code: "ta",
+    name: "தமிழ்",
+    file: "ta.js"
   },
   {
-    code: 'tl',
-    name: 'Tagalog',
-    file: 'tl.js',
+    code: "tl",
+    name: "Tagalog",
+    file: "tl.js"
   },
   {
-    code: 'ur',
-    name: 'اردو',
-    file: 'ur.js',
+    code: "ur",
+    name: "اردو",
+    file: "ur.js"
   },
   {
-    code: 'vi',
-    name: 'Tiếng Việt',
-    file: 'vi.js',
+    code: "vi",
+    name: "Tiếng Việt",
+    file: "vi.js"
   },
   {
-    code: 'zh-hans',
-    name: '简体中文',
-    file: 'zh-hans.js',
+    code: "zh-hans",
+    name: "简体中文",
+    file: "zh-hans.js"
   },
   {
-    code: 'zh-hant',
-    name: '繁體中文',
-    file: 'zh-hans.js',
-  },
-];
+    code: "zh-hant",
+    name: "繁體中文",
+    file: "zh-hans.js"
+  }
+]
 
 export const twitterHandles = [
   { code: "AU", name: "Australia", account: "healthgovau" },
@@ -453,5 +545,5 @@ export const twitterHandles = [
   { code: "IT", name: "Italy", account: "MinisteroSalute" },
   { code: "NA", name: "Namibia ", account: "MoHSS_Namibia" },
   { code: "PH", name: "Philippines", account: "DOHgovph" },
-  { code: "SE", name: "Sweden ", account: "Folkhalsomynd" },
+  { code: "SE", name: "Sweden ", account: "Folkhalsomynd" }
 ]

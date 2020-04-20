@@ -1,4 +1,4 @@
-import Vue from 'vue';
-import Paginate from 'vuejs-paginate';
+import Vue from "vue"
+import Paginate from "vuejs-paginate"
 
-Vue.component('paginate', Paginate);
+Vue.component("paginate", Paginate)

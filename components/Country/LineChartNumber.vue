@@ -2,11 +2,17 @@
   <div class="flex-1 relative overflow-hidden">
     <div class="border border-gray-400 p-4 rounded relative ">
       <div class="relative">
-        <div class="text-gray-900 font-bold text-l mb-2">{{ title }}</div>
-        <div class="text-gray-900 font-bold text-2xl mb-2">{{ number }}</div>
+        <div class="text-gray-900 font-bold text-l mb-2">
+          {{ title }}
+        </div>
+        <div class="text-gray-900 font-bold text-2xl mb-2">
+          {{ number }}
+        </div>
         <p class="text-gray-700 text-base">
-          <span class="text-red-600" v-if="subtitleRed">{{ subtitleRed }}</span>
-          <span class="text-blue-600" v-if="subtitleBlue">{{ subtitleBlue }}</span>
+          <span v-if="subtitleRed" class="text-red-600">{{ subtitleRed }}</span>
+          <span v-if="subtitleBlue" class="text-blue-600">{{
+            subtitleBlue
+          }}</span>
           {{ subtitle }}
         </p>
       </div>
@@ -16,7 +22,7 @@
             :options="chartOptions"
             :series="series"
             :height="height"
-          ></apexcharts>
+          />
         </client-only>
       </div>
     </div>
@@ -26,7 +32,6 @@
 <script>
 export default {
   components: {},
-  mounted() {},
   props: {
     height: {
       type: Number,
@@ -34,6 +39,7 @@ export default {
     },
     data: {
       type: Array,
+      // eslint-disable-next-line vue/require-valid-default-prop
       default: [0, 41, 35, 51, 49, 62, 69, 91, 148]
     },
     title: {
@@ -45,10 +51,12 @@ export default {
       default: 0
     },
     subtitleRed: {
+      // eslint-disable-next-line vue/require-prop-type-constructor
       type: String | Number,
       default: ""
     },
     subtitleBlue: {
+      // eslint-disable-next-line vue/require-prop-type-constructor
       type: String | Number,
       default: ""
     },
@@ -106,9 +114,10 @@ export default {
           }
         }
       }
-    };
-  }
-};
+    }
+  },
+  mounted() {}
+}
 </script>
 
 <style scoped>
