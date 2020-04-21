@@ -16,7 +16,7 @@
             <i class="fas fa-angle-right" />
           </span>
           <span class="cursor-pointer" @click="toggleGlobal()">
-            {{ isGlobal ? $t("global") : country.name }} {{ $t("overview") }}
+            {{ isGlobal ? country.name : $t("global") }} {{ $t("overview") }}
           </span>
         </div>
       </template>
