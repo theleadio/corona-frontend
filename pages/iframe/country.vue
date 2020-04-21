@@ -5,27 +5,25 @@
         <logo class="lg:flex mr-4" style="pointer-events:none;" />
       </a>
       <label class="block text-s font-bold mt-1">
-        {{ isGlobal ? "Global" : country.name }} live stats provided by
+        {{ isGlobal ? $t("global") : country.name }} live stats provided by
         CoronaTracker.com
       </label>
-      <div
-        v-if="showToggleOption"
-        class="flex-1 block text-center text-sm md:text-right text-blue-500 font-semibold mt-1 "
-      >
-        <span>
-          <i class="fas fa-angle-right" />
-        </span>
-        <span
-          v-if="isGlobal"
-          class="cursor-pointer"
-          @click="toggleGlobal(false)"
+      <template v-if="showToggleOption">
+        <div
+          class="flex-1 block text-center text-sm md:text-right text-blue-500 font-semibold mt-1"
         >
-          {{ country.name }} {{ $t("overview") }}
-        </span>
-        <span v-else class="cursor-pointer" @click="toggleGlobal(true)">
-          {{ $t("global") }} {{ $t("overview") }}
-        </span>
-      </div>
+          <span>
+            <i class="fas fa-angle-right" />
+          </span>
+          <span class="cursor-pointer" @click="toggleGlobal()">
+            {{ isGlobal ? $t("global") : country.name }} {{ $t("overview") }}
+          </span>
+        </div>
+      </template>
+      <!--  https://github.com/nuxt/nuxt.js/issues/1552-->
+      <template v-else>
+        <div />
+      </template>
     </div>
 
     <div class="flex flex-wrap -mx-2">
@@ -56,7 +54,7 @@
           </div>
         </template>
 
-        <template v-if="withExtraInfo && !isGlobal">
+        <template v-else>
           <div class="flex flex-wrap -mt-2">
             <div class="w-full lg:w-1/2 p-2">
               <Overview :info="overviewInfo" :country="country" />
@@ -157,6 +155,15 @@ export default {
       HAS_ERROR: "HAS_ERROR"
     }
 
+    const countryToFind = this.$route.query.country
+    const countryEntry = COUNTRIES.find(country =>
+      country.urlAliases.includes(countryToFind)
+    )
+    const country = countryEntry || {}
+    const countryCode = country?.code
+    const showToggleOption =
+      countryToFind && countryToFind.toUpperCase() !== "GLOBAL"
+
     return {
       PAGE_STATES,
       pageState: PAGE_STATES.LOADING,
@@ -196,64 +203,44 @@ export default {
         code: "global",
         name: "Global"
       },
-      selectedCountryCode: this.$route.query.country
+      selectedCountryCode: countryCode,
+      country,
+      showToggleOption,
+      withExtraInfo:
+        this.$route.query.charts === "true" || this.$route.query.charts === true
     }
   },
 
   computed: {
-    country() {
-      const countryToFind = this.$route.query.country
-      const countryEntry = COUNTRIES.find(country =>
-        country.urlAliases.includes(countryToFind)
-      )
-      return countryEntry || {}
-    },
-    countryCode() {
-      return this.country?.code
-    },
-    withExtraInfo() {
-      return (
-        this.$route.query.charts === "true" || this.$route.query.charts === true
-      )
-    },
     isGlobal() {
-      if (this.showingGlobal) return true
+      if (this.showingGlobal) {
+        return true
+      }
 
       if (this.selectedCountryCode) {
-        return (
-          this.selectedCountryCode === "global" ||
-          this.selectedCountryCode === "GLOBAL"
-        )
+        return this.selectedCountryCode.toUpperCase() === "GLOBAL"
       }
 
       return true
-    },
-    showToggleOption() {
-      if (this.$route.query.country) {
-        if (this.$route.query.country.toUpperCase() !== "GLOBAL") return true
-      }
-      return false
     }
   },
 
   mounted() {
-    if (this.isGlobal) {
-      this.loadGlobalInformation()
-    } else {
-      this.loadInformation(this.countryCode)
-      this.loadCountryTrendData(this.countryCode)
-    }
+    this.loadData()
   },
 
   methods: {
-    toggleGlobal(selectGlobal) {
-      this.showingGlobal = selectGlobal
-
-      if (selectGlobal) {
+    loadData() {
+      if (this.isGlobal) {
         this.loadGlobalInformation()
       } else {
-        this.loadInformation(this.countryCode)
+        this.loadCountryInformation(this.selectedCountryCode)
+        this.loadCountryTrendData(this.selectedCountryCode)
       }
+    },
+    toggleGlobal() {
+      this.showingGlobal = !this.showingGlobal
+      this.loadData()
     },
 
     async loadGlobalInformation() {
@@ -280,7 +267,7 @@ export default {
       this.overviewInfo.diffDeaths = totalCases.totalNewDeaths
     },
 
-    async loadInformation(countryCode) {
+    async loadCountryInformation(countryCode) {
       this.pageState = this.PAGE_STATES.LOADING
       let totalCases
 
@@ -290,20 +277,22 @@ export default {
         )?.[0]
       } catch (err) {
         this.pageState = this.PAGE_STATES.HAS_ERROR
-        this.error = err.data?.message ?? "Something went wrong."
+        this.error = err.data?.message || "Something went wrong."
         return
       }
 
       this.pageState = this.PAGE_STATES.HAS_FETCHED
 
-      // Total cases information
-      this.overviewInfo.confirmed = totalCases.totalConfirmed
-      this.overviewInfo.recovered = totalCases.totalRecovered
-      this.overviewInfo.deaths = totalCases.totalDeaths
+      this.overviewInfo = {
+        // Total cases information
+        confirmed: totalCases.totalConfirmed,
+        recovered: totalCases.totalRecovered,
+        deaths: totalCases.totalDeaths,
 
-      // Daily change information
-      this.overviewInfo.diffConfirmed = totalCases.dailyConfirmed
-      this.overviewInfo.diffDeaths = totalCases.dailyDeaths
+        // Daily change information
+        diffConfirmed: totalCases.dailyConfirmed,
+        diffDeaths: totalCases.dailyDeaths
+      }
 
       // Fatality Rate & Positive Rate
       // Data prep for FR and PR components
@@ -313,26 +302,35 @@ export default {
       const PRL = 100 - PRU
 
       // Fatality Rate
-      this.fatalityRate.days = 10
-      this.fatalityRate.data = [Number(FRL), Number(FRU)]
+      this.fatalityRate = {
+        days: 10,
+        data: [Number(FRL), Number(FRU)]
+      }
 
       // Positive Rate
-      this.positiveRate.days = 10
-      this.positiveRate.data = [Number(PRL), Number(PRU)]
+      this.positiveRate = {
+        days: 10,
+        data: [Number(PRL), Number(PRU)]
+      }
 
       // Critical Cases
-      this.criticalCases.totalCount = totalCases.totalCritical
-      this.criticalCases.inICUCount = (
-        (totalCases.totalCritical / totalCases.totalConfirmed) *
-        100
-      )?.toFixed(1)
+      this.criticalCases = {
+        totalCount: totalCases.totalCritical,
+        inICUCount:
+          (
+            (totalCases.totalCritical / totalCases.totalConfirmed) *
+            100
+          )?.toFixed(1) || 0
+      }
 
       // Active Cases
-      this.activeCases.totalCount = totalCases.activeCases
-      this.activeCases.percentage = (
-        (totalCases.activeCases / totalCases.totalConfirmed) *
-        100
-      )?.toFixed(1)
+      this.activeCases = {
+        totalCount: totalCases.activeCases,
+        percentage:
+          ((totalCases.activeCases / totalCases.totalConfirmed) * 100)?.toFixed(
+            1
+          ) || 0
+      }
 
       this.perMillionConfirmedCases.totalCount =
         totalCases.totalConfirmedPerMillionPopulation
@@ -353,14 +351,15 @@ export default {
         )
       } catch (err) {
         this.pageState = this.PAGE_STATES.HAS_ERROR
-        this.error = err.data?.message ?? "Something went wrong."
+        this.error = err.data?.message || "Something went wrong."
         return
       }
 
       // Country Trend
-      let countryTrendConfirmed = []
-      let countryTrendRecovered = []
-      let countryTrendDeath = []
+      const countryTrendConfirmed = []
+      const countryTrendRecovered = []
+      const countryTrendDeath = []
+      const trendDates = []
       let confirmedLastMax = 0
       let recoveredLastMax = 0
       let deadLastMax = 0
@@ -380,22 +379,26 @@ export default {
         countryTrendRecovered.push(recoveredLastMax)
         countryTrendDeath.push(deadLastMax)
 
-        this.countryTrend.trendDates.push(country["last_updated"].slice(0, 10))
+        trendDates.push(country["last_updated"].slice(0, 10))
       })
-      this.countryTrend.trendData = [
-        {
-          name: "confirmed",
-          data: countryTrendConfirmed
-        },
-        {
-          name: "recovered",
-          data: countryTrendRecovered
-        },
-        {
-          name: "death",
-          data: countryTrendDeath
-        }
-      ]
+
+      this.countryTrend = {
+        trendDates,
+        trendData: [
+          {
+            name: "confirmed",
+            data: countryTrendConfirmed
+          },
+          {
+            name: "recovered",
+            data: countryTrendRecovered
+          },
+          {
+            name: "death",
+            data: countryTrendDeath
+          }
+        ]
+      }
     }
   }
 }
