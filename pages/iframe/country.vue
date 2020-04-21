@@ -1,13 +1,33 @@
 <template>
   <div class="container">
-    <a href="/" target="_blank">
-      <div class="flex items-center mb-2 flex-col sm:flex-row">
+    <div class="flex items-center mb-2 flex-col sm:flex-row">
+      <a href="/" target="_blank">
         <logo class="lg:flex mr-4" style="pointer-events:none;" />
-        <label class="block text-s font-bold mt-1">
-          Live stats provided by CoronaTracker.com
-        </label>
+      </a>
+      <label class="block text-s font-bold mt-1">
+        {{ isGlobal ? "Global" : country.name }} live stats provided by
+        CoronaTracker.com
+      </label>
+      <div
+        v-if="showToggleOption"
+        class="flex-1 block text-center text-sm md:text-right text-blue-500 font-semibold mt-1 "
+      >
+        <span>
+          <i class="fas fa-angle-right" />
+        </span>
+        <span
+          v-if="isGlobal"
+          class="cursor-pointer"
+          @click="toggleGlobal(false)"
+        >
+          {{ country.name }} {{ $t("overview") }}
+        </span>
+        <span v-else class="cursor-pointer" @click="toggleGlobal(true)">
+          {{ $t("global") }} {{ $t("overview") }}
+        </span>
       </div>
-    </a>
+    </div>
+
     <div class="flex flex-wrap -mx-2">
       <div v-if="pageState === PAGE_STATES.LOADING" class="px-5 text-center">
         Loading...
@@ -25,7 +45,10 @@
               <div class="bg-teal-100 w-full rounded" />
             </div>
             <div class="w-full p-2 md:w-2/4">
-              <Overview :info="overviewInfo" :country="country" />
+              <Overview
+                :info="overviewInfo"
+                :country="isGlobal ? globalDetails : country"
+              />
             </div>
             <div class="hidden md:flex md:w-1/4 p-2">
               <div class="bg-teal-100 w-full rounded" />
@@ -167,7 +190,13 @@ export default {
       countryTrend: {
         trendData: [],
         trendDates: []
-      }
+      },
+      showingGlobal: false,
+      globalDetails: {
+        code: "global",
+        name: "Global"
+      },
+      selectedCountryCode: this.$route.query.country
     }
   },
 
@@ -188,20 +217,71 @@ export default {
       )
     },
     isGlobal() {
-      return (
-        this.$route.query.country === "global" ||
-        this.$route.query.country === "GLOBAL"
-      )
+      if (this.showingGlobal) return true
+
+      if (this.selectedCountryCode) {
+        return (
+          this.selectedCountryCode === "global" ||
+          this.selectedCountryCode === "GLOBAL"
+        )
+      }
+
+      return true
+    },
+    showToggleOption() {
+      if (this.$route.query.country) {
+        if (this.$route.query.country.toUpperCase() !== "GLOBAL") return true
+      }
+      return false
     }
   },
 
   mounted() {
-    this.loadInformation(this.countryCode)
-    !this.isGlobal ? this.loadCountryTrendData(this.countryCode) : null
+    if (this.isGlobal) {
+      this.loadGlobalInformation()
+    } else {
+      this.loadInformation(this.countryCode)
+      this.loadCountryTrendData(this.countryCode)
+    }
   },
 
   methods: {
+    toggleGlobal(selectGlobal) {
+      this.showingGlobal = selectGlobal
+
+      if (selectGlobal) {
+        this.loadGlobalInformation()
+      } else {
+        this.loadInformation(this.countryCode)
+      }
+    },
+
+    async loadGlobalInformation() {
+      this.pageState = this.PAGE_STATES.LOADING
+      let totalCases
+
+      try {
+        totalCases = await this.$api.stats.getGlobalStats()
+      } catch (err) {
+        this.pageState = this.PAGE_STATES.HAS_ERROR
+        this.error = err.data?.message ?? "Something went wrong."
+        return
+      }
+
+      this.pageState = this.PAGE_STATES.HAS_FETCHED
+
+      // // Total cases information
+      this.overviewInfo.confirmed = totalCases.totalConfirmed
+      this.overviewInfo.recovered = totalCases.totalRecovered
+      this.overviewInfo.deaths = totalCases.totalDeaths
+
+      // Daily change information
+      this.overviewInfo.diffConfirmed = totalCases.totalNewCases
+      this.overviewInfo.diffDeaths = totalCases.totalNewDeaths
+    },
+
     async loadInformation(countryCode) {
+      this.pageState = this.PAGE_STATES.LOADING
       let totalCases
 
       try {
