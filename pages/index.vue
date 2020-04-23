@@ -90,8 +90,7 @@ import StatsOverview from "~/components/StatsOverview"
 import Survey from "~/components/Survey"
 import TopStats from "~/components/TopStats"
 import TrendingNews from "~/components/TrendingNews"
-import surveyImageDesktop from "~/assets/image/survey_desktop.png"
-import surveyImageMobile from "~/assets/image/survey_mobile.png"
+import covid19AiImage from "~/assets/image/covid19ai.png"
 
 export default {
   components: {
@@ -112,10 +111,10 @@ export default {
       countryStats: [],
       country: {},
       surveyConfig: {
-        desktopImage: surveyImageDesktop,
-        mobileImage: surveyImageMobile,
-        link: "https://tinyurl.com/CoronaTrackerSurvey",
-        expiresOn: "2020-04-01"
+        desktopImage: covid19AiImage,
+        mobileImage: covid19AiImage,
+        link: "https://www.facebook.com/events/641115143102661/",
+        expiresOn: "2020-04-29"
       },
       sortField: "confirmed",
       sortInDescendingOrder: true
