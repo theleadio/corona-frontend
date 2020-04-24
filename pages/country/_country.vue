@@ -12,6 +12,15 @@
       </div>
       <div v-else-if="pageState === PAGE_STATES.HAS_FETCHED" class="w-full ">
         <div class="flex flex-wrap -mt-2">
+          <div class="w-full p-2">
+            <survey
+              class="my-2"
+              :desktop-image="surveyConfig.desktopImage"
+              :mobile-image="surveyConfig.mobileImage"
+              :link="surveyConfig.link"
+              :expires-on="surveyConfig.expiresOn"
+            />
+          </div>
           <div class="w-full lg:w-1/2 p-2">
             <Overview :info="overviewInfo" :country="country" />
           </div>
@@ -93,9 +102,11 @@ import LineChartNumber from "~/components/Country/LineChartNumber"
 import PastDaysChart from "~/components/Country/PastDaysChart"
 import Overview from "~/components/Country/Overview"
 import PositiveRate from "~/components/Analytics/PositiveRate"
+import Survey from "~/components/Survey"
 import TwitterFeed from "~/components/TwitterFeed"
 import TrendingNews from "~/components/TrendingNews"
 import { COUNTRIES, twitterHandles } from "~/utils/constants"
+import covid19AiImage from "~/assets/image/covid19ai.png"
 
 export default {
   components: {
@@ -104,6 +115,7 @@ export default {
     PastDaysChart,
     Overview,
     PositiveRate,
+    Survey,
     TwitterFeed,
     TrendingNews
   },
@@ -148,6 +160,12 @@ export default {
       countryTrend: {
         trendData: [],
         trendDates: []
+      },
+      surveyConfig: {
+        desktopImage: covid19AiImage,
+        mobileImage: covid19AiImage,
+        link: "https://www.facebook.com/events/641115143102661/",
+        expiresOn: "2020-04-29"
       }
     }
   },
