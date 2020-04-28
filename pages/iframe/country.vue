@@ -8,22 +8,18 @@
         {{ isGlobal ? $t("global") : country.name }} live stats provided by
         CoronaTracker.com
       </label>
-      <template v-if="showToggleOption">
+      <div
+        v-if="showToggleOption"
+        class="flex-1 block text-sm text-white font-semibold mt-1 flex justify-center md:justify-end"
+      >
         <div
-          class="flex-1 block text-center text-sm md:text-right text-blue-500 font-semibold mt-1"
+          class="p-2 rounded-md bg-teal-100 hover:bg-teal-200 cursor-pointer text-gray-700"
+          @click="toggleGlobal()"
         >
-          <span>
-            <i class="fas fa-angle-right" />
-          </span>
-          <span class="cursor-pointer" @click="toggleGlobal()">
-            {{ isGlobal ? country.name : $t("global") }} {{ $t("overview") }}
-          </span>
+          <i class="fas fa-angle-right" />
+          {{ isGlobal ? country.name : $t("global") }}
         </div>
-      </template>
-      <!--  https://github.com/nuxt/nuxt.js/issues/1552-->
-      <template v-else>
-        <div />
-      </template>
+      </div>
     </div>
 
     <div class="flex flex-wrap -mx-2">
@@ -37,7 +33,7 @@
         {{ error }}
       </div>
       <div v-else-if="pageState === PAGE_STATES.HAS_FETCHED" class="w-full ">
-        <template v-if="!withExtraInfo || isGlobal">
+        <div v-if="!withExtraInfo || isGlobal">
           <div class="flex flex-wrap -mt-2">
             <div class="hidden md:flex md:w-1/4 p-2">
               <div class="bg-teal-100 w-full rounded" />
@@ -52,9 +48,9 @@
               <div class="bg-teal-100 w-full rounded" />
             </div>
           </div>
-        </template>
+        </div>
 
-        <template v-else>
+        <div v-else>
           <div class="flex flex-wrap -mt-2">
             <div class="w-full lg:w-1/2 p-2">
               <Overview :info="overviewInfo" :country="country" />
@@ -121,7 +117,7 @@
           >
             <a href="/" target="_blank">{{ $t("more_details") }}</a>
           </div>
-        </template>
+        </div>
       </div>
     </div>
   </div>
@@ -257,7 +253,7 @@ export default {
 
       this.pageState = this.PAGE_STATES.HAS_FETCHED
 
-      // // Total cases information
+      // Total cases information
       this.overviewInfo.confirmed = totalCases.totalConfirmed
       this.overviewInfo.recovered = totalCases.totalRecovered
       this.overviewInfo.deaths = totalCases.totalDeaths
