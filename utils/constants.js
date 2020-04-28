@@ -421,6 +421,11 @@ export const locales = [
     file: "bik.js"
   },
   {
+    code: "ceb",
+    name: "Bisaya",
+    file: "ceb.js"
+  },
+  {
     code: "de",
     name: "Deutsch",
     file: "de.js"

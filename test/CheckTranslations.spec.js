@@ -1,6 +1,7 @@
 import _ from "lodash"
 import ar_translations from "@/lang/ar"
 import bik_translations from "@/lang/bik"
+import ceb_translations from "@/lang/ceb"
 import de_translations from "@/lang/de"
 import en_translations from "@/lang/en"
 import es_mx_translations from "@/lang/es-mx"
@@ -26,6 +27,7 @@ describe("Translations", () => {
   describe.each([
     ["ar", "Arabic", ar_translations],
     ["bik", "Bikolano", bik_translations],
+    ["ceb", "Bisaya", ceb_translations],
     ["de", "German", de_translations],
     ["es-mx", "Español", es_mx_translations],
     ["fr", "French", fr_translations],

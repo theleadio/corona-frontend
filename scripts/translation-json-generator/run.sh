@@ -53,3 +53,5 @@ python3 lang-generator.py -c b en.js \
 && mv bik.js ../../lang \
 && python3 lang-generator.py -c aa ro.js \
 && mv ro.js ../../lang \
+&& python3 lang-generator.py -c ac ceb.js \
+&& mv ceb.js ../../lang \
