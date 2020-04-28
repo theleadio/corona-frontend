@@ -20,6 +20,9 @@
           {{ isGlobal ? country.name : $t("global") }}
         </div>
       </div>
+      <div v-else>
+        <!--  https://github.com/nuxt/nuxt.js/issues/1552 -->
+      </div>
     </div>
 
     <div class="flex flex-wrap -mx-2">
