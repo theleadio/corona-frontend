@@ -57,5 +57,17 @@ export default axios => ({
     return axios
       .get(`/v3/analytics/trend/country`, { params })
       .then(res => res.data)
+  },
+
+  getNewCasesByCountryDate: (countryCode, startDate, endDate) => {
+    const params = {
+      countryCode,
+      startDate,
+      endDate
+    }
+
+    return axios
+      .get(`/v3/analytics/newcases/country`, { params })
+      .then(res => res.data)
   }
 })
