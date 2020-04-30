@@ -127,7 +127,7 @@ export default {
         legend: {
           position: "bottom",
           offsetX: 0,
-          offsetY: -5
+          offsetY: +5
         },
         tooltip: {
           enabled: this.enableTooltip,
