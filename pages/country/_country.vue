@@ -82,6 +82,14 @@
               :country="country"
               style="margin-bottom: 12px;"
             />
+            <PastDaysChartNewCases
+              :height="360"
+              :trend-data="countryNewCasesTrend.newCasesTrendData"
+              :trend-dates="countryNewCasesTrend.newCasesTrendDates"
+              :title="$t('past_new_cases_chart')"
+              :country="country"
+              style="margin-bottom: 12px;"
+            />
             <TrendingNews :country="country" />
           </div>
 
@@ -100,6 +108,7 @@
 import FatalityRate from "~/components/Analytics/FatalityRate"
 import LineChartNumber from "~/components/Country/LineChartNumber"
 import PastDaysChart from "~/components/Country/PastDaysChart"
+import PastDaysChartNewCases from "~/components/Country/PastDaysChartNewCases"
 import Overview from "~/components/Country/Overview"
 import PositiveRate from "~/components/Analytics/PositiveRate"
 import Survey from "~/components/Survey"
@@ -113,6 +122,7 @@ export default {
     FatalityRate,
     LineChartNumber,
     PastDaysChart,
+    PastDaysChartNewCases,
     Overview,
     PositiveRate,
     Survey,
@@ -161,6 +171,10 @@ export default {
         trendData: [],
         trendDates: []
       },
+      countryNewCasesTrend: {
+        newCasesTrendData: [],
+        newCasesTrendDates: []
+      },
       surveyConfig: {
         desktopImage: covid19AiImage,
         mobileImage: covid19AiImage,
@@ -192,6 +206,7 @@ export default {
   mounted() {
     this.loadInformation(this.countryCode)
     this.loadCountryTrendData(this.countryCode)
+    this.loadCountryNewCasesTrendData(this.countryCode)
   },
 
   methods: {
@@ -308,6 +323,56 @@ export default {
         {
           name: this.$t("death"),
           data: countryTrendDeath
+        }
+      ]
+    },
+
+    async loadCountryNewCasesTrendData(countryCode) {
+      let countryNewCasesTrendRaw
+
+      try {
+        countryNewCasesTrendRaw = await this.$api.stats.getNewCasesByCountryDate(
+          countryCode,
+          // start date
+          new Date(Date.now() - 60 * 24 * 60 * 60 * 1000)
+            .toISOString()
+            .slice(0, 10),
+          // end date
+          new Date(Date.now() + 1 * 24 * 60 * 60 * 1000)
+            .toISOString()
+            .slice(0, 10)
+        )
+      } catch (err) {
+        this.pageState = this.PAGE_STATES.HAS_ERROR
+        this.error = err.data?.message ?? "Something went wrong."
+        return
+      }
+
+      // Country Trend
+      let countryNewCasesTrendConfirmed = []
+      let countryNewCasesTrendRecovered = []
+      let countryNewCasesTrendDeath = []
+
+      countryNewCasesTrendRaw.forEach(country => {
+        countryNewCasesTrendConfirmed.push(country["new_infections"])
+        countryNewCasesTrendRecovered.push(country["new_recovered"])
+        countryNewCasesTrendDeath.push(country["new_deaths"])
+        this.countryNewCasesTrend.newCasesTrendDates.push(
+          country["last_updated"].slice(0, 10)
+        )
+      })
+      this.countryNewCasesTrend.newCasesTrendData = [
+        {
+          name: this.$t("confirmed"),
+          data: countryNewCasesTrendConfirmed
+        },
+        {
+          name: this.$t("recovered"),
+          data: countryNewCasesTrendRecovered
+        },
+        {
+          name: this.$t("death"),
+          data: countryNewCasesTrendDeath
         }
       ]
     }
