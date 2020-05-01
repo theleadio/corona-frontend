@@ -109,6 +109,7 @@ export default {
   "daily_confirmed_cases": "Kes Disahkan Harian",
   "per_million_population": "Per Sejuta Populasi",
   "past_2_weeks_chart": "Carta 14 Hari Lalu",
+  "past_new_cases_chart": "Daily Incidences Chart",
   "covid_corona_tracker": "COVID-19 Corona Tracker",
   "covid_corona_tracker_description": "COVID-19 Corona Tracker: Satu-satunya platform berita dan data sahih yang bebas berkenaan COVID-19 yang diiktiraf oleh World Health Organization (WHO).",
   "covid_corona_tracker_country": "COVID-19 Corona Tracker {country}",

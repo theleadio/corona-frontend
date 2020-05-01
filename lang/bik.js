@@ -109,6 +109,7 @@ export default {
   "daily_confirmed_cases": "Kompirmadong Kaso kada Aldaw",
   "per_million_population": "Kada Milyon na Populasyon",
   "past_2_weeks_chart": "Chart kan Nakaaging 14 na Aldaw",
+  "past_new_cases_chart": "Daily Incidences Chart",
   "covid_corona_tracker": "COVID-19 Corona Tracker",
   "covid_corona_tracker_description": "COVID-19 Corona Tracker: Ini an natatanging independyenteng one stop platform kan mga kumpirmadong datos nan bareta na pigmimidbid kan World Health Organization (WHO).",
   "covid_corona_tracker_country": "{country} COVID-19 Corona Tracker",

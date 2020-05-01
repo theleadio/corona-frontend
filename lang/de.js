@@ -109,6 +109,7 @@ export default {
   "daily_confirmed_cases": "Bestätigte Fälle pro Tag",
   "per_million_population": "Pro Mio. Einwohner",
   "past_2_weeks_chart": "Chart der letzten 14 Tage",
+  "past_new_cases_chart": "Daily Incidences Chart",
   "covid_corona_tracker": "COVID-19 Corona Tracker",
   "covid_corona_tracker_description": "COVID-19 Corona-Tracker: Die bisher einzige von der Weltgesundheitsorganisation (WHO) anerkannte, unabhängige One-Stop-Plattform für verifizierte Daten und Nachrichten",
   "covid_corona_tracker_country": "{country} COVID-19 Corona-Tracker",

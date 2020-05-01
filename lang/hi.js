@@ -109,6 +109,7 @@ export default {
   "daily_confirmed_cases": "दैनिक पुष्टि के मामले",
   "per_million_population": "प्रति दस लाख लोगो की जनसंख्या",
   "past_2_weeks_chart": "पिछले 14 दिन का चार्ट",
+  "past_new_cases_chart": "Daily Incidences Chart",
   "covid_corona_tracker": "COVID-19 कोरोना ट्रैकर",
   "covid_corona_tracker_description": "COVID-19 कोरोना ट्रैकर: एकमात्र स्वतंत्र विश्व स्वास्थ्य संगठन (WHO) ने सत्यापित डेटा और समाचार के लिए वन स्टॉप प्लेटफॉर्म को मान्यता दी",
   "covid_corona_tracker_country": "COVID-19 {country} कोरोना ट्रैकर",

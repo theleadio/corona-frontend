@@ -109,6 +109,7 @@ export default {
   "daily_confirmed_cases": "واقعات مثبت روزانه",
   "per_million_population": "در هر میلیون جمعیت",
   "past_2_weeks_chart": "جدول معلومات ۱۴ روزقبل",
+  "past_new_cases_chart": "Daily Incidences Chart",
   "covid_corona_tracker": "COVID-19 Corona Tracker",
   "covid_corona_tracker_description": "COVID-19 Corona Tracker.تنها سازمان بهداشت جهانی مستقل (WHO) یک سکوی توقف برای داده ها و اخبار تأیید شده را به رسمیت شناخته است.",
   "covid_corona_tracker_country": "{country} COVID-19 Corona Tracker",

@@ -109,6 +109,7 @@ export default {
   "daily_confirmed_cases": "Các ca được xác nhận hàng ngày",
   "per_million_population": "Trên 1 triệu dân",
   "past_2_weeks_chart": "Biểu đồ 14 ngày vừa qua",
+  "past_new_cases_chart": "Daily Incidences Chart",
   "covid_corona_tracker": "COVID-19 Corona Tracker",
   "covid_corona_tracker_description": "COVID-19 Corona Tracker: One-stop-platform độc lập duy nhất đã được Tổ chức Y tế Thế giới (WHO) công nhận để xác minh dữ liệu và tin tức.",
   "covid_corona_tracker_country": "COVID-19 {country} Corona Tracker",

@@ -109,6 +109,7 @@ export default {
   "daily_confirmed_cases": "الحالات المؤكدة اليومية",
   "per_million_population": "لكل مليون نسمة",
   "past_2_weeks_chart": "الرسم البياني لـ 14 يوما الماضية",
+  "past_new_cases_chart": "Daily Incidences Chart",
   "covid_corona_tracker": "COVID-19 Corona Tracker",
   "covid_corona_tracker_description": "COVID-19 Corona Tracker.المنصه الوحيدة المستقله المعتمده من منظمة الصحة العالمية في البيانات و الأخبار",
   "covid_corona_tracker_country": "COVID-19 {country} Corona Tracker",

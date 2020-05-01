@@ -109,6 +109,7 @@ export default {
   "daily_confirmed_cases": "Dagliga bekräftade fall",
   "per_million_population": "Per miljon invånare",
   "past_2_weeks_chart": "Föregående 14 dagar",
+  "past_new_cases_chart": "Daily Incidences Chart",
   "covid_corona_tracker": "COVID-19 Corona Tracker",
   "covid_corona_tracker_description": "COVID-19 Corona Tracker: Den enda självständiga World Health Organization (WHO) erkända plattformen för verifierad data och nyheter.",
   "covid_corona_tracker_country": "{country} COVID-19 Corona Tracker",

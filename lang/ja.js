@@ -109,6 +109,7 @@ export default {
   "daily_confirmed_cases": "毎日感染者数",
   "per_million_population": "１００万毎の人数",
   "past_2_weeks_chart": "14日前までのチャート",
+  "past_new_cases_chart": "Daily Incidences Chart",
   "covid_corona_tracker": "COVID-19コロナトラッカー",
   "covid_corona_tracker_description": "COVID-19コロナトラッカー: 世界保健機関（ＷＨＯ）が認定された唯一独自データとニュースのワンストッププラットフォーム",
   "covid_corona_tracker_country": "{country} COVID-19 Corona Tracker",

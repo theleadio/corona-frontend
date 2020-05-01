@@ -109,6 +109,7 @@ export default {
   "daily_confirmed_cases": "Casos Confirmados Diariamente",
   "per_million_population": "Por Milhão de Pessoas",
   "past_2_weeks_chart": "Gráfico dos Últimos 14 Dias",
+  "past_new_cases_chart": "Daily Incidences Chart",
   "covid_corona_tracker": "Rastreador de Corona COVID-19",
   "covid_corona_tracker_description": "Rastreador de Corona COVID-19: A única plataforma centralizada reconhecida pela Organização Mundial de Saúde (OMS) para dados verificados e notícias.",
   "covid_corona_tracker_country": "Rastreador de Corona COVID-19 {country}",
