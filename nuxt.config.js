@@ -246,22 +246,26 @@ export default {
     },
     filenames: {
       // This is the default config
-      // app: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
-      // chunk: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
-      // css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
-      // img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]',
-      // font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]',
-      // video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[contenthash:7].[ext]'
+      app: ({ isDev }) => (isDev ? "[name].js" : "[contenthash].js"),
+      chunk: ({ isDev }) => (isDev ? "[name].js" : "[contenthash].js"),
+      css: ({ isDev }) => (isDev ? "[name].css" : "[contenthash].css"),
+      img: ({ isDev }) =>
+        isDev ? "[path][name].[ext]" : "img/[contenthash:7].[ext]",
+      font: ({ isDev }) =>
+        isDev ? "[path][name].[ext]" : "fonts/[contenthash:7].[ext]",
+      video: ({ isDev }) =>
+        isDev ? "[path][name].[ext]" : "videos/[contenthash:7].[ext]"
 
       // Use [name] instead of [contenthash] so that we rely on netlify file hash and cache
       // invalidation to reduce number of file changes and hence deployment time. It also improves
       // performance as files that are not changed can use the already cached version.
-      app: () => "[name].js",
-      chunk: () => "[name].js",
-      css: () => "[name].css",
-      img: () => "[path][name].[ext]",
-      font: () => "[path][name].[ext]",
-      video: () => "[path][name].[ext]"
+      // 20200503: Revert to default config as the cache seems to cause issues on production.
+      // app: () => "[name].js",
+      // chunk: () => "[name].js",
+      // css: () => "[name].css",
+      // img: () => "[path][name].[ext]",
+      // font: () => "[path][name].[ext]",
+      // video: () => "[path][name].[ext]"
     },
     transpile: ["vue-clamp", "resize-detector"],
     html: {
