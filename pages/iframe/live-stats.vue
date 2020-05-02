@@ -83,6 +83,7 @@ import Flag from "~/components/Flag"
 import Logo from "~/components/Logo"
 import Stats from "~/components/Analytics/Stats"
 import { directive as onClickaway } from "vue-clickaway"
+import { COUNTRIES } from "~/utils/constants"
 
 export default {
   name: "IframeLiveStats",
@@ -96,27 +97,37 @@ export default {
     Stats
   },
   data: function() {
-    const countries = [
-      // { code: 'CN', name: 'China' },
-      // { code: 'HK', name: 'Hong Kong' },
-      // { code: 'ID', name: 'Indonesia' },
-      // { code: 'JP', name: 'Japan' },
-      // { code: 'KR', name: 'South Korea' },
-      { code: "MY", name: "Malaysia" }
-      // { code: 'PH', name: 'Philippines' },
-      // { code: 'SG', name: 'Singapore' },
-      // { code: 'TW', name: 'Taiwan' },
-      // { code: 'TH', name: 'Thailand' },
-      // { code: 'VN', name: 'Vietnam' },
-    ]
+    // const countries = [
+    // { code: 'CN', name: 'China' },
+    // { code: 'HK', name: 'Hong Kong' },
+    // { code: 'ID', name: 'Indonesia' },
+    // { code: 'JP', name: 'Japan' },
+    // { code: 'KR', name: 'South Korea' },
+    // { code: "MY", name: "Malaysia" }
+    // { code: 'PH', name: 'Philippines' },
+    // { code: 'SG', name: 'Singapore' },
+    // { code: 'TW', name: 'Taiwan' },
+    // { code: 'TH', name: 'Thailand' },
+    // { code: 'VN', name: 'Vietnam' },
+    // ]
 
-    const DEFAULT_SELECTED_COUNTRY_CODE = "MY"
-    const selectedCountry = countries.find(
-      a => a.code === DEFAULT_SELECTED_COUNTRY_CODE
+    const countryToFind = this.$route.query.country || "my"
+    const selectedCountry = COUNTRIES.find(country =>
+      country.urlAliases.includes(countryToFind)
     )
 
     return {
-      countries: [{ code: "global", name: "Global" }, ...countries],
+      // countries: [{ code: "global", name: "Global" }, ...countries],
+      countries: [
+        {
+          code: "global",
+          name: "Global"
+        },
+        {
+          code: selectedCountry && selectedCountry.code,
+          name: selectedCountry && selectedCountry.name
+        }
+      ],
       global: {
         code: "global",
         name: this.$t("global")
