@@ -109,6 +109,7 @@ export default {
   "daily_confirmed_cases": "Casos Diarios Confirmados",
   "per_million_population": "Por Millón de Habitantes",
   "past_2_weeks_chart": "Gráfica de los últimos 14 días",
+  "past_new_cases_chart": "Daily Incidences Chart",
   "covid_corona_tracker": "COVID-19 Corona Tracker",
   "covid_corona_tracker_description": "COVID-19 Corona Tracker: La única plataforma independiente de datos y noticias verificadas reconocida por la Organización Mundial de la Salud (OMS o WHO en Inglés).",
   "covid_corona_tracker_country": "COVID-19 {country} Corona Tracker",

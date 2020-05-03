@@ -109,6 +109,7 @@ export default {
   "daily_confirmed_cases": "Cazuri zilnice confirmate",
   "per_million_population": "Per milion de locuitori",
   "past_2_weeks_chart": "Grafic al ultimelor 14 zile",
+  "past_new_cases_chart": "Daily Incidences Chart",
   "covid_corona_tracker": "COVID-19 Corona Tracker",
   "covid_corona_tracker_description": "COVID-19 Corona Tracker: Singura sursă independentă de știri și informații verificate recunoscută de Organizația Mondială a Sănătății (OMS).",
   "covid_corona_tracker_country": "{country} COVID-19 Corona Tracker",

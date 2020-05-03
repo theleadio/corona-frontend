@@ -102,19 +102,19 @@
 </template>
 
 <script>
-import LAU_CHER_HAN from "~/assets/image/lau_cher_han.jpg";
-import HAFEEZ_NAZRI from "~/assets/image/hafeez_nazri.jpg";
-import TAN_WEI_SENG from "~/assets/image/tan_wei_seng.png";
-import SHIAN from "~/assets/image/shian.jpg";
-import DOMINIC from "~/assets/image/dominic.jpeg";
-import UMMI from "~/assets/image/ummi.jpg";
-import MARCUS from "~/assets/image/marcus.png";
-import FAIROZA from "~/assets/image/fairoza.png";
+import LAU_CHER_HAN from "~/assets/image/lau_cher_han.jpg"
+import HAFEEZ_NAZRI from "~/assets/image/hafeez_nazri.jpg"
+import TAN_WEI_SENG from "~/assets/image/tan_wei_seng.png"
+import SHIAN from "~/assets/image/shian.jpg"
+import DOMINIC from "~/assets/image/dominic.jpeg"
+import UMMI from "~/assets/image/ummi.jpg"
+import MARCUS from "~/assets/image/marcus.png"
+import FAIROZA from "~/assets/image/fairoza.png"
 
 export default {
   head() {
-    const title = this.$t("about_coronatracker");
-    const description = this.$t("about_coronatracker_meta_description");
+    const title = this.$t("about_coronatracker")
+    const description = this.$t("about_coronatracker_meta_description")
 
     return {
       title,
@@ -130,7 +130,7 @@ export default {
           content: description
         }
       ]
-    };
+    }
   },
   data() {
     return {
@@ -453,15 +453,15 @@ export default {
         }
       ],
       activeTab: 0
-    };
+    }
   },
   methods: {
     click: function(index) {
-      this.activeTab = index;
-      console.log(index);
+      this.activeTab = index
+      console.log(index)
     }
   }
-};
+}
 </script>
 <style scoped>
 li a:hover {

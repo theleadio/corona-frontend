@@ -109,6 +109,7 @@ export default {
   "daily_confirmed_cases": "தினசரி உறுதிப்படுத்தப்பட்ட வழக்குகள்",
   "per_million_population": "ஒரு மில்லியன் மக்கள் தொகைக்கு",
   "past_2_weeks_chart": "கடந்த 14 நாட்கள் விளக்கப்படம்",
+  "past_new_cases_chart": "Daily Incidences Chart",
   "covid_corona_tracker": "கோவிட் -19 கொரோனா டிராக்கர்",
   "covid_corona_tracker_description": "கோவிட் -19 கொரோனா டிராக்கர்: சரிபார்க்கப்பட்ட தரவு மற்றும் செய்திகளுக்கான ஒரே ஒரு தளத்தை ஒரே சுயாதீனமான உலக சுகாதார அமைப்பு (WHO) அங்கீகரித்தது.",
   "covid_corona_tracker_country": "COVID-19 {நாடு} கொரோனா டிராக்கர்",

@@ -109,6 +109,7 @@ export default {
   "daily_confirmed_cases": "နေ့စဉ်တွေ့ရှိနှုန်း",
   "per_million_population": "ပျမ်းမျှဖြစ်နှုန်း",
   "past_2_weeks_chart": "14 ရက်ဇယား",
+  "past_new_cases_chart": "Daily Incidences Chart",
   "covid_corona_tracker": "ကိုရိုနာဗိုင်းရပ်စ်ပိုး Tracker",
   "covid_corona_tracker_description": "COVID-19 Corona Tracker: လွတ်လပ်သောတစ်ခုတည်းသောကမ္ဘာ့ကျန်းမာရေးအဖွဲ့ (WHO) ကအတည်ပြုပြီးသောအချက်အလက်နှင့်သတင်းများအတွက်တစ်နေရာတည်းတွင်ပလက်ဖောင်းတစ်ခုအသိအမှတ်ပြုခဲ့သည်။",
   "covid_corona_tracker_country": "COVID-19 {country} Corona Tracker",

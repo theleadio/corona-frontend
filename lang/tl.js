@@ -109,6 +109,7 @@ export default {
   "daily_confirmed_cases": "Kumpirmadong Kaso sa Araw-araw",
   "per_million_population": "Per Million Population",
   "past_2_weeks_chart": "Chart ng Nakaraang 14 na Araw",
+  "past_new_cases_chart": "Chart ng Incidence kada Araw",
   "covid_corona_tracker": "COVID-19 Corona Tracker",
   "covid_corona_tracker_description": "COVID-19 Corona Tracker: Ang bukod tanging plataporma ng kumpirmadong datos at balita na binigyan ng pagkilala ng World Health Organization (WHO)",
   "covid_corona_tracker_country": "COVID-19 {country} Corona Tracker",

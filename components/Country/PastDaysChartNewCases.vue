@@ -40,7 +40,7 @@
 import PastDaysChartSelector from "~/components/Country/PastDaysChartSelector.vue"
 
 export default {
-  name: "PastDaysChart",
+  name: "PastDaysChartNewCases",
   components: {
     PastDaysChartSelector
   },

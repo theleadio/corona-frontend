@@ -109,6 +109,7 @@ export default {
   "daily_confirmed_cases": "Kasus Terkonfirmasi Harian",
   "per_million_population": "Per Juta Penduduk",
   "past_2_weeks_chart": "Grafik 14 Hari Terakhir",
+  "past_new_cases_chart": "Daily Incidences Chart",
   "covid_corona_tracker": "COVID-19 Corona Tracker",
   "covid_corona_tracker_description": "COVID-19 Corona Tracker: Satu-satunya Organisasi Kesehatan Dunia (WHO) bebas yang diakui sebagai platform data dan berita yang terverifikasi.",
   "covid_corona_tracker_country": "COVID-19 {country} Pelacak Corona",

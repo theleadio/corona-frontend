@@ -8,12 +8,16 @@
           style="height: 25rem;"
           :center="center"
           :zoom="zoom"
-          :minZoom="1"
-          :maxBounds="[[-130, -220], [130, 220]]"
+          :min-zoom="1"
+          :max-bounds="[
+            [-130, -220],
+            [130, 220]
+          ]"
           @update:bounds="updateBounds"
           @update:zoom="updateZoom"
-          @update:center="updateCenter">
-          <l-tile-layer :url="mapUrl" :noWrap="true"></l-tile-layer>
+          @update:center="updateCenter"
+        >
+          <l-tile-layer :url="mapUrl" :no-wrap="true" />
 
           <l-circle-marker
             v-for="(loc, idx) in countriesForMapDisplay"
@@ -21,23 +25,28 @@
             :lat-lng="[+loc.lat, +loc.lng]"
             :stroke="false"
             :radius="loc.radius"
-            fillColor="#e53e3e"
-            color="red">
+            fill-color="#e53e3e"
+            color="red"
+          >
             <l-popup>
               <p class="text-xs">
-                <span class="font-bold">{{ $t('country') }}:</span> {{ loc.country }}
+                <span class="font-bold">{{ $t("country") }}:</span>
+                {{ loc.country }}
               </p>
 
               <p class="text-xs">
-                <span class="font-bold">{{ $t('total_confirmed') }}:</span> {{ loc.totalConfirmed | formatNumber }}
+                <span class="font-bold">{{ $t("total_confirmed") }}:</span>
+                {{ loc.totalConfirmed | formatNumber }}
               </p>
 
               <p class="text-xs">
-                <span class="font-bold">{{ $t('total_recovered') }}:</span> {{ loc.totalRecovered | formatNumber }}
+                <span class="font-bold">{{ $t("total_recovered") }}:</span>
+                {{ loc.totalRecovered | formatNumber }}
               </p>
 
               <p class="text-xs">
-                <span class="font-bold">{{ $t('total_deaths') }}:</span> {{ loc.totalDeaths | formatNumber }}
+                <span class="font-bold">{{ $t("total_deaths") }}:</span>
+                {{ loc.totalDeaths | formatNumber }}
               </p>
             </l-popup>
           </l-circle-marker>
@@ -45,99 +54,122 @@
       </client-only>
     </div>
 
-    <div class="mt-3 hidden lg:block" style="max-height: 36.3rem; overflow: auto;">
-      <HintClickCountry/>
+    <div
+      class="mt-3 hidden lg:block"
+      style="max-height: 36.3rem; overflow: auto;"
+    >
+      <HintClickCountry />
       <table class="table-auto w-full">
         <thead class="text-xs leading-tight border-b-2">
-        <tr>
-          <th class="border px-2 py-2">{{ $t('country') }}</th>
-          <th class="border px-1 py-2">{{ $t('total_confirmed') }}</th>
-          <th class="border px-1 py-2">{{ $t('total_recovered') }}</th>
-          <th class="border px-1 py-2">{{ $t('total_deaths') }}</th>
-        </tr>
+          <tr>
+            <th class="border px-2 py-2">
+              {{ $t("country") }}
+            </th>
+            <th class="border px-1 py-2">
+              {{ $t("total_confirmed") }}
+            </th>
+            <th class="border px-1 py-2">
+              {{ $t("total_recovered") }}
+            </th>
+            <th class="border px-1 py-2">
+              {{ $t("total_deaths") }}
+            </th>
+          </tr>
         </thead>
         <tbody class="font-bold">
-        <tr v-for="loc in data" :key="loc.country">
-          <td class="bg-gray-200 text-xs border px-2 py-2 hover:bg-primary hover:text-white">
-            <template v-if="loc.countryCode === 'OT'">
-              <span>{{loc.country}}</span>
-              <a href="#notes-on-others">*</a>
-            </template>
-            <template v-else-if="loc.countryCode">
-              <nuxt-link :to="localePath(`/country/${loc.countryCode.toLowerCase()}`)" style="display: block;">
-                <Flag :country-code="loc.countryCode"></Flag>
-                {{loc.country}}
-              </nuxt-link>
-            </template>
-          </td>
-          <td class="text-center border px-1 py-2">{{ loc.totalConfirmed | formatNumber }}</td>
-          <td class="text-center border px-1 py-2">{{ loc.totalRecovered | formatNumber }}</td>
-          <td class="text-center border px-1 py-2">{{ loc.totalDeaths | formatNumber }}</td>
-        </tr>
+          <tr v-for="loc in data" :key="loc.country">
+            <td
+              class="bg-gray-200 text-xs border px-2 py-2 hover:bg-primary hover:text-white"
+            >
+              <template v-if="loc.countryCode === 'OT'">
+                <span>{{ loc.country }}</span>
+                <a href="#notes-on-others">*</a>
+              </template>
+              <template v-else-if="loc.countryCode">
+                <nuxt-link
+                  :to="localePath(`/country/${loc.countryCode.toLowerCase()}`)"
+                  style="display: block;"
+                >
+                  <Flag :country-code="loc.countryCode" />
+                  {{ loc.country }}
+                </nuxt-link>
+              </template>
+            </td>
+            <td class="text-center border px-1 py-2">
+              {{ loc.totalConfirmed | formatNumber }}
+            </td>
+            <td class="text-center border px-1 py-2">
+              {{ loc.totalRecovered | formatNumber }}
+            </td>
+            <td class="text-center border px-1 py-2">
+              {{ loc.totalDeaths | formatNumber }}
+            </td>
+          </tr>
         </tbody>
       </table>
       <div class="my-2 font-bold text-xs text-gray-600 leading-tight">
-        * {{ $t('cruise_ship_notice') }}
-        <a name="notes-on-others" class="anchor"></a>
+        * {{ $t("cruise_ship_notice") }}
+        <a name="notes-on-others" class="anchor" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Flag from '~/components/Flag';
-import HintClickCountry from '~/components/HintClickCountry';
+import Flag from "~/components/Flag"
+import HintClickCountry from "~/components/HintClickCountry"
 
 export default {
+  components: {
+    Flag,
+    HintClickCountry
+  },
   props: {
     data: {
       type: Array,
-      default: null,
+      default: null
     }
   },
 
-  components: {
-    Flag,
-    HintClickCountry,
-  },
-
-  data () {
+  data() {
     return {
-      mapUrl: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', // for other map: http://leaflet-extras.github.io/leaflet-providers/preview/index.html
+      mapUrl: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", // for other map: http://leaflet-extras.github.io/leaflet-providers/preview/index.html
       bounds: null,
       center: [0, 0],
-      zoom: 1,
+      zoom: 1
     }
   },
 
   computed: {
     countriesForMapDisplay() {
-      return this.data.filter(i => i.totalConfirmed && i.lat && i.lng).map(item => ({
-        ...item,
-        radius: this.scale(item.totalConfirmed)
-      }))
-    },
+      return this.data
+        .filter(i => i.totalConfirmed && i.lat && i.lng)
+        .map(item => ({
+          ...item,
+          radius: this.scale(item.totalConfirmed)
+        }))
+    }
   },
 
   methods: {
-    scale (d) {
+    scale(d) {
       const min = 1
       const factor = 5
 
       return Math.floor(Math.log(d) * factor) + min
     },
 
-    updateBounds (bounds) {
+    updateBounds(bounds) {
       this.bounds = bounds
     },
 
-    updateZoom (zoom) {
+    updateZoom(zoom) {
       this.zoom = zoom
     },
 
-    updateCenter (center) {
+    updateCenter(center) {
       this.center = center
-    },
+    }
   }
 }
 </script>
