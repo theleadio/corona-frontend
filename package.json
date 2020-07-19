@@ -30,7 +30,7 @@
     "apexcharts": "^3.18.1",
     "flag-icon-css": "^3.4.6",
     "leaflet": "^1.6.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "moment": "^2.24.0",
     "nuxt": "^2.12.2",
     "nuxt-i18n": "^6.8.1",
