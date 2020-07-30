@@ -354,9 +354,15 @@ export default {
       let countryNewCasesTrendDeath = []
 
       countryNewCasesTrendRaw.forEach(country => {
-        countryNewCasesTrendConfirmed.push(country["new_infections"])
-        countryNewCasesTrendRecovered.push(country["new_recovered"])
-        countryNewCasesTrendDeath.push(country["new_deaths"])
+        countryNewCasesTrendConfirmed.push(
+          country["new_infections"] > 0 ? country["new_infections"] : 0
+        )
+        countryNewCasesTrendRecovered.push(
+          country["new_recovered"] > 0 ? country["new_recovered"] : 0
+        )
+        countryNewCasesTrendDeath.push(
+          country["new_deaths"] > 0 ? country["new_deaths"] : 0
+        )
         this.countryNewCasesTrend.newCasesTrendDates.push(
           country["last_updated"].slice(0, 10)
         )
