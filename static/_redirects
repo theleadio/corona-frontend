@@ -590,8 +590,8 @@
 /:lang/share/country-stats-today/ca /:lang/share/country-stats-today/canada 301
 /share/country-stats-today/cc /share/country-stats-today/cocos-keeling-islands 301
 /:lang/share/country-stats-today/cc /:lang/share/country-stats-today/cocos-keeling-islands 301
-/share/country-stats-today/cd /share/country-stats-today/congo [drc] 301
-/:lang/share/country-stats-today/cd /:lang/share/country-stats-today/congo [drc] 301
+/share/country-stats-today/cd /share/country-stats-today/congo-drc 301
+/:lang/share/country-stats-today/cd /:lang/share/country-stats-today/congo-drc 301
 /share/country-stats-today/cf /share/country-stats-today/central-african-republic 301
 /:lang/share/country-stats-today/cf /:lang/share/country-stats-today/central-african-republic 301
 /share/country-stats-today/cg /share/country-stats-today/congo-republic 301
@@ -1086,8 +1086,8 @@
 /:lang/share/country-stats-recent/ca /:lang/share/country-stats-recent/canada 301
 /share/country-stats-recent/cc /share/country-stats-recent/cocos-keeling-islands 301
 /:lang/share/country-stats-recent/cc /:lang/share/country-stats-recent/cocos-keeling-islands 301
-/share/country-stats-recent/cd /share/country-stats-recent/congo [drc] 301
-/:lang/share/country-stats-recent/cd /:lang/share/country-stats-recent/congo [drc] 301
+/share/country-stats-recent/cd /share/country-stats-recent/congo-drc 301
+/:lang/share/country-stats-recent/cd /:lang/share/country-stats-recent/congo-drc 301
 /share/country-stats-recent/cf /share/country-stats-recent/central-african-republic 301
 /:lang/share/country-stats-recent/cf /:lang/share/country-stats-recent/central-african-republic 301
 /share/country-stats-recent/cg /share/country-stats-recent/congo-republic 301
