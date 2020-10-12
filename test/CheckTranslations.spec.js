@@ -13,6 +13,7 @@ import it_translations from "@/lang/it"
 import ja_translations from "@/lang/ja"
 import ms_translations from "@/lang/ms"
 import my_translations from "@/lang/my"
+import nl_translations from "@/lang/nl"
 import pl_translations from "@/lang/pl"
 import pt_br_translations from "@/lang/pt-br"
 import sv_translations from "@/lang/sv"
@@ -38,6 +39,7 @@ describe("Translations", () => {
     ["ja", "Japanese", ja_translations],
     ["ms", "Bahasa Melayu", ms_translations],
     ["my", "Burmese", my_translations],
+    ["nl", "Nederlands", nl_translations],
     ["pl", "Polish", pl_translations],
     ["pt-br", "Portuguese", pt_br_translations],
     ["sv", "Svenska", sv_translations],
