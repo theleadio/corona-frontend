@@ -3,7 +3,9 @@ GOOGLE_SHEET_ID="12_yx09THl9qcBboJvvBwPTY63MfKIIB8WzEDstIOI6s"
 GID="0"
 
 # Download google sheet and save
-curl -o "CoronaTracker - Translation - Sheet1.csv" "https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/export?gid=${GID}&format=csv"
+# FIXME: the link below will face a redirect and will cause an error when running the lang-generator.py script
+# Manually export instead and save in this folder
+# curl -o "CoronaTracker - Translation - Sheet1.csv" "https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/export?gid=${GID}&format=csv"
 
 python3 lang-generator.py -c b en.js \
 && mv en.js ../../lang \
