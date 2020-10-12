@@ -475,11 +475,11 @@ export const locales = [
     name: "Burmese",
     file: "my.js"
   },
-  /*{
-    code: 'nl',
-    name: 'Nederlands',
-    file: 'nl.js',
-  },*/
+  {
+    code: "nl",
+    name: "Nederlands",
+    file: "nl.js"
+  },
   {
     code: "pl",
     name: "Polski",
