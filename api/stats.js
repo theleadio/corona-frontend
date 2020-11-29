@@ -55,7 +55,7 @@ export default axios => ({
     }
 
     return axios
-      .get(`/v4/analytics/trend/country`, { params })
+      .get(`/v5/analytics/trend/country`, { params })
       .then(res => res.data)
   },
 
@@ -67,7 +67,7 @@ export default axios => ({
     }
 
     return axios
-      .get(`/v4/analytics/newcases/country`, { params })
+      .get(`/v5/analytics/newcases/country`, { params })
       .then(res => res.data)
   }
 })

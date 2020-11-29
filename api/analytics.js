@@ -10,11 +10,11 @@ export default axios => ({
   },
 
   // deprecating
-  fetchAffectedCountry: () => {
-    return axios.get(`/v2/analytics/country`).then(res => res.data)
-  },
+  // fetchAffectedCountry: () => {
+  //   return axios.get(`/v2/analytics/country`).then(res => res.data)
+  // },
 
   fetchTopCountryWithDailyNewStatsSortByNewCases: () => {
-    return axios.get(`/v3/analytics/dailyNewStats`).then(res => res.data)
+    return axios.get(`/v5/analytics/dailyNewStats`).then(res => res.data)
   }
 })
