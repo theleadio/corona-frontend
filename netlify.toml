@@ -20,7 +20,7 @@
   functions = "functions/"
 
 [context.staging.environment]
-  API_BASE_URL = "https://api2.staging.coronatracker.com"
+  API_BASE_URL = "https://api2.coronatracker.com"
   BASE_URL = "https://staging.coronatracker.com"
   GA_ID = "UA-xxxxxxxxx-x"
   GENERATE_ROUTES = "true"
