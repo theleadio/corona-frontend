@@ -10,7 +10,7 @@
   functions = "functions/"
 
 [context.production.environment]
-  API_BASE_URL = "https://api.coronatracker.com"
+  API_BASE_URL = "https://api2.coronatracker.com"
   BASE_URL = "https://www.coronatracker.com"
   GENERATE_ROUTES = "true"
 
