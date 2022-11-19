@@ -32,7 +32,7 @@
     "leaflet": "^1.6.0",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
-    "nuxt": "^2.12.2",
+    "nuxt": "^2.15.8",
     "nuxt-i18n": "^6.8.1",
     "nuxt-leaflet": "0.0.19",
     "nuxt-svg-loader": "^1.2.0",
